@@ -9,11 +9,9 @@ import { useScroll, useMotionValueEvent, motion } from "framer-motion";
 
 export default function GlobalUI() {
   const [fps, setFps] = useState(0);
-  const [isMuted, setIsMuted] = useState(true);
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [time, setTime] = useState("");
   const [scrollPos, setScrollPos] = useState(0);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   
   const { scrollYProgress } = useScroll();
 
@@ -63,22 +61,6 @@ export default function GlobalUI() {
     };
   }, []);
 
-  useEffect(() => {
-    audioRef.current = new Audio();
-    audioRef.current.loop = true;
-    audioRef.current.volume = 0.1;
-  }, []);
-
-  const toggleAudio = () => {
-    if (!audioRef.current) return;
-    if (isMuted) {
-      audioRef.current.play().catch(() => {});
-    } else {
-      audioRef.current.pause();
-    }
-    setIsMuted(!isMuted);
-  };
-
   return (
     <>
       <div className="scanlines pointer-events-none z-[9999]"></div>
@@ -106,13 +88,6 @@ export default function GlobalUI() {
       </div>
 
       <div className="fixed bottom-4 left-4 z-50 flex items-center gap-4">
-        <button
-          onClick={toggleAudio}
-          className="p-2 text-gray-500 hover:text-[var(--primary-color)] transition-colors duration-300 border border-transparent hover:border-gray-800 bg-black/50 backdrop-blur-sm cursor-crosshair"
-          onMouseEnter={playHoverSound}
-        >
-          {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-        </button>
 
         <a
           href="/resume.pdf"

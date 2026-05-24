@@ -34,9 +34,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${pixelify.variable} ${pressStart.variable} ${vt323.variable} h-full antialiased`}
+      className={`${pixelify.variable} ${pressStart.variable} ${vt323.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col crt-curve font-pixel bg-black text-white relative">
+      <body className="flex flex-col crt-curve font-pixel bg-black text-white relative">
         <div className="noise" />
         <div className="vignette" />
         <div className="scanlines" />
