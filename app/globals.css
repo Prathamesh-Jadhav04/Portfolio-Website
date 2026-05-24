@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-pixel: var(--font-pixel);
+  --font-press: var(--font-press);
+  --font-vt323: var(--font-vt323);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  cursor: none;
+}
+
+/* Hide default cursor globally */
+body, a, button {
+  cursor: none !important;
+}
+
+/* Ensure text cursor is visible for inputs so user can type */
+input, textarea {
+  cursor: text !important;
+}
+
+/* Matrix Mode Theme Overrides */
+body.matrix-mode * {
+  color: #00ff41 !important;
+  border-color: #00ff41 !important;
+}
+body.matrix-mode .text-gray-400, 
+body.matrix-mode .text-gray-500, 
+body.matrix-mode .text-gray-600 {
+  color: #008f11 !important;
+}
+body.matrix-mode .border-gray-800, 
+body.matrix-mode .border-gray-900,
+body.matrix-mode {
+  --primary-color: #0f0;
+  --secondary-color: #003300;
+  --text-color: #0f0;
+}
+
+.amber-mode {
+  --primary-color: #ffb000;
+  --secondary-color: #332000;
+  --text-color: #ffb000;
+}
+
+/* Glitch Text Effect */
+.glitch-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-hover:hover {
+  animation: glitch-anim 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #fff;
+}
+
+.glitch-hover:hover::before,
+.glitch-hover:hover::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.glitch-hover:hover::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  animation: glitch-anim-1 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite reverse;
+}
+
+.glitch-hover:hover::after {
+  left: -2px;
+  text-shadow: -2px 0 cyan;
+  animation: glitch-anim-2 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+@keyframes glitch-anim {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 1px) }
+  40% { transform: translate(-1px, -1px) }
+  60% { transform: translate(2px, 1px) }
+  80% { transform: translate(1px, -1px) }
+  100% { transform: translate(0) }
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(20% 0 80% 0) }
+  20% { clip-path: inset(60% 0 10% 0) }
+  40% { clip-path: inset(40% 0 50% 0) }
+  60% { clip-path: inset(80% 0 5% 0) }
+  80% { clip-path: inset(10% 0 70% 0) }
+  100% { clip-path: inset(30% 0 50% 0) }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(10% 0 60% 0) }
+  20% { clip-path: inset(30% 0 20% 0) }
+  40% { clip-path: inset(70% 0 10% 0) }
+  60% { clip-path: inset(20% 0 50% 0) }
+  80% { clip-path: inset(50% 0 30% 0) }
+  100% { clip-path: inset(5% 0 80% 0) }
+}
+body.matrix-mode .bg-black {
+  background-color: #000000 !important;
+}
+body.matrix-mode .bg-black\/60 {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Amber Mode Theme Overrides */
+body.amber-mode * {
+  color: #ffb000 !important;
+  border-color: #ffb000 !important;
+}
+body.amber-mode .text-gray-400, 
+body.amber-mode .text-gray-500, 
+body.amber-mode .text-gray-600 {
+  color: #cc8d00 !important;
+}
+body.amber-mode .border-gray-800, 
+body.amber-mode .border-gray-900,
+body.amber-mode .border-gray-700 {
+  border-color: #4a3300 !important;
+}
+body.amber-mode .bg-white {
+  background-color: #ffb000 !important;
+}
+body.amber-mode .bg-black {
+  background-color: #000000 !important;
+}
+body.amber-mode .bg-black\/60 {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Hacker-themed Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+  border-left: 1px solid #111;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) #000;
+}
+
+/* CRT Scanlines */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.1)
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.2;
+}
+
+/* Vignette Effect */
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    circle at center,
+    transparent 60%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+  z-index: 49;
+}
+
+/* Noise overlay - Optimized */
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 48;
+  opacity: 0.03;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAABiH2qCAAAACHRSTlMzMzMzMzMzM8yE/iAAAABzSURBVDjL7c2xDQAxDAJBw1/676oE1gQ+R0bylR1X7+v81s7q+7v3fX/Xv3vPz/P8vO/7+36e5/l53/f3/TzP8/O+7+/7eZ7n533f3/fzPM/P+76/7+d5np/3fX/fz/M8P+/7/r6f53l+3vf9fT/P8/z8t94P+Q4Z6j7A8AAAAABJRU5ErkJggg==");
+  background-repeat: repeat;
+  animation: staticNoise 0.2s steps(2) infinite;
+}
+
+@keyframes staticNoise {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, 10px); }
+  100% { transform: translate(10px, -10px); }
+}
+
+/* Terminal Cursor Blink */
+@keyframes terminalBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.animate-terminal-blink {
+  animation: terminalBlink 1s infinite;
+}
+
+/* Screen Curve Illusion */
+.crt-curve {
+  animation: crtFlicker 0.15s infinite;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.3);
+}
+
+@keyframes crtFlicker {
+  0% { opacity: 0.98; }
+  50% { opacity: 1; }
+  100% { opacity: 0.99; }
+}
+
+/* Pixel rendering for images/canvas */
+img, canvas {
+  image-rendering: pixelated;
+}

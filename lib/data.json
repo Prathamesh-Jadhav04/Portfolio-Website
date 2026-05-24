@@ -1,0 +1,89 @@
+{
+  "hiddenProjects": [
+    "Innomatics-Research-Labs",
+    "DPI-Engine"
+  ],
+  "projectOverrides": {
+    "DPI-Engine": {
+      "title": "DPI Engine",
+      "desc": "No description provided.",
+      "tech": "Multiple node"
+    }
+  },
+  "projects": [
+    {
+      "title": "NuroSearch",
+      "desc": "Custom Vector Database with Full-Stack RAG Pipeline implementing HNSW, BM25, and Ollama-grounded LLM generation. Engineered to achieve sub-10 ms retrieval.",
+      "tech": "Python / Flask / Redis / Ollama / HNSW",
+      "github": "https://github.com/Prathamesh-Jadhav04/NuroSearch"
+    },
+    {
+      "title": "DPI Engine",
+      "desc": "Multi-Threaded Deep Packet Inspection System achieving 500+ packets/sec concurrent capture with TLS SNI extraction and rule-based filtering.",
+      "tech": "Python / Multithreading / PCAP / Protocols",
+      "github": "https://github.com/Prathamesh-Jadhav04/DPI-Engine"
+    },
+    {
+      "title": "CDSS",
+      "desc": "AI-powered Clinical Decision Support System. Engineered a 3-model ML pipeline predicting Covid-19 outcomes with 82% accuracy using Random Forest.",
+      "tech": "Machine Learning / Scikit-Learn / Data Science"
+    }
+  ],
+  "skills": [
+    {
+      "name": "AI / ML / GenAI",
+      "progress": "█████████░",
+      "percent": "90%"
+    },
+    {
+      "name": "Python / TS / C",
+      "progress": "██████████",
+      "percent": "95%"
+    },
+    {
+      "name": "Backend / APIs",
+      "progress": "████████░░",
+      "percent": "85%"
+    },
+    {
+      "name": "Databases / Cloud",
+      "progress": "███████░░░",
+      "percent": "80%"
+    }
+  ],
+  "experience": [
+    {
+      "id": "commit a9f4c1",
+      "role": "Data Science Intern",
+      "company": "Uptricks Services Pvt. Ltd.",
+      "duration": "OCT 2024 - DEC 2024",
+      "desc": "Automated data preprocessing pipelines. Built ML workflows improving accuracy by 12%. Integrated REST APIs."
+    },
+    {
+      "id": "commit e5b2d9",
+      "role": "Software Engineering Simulation",
+      "company": "JPMorgan Chase & Co.",
+      "duration": "JAN 2026",
+      "desc": "Completed job simulation focusing on Kafka, REST APIs, and Backend Integration development."
+    },
+    {
+      "id": "commit c71a8f",
+      "role": "AWS Architecture Simulation",
+      "company": "Amazon Web Services",
+      "duration": "JAN 2026",
+      "desc": "Completed job simulation focusing on Cloud Architecture, Scalable Systems, and Hosting Infrastructure."
+    },
+    {
+      "id": "commit b3d8e2",
+      "role": "Bachelor of Engineering (CSE)",
+      "company": "College of Eng & Tech, Akola",
+      "duration": "2022 - 2026",
+      "desc": "CGPA: 7.8. Focused on Core CS, AI/ML, and Data Analytics."
+    }
+  ],
+  "profileData": {
+    "name": "PRATHAMESH JADHAV",
+    "tagline": "AI/ML ENGINEER & DATA SCIENTIST",
+    "established": "EST. 2022 — CHHATRAPATI SAMBHAJINAGAR"
+  }
+}
