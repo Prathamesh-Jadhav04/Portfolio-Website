@@ -41,6 +41,45 @@ export function HeroSection() {
           <div className="scroll-line" />
         </div>
       </div>
+      <style>{`
+        .year-badge {
+          border: 1px solid rgba(255, 180, 0, 0.15) !important;
+          background: rgba(255, 180, 0, 0.02) !important;
+          padding: 0.35rem 0.85rem !important;
+          border-radius: 4px;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .year-badge:hover {
+          border-color: rgba(255, 180, 0, 0.45) !important;
+          background: rgba(255, 180, 0, 0.06) !important;
+          box-shadow: 0 0 20px rgba(255, 180, 0, 0.18);
+          transform: translateY(-2px) !important;
+        }
+
+        .scroll-explore {
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-explore:hover {
+          color: var(--accent-amber, #ffb400) !important;
+          transform: translateY(3px);
+        }
+
+        .scroll-explore:hover .scroll-line {
+          background: var(--accent-amber, #ffb400) !important;
+          animation: lineStretch 0.8s infinite alternate ease-in-out;
+        }
+
+        @keyframes lineStretch {
+          from {
+            width: 30px;
+          }
+          to {
+            width: 55px;
+          }
+        }
+      `}</style>
     </section>
   );
 }
