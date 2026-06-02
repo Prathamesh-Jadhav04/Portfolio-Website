@@ -23,7 +23,6 @@ function GitHubIcon() {
   );
 }
 
-
 function LinkedInIcon() {
   return (
     <svg
@@ -37,7 +36,6 @@ function LinkedInIcon() {
     </svg>
   );
 }
-
 
 const socialLinks: SocialLink[] = [
   {
@@ -88,7 +86,9 @@ function SocialButton({ link }: { link: SocialLink }) {
 export function ContactSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const [btnHovered, setBtnHovered] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -101,12 +101,52 @@ export function ContactSection() {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setErrorMsg('All fields are required.');
+      setStatus('error');
+      return;
+    }
+
+    setStatus('sending');
+    setErrorMsg('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to transmit message.');
+      }
+
+      setStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (err: any) {
+      console.error(err);
+      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+      setStatus('error');
+    }
+  };
 
   return (
     <section
@@ -167,7 +207,7 @@ export function ContactSection() {
             fontWeight: 300,
             fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)',
             color: 'rgba(245,245,245,0.5)',
-            margin: '0',
+            margin: '0 0 4rem 0',
             opacity: visible ? 1 : 0,
             transform: visible ? 'translateY(0)' : 'translateY(20px)',
             transition:
@@ -177,38 +217,167 @@ export function ContactSection() {
           Have an idea? Let&apos;s make it real.
         </p>
 
-        {/* CTA Button */}
+        {/* Contact Form OR Success State */}
         <div
           style={{
+            maxWidth: '650px',
+            margin: '0 auto',
+            textAlign: 'left',
             opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(20px)',
-            transition:
-              'opacity 0.7s 0.3s cubic-bezier(0.65, 0, 0.35, 1), transform 0.7s 0.3s cubic-bezier(0.65, 0, 0.35, 1)',
+            transform: visible ? 'translateY(0)' : 'translateY(30px)',
+            transition: 'opacity 0.8s 0.25s cubic-bezier(0.65, 0, 0.35, 1), transform 0.8s 0.25s cubic-bezier(0.65, 0, 0.35, 1)',
           }}
         >
-          <Magnetic strength={0.2} range={80}>
-            <a
-              href="mailto:Prathamesh.Jadhav.Office@gmail.com"
-              onMouseEnter={() => setBtnHovered(true)}
-              onMouseLeave={() => setBtnHovered(false)}
+          {status === 'success' ? (
+            <div
               style={{
-                border: '1px solid #ffb400',
-                color: btnHovered ? '#0a0a0a' : '#ffb400',
-                backgroundColor: btnHovered ? '#ffb400' : 'transparent',
-                padding: '1rem 3rem',
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.75rem',
-                letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-                textDecoration: 'none',
-                display: 'inline-block',
-                marginTop: '3rem',
-                transition: 'all 0.3s cubic-bezier(0.65, 0, 0.35, 1)',
+                background: 'rgba(255, 180, 0, 0.02)',
+                border: '1px solid rgba(255, 180, 0, 0.2)',
+                borderRadius: '8px',
+                padding: '3rem 2rem',
+                textAlign: 'center',
+                boxShadow: '0 15px 40px -15px rgba(255, 180, 0, 0.05)',
               }}
             >
-              GET IN TOUCH
-            </a>
-          </Magnetic>
+              <div
+                style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.25em',
+                  color: '#ffb400',
+                  marginBottom: '1rem',
+                }}
+              >
+                [SUCCESS] TRANSMISSION ESTABLISHED
+              </div>
+              <h3
+                style={{
+                  fontFamily: 'Bebas Neue, sans-serif',
+                  fontSize: '2.5rem',
+                  color: '#f5f5f5',
+                  marginBottom: '1rem',
+                  letterSpacing: '0.02em',
+                }}
+              >
+                MESSAGE LOGGED
+              </h3>
+              <p
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 300,
+                  fontSize: '0.95rem',
+                  lineHeight: 1.6,
+                  color: 'rgba(245,245,245,0.6)',
+                  marginBottom: '2rem',
+                }}
+              >
+                Thank you. Your message has been ingested securely. Prathamesh will review your query and reply shortly.
+              </p>
+              <Magnetic strength={0.2} range={60}>
+                <button
+                  type="button"
+                  onClick={() => setStatus('idle')}
+                  className="submit-btn"
+                >
+                  SEND ANOTHER MESSAGE
+                </button>
+              </Magnetic>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <div className="contact-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                {/* Name */}
+                <div className="contact-form-group">
+                  <label htmlFor="name" className="contact-label">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="contact-input"
+                    placeholder="Enter your name"
+                    disabled={status === 'sending'}
+                  />
+                </div>
+
+                {/* Email */}
+                <div className="contact-form-group">
+                  <label htmlFor="email" className="contact-label">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="contact-input"
+                    placeholder="Enter your email"
+                    disabled={status === 'sending'}
+                  />
+                </div>
+              </div>
+
+              {/* Subject */}
+              <div className="contact-form-group">
+                <label htmlFor="subject" className="contact-label">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  className="contact-input"
+                  placeholder="Enter message subject"
+                  disabled={status === 'sending'}
+                />
+              </div>
+
+              {/* Message */}
+              <div className="contact-form-group">
+                <label htmlFor="message" className="contact-label">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  className="contact-textarea"
+                  placeholder="Enter details of your project or query..."
+                  disabled={status === 'sending'}
+                />
+              </div>
+
+              {status === 'error' && (
+                <div
+                  style={{
+                    fontFamily: 'JetBrains Mono, monospace',
+                    fontSize: '0.7rem',
+                    color: '#ff4444',
+                    marginBottom: '1.5rem',
+                    letterSpacing: '0.05em',
+                  }}
+                >
+                  // [ERROR]: {errorMsg}
+                </div>
+              )}
+
+              {/* Submit CTA Button */}
+              <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+                <Magnetic strength={0.2} range={80}>
+                  <button
+                    type="submit"
+                    disabled={status === 'sending'}
+                    className="submit-btn"
+                  >
+                    {status === 'sending' ? 'TRANSMITTING...' : 'TRANSMIT MESSAGE'}
+                  </button>
+                </Magnetic>
+              </div>
+            </form>
+          )}
         </div>
 
         {/* Social links row */}
@@ -217,7 +386,7 @@ export function ContactSection() {
             display: 'flex',
             gap: '2rem',
             justifyContent: 'center',
-            marginTop: '4rem',
+            marginTop: '5rem',
             flexWrap: 'wrap',
             opacity: visible ? 1 : 0,
             transform: visible ? 'translateY(0)' : 'translateY(20px)',
@@ -253,6 +422,85 @@ export function ContactSection() {
           </span>
         </div>
       </div>
+
+      <style>{`
+        .contact-form-group {
+          position: relative;
+          margin-bottom: 2.5rem;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .contact-label {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.65rem;
+          letter-spacing: 0.15em;
+          color: rgba(245, 245, 245, 0.3);
+          text-transform: uppercase;
+          margin-bottom: 0.6rem;
+          transition: color 0.3s ease;
+        }
+
+        .contact-input, .contact-textarea {
+          font-family: 'Inter', sans-serif;
+          font-weight: 300;
+          font-size: 1rem;
+          color: #f5f5f5;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid rgba(245, 245, 245, 0.12);
+          padding: 0.8rem 0;
+          transition: all 0.3s ease;
+          width: 100%;
+          outline: none;
+          cursor: text !important;
+        }
+
+        .contact-input:focus, .contact-textarea:focus {
+          border-bottom-color: var(--accent-amber, #ffb400);
+        }
+
+        .contact-form-group:focus-within .contact-label {
+          color: var(--accent-amber, #ffb400);
+        }
+
+        .contact-textarea {
+          min-height: 120px;
+          resize: vertical;
+        }
+        
+        .submit-btn {
+          border: 1px solid #ffb400;
+          color: #ffb400;
+          background: transparent;
+          padding: 1rem 3rem;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.75rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+          display: inline-block;
+        }
+
+        .submit-btn:hover {
+          color: #0a0a0a;
+          background-color: #ffb400;
+        }
+        
+        .submit-btn:disabled {
+          border-color: rgba(245, 245, 245, 0.2);
+          color: rgba(245, 245, 245, 0.3);
+          cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+          .contact-form-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
