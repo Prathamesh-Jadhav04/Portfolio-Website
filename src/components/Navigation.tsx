@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { Magnetic } from './ui/Magnetic';
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,9 +20,15 @@ export function Navigation() {
       <div className="nav-content">
         <span className="nav-logo">P. JADHAV</span>
         <div className="nav-links">
-          <a href="#about">Origin</a>
-          <a href="#projects">Work</a>
-          <a href="#contact">Build</a>
+          <Magnetic>
+            <a href="#about">Origin</a>
+          </Magnetic>
+          <Magnetic>
+            <a href="#projects">Work</a>
+          </Magnetic>
+          <Magnetic>
+            <a href="#contact">Build</a>
+          </Magnetic>
         </div>
       </div>
     </nav>

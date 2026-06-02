@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { Magnetic } from './ui/Magnetic';
 
 interface SocialLink {
   label: string;
@@ -55,30 +56,32 @@ function SocialButton({ link }: { link: SocialLink }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a
-      href={link.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={link.label}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.5rem',
-        color: hovered ? '#ffb400' : 'rgba(245,245,245,0.4)',
-        textDecoration: 'none',
-        fontFamily: 'JetBrains Mono, monospace',
-        fontSize: '0.65rem',
-        letterSpacing: '0.15em',
-        textTransform: 'uppercase',
-        transition: 'color 0.3s cubic-bezier(0.65, 0, 0.35, 1)',
-        padding: '0.5rem',
-      }}
-    >
-      {link.icon}
-      <span>{link.label}</span>
-    </a>
+    <Magnetic>
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={link.label}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          color: hovered ? '#ffb400' : 'rgba(245,245,245,0.4)',
+          textDecoration: 'none',
+          fontFamily: 'JetBrains Mono, monospace',
+          fontSize: '0.65rem',
+          letterSpacing: '0.15em',
+          textTransform: 'uppercase',
+          transition: 'color 0.3s cubic-bezier(0.65, 0, 0.35, 1)',
+          padding: '0.5rem',
+        }}
+      >
+        {link.icon}
+        <span>{link.label}</span>
+      </a>
+    </Magnetic>
   );
 }
 
@@ -183,27 +186,29 @@ export function ContactSection() {
               'opacity 0.7s 0.3s cubic-bezier(0.65, 0, 0.35, 1), transform 0.7s 0.3s cubic-bezier(0.65, 0, 0.35, 1)',
           }}
         >
-          <a
-            href="mailto:Prathamesh.Jadhav.Office@gmail.com"
-            onMouseEnter={() => setBtnHovered(true)}
-            onMouseLeave={() => setBtnHovered(false)}
-            style={{
-              border: '1px solid #ffb400',
-              color: btnHovered ? '#0a0a0a' : '#ffb400',
-              backgroundColor: btnHovered ? '#ffb400' : 'transparent',
-              padding: '1rem 3rem',
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.75rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              textDecoration: 'none',
-              display: 'inline-block',
-              marginTop: '3rem',
-              transition: 'all 0.3s cubic-bezier(0.65, 0, 0.35, 1)',
-            }}
-          >
-            GET IN TOUCH
-          </a>
+          <Magnetic strength={0.2} range={80}>
+            <a
+              href="mailto:Prathamesh.Jadhav.Office@gmail.com"
+              onMouseEnter={() => setBtnHovered(true)}
+              onMouseLeave={() => setBtnHovered(false)}
+              style={{
+                border: '1px solid #ffb400',
+                color: btnHovered ? '#0a0a0a' : '#ffb400',
+                backgroundColor: btnHovered ? '#ffb400' : 'transparent',
+                padding: '1rem 3rem',
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.75rem',
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                display: 'inline-block',
+                marginTop: '3rem',
+                transition: 'all 0.3s cubic-bezier(0.65, 0, 0.35, 1)',
+              }}
+            >
+              GET IN TOUCH
+            </a>
+          </Magnetic>
         </div>
 
         {/* Social links row */}
