@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
 // Target site fonts from sanjaybehera.web.app
 const bebasNeue = Bebas_Neue({
@@ -37,7 +38,9 @@ export default function RootLayout({
       className={`${bebasNeue.variable} ${inter.variable} ${jetbrainsMono.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-[#0a0a0a] text-[#f5f5f5]">
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

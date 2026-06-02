@@ -1,4 +1,4 @@
-{"timestamp":"00:00:08.372","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 407ms. If D:\\Portfolio\\.next/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
-{"timestamp":"00:00:14.477","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:17.820","source":"Server","level":"LOG","message":"○ Compiling / ..."}
-{"timestamp":"00:00:27.519","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:06.472","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 320ms. If D:\\Portfolio\\.next/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
+{"timestamp":"00:00:06.474","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:08.447","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:11.372","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}

@@ -26,8 +26,6 @@ To elevate your portfolio and make it look extremely premium, consider adding th
     *   Add real magnetic movement code using GSAP or standard React mouse movement. Make the navigation links, social buttons, and call-to-action buttons physically pull towards the custom cursor when close.
 2.  **💼 Project Details Drawer/Modal:**
     *   Implement an interactive slide-out drawer or page transition to showcase case studies for each project, including screen previews, role, key challenges, and solutions.
-3.  **📜 Lenis/GSAP Smooth Scroll:**
-    *   Add custom smooth inertial scrolling for a premium, cinematic feel during scroll transitions.
 4.  **💬 Dynamic Contact Form:**
     *   Replace the simple email button with an interactive contact form that submits messages directly to your email (using EmailJS, Resend, or Next.js server actions) without opening an email client.
 5.  **📟 Interactive Developer Console:**
