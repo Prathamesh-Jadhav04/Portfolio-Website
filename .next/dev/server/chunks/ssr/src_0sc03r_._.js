@@ -11,7 +11,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 'use client';
 ;
 ;
-function Loader({ onComplete }) {
+function Loader({ onComplete, onStartTransition }) {
     const loaderRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const textRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const barRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -28,10 +28,11 @@ function Loader({ onComplete }) {
         }, 200);
         const t3 = setTimeout(()=>{
             loader.classList.add('hidden');
+            if (onStartTransition) onStartTransition();
         }, 1800);
         const t4 = setTimeout(()=>{
             onComplete();
-        }, 2400);
+        }, 3600);
         return ()=>{
             clearTimeout(t1);
             clearTimeout(t2);
@@ -53,7 +54,7 @@ function Loader({ onComplete }) {
                     children: "PRATHAMESH JADHAV"
                 }, void 0, false, {
                     fileName: "[project]/src/components/Loader.tsx",
-                    lineNumber: 47,
+                    lineNumber: 49,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -61,18 +62,18 @@ function Loader({ onComplete }) {
                     className: "loader-bar"
                 }, void 0, false, {
                     fileName: "[project]/src/components/Loader.tsx",
-                    lineNumber: 50,
+                    lineNumber: 52,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/Loader.tsx",
-            lineNumber: 46,
+            lineNumber: 48,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/Loader.tsx",
-        lineNumber: 45,
+        lineNumber: 47,
         columnNumber: 5
     }, this);
 }
@@ -554,7 +555,7 @@ function AboutSection() {
                                             fontSize: '1.1rem',
                                             lineHeight: 1.8,
                                             color: 'var(--text-dim, rgba(245,245,245,0.5))',
-                                            marginBottom: '2rem'
+                                            marginBottom: '1.5rem'
                                         },
                                         children: "I'm Prathamesh Jadhav — an engineering-focused AI/ML developer specializing in building production-grade vector databases, RAG pipelines, and intelligent API systems."
                                     }, void 0, false, {
@@ -568,7 +569,8 @@ function AboutSection() {
                                             fontWeight: 300,
                                             fontSize: '1.1rem',
                                             lineHeight: 1.8,
-                                            color: 'var(--text-dim, rgba(245,245,245,0.5))'
+                                            color: 'var(--text-dim, rgba(245,245,245,0.5))',
+                                            marginBottom: '2rem'
                                         },
                                         children: "From custom HNSW indexing to systems-level multi-threaded network analysis, I focus on building scalable, low-latency architectures that bridge AI research and robust production systems."
                                     }, void 0, false, {
@@ -578,10 +580,45 @@ function AboutSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         style: {
+                                            display: 'flex',
+                                            gap: '0.5rem',
+                                            flexWrap: 'wrap',
+                                            marginBottom: '3rem'
+                                        },
+                                        children: [
+                                            'Vector Search',
+                                            'RAG Pipelines',
+                                            'GenAI APIs',
+                                            'Network Systems',
+                                            'Performance Tuning'
+                                        ].map((skill)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                style: {
+                                                    fontFamily: 'var(--font-jetbrains-mono, "JetBrains Mono", monospace)',
+                                                    fontSize: '0.65rem',
+                                                    letterSpacing: '0.08em',
+                                                    color: 'var(--accent-amber, #ffb400)',
+                                                    background: 'rgba(255, 180, 0, 0.05)',
+                                                    border: '1px solid rgba(255, 180, 0, 0.12)',
+                                                    borderRadius: '4px',
+                                                    padding: '0.35rem 0.75rem',
+                                                    textTransform: 'uppercase'
+                                                },
+                                                children: skill
+                                            }, skill, false, {
+                                                fileName: "[project]/src/components/AboutSection.tsx",
+                                                lineNumber: 125,
+                                                columnNumber: 17
+                                            }, this))
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/AboutSection.tsx",
+                                        lineNumber: 123,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        style: {
                                             display: 'grid',
                                             gridTemplateColumns: '1fr 1fr',
-                                            gap: '2rem',
-                                            marginTop: '3rem',
+                                            gap: '1.5rem',
                                             paddingTop: '3rem',
                                             borderTop: '1px solid rgba(245,245,245,0.08)'
                                         },
@@ -603,18 +640,28 @@ function AboutSection() {
                                                 label: 'Ideas in Queue'
                                             }
                                         ].map(({ num, label })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "about-stat-card",
+                                                style: {
+                                                    background: 'rgba(245, 245, 245, 0.015)',
+                                                    border: '1px solid rgba(245, 245, 245, 0.05)',
+                                                    padding: '1.5rem',
+                                                    borderRadius: '6px',
+                                                    transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
+                                                },
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "stat-num",
                                                         style: {
                                                             fontFamily: 'var(--font-bebas-neue, "Bebas Neue", cursive)',
-                                                            fontSize: '2.5rem',
+                                                            fontSize: '2.8rem',
                                                             color: 'var(--text-color, #f5f5f5)',
-                                                            lineHeight: 1
+                                                            lineHeight: 1,
+                                                            transition: 'color 0.3s ease'
                                                         },
                                                         children: num
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 139,
+                                                        lineNumber: 171,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -624,23 +671,23 @@ function AboutSection() {
                                                             letterSpacing: '0.2em',
                                                             textTransform: 'uppercase',
                                                             color: 'var(--text-dim, rgba(245,245,245,0.5))',
-                                                            marginTop: '0.25rem'
+                                                            marginTop: '0.5rem'
                                                         },
                                                         children: label
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 149,
+                                                        lineNumber: 183,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, label, true, {
                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                lineNumber: 138,
+                                                lineNumber: 160,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 145,
                                         columnNumber: 13
                                     }, this)
                                 ]
@@ -668,6 +715,17 @@ function AboutSection() {
           transform: translateY(0) !important;
         }
 
+        .about-stat-card:hover {
+          background: rgba(255, 180, 0, 0.03) !important;
+          border-color: rgba(255, 180, 0, 0.25) !important;
+          transform: translateY(-5px);
+          box-shadow: 0 12px 30px -15px rgba(255, 180, 0, 0.12);
+        }
+
+        .about-stat-card:hover .stat-num {
+          color: var(--accent-amber, #ffb400) !important;
+        }
+
         @media (max-width: 768px) {
           #about > div > div:last-child {
             grid-template-columns: 1fr !important;
@@ -676,7 +734,7 @@ function AboutSection() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/components/AboutSection.tsx",
-                lineNumber: 168,
+                lineNumber: 202,
                 columnNumber: 7
             }, this)
         ]
@@ -1399,61 +1457,59 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Contact
 ;
 function Home() {
     const [loaderDone, setLoaderDone] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [startReveal, setStartReveal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             !loaderDone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Loader$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Loader"], {
-                onComplete: ()=>setLoaderDone(true)
+                onComplete: ()=>setLoaderDone(true),
+                onStartTransition: ()=>setStartReveal(true)
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 19,
-                columnNumber: 23
+                lineNumber: 21,
+                columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$NoiseOverlay$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["NoiseOverlay"], {}, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 22,
+                lineNumber: 28,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CustomCursor$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CustomCursor"], {}, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 23,
+                lineNumber: 29,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-                style: {
-                    opacity: loaderDone ? 1 : 0,
-                    transition: 'opacity 0.5s ease'
-                },
+            startReveal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Navigation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Navigation"], {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 33,
-                        columnNumber: 9
+                        lineNumber: 35,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HeroSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["HeroSection"], {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 36,
-                        columnNumber: 9
+                        lineNumber: 38,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AboutSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AboutSection"], {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 39,
-                        columnNumber: 9
+                        lineNumber: 41,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ProjectsSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ProjectsSection"], {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 42,
-                        columnNumber: 9
+                        lineNumber: 44,
+                        columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ContactSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ContactSection"], {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 45,
-                        columnNumber: 9
+                        lineNumber: 47,
+                        columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 26,
-                columnNumber: 7
+                lineNumber: 33,
+                columnNumber: 9
             }, this)
         ]
     }, void 0, true);

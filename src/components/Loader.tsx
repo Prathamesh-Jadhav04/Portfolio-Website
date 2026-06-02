@@ -3,9 +3,10 @@ import { useEffect, useRef } from 'react';
 
 interface LoaderProps {
   onComplete: () => void;
+  onStartTransition?: () => void;
 }
 
-export function Loader({ onComplete }: LoaderProps) {
+export function Loader({ onComplete, onStartTransition }: LoaderProps) {
   const loaderRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
@@ -27,11 +28,12 @@ export function Loader({ onComplete }: LoaderProps) {
 
     const t3 = setTimeout(() => {
       loader.classList.add('hidden');
+      if (onStartTransition) onStartTransition();
     }, 1800);
 
     const t4 = setTimeout(() => {
       onComplete();
-    }, 2400);
+    }, 3600);
 
     return () => {
       clearTimeout(t1);

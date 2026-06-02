@@ -101,7 +101,7 @@ export function AboutSection() {
                 fontSize: '1.1rem',
                 lineHeight: 1.8,
                 color: 'var(--text-dim, rgba(245,245,245,0.5))',
-                marginBottom: '2rem',
+                marginBottom: '1.5rem',
               }}
             >
               I&apos;m Prathamesh Jadhav — an engineering-focused AI/ML developer specializing in building production-grade vector databases, RAG pipelines, and intelligent API systems.
@@ -113,18 +113,40 @@ export function AboutSection() {
                 fontSize: '1.1rem',
                 lineHeight: 1.8,
                 color: 'var(--text-dim, rgba(245,245,245,0.5))',
+                marginBottom: '2rem',
               }}
             >
               From custom HNSW indexing to systems-level multi-threaded network analysis, I focus on building scalable, low-latency architectures that bridge AI research and robust production systems.
             </p>
 
-            {/* Stats */}
+            {/* Core Competencies Tech Badges */}
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+              {['Vector Search', 'RAG Pipelines', 'GenAI APIs', 'Network Systems', 'Performance Tuning'].map((skill) => (
+                <span
+                  key={skill}
+                  style={{
+                    fontFamily: 'var(--font-jetbrains-mono, "JetBrains Mono", monospace)',
+                    fontSize: '0.65rem',
+                    letterSpacing: '0.08em',
+                    color: 'var(--accent-amber, #ffb400)',
+                    background: 'rgba(255, 180, 0, 0.05)',
+                    border: '1px solid rgba(255, 180, 0, 0.12)',
+                    borderRadius: '4px',
+                    padding: '0.35rem 0.75rem',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+
+            {/* Stats Cards Grid */}
             <div
               style={{
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr',
-                gap: '2rem',
-                marginTop: '3rem',
+                gap: '1.5rem',
                 paddingTop: '3rem',
                 borderTop: '1px solid rgba(245,245,245,0.08)',
               }}
@@ -135,13 +157,25 @@ export function AboutSection() {
                 { num: '80+', label: 'Open Source Commits' },
                 { num: '∞', label: 'Ideas in Queue' },
               ].map(({ num, label }) => (
-                <div key={label}>
+                <div
+                  key={label}
+                  className="about-stat-card"
+                  style={{
+                    background: 'rgba(245, 245, 245, 0.015)',
+                    border: '1px solid rgba(245, 245, 245, 0.05)',
+                    padding: '1.5rem',
+                    borderRadius: '6px',
+                    transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                  }}
+                >
                   <div
+                    className="stat-num"
                     style={{
                       fontFamily: 'var(--font-bebas-neue, "Bebas Neue", cursive)',
-                      fontSize: '2.5rem',
+                      fontSize: '2.8rem',
                       color: 'var(--text-color, #f5f5f5)',
                       lineHeight: 1,
+                      transition: 'color 0.3s ease',
                     }}
                   >
                     {num}
@@ -153,7 +187,7 @@ export function AboutSection() {
                       letterSpacing: '0.2em',
                       textTransform: 'uppercase',
                       color: 'var(--text-dim, rgba(245,245,245,0.5))',
-                      marginTop: '0.25rem',
+                      marginTop: '0.5rem',
                     }}
                   >
                     {label}
@@ -169,6 +203,17 @@ export function AboutSection() {
         .animate-on-scroll.in-view {
           opacity: 1 !important;
           transform: translateY(0) !important;
+        }
+
+        .about-stat-card:hover {
+          background: rgba(255, 180, 0, 0.03) !important;
+          border-color: rgba(255, 180, 0, 0.25) !important;
+          transform: translateY(-5px);
+          box-shadow: 0 12px 30px -15px rgba(255, 180, 0, 0.12);
+        }
+
+        .about-stat-card:hover .stat-num {
+          color: var(--accent-amber, #ffb400) !important;
         }
 
         @media (max-width: 768px) {

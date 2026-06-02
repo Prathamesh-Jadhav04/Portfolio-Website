@@ -12,38 +12,41 @@ import { ContactSection } from '@/components/ContactSection';
 
 export default function Home() {
   const [loaderDone, setLoaderDone] = useState(false);
+  const [startReveal, setStartReveal] = useState(false);
 
   return (
     <>
       {/* Loader — shows until onComplete called */}
-      {!loaderDone && <Loader onComplete={() => setLoaderDone(true)} />}
+      {!loaderDone && (
+        <Loader
+          onComplete={() => setLoaderDone(true)}
+          onStartTransition={() => setStartReveal(true)}
+        />
+      )}
 
       {/* Global overlays — always present */}
       <NoiseOverlay />
       <CustomCursor />
 
-      {/* Main content — fades in after loader */}
-      <main
-        style={{
-          opacity: loaderDone ? 1 : 0,
-          transition: 'opacity 0.5s ease',
-        }}
-      >
-        {/* Sticky Navigation */}
-        <Navigation />
+      {/* Main content — rendered when loader starts slide-up */}
+      {startReveal && (
+        <main>
+          {/* Sticky Navigation */}
+          <Navigation />
 
-        {/* 1. HERO SECTION */}
-        <HeroSection />
+          {/* 1. HERO SECTION */}
+          <HeroSection />
 
-        {/* 2. ABOUT / ORIGIN SECTION */}
-        <AboutSection />
+          {/* 2. ABOUT / ORIGIN SECTION */}
+          <AboutSection />
 
-        {/* 3. PROJECTS / WORK SECTION */}
-        <ProjectsSection />
+          {/* 3. PROJECTS / WORK SECTION */}
+          <ProjectsSection />
 
-        {/* 4. CONTACT / BUILD SECTION */}
-        <ContactSection />
-      </main>
+          {/* 4. CONTACT / BUILD SECTION */}
+          <ContactSection />
+        </main>
+      )}
     </>
   );
 }
