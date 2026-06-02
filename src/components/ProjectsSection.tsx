@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { ProjectDrawer } from './ProjectDrawer';
 
 interface Project {
   id: string;
@@ -48,7 +49,7 @@ const projects: Project[] = [
   },
 ];
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({ project, index, onOpen }: { project: Project; index: number; onOpen: (p: Project) => void }) {
   const [hovered, setHovered] = useState(false);
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -77,6 +78,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       ref={ref}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={() => onOpen(project)}
       style={{
         borderTop: '1px solid rgba(245,245,245,0.08)',
         padding: '2.5rem 0',
@@ -229,6 +231,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 export function ProjectsSection() {
   const headerRef = useRef<HTMLDivElement>(null);
   const [headerVisible, setHeaderVisible] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const handleOpenDrawer = (project: Project) => {
+    setSelectedProject(project);
+    setIsDrawerOpen(true);
+  };
 
   useEffect(() => {
     const el = headerRef.current;
@@ -295,12 +304,23 @@ export function ProjectsSection() {
         {/* Projects list */}
         <div>
           {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+            <ProjectCard 
+              key={project.id} 
+              project={project} 
+              index={index} 
+              onOpen={handleOpenDrawer}
+            />
           ))}
           {/* Bottom border */}
           <div style={{ borderTop: '1px solid rgba(245,245,245,0.08)' }} />
         </div>
       </div>
+
+      <ProjectDrawer 
+        project={selectedProject} 
+        isOpen={isDrawerOpen} 
+        onClose={() => setIsDrawerOpen(false)}
+      />
     </section>
   );
 }
