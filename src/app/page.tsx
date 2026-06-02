@@ -8,11 +8,13 @@ import { Navigation } from '@/components/Navigation';
 import { HeroSection } from '@/components/HeroSection';
 import { AboutSection } from '@/components/AboutSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
+import { DeveloperConsole } from '@/components/DeveloperConsole';
 import { ContactSection } from '@/components/ContactSection';
 
 export default function Home() {
   const [loaderDone, setLoaderDone] = useState(false);
   const [startReveal, setStartReveal] = useState(false);
+  const [terminalOpen, setTerminalOpen] = useState(false);
 
   return (
     <>
@@ -32,7 +34,7 @@ export default function Home() {
       {startReveal && (
         <main>
           {/* Sticky Navigation */}
-          <Navigation />
+          <Navigation onLogoDoubleClick={() => setTerminalOpen(true)} />
 
           {/* 1. HERO SECTION */}
           <HeroSection />
@@ -45,6 +47,9 @@ export default function Home() {
 
           {/* 4. CONTACT / BUILD SECTION */}
           <ContactSection />
+
+          {/* 5. DEVELOPER CONSOLE MODAL OVERLAY */}
+          <DeveloperConsole isOpen={terminalOpen} onClose={() => setTerminalOpen(false)} />
         </main>
       )}
     </>

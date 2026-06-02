@@ -248,7 +248,7 @@
   opacity: 0;
   transform: translateY(-100%);
   animation: navSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: 4.6s; /* Triggers 2 seconds after text animations settle (at 2.6s relative to reveal) */
+  animation-delay: 3.669s; /* Triggers 1069ms after text animations settle (at 2.6s relative to reveal) */
 }
 
 @keyframes navSlideDown {

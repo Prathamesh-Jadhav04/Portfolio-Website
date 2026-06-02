@@ -3,7 +3,11 @@
 import { useEffect, useState } from 'react';
 import { Magnetic } from './ui/Magnetic';
 
-export function Navigation() {
+interface NavigationProps {
+  onLogoDoubleClick: () => void;
+}
+
+export function Navigation({ onLogoDoubleClick }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -18,7 +22,26 @@ export function Navigation() {
   return (
     <nav className={`sticky-nav${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-content">
-        <span className="nav-logo">P. JADHAV</span>
+        {/* Brand Logo with magnetic draw, double-click trigger, and hover tooltip hint */}
+        <div className="logo-group">
+          <Magnetic range={40} strength={0.35}>
+            <span
+              className="nav-logo"
+              onDoubleClick={onLogoDoubleClick}
+              style={{
+                cursor: 'pointer',
+                userSelect: 'none',
+                display: 'inline-block'
+              }}
+            >
+              P. JADHAV
+            </span>
+          </Magnetic>
+          <div className="logo-tooltip">
+            [DBL-CLICK FOR SHELL]
+          </div>
+        </div>
+
         <div className="nav-links">
           <Magnetic>
             <a href="#about">Origin</a>
@@ -31,6 +54,39 @@ export function Navigation() {
           </Magnetic>
         </div>
       </div>
+
+      <style>{`
+        .logo-group {
+          position: relative;
+          display: inline-block;
+        }
+
+        .logo-tooltip {
+          position: absolute;
+          top: calc(100% + 12px);
+          left: 50%;
+          transform: translateX(-50%) translateY(0);
+          background: #050505;
+          border: 1px solid rgba(255, 180, 0, 0.2);
+          color: var(--accent-amber, #ffb400);
+          font-family: var(--font-jetbrains-mono, monospace);
+          font-size: 0.55rem;
+          letter-spacing: 0.1em;
+          padding: 0.35rem 0.65rem;
+          border-radius: 4px;
+          white-space: nowrap;
+          opacity: 0.8;
+          pointer-events: none;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+          z-index: 1001;
+        }
+
+        .logo-group:hover .logo-tooltip {
+          opacity: 1;
+          border-color: rgba(255, 180, 0, 0.45);
+        }
+      `}</style>
     </nav>
   );
 }
