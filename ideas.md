@@ -1,47 +1,59 @@
-# Next-Level Enhancements for Hero & About Sections
+# 📈 Plan: In-Place Expanding Timeline Cards (Origin Section)
 
-This document outlines high-fidelity interactive features and visual enhancements to elevate the **Hero** and **About** sections to a world-class, premium standard.
-
----
-
-## ⚡ Hero Section Improvements
-
-### 1. 🧲 Real Magnetic Interaction
-*   **Behavior**: Convert elements like the `EST. 2022` badge, navigation links, and the `SCROLL TO EXPLORE` text into magnetic elements.
-*   **Implementation**: Use lightweight GSAP or vanilla JavaScript mouse event tracking. When the user's cursor approaches within a 60px radius, the element physically pulls toward the cursor with a spring-damper effect, releasing smoothly as the mouse moves away.
-
-### 2. 🌌 Volumetric Radial Backglow
-*   **Behavior**: Add a subtle, dynamic radial gradient backdrop that tracks the user's mouse coordinates.
-*   **Implementation**: Renders a deep amber-to-transparent gradient blob behind the text that is constrained by a mix-blend mode. This creates depth and makes the typography pop against the dark swirling ink background video.
-
-### 3. 📝 Live Systems Initialization Logs
-*   **Behavior**: Embed a terminal-style micro-console at the bottom-right corner of the Hero screen.
-*   **Implementation**: When the loader completes, it prints low-latency bootup strings like:
-    ```
-    [SYS] INIT_VECTOR_INDEXER... SUCCESS
-    [SYS] LOADING HNSW_GRAPH... DONE (42ms)
-    [SYS] PORTFOLIO_CORE RUNNING AT LOCALHOST:3000
-    ```
-    This instantly establishes the AI/ML and low-level systems developer persona.
+This document outlines the architectural plan for the **In-Place Expanding Timeline Cards** in the [AboutSection.tsx](file:///D:/Portfolio/src/components/AboutSection.tsx).
 
 ---
 
-## 📈 About Section Improvements
+## ⚡ Visual & User Experience (UX) Impact
 
-### 1. 📊 Vertical Scroll Progress Fill
-*   **Behavior**: The thin vertical timeline line running on the left should fill up with a glowing amber gradient color precisely synced with the window scroll position.
-*   **Implementation**: Use a CSS background gradient height calculation synced to the scroll position or Intersection Observer markers, showing exactly how far down the timeline the visitor has traversed.
+1. **Curiosity Loop & Interactive Feel**:
+   * Instead of a static block of text, each timeline card acts like an interactive data block. 
+   * When unhovered, it remains compact, keeping the page clean and easy to scan.
+   * When hovered, it smoothly grows, lighting up in amber and revealing deep systems specs, metrics, and custom diagram schematics.
+2. **Context Preservation**:
+   * The user never leaves the timeline. The giant sticky year on the right remains active and updates as they scroll, while the left cards expand inline.
+3. **No Heavy Sidebar Overlay**:
+   * By bringing metrics and diagrams directly inside the expanding cards, we don't need a separate sidebar drawer. This keeps the visitor's focus 100% on the scroll narrative.
 
-### 2. 📐 3D Tilt Card Glare Effect
-*   **Behavior**: Make the timeline cards tilt dynamically based on mouse hover position, reflecting light from a virtual source.
-*   **Implementation**: Implement a lightweight CSS perspective transform. When a user hovers, the card rotates slightly on the X and Y axes depending on cursor distance from the card's center, creating a premium glassmorphic refraction.
+---
 
-### 3. 🔍 Timeline Node Navigation Click-to-Jump
-*   **Behavior**: Hovering over the timeline line shows interactive anchor circles. Clicking any circle instantly triggers a smooth Lenis-scrolled transition straight to that specific milestone card.
-*   **Implementation**: Map click handlers to targets using card element bounds, ensuring smooth scroll sync.
+## 🛠️ Implementation Plan
 
-### 4. 🗂️ Accordion-Style Technical Case Studies
-*   **Behavior**: Each timeline card features a subtle toggle (e.g. `[VIEW_SYSTEM_SPEC]`). Clicking it smoothly expands an nested drawer within the card to show:
-    - **Technologies Used**: Specific microservices, languages, or indexing algorithms.
-    - **Core Metric**: (e.g., *7.8 CGPA*, *42% throughput improvement*, *custom HNSW index built from scratch*).
-*   **Implementation**: Use React state and CSS grid transition (`grid-template-rows: 0fr -> 1fr`) to animate height changes smoothly without layout jumps.
+### 1. Card States Design
+*   **Compact State (Default)**:
+    *   **Height**: Small (`~100px` to `120px` height).
+    *   **Content**: Only the Year, a small status dot, the Milestone Title, and a 1-line teaser.
+    *   **Aesthetics**: Low opacity (`0.35` to `0.4`), thin grey border, no diagrams or tech badges visible.
+*   **Expanded State (On Cursor Hover)**:
+    *   **Height**: Auto-expands smoothly (using CSS transition on max-height/grid-rows).
+    *   **Content**: Reveals full description, key metrics (highlighted in amber), technical specs (tech badges), and the custom vector/systems SVG schematic diagram.
+    *   **Aesthetics**: Full opacity (`1.0`), glowing amber border, soft drop-shadow backdrop.
+
+### 2. Transition Mechanism (Smooth Animations)
+To prevent sudden layout jumps when a card expands, we will use a CSS Grid transition trick for height interpolation:
+```css
+.timeline-card {
+  display: grid;
+  grid-template-rows: 0fr; /* Collapsed state for details */
+  transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s, opacity 0.4s;
+}
+
+.timeline-card:hover {
+  grid-template-rows: 1fr; /* Expands to full height of content */
+}
+```
+This enables hardware-accelerated, butter-smooth height expansions without any lag or performance drops during Lenis scrolling.
+
+### 3. Integrated SVG Diagrams
+Each card will contain its own custom inline SVG schematic directly under the details section, representing that specific milestone:
+*   **2022 (College)**: Visual of a neural network layer mapping foundations.
+*   **2022 (First Code)**: Console screen mockup with `print("Hello World")`.
+*   **2023 (First Deployment)**: Client-Server network node graph.
+*   **2024 (Data Science Intern)**: Dynamic data cleanup filter flow.
+*   **2025 (GenAI & APIs)**: LLM integration prompt mapping.
+*   **2026 (NuroSearch Vector DB)**: Custom HNSW multi-layer index tree graph.
+
+---
+
+## 📱 Mobile Adaptation
+On mobile viewports (`<992px`), cards will remain in their fully expanded states automatically so mobile visitors don't have to deal with touch-hover issues, keeping readability high.

@@ -734,63 +734,969 @@ const timelineEvents = [
         id: 1,
         year: '2022',
         title: 'COMMENCEMENT OF ENGINEERING JOURNEY',
-        description: 'Began my Bachelor of Engineering in Computer Science. Stepped into the world of computational thinking, algorithms, and systems architecture.',
-        details: 'Immersed myself in foundational engineering mathematics, logical reasoning, and structured programming paradigms.'
+        teaser: 'Entered Computer Science foundations, diving into algorithms and core computing logic.',
+        description: 'Stepped into the world of computational thinking, logical structures, and database principles. Immersed myself in learning foundational engineering mathematics and digital electronics.',
+        details: 'Acquired core logic and basic troubleshooting patterns early on.',
+        technologies: [
+            'C Language',
+            'CS Fundamentals',
+            'Boolean Logic'
+        ]
     },
     {
         id: 2,
         year: '2022',
         title: 'THE FIRST LINE OF CODE',
-        description: 'Wrote my very first "Hello World" program. This small print statement ignited a passion for building complex software systems.',
-        details: 'Started building command-line utilities and scripts, exploring data structures and debugging processes.'
+        teaser: 'Wrote my very first "Hello World" terminal program, igniting a passion for software construction.',
+        description: 'Began building basic terminal games, calculators, and automation scripts. Explored control flow structure, debugging routines, and compiling mechanics.',
+        details: 'Spent hours debugging pointer offsets and system syntax anomalies.',
+        technologies: [
+            'Python',
+            'C Language',
+            'Scripting'
+        ]
     },
     {
         id: 3,
         year: '2023',
-        title: 'MASTERING CS FUNDAMENTALS',
-        description: 'Delved deep into Core Computer Science: Data Structures & Algorithms (DSA), Object-Oriented Programming (OOP), and Database Management Systems (DBMS).',
-        details: 'Designed custom relational database schemas and optimized algorithmic complexities for academic projects.'
+        title: 'FIRST FULL-STACK WEB APPLICATION',
+        teaser: 'Designed, coded, and deployed my first database-driven live server site.',
+        description: 'Mastered standard relational database structures, SQL query structures, and server routing. Deployed first responsive media portal hosting, resolving client-server data flows.',
+        details: 'Optimized page load configurations and local caching schemas.',
+        technologies: [
+            'React',
+            'Node.js',
+            'Express',
+            'SQL Databases'
+        ]
     },
     {
         id: 4,
         year: '2024',
         title: 'DATA SCIENCE INTERNSHIP',
-        description: 'Joined Uptricks Services Pvt. Ltd. as a Data Science Intern. Learned to handle, preprocess, and model complex datasets in Python.',
-        details: 'Utilized pandas, numpy, and scikit-learn to analyze and draw actionable patterns from multi-dimensional datasets.'
+        teaser: 'Joined Uptricks Services Pvt. Ltd. to run statistical modeling and pre-processing.',
+        description: 'Processed high-dimensional tabular datasets. Evaluated predictive machine learning models to capture actionable analytics patterns.',
+        details: 'Wrote robust validation suites to filter noisy logistics dataset entries.',
+        technologies: [
+            'Python',
+            'Pandas',
+            'NumPy',
+            'Scikit-Learn',
+            'Statistical Modeling'
+        ]
     },
     {
         id: 5,
         year: '2024',
         title: 'SYSTEMS-LEVEL PIPELINES',
-        description: 'Architected automated preprocessing pipelines to streamline machine learning workflows and database ingestion.',
-        details: 'Significantly minimized data cleanup time and enhanced throughput, bridging raw data engineering with predictive modeling.'
+        teaser: 'Architected automated data ingest workflows, reducing database import overheads.',
+        description: 'Designed and deployed automated pre-processing pipelines to optimize model ingest latency.',
+        details: 'Gained hands-on exposure to CI/CD triggers and Linux deployment environments.',
+        technologies: [
+            'Python',
+            'Shell Scripting',
+            'ETL Pipelines',
+            'Database Optimization'
+        ]
     },
     {
         id: 6,
         year: '2025',
-        title: 'GENAI & INTELLIGENT APIs',
-        description: 'Engineered custom Retrieval-Augmented Generation (RAG) pipelines and automated AI-driven Code Review Chatbots.',
-        details: 'Designed highly secure, low-latency RESTful API architectures using FastAPI and Node.js to serve LLM inferences.'
+        title: 'GENAI & LLM API INTEGRATIONS',
+        teaser: 'Engineered FastAPI endpoints and LangChain RAG pipelines for contextual bots.',
+        description: 'Built secure webhook aggregators to review git diffs. Designed vector search integration layers serving low-latency context injections to LLM prompts.',
+        details: 'Engineered prompt templates with metadata filters to prevent context leaks.',
+        technologies: [
+            'FastAPI',
+            'LangChain',
+            'OpenAI APIs',
+            'Vector Embeddings'
+        ]
     },
     {
         id: 7,
         year: '2026',
-        title: 'ENGINEERING GRADUATION',
-        description: 'Graduated with a Bachelor of Engineering in Computer Science, maintaining a strong CGPA of 7.8.',
-        details: 'Successfully built and defended a Clinical Decision Support System (CDSS) capstone project integrating multi-modal clinical data.'
+        title: 'ENGINEERING GRADUATION (CGPA 7.8)',
+        teaser: 'Successfully completed degree. Built a Capstone Clinical Decision Support System.',
+        description: 'Completed Bachelor of Engineering in Computer Science. Designed and defended CDSS capstone model merging multi-modal clinical markers for prognosis analytics.',
+        details: 'Maintained a strong cumulative CGPA of 7.8 across rigorous coursework semesters.',
+        technologies: [
+            'Predictive Modeling',
+            'Data Visualization',
+            'Capstone Project'
+        ]
     },
     {
         id: 8,
         year: '2026',
-        title: 'NUROSEARCH & DPI ENGINE',
-        description: 'Designed and implemented NuroSearch, a custom HNSW-indexed vector database, and DPI Engine, a multi-threaded network packet analysis tool.',
-        details: 'Focused on low-latency vector operations, high-concurrency systems, and custom memory management configurations.'
+        title: 'PRODUCTION SYSTEMS DEVELOPMENT',
+        teaser: 'Built custom HNSW vector database (NuroSearch) & packet inspector (DPI Engine).',
+        description: 'Implemented low-latency index graphs and multi-threaded raw network packet capturing listeners. Focused on memory allocations and concurrent graph insertions.',
+        details: 'Architected custom scalar quantization scripts to compress memory footprints.',
+        technologies: [
+            'Rust',
+            'Python',
+            'C Language',
+            'HNSW Graph',
+            'Multithreading',
+            'Scapy'
+        ]
     }
 ];
+function ProjectSchematic({ id }) {
+    if (id === 1) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "120",
+            viewBox: "0 0 400 120",
+            style: {
+                background: '#111',
+                border: '1px solid rgba(255,180,0,0.1)',
+                borderRadius: '6px',
+                margin: '1rem 0'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "80",
+                    cy: "60",
+                    r: "12",
+                    fill: "rgba(255,180,0,0.08)",
+                    stroke: "#ffb400",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 94,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "200",
+                    cy: "60",
+                    r: "12",
+                    fill: "none",
+                    stroke: "rgba(245,245,245,0.15)",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 95,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "320",
+                    cy: "60",
+                    r: "12",
+                    fill: "none",
+                    stroke: "rgba(245,245,245,0.15)",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 96,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                    x1: "92",
+                    y1: "60",
+                    x2: "188",
+                    y2: "60",
+                    stroke: "rgba(245,245,245,0.08)",
+                    strokeDasharray: "3"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 97,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                    x1: "212",
+                    y1: "60",
+                    x2: "308",
+                    y2: "60",
+                    stroke: "rgba(245,245,245,0.08)",
+                    strokeDasharray: "3"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 98,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "80",
+                    y: "63",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "CS"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 99,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "63",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "DS"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 100,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "320",
+                    y: "63",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "AI"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 101,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    children: "CS FOUNDATION INDEX"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 102,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 93,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 2) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "120",
+            viewBox: "0 0 400 120",
+            style: {
+                background: '#111',
+                border: '1px solid rgba(255,180,0,0.1)',
+                borderRadius: '6px',
+                margin: '1rem 0'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "25",
+                    y: "25",
+                    width: "350",
+                    height: "70",
+                    rx: "4",
+                    fill: "#050505",
+                    stroke: "rgba(245,245,245,0.05)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 109,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "40",
+                    y: "52",
+                    fill: "rgba(245,245,245,0.35)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8.5",
+                    children: '>>> print("Hello World")'
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 110,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "40",
+                    y: "72",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8.5",
+                    children: "Hello World"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 111,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "110",
+                    y: "62",
+                    width: "5",
+                    height: "10",
+                    fill: "#ffb400",
+                    opacity: "0.8"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 112,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    children: "COMPILER SHELL EXECUTION"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 113,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 108,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 3) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "120",
+            viewBox: "0 0 400 120",
+            style: {
+                background: '#111',
+                border: '1px solid rgba(255,180,0,0.1)',
+                borderRadius: '6px',
+                margin: '1rem 0'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "35",
+                    y: "35",
+                    width: "90",
+                    height: "45",
+                    rx: "3",
+                    fill: "none",
+                    stroke: "rgba(245,245,245,0.12)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 120,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "275",
+                    y: "35",
+                    width: "90",
+                    height: "45",
+                    rx: "3",
+                    fill: "none",
+                    stroke: "rgba(245,245,245,0.12)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 121,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 125 58 L 275 58",
+                    stroke: "#ffb400",
+                    strokeDasharray: "3"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 122,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "80",
+                    y: "53",
+                    fill: "#f5f5f5",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "USERS_DB"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 123,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "80",
+                    y: "65",
+                    fill: "rgba(245,245,245,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    textAnchor: "middle",
+                    children: "PK: user_id"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 124,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "320",
+                    y: "53",
+                    fill: "#f5f5f5",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "POSTS_DB"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 125,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "320",
+                    y: "65",
+                    fill: "rgba(245,245,245,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    textAnchor: "middle",
+                    children: "FK: author_id"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 126,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "50",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7.5",
+                    textAnchor: "middle",
+                    children: "RELATIONAL MAP"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 127,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    children: "DATABASE SCHEMA"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 128,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 119,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 4) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "120",
+            viewBox: "0 0 400 120",
+            style: {
+                background: '#111',
+                border: '1px solid rgba(255,180,0,0.1)',
+                borderRadius: '6px',
+                margin: '1rem 0'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 40 60 L 140 60 M 260 60 L 360 60",
+                    stroke: "rgba(245,245,245,0.15)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 135,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "140",
+                    y: "42",
+                    width: "120",
+                    height: "36",
+                    rx: "3",
+                    fill: "none",
+                    stroke: "#ffb400"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 136,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "64",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "CLEANSE & MODEL"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 137,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "90",
+                    cy: "60",
+                    r: "3",
+                    fill: "#f5f5f5",
+                    opacity: "0.3"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 138,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "310",
+                    cy: "60",
+                    r: "3",
+                    fill: "#ffb400"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 139,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    children: "UPTRICKS DATA REFINEMENT FLOW"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 140,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 134,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 5) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "120",
+            viewBox: "0 0 400 120",
+            style: {
+                background: '#111',
+                border: '1px solid rgba(255,180,0,0.1)',
+                borderRadius: '6px',
+                margin: '1rem 0'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                    stroke: "rgba(245,245,245,0.1)",
+                    strokeWidth: "1",
+                    fill: "none",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "40",
+                            y: "45",
+                            width: "60",
+                            height: "28",
+                            rx: "2"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 148,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "170",
+                            y: "45",
+                            width: "60",
+                            height: "28",
+                            rx: "2"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 149,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "300",
+                            y: "45",
+                            width: "60",
+                            height: "28",
+                            rx: "2"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 150,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 100 59 L 170 59 M 230 59 L 300 59",
+                            stroke: "#ffb400"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 151,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 147,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "70",
+                    y: "62",
+                    fill: "rgba(245,245,245,0.5)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "RAW"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 153,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "62",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "FILTER"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 154,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "330",
+                    y: "62",
+                    fill: "rgba(245,245,245,0.5)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "STORE"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 155,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    children: "AUTOMATED PIPELINE LOAD (ETL)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 156,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 146,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 6) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "120",
+            viewBox: "0 0 400 120",
+            style: {
+                background: '#111',
+                border: '1px solid rgba(255,180,0,0.1)',
+                borderRadius: '6px',
+                margin: '1rem 0'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "30",
+                    y: "40",
+                    width: "80",
+                    height: "36",
+                    rx: "3",
+                    fill: "none",
+                    stroke: "rgba(245,245,245,0.12)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 163,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "160",
+                    y: "40",
+                    width: "80",
+                    height: "36",
+                    rx: "3",
+                    fill: "none",
+                    stroke: "#ffb400",
+                    strokeWidth: "1.5"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 164,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "290",
+                    y: "40",
+                    width: "80",
+                    height: "36",
+                    rx: "3",
+                    fill: "none",
+                    stroke: "rgba(245,245,245,0.12)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 165,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 110 58 L 160 58 M 240 58 L 290 58",
+                    stroke: "rgba(245,245,245,0.12)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 166,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "70",
+                    y: "62",
+                    fill: "rgba(245,245,245,0.6)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7.5",
+                    textAnchor: "middle",
+                    children: "PROMPT"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 167,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "62",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7.5",
+                    textAnchor: "middle",
+                    children: "RAG MODEL"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 168,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "330",
+                    y: "62",
+                    fill: "rgba(245,245,245,0.6)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7.5",
+                    textAnchor: "middle",
+                    children: "OUTPUT"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 169,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    children: "SEMANTIC CONTEXT RETRIEVAL LAYER"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 170,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 162,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 7) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "120",
+            viewBox: "0 0 400 120",
+            style: {
+                background: '#111',
+                border: '1px solid rgba(255,180,0,0.1)',
+                borderRadius: '6px',
+                margin: '1rem 0'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "150",
+                    y: "35",
+                    width: "100",
+                    height: "36",
+                    rx: "4",
+                    fill: "rgba(255,180,0,0.02)",
+                    stroke: "#ffb400",
+                    strokeWidth: "1.5"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 177,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "57",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-bebas-neue, sans-serif)",
+                    fontSize: "14",
+                    letterSpacing: "0.05em",
+                    textAnchor: "middle",
+                    children: "B.E. GRADUATE"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 178,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "94",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "CGPA: 7.8 // CAPSTONE DEPLOYED"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 179,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    children: "ACADEMIC DEGREE VERIFICATION"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 180,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 176,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 8) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "120",
+            viewBox: "0 0 400 120",
+            style: {
+                background: '#111',
+                border: '1px solid rgba(255,180,0,0.1)',
+                borderRadius: '6px',
+                margin: '1rem 0'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "110",
+                    cy: "60",
+                    r: "18",
+                    fill: "none",
+                    stroke: "#ffb400",
+                    strokeWidth: "1.5"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 187,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "290",
+                    cy: "60",
+                    r: "18",
+                    fill: "none",
+                    stroke: "rgba(245,245,245,0.15)",
+                    strokeWidth: "1.5"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 188,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                    x1: "128",
+                    y1: "60",
+                    x2: "272",
+                    y2: "60",
+                    stroke: "#ffb400",
+                    strokeDasharray: "3"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 189,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "110",
+                    y: "63",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "NUROSEARCH"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 190,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "290",
+                    y: "63",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "DPI_ENGINE"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 191,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "50",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7.5",
+                    textAnchor: "middle",
+                    children: "SYSTEMS ARCH"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 192,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    children: "CUSTOM ENGINE GRAPH"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 193,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 186,
+            columnNumber: 7
+        }, this);
+    }
+    return null;
+}
+_c = ProjectSchematic;
 function AboutSection() {
     _s();
     const [activeYear, setActiveYear] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('2022');
     const [activeCardId, setActiveCardId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
+    const [expandedCardId, setExpandedCardId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AboutSection.useEffect": ()=>{
@@ -849,6 +1755,10 @@ function AboutSection() {
             })["AboutSection.useEffect"];
         }
     }["AboutSection.useEffect"], []);
+    const toggleExpand = (id, e)=>{
+        e.stopPropagation();
+        setExpandedCardId(expandedCardId === id ? null : id);
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "about",
         ref: sectionRef,
@@ -883,7 +1793,7 @@ function AboutSection() {
                         children: "01 / Origin"
                     }, void 0, false, {
                         fileName: "[project]/src/components/AboutSection.tsx",
-                        lineNumber: 142,
+                        lineNumber: 276,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -912,7 +1822,7 @@ function AboutSection() {
                                                     "BUILDING",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 179,
+                                                        lineNumber: 313,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -922,19 +1832,19 @@ function AboutSection() {
                                                         children: "THINGS"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 180,
+                                                        lineNumber: 314,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 181,
+                                                        lineNumber: 315,
                                                         columnNumber: 17
                                                     }, this),
                                                     "THAT MATTER."
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                lineNumber: 165,
+                                                lineNumber: 299,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -957,7 +1867,7 @@ function AboutSection() {
                                                         children: "I'm Prathamesh Jadhav — an engineering-focused AI/ML developer specializing in building production-grade vector databases, RAG pipelines, and intelligent API systems."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 193,
+                                                        lineNumber: 327,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -972,7 +1882,7 @@ function AboutSection() {
                                                         children: "From custom HNSW indexing to systems-level multi-threaded network analysis, I focus on building scalable, low-latency architectures that bridge AI research and robust production systems."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 205,
+                                                        lineNumber: 339,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1003,24 +1913,24 @@ function AboutSection() {
                                                                 children: skill
                                                             }, skill, false, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 221,
+                                                                lineNumber: 355,
                                                                 columnNumber: 21
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 219,
+                                                        lineNumber: 353,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                lineNumber: 185,
+                                                lineNumber: 319,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                        lineNumber: 164,
+                                        lineNumber: 298,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1036,83 +1946,238 @@ function AboutSection() {
                                             transform: 'translateY(15px)',
                                             transition: 'opacity 0.6s ease, transform 0.6s ease'
                                         },
-                                        children: "// Interactive Journey & Milestones"
+                                        children: "// Interactive Journey & Milestones (Click Overview to Expand)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                        lineNumber: 243,
+                                        lineNumber: 377,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "timeline-container",
                                         children: timelineEvents.map((event)=>{
                                             const isActive = activeCardId === event.id;
+                                            const isExpanded = expandedCardId === event.id;
                                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 "data-year": event.year,
                                                 "data-id": event.id,
-                                                className: `timeline-card ${isActive ? 'active' : ''}`,
-                                                onClick: ()=>{
-                                                    const cardEl = document.querySelector(`[data-id="${event.id}"]`);
-                                                    cardEl?.scrollIntoView({
-                                                        behavior: 'smooth',
-                                                        block: 'center'
-                                                    });
+                                                className: `timeline-card ${isExpanded ? 'expanded' : ''} ${isActive ? 'active' : ''}`,
+                                                onClick: (e)=>toggleExpand(event.id, e),
+                                                style: {
+                                                    display: 'grid',
+                                                    gridTemplateRows: isExpanded ? 'auto 1fr' : 'auto 0fr',
+                                                    overflow: 'hidden'
                                                 },
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "mobile-year-badge",
-                                                        children: event.year
-                                                    }, void 0, false, {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "mobile-year-badge",
+                                                                children: event.year
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/AboutSection.tsx",
+                                                                lineNumber: 416,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: `timeline-dot ${isActive ? 'active' : ''}`
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/AboutSection.tsx",
+                                                                lineNumber: 421,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                style: {
+                                                                    display: 'flex',
+                                                                    alignItems: 'baseline',
+                                                                    justifyContent: 'space-between',
+                                                                    gap: '1rem'
+                                                                },
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                        className: "timeline-card-title",
+                                                                        children: event.title
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/components/AboutSection.tsx",
+                                                                        lineNumber: 424,
+                                                                        columnNumber: 25
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "card-index",
+                                                                        style: {
+                                                                            fontFamily: 'var(--font-jetbrains-mono, monospace)',
+                                                                            fontSize: '0.6rem',
+                                                                            color: isExpanded ? 'var(--accent-amber, #ffb400)' : 'rgba(245, 245, 245, 0.2)',
+                                                                            transition: 'color 0.4s ease'
+                                                                        },
+                                                                        children: [
+                                                                            "0",
+                                                                            event.id
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/src/components/AboutSection.tsx",
+                                                                        lineNumber: 427,
+                                                                        columnNumber: 25
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/src/components/AboutSection.tsx",
+                                                                lineNumber: 423,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                style: {
+                                                                    display: 'flex',
+                                                                    alignItems: 'center',
+                                                                    justifyContent: 'space-between',
+                                                                    gap: '2rem',
+                                                                    marginTop: '0.2rem'
+                                                                },
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                        className: "timeline-card-teaser",
+                                                                        style: {
+                                                                            fontFamily: 'var(--font-inter, sans-serif)',
+                                                                            fontWeight: 300,
+                                                                            fontSize: '0.9rem',
+                                                                            color: isActive ? 'rgba(245, 245, 245, 0.75)' : 'rgba(245, 245, 245, 0.35)',
+                                                                            transition: 'color 0.4s ease',
+                                                                            margin: 0,
+                                                                            flex: 1
+                                                                        },
+                                                                        children: event.teaser
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/components/AboutSection.tsx",
+                                                                        lineNumber: 433,
+                                                                        columnNumber: 25
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                        onClick: (e)=>toggleExpand(event.id, e),
+                                                                        className: "expand-trigger-btn",
+                                                                        style: {
+                                                                            background: 'none',
+                                                                            color: isExpanded ? 'var(--accent-amber, #ffb400)' : 'rgba(245, 245, 245, 0.4)',
+                                                                            fontFamily: 'var(--font-jetbrains-mono, monospace)',
+                                                                            fontSize: '0.6rem',
+                                                                            letterSpacing: '0.1em',
+                                                                            cursor: 'pointer',
+                                                                            padding: '0.35rem 0.75rem',
+                                                                            border: isExpanded ? '1px solid rgba(255, 180, 0, 0.25)' : '1px solid rgba(245, 245, 245, 0.1)',
+                                                                            borderRadius: '4px',
+                                                                            textTransform: 'uppercase',
+                                                                            transition: 'all 0.3s ease',
+                                                                            flexShrink: 0
+                                                                        },
+                                                                        children: isExpanded ? '[ - CLOSE ]' : '[ + OVERVIEW ]'
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/components/AboutSection.tsx",
+                                                                        lineNumber: 438,
+                                                                        columnNumber: 25
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/src/components/AboutSection.tsx",
+                                                                lineNumber: 432,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 276,
+                                                        lineNumber: 414,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: `timeline-dot ${isActive ? 'active' : ''}`
+                                                        style: {
+                                                            minHeight: '0',
+                                                            overflow: 'hidden',
+                                                            opacity: isExpanded ? 1 : 0,
+                                                            transition: 'opacity 0.4s ease'
+                                                        },
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            style: {
+                                                                paddingTop: '1.2rem',
+                                                                borderTop: '1px solid rgba(245,245,245,0.04)',
+                                                                marginTop: '1.2rem'
+                                                            },
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "timeline-card-desc",
+                                                                    children: event.description
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/AboutSection.tsx",
+                                                                    lineNumber: 464,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ProjectSchematic, {
+                                                                    id: event.id
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/AboutSection.tsx",
+                                                                    lineNumber: 469,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                event.details && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "timeline-card-details",
+                                                                    children: event.details
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/AboutSection.tsx",
+                                                                    lineNumber: 472,
+                                                                    columnNumber: 27
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    style: {
+                                                                        display: 'flex',
+                                                                        gap: '0.4rem',
+                                                                        flexWrap: 'wrap',
+                                                                        marginTop: '1rem'
+                                                                    },
+                                                                    children: event.technologies.map((t)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            style: {
+                                                                                fontFamily: 'var(--font-jetbrains-mono, monospace)',
+                                                                                fontSize: '0.55rem',
+                                                                                color: 'rgba(245, 245, 245, 0.5)',
+                                                                                background: 'rgba(245, 245, 245, 0.03)',
+                                                                                border: '1px solid rgba(245, 245, 245, 0.08)',
+                                                                                padding: '0.2rem 0.5rem',
+                                                                                borderRadius: '3px',
+                                                                                textTransform: 'uppercase'
+                                                                            },
+                                                                            children: t
+                                                                        }, t, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 480,
+                                                                            columnNumber: 29
+                                                                        }, this))
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/AboutSection.tsx",
+                                                                    lineNumber: 478,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                            lineNumber: 463,
+                                                            columnNumber: 23
+                                                        }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 281,
+                                                        lineNumber: 462,
                                                         columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                        className: "timeline-card-title",
-                                                        children: event.title
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 283,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "timeline-card-desc",
-                                                        children: event.description
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 287,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    event.details && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "timeline-card-details",
-                                                        children: event.details
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 292,
-                                                        columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, event.id, true, {
                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                lineNumber: 265,
+                                                lineNumber: 401,
                                                 columnNumber: 19
                                             }, this);
                                         })
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                        lineNumber: 261,
+                                        lineNumber: 395,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                lineNumber: 162,
+                                lineNumber: 296,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1125,7 +2190,7 @@ function AboutSection() {
                                             children: "YEAR"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                            lineNumber: 305,
+                                            lineNumber: 508,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1133,7 +2198,7 @@ function AboutSection() {
                                             children: activeYear
                                         }, activeYear, false, {
                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                            lineNumber: 306,
+                                            lineNumber: 509,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1143,50 +2208,50 @@ function AboutSection() {
                                                     children: "// 19.0760° N, 72.8777° E"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                    lineNumber: 310,
+                                                    lineNumber: 513,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "// CORE_SYSTEM_INDEXING: ACTIVE"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                    lineNumber: 311,
+                                                    lineNumber: 514,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "// INDEX: HNSW_INDEX_FOUND"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                    lineNumber: 312,
+                                                    lineNumber: 515,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                            lineNumber: 309,
+                                            lineNumber: 512,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                    lineNumber: 304,
+                                    lineNumber: 507,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                lineNumber: 303,
+                                lineNumber: 506,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/AboutSection.tsx",
-                        lineNumber: 160,
+                        lineNumber: 294,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/AboutSection.tsx",
-                lineNumber: 140,
+                lineNumber: 274,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -1212,7 +2277,7 @@ function AboutSection() {
           border-left: 1px solid rgba(245, 245, 245, 0.08);
           display: flex;
           flex-direction: column;
-          gap: 2.5rem;
+          gap: 1.5rem;
         }
 
         /* Dot aligned with vertical line */
@@ -1239,74 +2304,103 @@ function AboutSection() {
         /* Individual Card styles */
         .timeline-card {
           position: relative;
-          padding: 2.2rem;
-          background: rgba(245, 245, 245, 0.012);
-          border: 1px solid rgba(245, 245, 245, 0.03);
+          padding: 1.8rem;
+          background: rgba(245, 245, 245, 0.01);
+          border: 1px solid rgba(245, 245, 245, 0.025);
           border-radius: 8px;
           cursor: pointer;
-          opacity: 0.3;
-          transform: scale(0.97);
-          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+          opacity: 0.35;
+          transform: scale(0.985);
+          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .timeline-card.expanded {
+          opacity: 1;
+          transform: scale(1);
+          background: rgba(245, 245, 245, 0.02) !important;
+          border-color: rgba(245, 245, 245, 0.08) !important;
+          box-shadow: 0 10px 40px -25px rgba(0, 0, 0, 0.5);
         }
 
         .timeline-card.active {
+          opacity: 0.85;
+          border-color: rgba(245, 245, 245, 0.06);
+        }
+
+        .timeline-card.active.expanded {
           opacity: 1;
-          transform: scale(1);
-          background: rgba(255, 180, 0, 0.015) !important;
-          border-color: rgba(255, 180, 0, 0.2) !important;
           border-left: 3px solid var(--accent-amber, #ffb400) !important;
-          padding-left: calc(2.2rem - 2px) !important;
-          box-shadow: 0 15px 40px -15px rgba(255, 180, 0, 0.08), inset 0 1px 0px rgba(255, 255, 255, 0.05);
+          padding-left: calc(1.8rem - 2px) !important;
+          border-color: rgba(255, 180, 0, 0.2) !important;
+          background: rgba(255, 180, 0, 0.015) !important;
+          box-shadow: 0 15px 40px -15px rgba(255, 180, 0, 0.06), inset 0 1px 0px rgba(255, 255, 255, 0.05) !important;
         }
 
         .timeline-card:hover {
-          border-color: rgba(245, 245, 245, 0.12);
-          background: rgba(245, 245, 245, 0.02);
+          border-color: rgba(245, 245, 245, 0.1);
+          background: rgba(245, 245, 245, 0.015);
+          opacity: 0.85;
+        }
+
+        .timeline-card.expanded:hover {
+          background: rgba(245, 245, 245, 0.02) !important;
+          border-color: rgba(245, 245, 245, 0.08) !important;
+          opacity: 1;
         }
 
         .timeline-card.active:hover {
+          opacity: 1;
+        }
+
+        .timeline-card.active.expanded:hover {
           border-color: rgba(255, 180, 0, 0.35) !important;
           background: rgba(255, 180, 0, 0.025) !important;
         }
 
+        /* Hover behavior for inner trigger button */
+        .timeline-card:hover .expand-trigger-btn {
+          color: rgba(245, 245, 245, 0.8);
+          border-color: rgba(245, 245, 245, 0.25);
+        }
+
+        .timeline-card:hover .expand-trigger-btn:hover {
+          color: var(--accent-amber, #ffb400) !important;
+          border-color: rgba(255, 180, 0, 0.35) !important;
+          background: rgba(255, 180, 0, 0.03);
+        }
+
         .timeline-card-title {
           font-family: var(--font-bebas-neue, "Bebas Neue", cursive);
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           letter-spacing: 0.05em;
-          color: rgba(245, 245, 245, 0.85);
-          margin-bottom: 0.8rem;
+          color: rgba(245, 245, 245, 0.7);
+          margin-bottom: 0.4rem;
           transition: color 0.4s ease;
         }
 
         .timeline-card.active .timeline-card-title {
+          color: rgba(245, 245, 245, 0.95);
+        }
+
+        .timeline-card.active.expanded .timeline-card-title {
           color: var(--accent-amber, #ffb400);
         }
 
         .timeline-card-desc {
           font-family: var(--font-inter, "Inter", sans-serif);
           font-weight: 300;
-          font-size: 1.05rem;
+          font-size: 0.95rem;
           line-height: 1.6;
-          color: rgba(245, 245, 245, 0.5);
-          transition: color 0.4s ease;
+          color: rgba(245, 245, 245, 0.8);
           margin-bottom: 0.6rem;
-        }
-
-        .timeline-card.active .timeline-card-desc {
-          color: rgba(245, 245, 245, 0.85);
         }
 
         .timeline-card-details {
           font-family: var(--font-inter, "Inter", sans-serif);
           font-weight: 300;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           line-height: 1.5;
-          color: rgba(245, 245, 245, 0.25);
-          transition: color 0.4s ease;
-        }
-
-        .timeline-card.active .timeline-card-details {
-          color: rgba(245, 245, 245, 0.55);
+          color: rgba(245, 245, 245, 0.5);
         }
 
         /* Sticky container for desktop */
@@ -1342,7 +2436,7 @@ function AboutSection() {
           }
           100% {
             transform: translateY(0);
-            opacity: 0.85;
+            opacity: 0.95;
           }
         }
 
@@ -1416,20 +2510,21 @@ function AboutSection() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/components/AboutSection.tsx",
-                lineNumber: 319,
+                lineNumber: 522,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/AboutSection.tsx",
-        lineNumber: 127,
+        lineNumber: 261,
         columnNumber: 5
     }, this);
 }
-_s(AboutSection, "fGPOuuZ64Ag/OvYe4c85OAYEuvI=");
-_c = AboutSection;
-var _c;
-__turbopack_context__.k.register(_c, "AboutSection");
+_s(AboutSection, "dSwyQa5QR7H0LENHQQ698+fMMOY=");
+_c1 = AboutSection;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "ProjectSchematic");
+__turbopack_context__.k.register(_c1, "AboutSection");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
