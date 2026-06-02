@@ -9,12 +9,8 @@ This file contains ideas and corrections/priorities to customize this cloned por
 To convert this cloned template into your actual personal website, follow this priority list:
 
 
-### 2. High Priority (Work Showcase)
-*   **Projects Showcase:** Replace the placeholder projects in [ProjectsSection.tsx](file:///D:/Portfolio/src/components/ProjectsSection.tsx) (DEVFLOW, CONTENTKIT, LAUNCHKIT) with your actual projects:
-    *   Modify titles, descriptions, year, tags, and links to your project repositories or live builds.
 
 ### 3. Medium Priority (Branding & Assets)
-*   **Hero Subtext:** Customize "Developer. Entrepreneur. Content Creator." in [HeroSection.tsx](file:///D:/Portfolio/src/components/HeroSection.tsx) to match your true profile (e.g., "Full-Stack Developer. UI Designer. Tech Enthusiast.").
 *   **Background Video:** Replace the Mixkit dark ink stock video with something that matches your branding, or host a video locally in `/public/videos/`.
 *   **SEO & Favicon:**
     *   Modify metadata title and description in [layout.tsx](file:///D:/Portfolio/src/app/layout.tsx).

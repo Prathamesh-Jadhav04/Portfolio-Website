@@ -371,70 +371,79 @@ function HeroSection() {
                 className: "hero-content container",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "year-badge",
-                        children: "EST. 2021"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 21,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                        className: "hero-headline",
+                        className: "hero-text-wrapper",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "line",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    children: "I BUILD."
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 25,
-                                    columnNumber: 13
-                                }, this)
+                                className: "year-badge",
+                                children: "EST. 2022"
                             }, void 0, false, {
+                                fileName: "[project]/src/components/HeroSection.tsx",
+                                lineNumber: 22,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                className: "hero-headline",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "line",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "I BUILD."
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/HeroSection.tsx",
+                                            lineNumber: 26,
+                                            columnNumber: 15
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/HeroSection.tsx",
+                                        lineNumber: 25,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "line",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "I SHIP."
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/HeroSection.tsx",
+                                            lineNumber: 29,
+                                            columnNumber: 15
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/HeroSection.tsx",
+                                        lineNumber: 28,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "line",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "I OPTIMIZE."
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/HeroSection.tsx",
+                                            lineNumber: 32,
+                                            columnNumber: 15
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/HeroSection.tsx",
+                                        lineNumber: 31,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
                                 lineNumber: 24,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "line",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    children: "I SHIP."
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 28,
-                                    columnNumber: 13
-                                }, this)
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "hero-subtext",
+                                children: "AI/ML Developer. Data Scientist. GenAI Engineer."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 27,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "line",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    children: "I INFLUENCE."
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 31,
-                                    columnNumber: 13
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 30,
+                                lineNumber: 36,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 23,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "hero-subtext",
-                        children: "Developer. Entrepreneur. Content Creator."
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 35,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -444,20 +453,20 @@ function HeroSection() {
                                 children: "SCROLL TO EXPLORE"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 38,
+                                lineNumber: 40,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "scroll-line"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 39,
+                                lineNumber: 41,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 37,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, this)
                 ]
@@ -782,36 +791,58 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 const projects = [
     {
         id: '01',
-        title: 'DEVFLOW',
-        year: '2024',
+        title: 'NUROSEARCH',
+        year: '2026',
         tags: [
-            'SaaS',
-            'Next.js',
-            'AI'
+            'AI/ML',
+            'Vector DB',
+            'RAG'
         ],
-        description: 'Developer productivity tool — ship faster.'
+        description: 'Custom vector database from scratch implementing HNSW indexing and a full-stack RAG pipeline.'
     },
     {
         id: '02',
-        title: 'CONTENTKIT',
-        year: '2023',
+        title: 'DPI ENGINE',
+        year: '2026',
         tags: [
-            'Content',
-            'Creator Tools',
-            'React'
+            'Systems',
+            'Python',
+            'Networking'
         ],
-        description: 'Content creation system for indie creators.'
+        description: 'Multi-threaded deep packet inspection engine analyzing 500+ packets/sec with TLS SNI extraction.'
     },
     {
         id: '03',
-        title: 'LAUNCHKIT',
-        year: '2022',
+        title: 'KOZUMIHUB',
+        year: '2026',
         tags: [
-            'Template',
+            'TypeScript',
             'Next.js',
-            'Tailwind'
+            'Web App'
         ],
-        description: 'Launch your startup in days, not weeks.'
+        description: 'Entertainment discovery platform for anime and movies featuring smart discovery and immersive UI.'
+    },
+    {
+        id: '04',
+        title: 'SPENDSTRACK',
+        year: '2026',
+        tags: [
+            'Finance',
+            'TypeScript',
+            'Dashboard'
+        ],
+        description: 'Personal wealth tracking application with dynamic visualization and category analytics.'
+    },
+    {
+        id: '05',
+        title: 'CODE CHATBOT',
+        year: '2025',
+        tags: [
+            'AI',
+            'Python',
+            'LLM'
+        ],
+        description: 'Automated AI assistant built to review pull requests and provide constructive feedback on code structure.'
     }
 ];
 function ProjectCard({ project, index }) {
@@ -884,7 +915,7 @@ function ProjectCard({ project, index }) {
                                 children: project.id
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 86,
+                                lineNumber: 100,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -899,7 +930,7 @@ function ProjectCard({ project, index }) {
                                 children: project.title
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 99,
+                                lineNumber: 113,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -914,13 +945,13 @@ function ProjectCard({ project, index }) {
                                 children: project.description
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 113,
+                                lineNumber: 127,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                        lineNumber: 84,
+                        lineNumber: 98,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -953,12 +984,12 @@ function ProjectCard({ project, index }) {
                                         children: tag
                                     }, tag, false, {
                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                        lineNumber: 139,
+                                        lineNumber: 153,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 137,
+                                lineNumber: 151,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -973,7 +1004,7 @@ function ProjectCard({ project, index }) {
                                 children: project.year
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 159,
+                                lineNumber: 173,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -991,19 +1022,19 @@ function ProjectCard({ project, index }) {
                                 children: "→"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 173,
+                                lineNumber: 187,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                        lineNumber: 128,
+                        lineNumber: 142,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                lineNumber: 75,
+                lineNumber: 89,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1023,18 +1054,18 @@ function ProjectCard({ project, index }) {
                     children: project.description
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 198,
+                    lineNumber: 212,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                lineNumber: 192,
+                lineNumber: 206,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ProjectsSection.tsx",
-        lineNumber: 62,
+        lineNumber: 76,
         columnNumber: 5
     }, this);
 }
@@ -1092,7 +1123,7 @@ function ProjectsSection() {
                     children: "02 / Work"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 247,
+                    lineNumber: 261,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1110,7 +1141,7 @@ function ProjectsSection() {
                     children: "SELECTED WORK"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 265,
+                    lineNumber: 279,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1120,7 +1151,7 @@ function ProjectsSection() {
                                 index: index
                             }, project.id, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 284,
+                                lineNumber: 298,
                                 columnNumber: 13
                             }, this)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1129,24 +1160,24 @@ function ProjectsSection() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 287,
+                            lineNumber: 301,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 282,
+                    lineNumber: 296,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ProjectsSection.tsx",
-            lineNumber: 245,
+            lineNumber: 259,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ProjectsSection.tsx",
-        lineNumber: 238,
+        lineNumber: 252,
         columnNumber: 5
     }, this);
 }
@@ -1193,27 +1224,6 @@ function GitHubIcon() {
     }, this);
 }
 _c = GitHubIcon;
-function XIcon() {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-        width: "16",
-        height: "16",
-        viewBox: "0 0 24 24",
-        fill: "currentColor",
-        "aria-hidden": "true",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-            d: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-        }, void 0, false, {
-            fileName: "[project]/src/components/ContactSection.tsx",
-            lineNumber: 34,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "[project]/src/components/ContactSection.tsx",
-        lineNumber: 27,
-        columnNumber: 5
-    }, this);
-}
-_c1 = XIcon;
 function LinkedInIcon() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
         width: "18",
@@ -1225,44 +1235,23 @@ function LinkedInIcon() {
             d: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
         }, void 0, false, {
             fileName: "[project]/src/components/ContactSection.tsx",
-            lineNumber: 48,
+            lineNumber: 35,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ContactSection.tsx",
-        lineNumber: 41,
+        lineNumber: 28,
         columnNumber: 5
     }, this);
 }
-_c2 = LinkedInIcon;
-function YouTubeIcon() {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-        width: "20",
-        height: "18",
-        viewBox: "0 0 24 24",
-        fill: "currentColor",
-        "aria-hidden": "true",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-            d: "M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-        }, void 0, false, {
-            fileName: "[project]/src/components/ContactSection.tsx",
-            lineNumber: 62,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "[project]/src/components/ContactSection.tsx",
-        lineNumber: 55,
-        columnNumber: 5
-    }, this);
-}
-_c3 = YouTubeIcon;
+_c1 = LinkedInIcon;
 const socialLinks = [
     {
         label: 'GitHub',
         href: 'https://github.com/Prathamesh-Jadhav04',
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(GitHubIcon, {}, void 0, false, {
             fileName: "[project]/src/components/ContactSection.tsx",
-            lineNumber: 71,
+            lineNumber: 45,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0))
     },
@@ -1271,7 +1260,7 @@ const socialLinks = [
         href: 'https://linkedin.com/in/prathamesh-jadhav04',
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(LinkedInIcon, {}, void 0, false, {
             fileName: "[project]/src/components/ContactSection.tsx",
-            lineNumber: 76,
+            lineNumber: 50,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0))
     }
@@ -1305,18 +1294,18 @@ function SocialButton({ link }) {
                 children: link.label
             }, void 0, false, {
                 fileName: "[project]/src/components/ContactSection.tsx",
-                lineNumber: 106,
+                lineNumber: 80,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ContactSection.tsx",
-        lineNumber: 84,
+        lineNumber: 58,
         columnNumber: 5
     }, this);
 }
 _s(SocialButton, "V8YbV+gTZxGliGj1g0fftBlvsq4=");
-_c4 = SocialButton;
+_c2 = SocialButton;
 function ContactSection() {
     _s1();
     const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -1372,7 +1361,7 @@ function ContactSection() {
                     children: "03 / Build"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ContactSection.tsx",
-                    lineNumber: 152,
+                    lineNumber: 126,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1390,7 +1379,7 @@ function ContactSection() {
                     children: "LET'S BUILD SOMETHING."
                 }, void 0, false, {
                     fileName: "[project]/src/components/ContactSection.tsx",
-                    lineNumber: 169,
+                    lineNumber: 143,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1407,7 +1396,7 @@ function ContactSection() {
                     children: "Have an idea? Let's make it real."
                 }, void 0, false, {
                     fileName: "[project]/src/components/ContactSection.tsx",
-                    lineNumber: 187,
+                    lineNumber: 161,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1437,12 +1426,12 @@ function ContactSection() {
                         children: "GET IN TOUCH"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ContactSection.tsx",
-                        lineNumber: 212,
+                        lineNumber: 186,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ContactSection.tsx",
-                    lineNumber: 204,
+                    lineNumber: 178,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1460,12 +1449,12 @@ function ContactSection() {
                             link: link
                         }, link.label, false, {
                             fileName: "[project]/src/components/ContactSection.tsx",
-                            lineNumber: 250,
+                            lineNumber: 224,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/ContactSection.tsx",
-                    lineNumber: 236,
+                    lineNumber: 210,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1487,35 +1476,33 @@ function ContactSection() {
                         children: "© 2026 PRATHAMESH JADHAV. BUILT WITH PURPOSE."
                     }, void 0, false, {
                         fileName: "[project]/src/components/ContactSection.tsx",
-                        lineNumber: 264,
+                        lineNumber: 238,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/ContactSection.tsx",
-                    lineNumber: 255,
+                    lineNumber: 229,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ContactSection.tsx",
-            lineNumber: 143,
+            lineNumber: 117,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ContactSection.tsx",
-        lineNumber: 135,
+        lineNumber: 109,
         columnNumber: 5
     }, this);
 }
 _s1(ContactSection, "ENWdELyXUk0QX7bLT0Ts7myS9ao=");
-_c5 = ContactSection;
-var _c, _c1, _c2, _c3, _c4, _c5;
+_c3 = ContactSection;
+var _c, _c1, _c2, _c3;
 __turbopack_context__.k.register(_c, "GitHubIcon");
-__turbopack_context__.k.register(_c1, "XIcon");
-__turbopack_context__.k.register(_c2, "LinkedInIcon");
-__turbopack_context__.k.register(_c3, "YouTubeIcon");
-__turbopack_context__.k.register(_c4, "SocialButton");
-__turbopack_context__.k.register(_c5, "ContactSection");
+__turbopack_context__.k.register(_c1, "LinkedInIcon");
+__turbopack_context__.k.register(_c2, "SocialButton");
+__turbopack_context__.k.register(_c3, "ContactSection");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

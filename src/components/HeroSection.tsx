@@ -18,21 +18,23 @@ export function HeroSection() {
       </div>
 
       <div className="hero-content container">
-        <div className="year-badge">EST. 2021</div>
+        <div className="hero-text-wrapper">
+          <div className="year-badge">EST. 2022</div>
 
-        <h1 className="hero-headline">
-          <div className="line">
-            <span>I BUILD.</span>
-          </div>
-          <div className="line">
-            <span>I SHIP.</span>
-          </div>
-          <div className="line">
-            <span>I INFLUENCE.</span>
-          </div>
-        </h1>
+          <h1 className="hero-headline">
+            <div className="line">
+              <span>I BUILD.</span>
+            </div>
+            <div className="line">
+              <span>I SHIP.</span>
+            </div>
+            <div className="line">
+              <span>I OPTIMIZE.</span>
+            </div>
+          </h1>
 
-        <p className="hero-subtext">Developer. Entrepreneur. Content Creator.</p>
+          <p className="hero-subtext">AI/ML Developer. Data Scientist. GenAI Engineer.</p>
+        </div>
 
         <div className="scroll-explore">
           <span>SCROLL TO EXPLORE</span>

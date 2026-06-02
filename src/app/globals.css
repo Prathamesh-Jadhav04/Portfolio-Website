@@ -327,6 +327,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center; /* Center the left-aligned block horizontally */
+  text-align: left;
   padding: 0 2rem;
 }
 
@@ -337,12 +339,20 @@
   padding: 0 2rem;
 }
 
+.hero-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-top: -3rem; /* Shift upwards slightly */
+}
+
 .year-badge {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.75rem;
   letter-spacing: 0.3em;
   color: var(--accent-amber);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem; /* Restored margin */
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 0.8s var(--transition-cinematic) 0.3s forwards;
@@ -350,12 +360,16 @@
 
 .hero-headline {
   font-family: "Bebas Neue", cursive;
-  font-size: clamp(5rem, 12vw, 12rem);
-  line-height: 0.9;
+  font-size: clamp(5rem, 12vw, 12rem); /* Restored huge cinematic size */
+  line-height: 0.9; /* Restored tight line spacing */
   letter-spacing: -0.02em;
   color: var(--text-color);
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; /* Restored margin */
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .hero-headline .line {
@@ -375,17 +389,20 @@
 
 .hero-subtext {
   font-family: "Inter", sans-serif;
-  font-size: 1rem;
+  font-size: 1rem; /* Restored text size */
   font-weight: 300;
   letter-spacing: 0.2em;
   color: var(--text-dim);
   text-transform: uppercase;
-  margin-bottom: 3rem;
+  margin-bottom: 3rem; /* Restored margin */
   opacity: 0;
   animation: fadeUp 0.8s var(--transition-cinematic) 1.1s forwards;
 }
 
 .scroll-explore {
+  position: absolute;
+  bottom: 5.5rem; /* Shifted upwards to prevent screen cutoff */
+  left: 2rem;
   display: inline-flex;
   align-items: center;
   gap: 1rem;
@@ -397,6 +414,13 @@
   opacity: 0;
   animation: fadeUp 0.8s var(--transition-cinematic) 1.3s forwards;
   cursor: none;
+}
+
+.scroll-line {
+  width: 30px;
+  height: 1px;
+  background: var(--text-dim);
+  opacity: 0.4;
 }
 
 /* =============================================
