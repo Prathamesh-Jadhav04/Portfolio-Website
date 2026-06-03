@@ -6870,17 +6870,41 @@ function ProjectSchematic({ id }) {
                     y: 140
                 }),
             style: {
-                background: '#121212',
-                border: '1px solid rgba(255,180,0,0.1)',
+                background: '#090909',
+                border: '1px solid rgba(255,180,0,0.15)',
                 borderRadius: '6px',
                 margin: '1.5rem 0',
-                cursor: 'crosshair'
+                cursor: 'crosshair',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
             },
             children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes glowPulse {
+            0%, 100% { filter: drop-shadow(0 0 2px rgba(255,180,0,0.4)); opacity: 0.8; }
+            50% { filter: drop-shadow(0 0 10px rgba(255,180,0,0.9)); opacity: 1; }
+          }
+          .active-node-glow { animation: glowPulse 2s infinite ease-in-out; }
+        `
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 314,
+                    columnNumber: 9
+                }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
-                    stroke: "rgba(245,245,245,0.02)",
-                    strokeWidth: "1",
+                    stroke: "rgba(255,180,0,0.03)",
+                    strokeWidth: "0.5",
                     children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "20",
+                            x2: "400",
+                            y2: "20"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 323,
+                            columnNumber: 11
+                        }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
                             x1: "0",
                             y1: "40",
@@ -6888,7 +6912,17 @@ function ProjectSchematic({ id }) {
                             y2: "40"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 316,
+                            lineNumber: 324,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "65",
+                            x2: "400",
+                            y2: "65"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 325,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -6898,7 +6932,17 @@ function ProjectSchematic({ id }) {
                             y2: "90"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 317,
+                            lineNumber: 326,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "115",
+                            x2: "400",
+                            y2: "115"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 327,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -6908,13 +6952,122 @@ function ProjectSchematic({ id }) {
                             y2: "140"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 318,
+                            lineNumber: 328,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "50",
+                            y1: "0",
+                            x2: "50",
+                            y2: "180"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 329,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "100",
+                            y1: "0",
+                            x2: "100",
+                            y2: "180"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 330,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "150",
+                            y1: "0",
+                            x2: "150",
+                            y2: "180"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 331,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "200",
+                            y1: "0",
+                            x2: "200",
+                            y2: "180"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 332,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "250",
+                            y1: "0",
+                            x2: "250",
+                            y2: "180"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 333,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "300",
+                            y1: "0",
+                            x2: "300",
+                            y2: "180"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 334,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "350",
+                            y1: "0",
+                            x2: "350",
+                            y2: "180"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 335,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 315,
+                    lineNumber: 322,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "390",
+                    y: "43",
+                    fill: "rgba(255,180,0,0.15)",
+                    fontFamily: "monospace",
+                    fontSize: "5.5",
+                    textAnchor: "end",
+                    children: "LAYER_2 (COARSE)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 339,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "390",
+                    y: "93",
+                    fill: "rgba(255,180,0,0.15)",
+                    fontFamily: "monospace",
+                    fontSize: "5.5",
+                    textAnchor: "end",
+                    children: "LAYER_1 (INTER)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 340,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "390",
+                    y: "143",
+                    fill: "rgba(255,180,0,0.15)",
+                    fontFamily: "monospace",
+                    fontSize: "5.5",
+                    textAnchor: "end",
+                    children: "LAYER_0 (FINE)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 341,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -6928,7 +7081,7 @@ function ProjectSchematic({ id }) {
                             y2: "90"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 324,
+                            lineNumber: 346,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -6938,7 +7091,7 @@ function ProjectSchematic({ id }) {
                             y2: "90"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 325,
+                            lineNumber: 347,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -6948,7 +7101,7 @@ function ProjectSchematic({ id }) {
                             y2: "90"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 326,
+                            lineNumber: 348,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -6958,7 +7111,7 @@ function ProjectSchematic({ id }) {
                             y2: "90"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 327,
+                            lineNumber: 349,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -6968,7 +7121,7 @@ function ProjectSchematic({ id }) {
                             y2: "140"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 330,
+                            lineNumber: 352,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -6978,7 +7131,7 @@ function ProjectSchematic({ id }) {
                             y2: "140"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 331,
+                            lineNumber: 353,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -6988,7 +7141,7 @@ function ProjectSchematic({ id }) {
                             y2: "140"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 332,
+                            lineNumber: 354,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -6998,7 +7151,7 @@ function ProjectSchematic({ id }) {
                             y2: "140"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 333,
+                            lineNumber: 355,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7008,7 +7161,7 @@ function ProjectSchematic({ id }) {
                             y2: "140"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 334,
+                            lineNumber: 356,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7018,7 +7171,7 @@ function ProjectSchematic({ id }) {
                             y2: "140"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 335,
+                            lineNumber: 357,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7026,10 +7179,10 @@ function ProjectSchematic({ id }) {
                             y1: "40",
                             x2: "300",
                             y2: "40",
-                            strokeDasharray: "3"
+                            strokeDasharray: "4"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 338,
+                            lineNumber: 360,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7037,10 +7190,10 @@ function ProjectSchematic({ id }) {
                             y1: "90",
                             x2: "200",
                             y2: "90",
-                            strokeDasharray: "3"
+                            strokeDasharray: "4"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 339,
+                            lineNumber: 361,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7048,191 +7201,170 @@ function ProjectSchematic({ id }) {
                             y1: "90",
                             x2: "330",
                             y2: "90",
-                            strokeDasharray: "3"
+                            strokeDasharray: "4"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 340,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                            x1: "50",
-                            y1: "140",
-                            x2: "150",
-                            y2: "140",
-                            strokeDasharray: "2"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 341,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                            x1: "150",
-                            y1: "140",
-                            x2: "250",
-                            y2: "140",
-                            strokeDasharray: "2"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 342,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                            x1: "250",
-                            y1: "140",
-                            x2: "350",
-                            y2: "140",
-                            strokeDasharray: "2"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 343,
+                            lineNumber: 362,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 322,
+                    lineNumber: 344,
                     columnNumber: 9
                 }, this),
                 mousePos && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
                     stroke: "var(--accent-amber, #ffb400)",
-                    strokeWidth: "2",
+                    strokeWidth: "1.5",
                     fill: "none",
-                    style: {
-                        filter: 'drop-shadow(0 0 3px rgba(255,180,0,0.4))'
-                    },
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
                             x1: activeE.x,
                             y1: activeE.y,
                             x2: activeH.x,
-                            y2: activeH.y
+                            y2: activeH.y,
+                            style: {
+                                filter: 'drop-shadow(0 0 4px rgba(255,180,0,0.6))'
+                            }
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 350,
+                            lineNumber: 368,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
                             x1: activeH.x,
                             y1: activeH.y,
                             x2: activeG.x,
-                            y2: activeG.y
+                            y2: activeG.y,
+                            style: {
+                                filter: 'drop-shadow(0 0 4px rgba(255,180,0,0.6))'
+                            }
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 352,
+                            lineNumber: 369,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 348,
+                    lineNumber: 367,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "100",
                     cy: "40",
-                    r: "6",
-                    fill: activeE.label === 'E1' ? 'var(--accent-amber, #ffb400)' : '#333',
-                    stroke: "#121212",
-                    strokeWidth: "1.5"
+                    r: "7",
+                    fill: activeE.label === 'E1' ? 'var(--accent-amber, #ffb400)' : '#181818',
+                    stroke: activeE.label === 'E1' ? '#ffb400' : 'rgba(255,255,255,0.1)',
+                    strokeWidth: "1",
+                    className: activeE.label === 'E1' ? 'active-node-glow' : ''
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 358,
+                    lineNumber: 375,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "300",
                     cy: "40",
-                    r: "6",
-                    fill: activeE.label === 'E2' ? 'var(--accent-amber, #ffb400)' : '#333',
-                    stroke: "#121212",
-                    strokeWidth: "1.5"
+                    r: "7",
+                    fill: activeE.label === 'E2' ? 'var(--accent-amber, #ffb400)' : '#181818',
+                    stroke: activeE.label === 'E2' ? '#ffb400' : 'rgba(255,255,255,0.1)',
+                    strokeWidth: "1",
+                    className: activeE.label === 'E2' ? 'active-node-glow' : ''
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 359,
+                    lineNumber: 376,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "70",
                     cy: "90",
-                    r: "5",
-                    fill: activeH.label === 'H1' ? 'var(--accent-amber, #ffb400)' : '#444',
-                    stroke: "#121212",
-                    strokeWidth: "1.5"
+                    r: "6",
+                    fill: activeH.label === 'H1' ? 'var(--accent-amber, #ffb400)' : '#181818',
+                    stroke: activeH.label === 'H1' ? '#ffb400' : 'rgba(255,255,255,0.1)',
+                    strokeWidth: "1",
+                    className: activeH.label === 'H1' ? 'active-node-glow' : ''
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 362,
+                    lineNumber: 379,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "200",
                     cy: "90",
-                    r: "5",
-                    fill: activeH.label === 'H2' ? 'var(--accent-amber, #ffb400)' : '#444',
-                    stroke: "#121212",
-                    strokeWidth: "1.5"
+                    r: "6",
+                    fill: activeH.label === 'H2' ? 'var(--accent-amber, #ffb400)' : '#181818',
+                    stroke: activeH.label === 'H2' ? '#ffb400' : 'rgba(255,255,255,0.1)',
+                    strokeWidth: "1",
+                    className: activeH.label === 'H2' ? 'active-node-glow' : ''
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 363,
+                    lineNumber: 380,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "330",
                     cy: "90",
-                    r: "5",
-                    fill: activeH.label === 'H3' ? 'var(--accent-amber, #ffb400)' : '#444',
-                    stroke: "#121212",
-                    strokeWidth: "1.5"
+                    r: "6",
+                    fill: activeH.label === 'H3' ? 'var(--accent-amber, #ffb400)' : '#181818',
+                    stroke: activeH.label === 'H3' ? '#ffb400' : 'rgba(255,255,255,0.1)',
+                    strokeWidth: "1",
+                    className: activeH.label === 'H3' ? 'active-node-glow' : ''
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 364,
+                    lineNumber: 381,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "50",
                     cy: "140",
-                    r: "4.5",
-                    fill: activeG.id === 1 ? 'var(--accent-amber, #ffb400)' : '#555',
-                    stroke: "#121212",
-                    strokeWidth: "1"
+                    r: "5",
+                    fill: activeG.id === 1 ? 'var(--accent-amber, #ffb400)' : '#181818',
+                    stroke: activeG.id === 1 ? '#ffb400' : 'rgba(255,255,255,0.1)',
+                    strokeWidth: "1",
+                    className: activeG.id === 1 ? 'active-node-glow' : ''
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 367,
+                    lineNumber: 384,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "150",
                     cy: "140",
-                    r: "4.5",
-                    fill: activeG.id === 2 ? 'var(--accent-amber, #ffb400)' : '#555',
-                    stroke: "#121212",
-                    strokeWidth: "1"
+                    r: "5",
+                    fill: activeG.id === 2 ? 'var(--accent-amber, #ffb400)' : '#181818',
+                    stroke: activeG.id === 2 ? '#ffb400' : 'rgba(255,255,255,0.1)',
+                    strokeWidth: "1",
+                    className: activeG.id === 2 ? 'active-node-glow' : ''
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 368,
+                    lineNumber: 385,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "250",
                     cy: "140",
-                    r: "4.5",
-                    fill: activeG.id === 3 ? 'var(--accent-amber, #ffb400)' : '#555',
-                    stroke: "#121212",
-                    strokeWidth: "1"
+                    r: "5",
+                    fill: activeG.id === 3 ? 'var(--accent-amber, #ffb400)' : '#181818',
+                    stroke: activeG.id === 3 ? '#ffb400' : 'rgba(255,255,255,0.1)',
+                    strokeWidth: "1",
+                    className: activeG.id === 3 ? 'active-node-glow' : ''
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 369,
+                    lineNumber: 386,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "350",
                     cy: "140",
-                    r: "4.5",
-                    fill: activeG.id === 4 ? 'var(--accent-amber, #ffb400)' : '#555',
-                    stroke: "#121212",
-                    strokeWidth: "1"
+                    r: "5",
+                    fill: activeG.id === 4 ? 'var(--accent-amber, #ffb400)' : '#181818',
+                    stroke: activeG.id === 4 ? '#ffb400' : 'rgba(255,255,255,0.1)',
+                    strokeWidth: "1",
+                    className: activeG.id === 4 ? 'active-node-glow' : ''
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 370,
+                    lineNumber: 387,
                     columnNumber: 9
                 }, this),
                 mousePos && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -7242,12 +7374,12 @@ function ProjectSchematic({ id }) {
                             y1: "0",
                             x2: mousePos.x,
                             y2: "180",
-                            stroke: "rgba(255,180,0,0.15)",
-                            strokeWidth: "0.5",
-                            strokeDasharray: "2"
+                            stroke: "rgba(255,180,0,0.18)",
+                            strokeWidth: "0.75",
+                            strokeDasharray: "3 3"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 375,
+                            lineNumber: 392,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7255,12 +7387,12 @@ function ProjectSchematic({ id }) {
                             y1: mousePos.y,
                             x2: "400",
                             y2: mousePos.y,
-                            stroke: "rgba(255,180,0,0.15)",
-                            strokeWidth: "0.5",
-                            strokeDasharray: "2"
+                            stroke: "rgba(255,180,0,0.18)",
+                            strokeWidth: "0.75",
+                            strokeDasharray: "3 3"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 376,
+                            lineNumber: 393,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
@@ -7273,38 +7405,39 @@ function ProjectSchematic({ id }) {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 377,
+                            lineNumber: 394,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 374,
+                    lineNumber: 391,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "15",
-                    y: "20",
-                    fill: "rgba(255,180,0,0.4)",
-                    fontFamily: "monospace",
+                    y: "22",
+                    fill: "rgba(255,180,0,0.45)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "8",
-                    children: "HNSW LAYERED SEARCH TOPOLOGY [MOVE CURSOR]"
+                    letterSpacing: "0.05em",
+                    children: "HNSW INDEX TRAVERSAL CONSOLE [MOVE CURSOR]"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 382,
+                    lineNumber: 399,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "385",
-                    y: "20",
+                    y: "22",
                     fill: "rgba(245,245,245,0.2)",
-                    fontFamily: "monospace",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "7",
                     textAnchor: "end",
                     children: "NURO_INDEX: ACTIVE"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 383,
+                    lineNumber: 400,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -7312,11 +7445,11 @@ function ProjectSchematic({ id }) {
                     y: "160",
                     width: "400",
                     height: "20",
-                    fill: "#0c0c0c",
-                    opacity: "0.9"
+                    fill: "#050505",
+                    opacity: "0.95"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 386,
+                    lineNumber: 403,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7324,18 +7457,18 @@ function ProjectSchematic({ id }) {
                     y1: "160",
                     x2: "400",
                     y2: "160",
-                    stroke: "rgba(255,255,255,0.03)"
+                    stroke: "rgba(255,255,255,0.05)"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 387,
+                    lineNumber: 404,
                     columnNumber: 9
                 }, this),
                 mousePos ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "15",
-                    y: "172",
+                    y: "173",
                     fill: "var(--accent-amber, #ffb400)",
-                    fontFamily: "monospace",
-                    fontSize: "6.8",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
                     children: [
                         "SEARCH_VEC: [",
                         Math.round(mousePos.x),
@@ -7343,27 +7476,27 @@ function ProjectSchematic({ id }) {
                         Math.round(mousePos.y),
                         "] // PATH: ",
                         activeE.label,
-                        "➔",
+                        " ➔ ",
                         activeH.label,
-                        "➔",
+                        " ➔ ",
                         activeG.label,
-                        " // COS_SIM: ",
+                        " // SIMILARITY: ",
                         sim.toFixed(4)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 389,
+                    lineNumber: 406,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "15",
-                    y: "172",
-                    fill: "rgba(245,245,245,0.3)",
-                    fontFamily: "monospace",
-                    fontSize: "6.8",
-                    children: "HOVER GRAPH TO INITIATE COARSE-TO-FINE VECTOR TRAVERSAL"
+                    y: "173",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    children: "HOVER GRAPH TO RUN NEAREST-NEIGHBOR HNSW INDEXING"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 393,
+                    lineNumber: 410,
                     columnNumber: 11
                 }, this)
             ]
@@ -7379,137 +7512,220 @@ function ProjectSchematic({ id }) {
             height: "180",
             viewBox: "0 0 400 180",
             style: {
-                background: '#121212',
-                border: '1px solid rgba(255,180,0,0.1)',
+                background: '#090909',
+                border: '1px solid rgba(239,68,68,0.15)',
                 borderRadius: '6px',
-                margin: '1.5rem 0'
+                margin: '1.5rem 0',
+                overflow: 'hidden'
             },
             children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes pulseDpiNode { 0%, 100% { fill: rgba(239,68,68,0.08); stroke: rgba(239,68,68,0.3); } 50% { fill: rgba(239,68,68,0.2); stroke: rgba(239,68,68,0.85); } }
+          @keyframes packetDash { to { stroke-dashoffset: -20; } }
+          .queue-node { animation: pulseDpiNode 2s infinite ease-in-out; }
+          .dpi-stream-dash { stroke-dasharray: 6 3; animation: packetDash 0.8s linear infinite; }
+        `
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 425,
+                    columnNumber: 9
+                }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
-                    stroke: "rgba(255,180,0,0.15)",
-                    strokeWidth: "1",
-                    fill: "none",
+                    stroke: "rgba(239,68,68,0.02)",
+                    strokeWidth: "0.5",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                            x: "20",
-                            y: "50",
-                            width: "80",
-                            height: "40",
-                            rx: "4",
-                            fill: "#151515"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "40",
+                            x2: "400",
+                            y2: "40"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 410,
+                            lineNumber: 433,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                            x: "150",
-                            y: "50",
-                            width: "100",
-                            height: "40",
-                            rx: "4",
-                            fill: "#151515"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "80",
+                            x2: "400",
+                            y2: "80"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 411,
+                            lineNumber: 434,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                            x: "300",
-                            y: "50",
-                            width: "80",
-                            height: "40",
-                            rx: "4",
-                            fill: "#151515"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "120",
+                            x2: "400",
+                            y2: "120"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 412,
+                            lineNumber: 435,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                            d: "M 100 70 L 150 70",
-                            stroke: "#ffb400",
-                            strokeWidth: "1"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "100",
+                            y1: "0",
+                            x2: "100",
+                            y2: "180"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 413,
+                            lineNumber: 436,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                            d: "M 250 70 L 300 70",
-                            stroke: "#ffb400",
-                            strokeWidth: "1"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "200",
+                            y1: "0",
+                            x2: "200",
+                            y2: "180"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 414,
+                            lineNumber: 437,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "300",
+                            y1: "0",
+                            x2: "300",
+                            y2: "180"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 438,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 409,
+                    lineNumber: 432,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                    stroke: "rgba(239,68,68,0.2)",
+                    strokeWidth: "1",
+                    fill: "rgba(239,68,68,0.01)",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "25",
+                            y: "45",
+                            width: "70",
+                            height: "35",
+                            rx: "3"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 443,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "155",
+                            y: "45",
+                            width: "90",
+                            height: "35",
+                            rx: "3",
+                            className: "queue-node"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 444,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "305",
+                            y: "45",
+                            width: "70",
+                            height: "35",
+                            rx: "3"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 445,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 442,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 95 62 L 155 62",
+                    stroke: "#ef4444",
+                    strokeWidth: "1.5",
+                    className: "dpi-stream-dash"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 449,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 245 62 L 305 62",
+                    stroke: "#ef4444",
+                    strokeWidth: "1.5",
+                    className: "dpi-stream-dash"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 450,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "60",
-                    y: "74",
+                    y: "66",
                     fill: "#f5f5f5",
-                    fontFamily: "monospace",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "8.5",
                     fontWeight: "bold",
                     textAnchor: "middle",
-                    children: "libpcap"
+                    children: "LIBPCAP"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 418,
+                    lineNumber: 453,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "200",
-                    y: "74",
-                    fill: "var(--accent-amber, #ffb400)",
-                    fontFamily: "monospace",
-                    fontSize: "8.5",
+                    y: "66",
+                    fill: "#ef4444",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
                     fontWeight: "bold",
                     textAnchor: "middle",
-                    children: "parser-queue"
+                    children: "RING_BUFFER"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 419,
+                    lineNumber: 454,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "340",
-                    y: "74",
+                    y: "66",
                     fill: "#f5f5f5",
-                    fontFamily: "monospace",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "8.5",
                     fontWeight: "bold",
                     textAnchor: "middle",
-                    children: "TLS SNI"
+                    children: "TLS_SNI"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 420,
+                    lineNumber: 455,
                     columnNumber: 9
                 }, this),
                 packets.map((p)=>{
                     let px = 60;
                     if (p.progress < 50) {
-                        px = 60 + p.progress / 50 * 140;
+                        px = 60 + p.progress / 50 * 95;
                     } else {
-                        px = 200 + (p.progress - 50) / 50 * 140;
+                        px = 155 + (p.progress - 50) / 50 * 150;
                     }
                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                         cx: px,
-                        cy: "70",
+                        cy: "62",
                         r: "4.5",
-                        fill: p.type === 'TLS' ? 'var(--accent-amber, #ffb400)' : '#f5f5f5',
+                        fill: p.type === 'TLS' ? '#ef4444' : '#f5f5f5',
                         style: {
-                            filter: 'drop-shadow(0 0 3px var(--accent-amber, #ffb400))'
+                            filter: 'drop-shadow(0 0 4px #ef4444)'
                         }
                     }, p.id, false, {
                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                        lineNumber: 431,
+                        lineNumber: 466,
                         columnNumber: 13
                     }, this);
                 }),
@@ -7521,107 +7737,105 @@ function ProjectSchematic({ id }) {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
                             x: "140",
-                            y: "105",
+                            y: "98",
                             width: "120",
                             height: "22",
                             rx: "3",
-                            fill: "#181818",
-                            stroke: "var(--accent-amber, #ffb400)",
-                            strokeWidth: "1",
-                            style: {
-                                transition: 'all 0.2s ease'
-                            }
+                            fill: "#111",
+                            stroke: "#ef4444",
+                            strokeWidth: "1"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 447,
+                            lineNumber: 482,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                             x: "200",
-                            y: "119",
-                            fill: "var(--accent-amber, #ffb400)",
-                            fontFamily: "monospace",
+                            y: "112",
+                            fill: "#ef4444",
+                            fontFamily: "var(--font-jetbrains-mono, monospace)",
                             fontSize: "8",
                             fontWeight: "bold",
                             textAnchor: "middle",
                             children: "[ INJECT PACKET ]"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 448,
+                            lineNumber: 483,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 443,
+                    lineNumber: 478,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                    x: "20",
-                    y: "137",
-                    width: "360",
-                    height: "34",
-                    fill: "#080808",
-                    stroke: "rgba(245,245,245,0.03)",
+                    x: "25",
+                    y: "132",
+                    width: "350",
+                    height: "36",
+                    fill: "#050505",
+                    stroke: "rgba(239,68,68,0.06)",
                     rx: "2"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 452,
+                    lineNumber: 487,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "30",
-                    y: "148",
+                    x: "35",
+                    y: "144",
                     fill: "rgba(245,245,245,0.3)",
-                    fontFamily: "monospace",
-                    fontSize: "6.5",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
                     children: dpiLogs[1]
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 453,
+                    lineNumber: 488,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "30",
-                    y: "160",
-                    fill: "var(--accent-amber, #ffb400)",
-                    fontFamily: "monospace",
-                    fontSize: "6.5",
+                    x: "35",
+                    y: "157",
+                    fill: "#ef4444",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    fontWeight: "bold",
                     children: dpiLogs[0]
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 456,
+                    lineNumber: 491,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "15",
-                    y: "20",
-                    fill: "rgba(255,180,0,0.4)",
-                    fontFamily: "monospace",
+                    y: "22",
+                    fill: "rgba(239,68,68,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "8",
-                    children: "DPI STREAM INGESTION FLOW"
+                    children: "DPI PACKET PARSING CORE [CLICK INJECT]"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 460,
+                    lineNumber: 495,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "385",
-                    y: "20",
+                    y: "22",
                     fill: "rgba(245,245,245,0.25)",
-                    fontFamily: "monospace",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "7",
                     textAnchor: "end",
-                    children: "STATUS: CAPTURING"
+                    children: "CAPTURING"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 461,
+                    lineNumber: 496,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ProjectsSection.tsx",
-            lineNumber: 402,
+            lineNumber: 419,
             columnNumber: 7
         }, this);
     }
@@ -7631,43 +7845,58 @@ function ProjectSchematic({ id }) {
             height: "180",
             viewBox: "0 0 400 180",
             style: {
-                background: '#121212',
-                border: '1px solid rgba(255,180,0,0.1)',
+                background: '#090909',
+                border: '1px solid rgba(88,196,220,0.15)',
                 borderRadius: '6px',
-                margin: '1.5rem 0'
+                margin: '1.5rem 0',
+                overflow: 'hidden'
             },
             children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes glowCyanCard {
+            0%, 100% { filter: drop-shadow(0 0 2px rgba(88,196,220,0.2)); }
+            50% { filter: drop-shadow(0 0 10px rgba(88,196,220,0.6)); }
+          }
+          .cyan-card-glow { animation: glowCyanCard 2s infinite ease-in-out; }
+        `
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 508,
+                    columnNumber: 9
+                }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
                     x: "20",
                     y: "35",
                     width: "360",
                     height: "18",
                     rx: "2",
-                    fill: "#181818",
-                    stroke: "rgba(245,245,245,0.05)"
+                    fill: "#111",
+                    stroke: "rgba(88,196,220,0.1)"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 474,
+                    lineNumber: 516,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "32",
                     y: "46",
-                    fill: hoveredCard ? '#f5f5f5' : 'rgba(245,245,245,0.25)',
-                    fontFamily: "monospace",
-                    fontSize: "7",
+                    fill: hoveredCard ? '#58c4dc' : 'rgba(245,245,245,0.3)',
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7.5",
                     style: {
-                        transition: 'color 0.3s ease'
+                        transition: 'color 0.3s ease',
+                        fontWeight: hoveredCard ? 'bold' : 'normal'
                     },
                     children: [
-                        hoveredCard === 'left' && 'SEARCH MATCH: "SPIDERMAN: INTO THE MULTIVERSE" (2018)',
-                        hoveredCard === 'middle' && 'SEARCH MATCH: "ATTACK ON TITAN: SEASON 4" (2020)',
-                        hoveredCard === 'right' && 'SEARCH MATCH: "THE DARK KNIGHT" (2008)',
-                        !hoveredCard && 'HOVER CARDS BELOW TO RUN DISCOVERY PIPELINE...'
+                        hoveredCard === 'left' && 'MATCH: "SPIDERMAN: INTO THE MULTIVERSE" (REDIS_CACHE)',
+                        hoveredCard === 'middle' && 'MATCH: "ATTACK ON TITAN: SEASON 4" (JIKAN_API_FETCH)',
+                        hoveredCard === 'right' && 'MATCH: "THE DARK KNIGHT" (TMDB_V3_DB)',
+                        !hoveredCard && 'HOVER DISCOVERY CARDS FOR MEDIA GRAPH FETCH...'
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 475,
+                    lineNumber: 517,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -7685,33 +7914,47 @@ function ProjectSchematic({ id }) {
                                     width: "105",
                                     height: "85",
                                     rx: "4",
-                                    fill: hoveredCard === 'left' ? 'rgba(255,180,0,0.03)' : '#151515',
-                                    stroke: hoveredCard === 'left' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.06)',
+                                    fill: hoveredCard === 'left' ? 'rgba(88,196,220,0.03)' : '#111',
+                                    stroke: hoveredCard === 'left' ? '#58c4dc' : 'rgba(245,245,245,0.06)',
                                     strokeWidth: "1",
                                     style: {
                                         transition: 'all 0.3s ease'
-                                    }
+                                    },
+                                    className: hoveredCard === 'left' ? 'cyan-card-glow' : ''
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 489,
+                                    lineNumber: 531,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                    x: "35",
+                                    y: "75",
+                                    width: "75",
+                                    height: "40",
+                                    fill: "none",
+                                    stroke: hoveredCard === 'left' ? 'rgba(88,196,220,0.3)' : 'rgba(245,245,245,0.08)',
+                                    strokeWidth: "1"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                                    lineNumber: 540,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polygon", {
-                                    points: "67,98 67,112 79,105",
-                                    fill: hoveredCard === 'left' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.2)',
+                                    points: "67,88 67,102 79,95",
+                                    fill: hoveredCard === 'left' ? '#58c4dc' : 'rgba(245,245,245,0.2)',
                                     style: {
                                         transition: 'fill 0.3s ease'
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 497,
+                                    lineNumber: 541,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                                     x: "72",
-                                    y: "80",
-                                    fill: hoveredCard === 'left' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.4)',
-                                    fontFamily: "monospace",
+                                    y: "132",
+                                    fill: hoveredCard === 'left' ? '#58c4dc' : 'rgba(245,245,245,0.4)',
+                                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                                     fontSize: "7",
                                     textAnchor: "middle",
                                     style: {
@@ -7720,13 +7963,13 @@ function ProjectSchematic({ id }) {
                                     children: "01 / SCI-FI"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 502,
+                                    lineNumber: 546,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 485,
+                            lineNumber: 527,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -7739,33 +7982,47 @@ function ProjectSchematic({ id }) {
                                     width: "105",
                                     height: "85",
                                     rx: "4",
-                                    fill: hoveredCard === 'middle' ? 'rgba(255,180,0,0.03)' : '#151515',
-                                    stroke: hoveredCard === 'middle' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.06)',
+                                    fill: hoveredCard === 'middle' ? 'rgba(88,196,220,0.03)' : '#111',
+                                    stroke: hoveredCard === 'middle' ? '#58c4dc' : 'rgba(245,245,245,0.06)',
                                     strokeWidth: "1",
                                     style: {
                                         transition: 'all 0.3s ease'
-                                    }
+                                    },
+                                    className: hoveredCard === 'middle' ? 'cyan-card-glow' : ''
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 510,
+                                    lineNumber: 554,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                    x: "162",
+                                    y: "75",
+                                    width: "75",
+                                    height: "40",
+                                    fill: "none",
+                                    stroke: hoveredCard === 'middle' ? 'rgba(88,196,220,0.3)' : 'rgba(245,245,245,0.08)',
+                                    strokeWidth: "1"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                                    lineNumber: 562,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polygon", {
-                                    points: "194,98 194,112 206,105",
-                                    fill: hoveredCard === 'middle' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.2)',
+                                    points: "194,88 194,102 206,95",
+                                    fill: hoveredCard === 'middle' ? '#58c4dc' : 'rgba(245,245,245,0.2)',
                                     style: {
                                         transition: 'fill 0.3s ease'
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 517,
+                                    lineNumber: 563,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                                     x: "200",
-                                    y: "80",
-                                    fill: hoveredCard === 'middle' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.4)',
-                                    fontFamily: "monospace",
+                                    y: "132",
+                                    fill: hoveredCard === 'middle' ? '#58c4dc' : 'rgba(245,245,245,0.4)',
+                                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                                     fontSize: "7",
                                     textAnchor: "middle",
                                     style: {
@@ -7774,13 +8031,13 @@ function ProjectSchematic({ id }) {
                                     children: "02 / ANIME"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 522,
+                                    lineNumber: 568,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 506,
+                            lineNumber: 550,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -7793,33 +8050,47 @@ function ProjectSchematic({ id }) {
                                     width: "105",
                                     height: "85",
                                     rx: "4",
-                                    fill: hoveredCard === 'right' ? 'rgba(255,180,0,0.03)' : '#151515',
-                                    stroke: hoveredCard === 'right' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.06)',
+                                    fill: hoveredCard === 'right' ? 'rgba(88,196,220,0.03)' : '#111',
+                                    stroke: hoveredCard === 'right' ? '#58c4dc' : 'rgba(245,245,245,0.06)',
                                     strokeWidth: "1",
                                     style: {
                                         transition: 'all 0.3s ease'
-                                    }
+                                    },
+                                    className: hoveredCard === 'right' ? 'cyan-card-glow' : ''
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 530,
+                                    lineNumber: 576,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                                    x: "290",
+                                    y: "75",
+                                    width: "75",
+                                    height: "40",
+                                    fill: "none",
+                                    stroke: hoveredCard === 'right' ? 'rgba(88,196,220,0.3)' : 'rgba(245,245,245,0.08)',
+                                    strokeWidth: "1"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                                    lineNumber: 584,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("polygon", {
-                                    points: "322,98 322,112 334,105",
-                                    fill: hoveredCard === 'right' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.2)',
+                                    points: "322,88 322,102 334,95",
+                                    fill: hoveredCard === 'right' ? '#58c4dc' : 'rgba(245,245,245,0.2)',
                                     style: {
                                         transition: 'fill 0.3s ease'
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 537,
+                                    lineNumber: 585,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                                     x: "327",
-                                    y: "80",
-                                    fill: hoveredCard === 'right' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.4)',
-                                    fontFamily: "monospace",
+                                    y: "132",
+                                    fill: hoveredCard === 'right' ? '#58c4dc' : 'rgba(245,245,245,0.4)',
+                                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                                     fontSize: "7",
                                     textAnchor: "middle",
                                     style: {
@@ -7828,19 +8099,19 @@ function ProjectSchematic({ id }) {
                                     children: "03 / ACTION"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 542,
+                                    lineNumber: 590,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 526,
+                            lineNumber: 572,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 483,
+                    lineNumber: 525,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -7848,10 +8119,10 @@ function ProjectSchematic({ id }) {
                     y: "160",
                     width: "400",
                     height: "20",
-                    fill: "#0c0c0c"
+                    fill: "#050505"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 547,
+                    lineNumber: 595,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7859,45 +8130,45 @@ function ProjectSchematic({ id }) {
                     y1: "160",
                     x2: "400",
                     y2: "160",
-                    stroke: "rgba(255,255,255,0.03)"
+                    stroke: "rgba(255,255,255,0.05)"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 548,
+                    lineNumber: 596,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "15",
-                    y: "172",
-                    fill: hoveredCard ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.3)',
-                    fontFamily: "monospace",
-                    fontSize: "6.8",
+                    y: "173",
+                    fill: hoveredCard ? '#58c4dc' : 'rgba(245,245,245,0.4)',
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
                     children: [
-                        hoveredCard === 'left' && 'API_DISCOVERY: JIKAN_V4 & TMDB_V3 FETCH // SCORE: 9.1 // RESP: 142ms',
-                        hoveredCard === 'middle' && 'API_DISCOVERY: JIKAN_V4 & TMDB_V3 FETCH // SCORE: 9.5 // RESP: 189ms',
-                        hoveredCard === 'right' && 'API_DISCOVERY: JIKAN_V4 & TMDB_V3 FETCH // SCORE: 9.0 // RESP: 110ms',
-                        !hoveredCard && 'DISCOVERY_ROUTING: LISTENER ONLINE // REDIS CACHE: INLINE'
+                        hoveredCard === 'left' && 'API_DISCOVERY: REDIS_CACHE HIT // LATENCY: 3ms // STATS: CACHE_HEALTH_100%',
+                        hoveredCard === 'middle' && 'API_DISCOVERY: JIKAN_V4 ROUTE // LATENCY: 220ms // REST_PAYLOAD: 42KB',
+                        hoveredCard === 'right' && 'API_DISCOVERY: TMDB_V3 ROUTE // LATENCY: 140ms // MATCH_CONFIDENCE: 98%',
+                        !hoveredCard && 'DISCOVERY_ROUTING: SERVICE LISTENING // REDIS KEY_SPACER: STANDBY'
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 549,
+                    lineNumber: 597,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "15",
-                    y: "20",
-                    fill: "rgba(255,180,0,0.4)",
-                    fontFamily: "monospace",
+                    y: "22",
+                    fill: "rgba(88,196,220,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "8",
-                    children: "IMMERSIVE MEDIA CATALOG GRID"
+                    children: "IMMERSIVE MEDIA CATALOG GATEWAY [HOVER CARDS]"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 556,
+                    lineNumber: 604,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ProjectsSection.tsx",
-            lineNumber: 467,
+            lineNumber: 502,
             columnNumber: 7
         }, this);
     }
@@ -7907,15 +8178,26 @@ function ProjectSchematic({ id }) {
             height: "180",
             viewBox: "0 0 400 180",
             style: {
-                background: '#121212',
-                border: '1px solid rgba(255,180,0,0.1)',
+                background: '#090909',
+                border: '1px solid rgba(16,185,129,0.15)',
                 borderRadius: '6px',
-                margin: '1.5rem 0'
+                margin: '1.5rem 0',
+                overflow: 'hidden'
             },
             children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes chartPulse { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.35; } }
+          .chart-area { animation: chartPulse 3s infinite ease-in-out; }
+        `
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 616,
+                    columnNumber: 9
+                }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
-                    stroke: "rgba(245,245,245,0.02)",
-                    strokeWidth: "1",
+                    stroke: "rgba(16,185,129,0.02)",
+                    strokeWidth: "0.5",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
                             x1: "40",
@@ -7924,7 +8206,7 @@ function ProjectSchematic({ id }) {
                             y2: "40"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 570,
+                            lineNumber: 622,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7934,7 +8216,7 @@ function ProjectSchematic({ id }) {
                             y2: "80"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 571,
+                            lineNumber: 623,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7944,13 +8226,43 @@ function ProjectSchematic({ id }) {
                             y2: "120"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 572,
+                            lineNumber: 624,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "120",
+                            y1: "20",
+                            x2: "120",
+                            y2: "140"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 625,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "200",
+                            y1: "20",
+                            x2: "200",
+                            y2: "140"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 626,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "280",
+                            y1: "20",
+                            x2: "280",
+                            y2: "140"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 627,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 569,
+                    lineNumber: 621,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7962,7 +8274,7 @@ function ProjectSchematic({ id }) {
                     strokeWidth: "1"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 574,
+                    lineNumber: 629,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -7974,60 +8286,99 @@ function ProjectSchematic({ id }) {
                     strokeWidth: "1"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 575,
+                    lineNumber: 630,
                     columnNumber: 9
                 }, this),
-                activeMode === 'SAVE' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                    d: "M 40 130 L 100 115 L 180 100 L 260 88 L 340 75",
-                    fill: "none",
-                    stroke: "var(--accent-amber, #ffb400)",
-                    strokeWidth: "2.5",
-                    style: {
-                        transition: 'all 0.5s ease'
-                    }
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 579,
-                    columnNumber: 11
-                }, this),
-                activeMode === 'BALANCE' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                    d: "M 40 130 Q 90 110 140 90 T 240 60 T 340 30",
-                    fill: "none",
-                    stroke: "var(--accent-amber, #ffb400)",
-                    strokeWidth: "2.5",
-                    style: {
-                        transition: 'all 0.5s ease'
-                    }
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 582,
-                    columnNumber: 11
-                }, this),
-                activeMode === 'INVEST' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                    d: "M 40 130 Q 90 125 140 120 T 240 70 T 340 15",
-                    fill: "none",
-                    stroke: "var(--accent-amber, #ffb400)",
-                    strokeWidth: "2.5",
-                    style: {
-                        transition: 'all 0.5s ease'
-                    }
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 585,
-                    columnNumber: 11
-                }, this),
+                activeMode === 'SAVE' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 40 130 L 100 115 L 180 100 L 260 88 L 340 75 L 340 140 L 40 140 Z",
+                            fill: "rgba(16,185,129,0.03)",
+                            className: "chart-area"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 635,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 40 130 L 100 115 L 180 100 L 260 88 L 340 75",
+                            fill: "none",
+                            stroke: "#10b981",
+                            strokeWidth: "2.5",
+                            style: {
+                                transition: 'all 0.5s ease'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 636,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true),
+                activeMode === 'BALANCE' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 40 130 Q 90 110 140 90 T 240 60 T 340 30 L 340 140 L 40 140 Z",
+                            fill: "rgba(16,185,129,0.03)",
+                            className: "chart-area"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 641,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 40 130 Q 90 110 140 90 T 240 60 T 340 30",
+                            fill: "none",
+                            stroke: "#10b981",
+                            strokeWidth: "2.5",
+                            style: {
+                                transition: 'all 0.5s ease'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 642,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true),
+                activeMode === 'INVEST' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 40 130 Q 90 125 140 120 T 240 70 T 340 15 L 340 140 L 40 140 Z",
+                            fill: "rgba(16,185,129,0.03)",
+                            className: "chart-area"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 647,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 40 130 Q 90 125 140 120 T 240 70 T 340 15",
+                            fill: "none",
+                            stroke: "#10b981",
+                            strokeWidth: "2.5",
+                            style: {
+                                transition: 'all 0.5s ease'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 648,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "340",
                     cy: activeMode === 'SAVE' ? 75 : activeMode === 'BALANCE' ? 30 : 15,
                     r: "4.5",
-                    fill: "var(--accent-amber, #ffb400)",
+                    fill: "#10b981",
                     style: {
-                        filter: 'drop-shadow(0 0 4px var(--accent-amber, #ffb400))',
+                        filter: 'drop-shadow(0 0 5px #10b981)',
                         transition: 'cy 0.5s ease'
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 589,
+                    lineNumber: 653,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -8047,32 +8398,32 @@ function ProjectSchematic({ id }) {
                                     width: "65",
                                     height: "18",
                                     rx: "2",
-                                    fill: activeMode === 'SAVE' ? 'var(--accent-amber, #ffb400)' : '#181818',
-                                    stroke: "rgba(255,180,0,0.2)",
+                                    fill: activeMode === 'SAVE' ? '#10b981' : '#111',
+                                    stroke: "rgba(16,185,129,0.2)",
                                     strokeWidth: "0.5"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 601,
+                                    lineNumber: 665,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                                     x: "107.5",
                                     y: "160",
                                     fill: activeMode === 'SAVE' ? '#0a0a0a' : 'rgba(245,245,245,0.5)',
-                                    fontFamily: "monospace",
+                                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                                     fontSize: "7.5",
                                     fontWeight: "bold",
                                     textAnchor: "middle",
                                     children: "SAVINGS"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 602,
+                                    lineNumber: 666,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 600,
+                            lineNumber: 664,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -8087,32 +8438,32 @@ function ProjectSchematic({ id }) {
                                     width: "75",
                                     height: "18",
                                     rx: "2",
-                                    fill: activeMode === 'BALANCE' ? 'var(--accent-amber, #ffb400)' : '#181818',
-                                    stroke: "rgba(255,180,0,0.2)",
+                                    fill: activeMode === 'BALANCE' ? '#10b981' : '#111',
+                                    stroke: "rgba(16,185,129,0.2)",
                                     strokeWidth: "0.5"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 607,
+                                    lineNumber: 671,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                                     x: "192.5",
                                     y: "160",
                                     fill: activeMode === 'BALANCE' ? '#0a0a0a' : 'rgba(245,245,245,0.5)',
-                                    fontFamily: "monospace",
+                                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                                     fontSize: "7.5",
                                     fontWeight: "bold",
                                     textAnchor: "middle",
                                     children: "BALANCED"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 608,
+                                    lineNumber: 672,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 606,
+                            lineNumber: 670,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -8127,84 +8478,85 @@ function ProjectSchematic({ id }) {
                                     width: "75",
                                     height: "18",
                                     rx: "2",
-                                    fill: activeMode === 'INVEST' ? 'var(--accent-amber, #ffb400)' : '#181818',
-                                    stroke: "rgba(255,180,0,0.2)",
+                                    fill: activeMode === 'INVEST' ? '#10b981' : '#111',
+                                    stroke: "rgba(16,185,129,0.2)",
                                     strokeWidth: "0.5"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 613,
+                                    lineNumber: 677,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                                     x: "282.5",
                                     y: "160",
                                     fill: activeMode === 'INVEST' ? '#0a0a0a' : 'rgba(245,245,245,0.5)',
-                                    fontFamily: "monospace",
+                                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                                     fontSize: "7.5",
                                     fontWeight: "bold",
                                     textAnchor: "middle",
                                     children: "AGGRESSIVE"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 614,
+                                    lineNumber: 678,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 612,
+                            lineNumber: 676,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 598,
+                    lineNumber: 662,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "15",
-                    y: "20",
-                    fill: "rgba(255,180,0,0.4)",
-                    fontFamily: "monospace",
+                    y: "22",
+                    fill: "rgba(16,185,129,0.45)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "8",
-                    children: "WEALTH GROWTH RATE PREVIEW"
+                    children: "WEALTH COMPOUND GROWTH PREVIEW [CLICK PRESETS]"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 618,
+                    lineNumber: 682,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "345",
                     y: "25",
-                    fill: "#ffb400",
-                    fontFamily: "monospace",
-                    fontSize: "7",
+                    fill: "#10b981",
+                    fontFamily: "var(--font-bebas-neue, sans-serif)",
+                    fontSize: "9",
+                    letterSpacing: "0.05em",
                     children: "GROWTH"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 619,
+                    lineNumber: 683,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "15",
                     y: "132",
-                    fill: "rgba(245,245,245,0.25)",
-                    fontFamily: "monospace",
-                    fontSize: "6.5",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
                     children: [
-                        activeMode === 'SAVE' && 'PLAN: SAFE SAVINGS // GROWTH APY: +4.5% // STABILITY: 100%',
-                        activeMode === 'BALANCE' && 'PLAN: EQUITIES & SAVINGS // GROWTH APY: +8.2% // STABILITY: 70%',
-                        activeMode === 'INVEST' && 'PLAN: ALPHA STOCKS & VECTOR ASSETS // GROWTH APY: +22.4% // STABILITY: 30%'
+                        activeMode === 'SAVE' && 'STRATEGY: LIQUID ASSETS // YIELD APY: +4.8% // RISK PROFILE: LOW',
+                        activeMode === 'BALANCE' && 'STRATEGY: EQUITIES INDEX & CASH // YIELD APY: +8.5% // RISK PROFILE: MODERATE',
+                        activeMode === 'INVEST' && 'STRATEGY: ALPHA STOCKS & HIGH-MUTABLE DBs // YIELD APY: +24.6% // RISK PROFILE: HIGH'
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 622,
+                    lineNumber: 686,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ProjectsSection.tsx",
-            lineNumber: 562,
+            lineNumber: 610,
             columnNumber: 7
         }, this);
     }
@@ -8214,12 +8566,96 @@ function ProjectSchematic({ id }) {
             height: "180",
             viewBox: "0 0 400 180",
             style: {
-                background: '#121212',
-                border: '1px solid rgba(255,180,0,0.1)',
+                background: '#090909',
+                border: '1px solid rgba(129,140,248,0.15)',
                 borderRadius: '6px',
-                margin: '1.5rem 0'
+                margin: '1.5rem 0',
+                overflow: 'hidden'
             },
             children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes prFlowPulse {
+            0% { stroke-dashoffset: 20; }
+            100% { stroke-dashoffset: 0; }
+          }
+          .pr-stream-dash { stroke-dasharray: 5 3; animation: prFlowPulse 1s linear infinite; }
+        `
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 702,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                    stroke: "rgba(129,140,248,0.02)",
+                    strokeWidth: "0.5",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "40",
+                            x2: "400",
+                            y2: "40"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 711,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "80",
+                            x2: "400",
+                            y2: "80"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 712,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "120",
+                            x2: "400",
+                            y2: "120"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 713,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "100",
+                            y1: "0",
+                            x2: "100",
+                            y2: "180"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 714,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "200",
+                            y1: "0",
+                            x2: "200",
+                            y2: "180"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 715,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "300",
+                            y1: "0",
+                            x2: "300",
+                            y2: "180"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ProjectsSection.tsx",
+                            lineNumber: 716,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/ProjectsSection.tsx",
+                    lineNumber: 710,
+                    columnNumber: 9
+                }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
                     stroke: "rgba(245,245,245,0.06)",
                     strokeWidth: "1.5",
@@ -8232,7 +8668,7 @@ function ProjectSchematic({ id }) {
                             y2: "90"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 640,
+                            lineNumber: 721,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -8240,33 +8676,35 @@ function ProjectSchematic({ id }) {
                             strokeDasharray: "3"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 641,
+                            lineNumber: 722,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 639,
+                    lineNumber: 720,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "120",
                     cy: "90",
-                    r: "4.5",
-                    fill: "#555"
+                    r: "5.5",
+                    fill: "#181818",
+                    stroke: "rgba(245,245,245,0.2)"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 645,
+                    lineNumber: 726,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "340",
                     cy: "90",
-                    r: "4.5",
-                    fill: "#555"
+                    r: "5.5",
+                    fill: "#181818",
+                    stroke: "rgba(245,245,245,0.2)"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 646,
+                    lineNumber: 727,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
@@ -8275,45 +8713,45 @@ function ProjectSchematic({ id }) {
                     width: "100",
                     height: "35",
                     rx: "3",
-                    fill: "#181818",
-                    stroke: prTriggered ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.08)',
+                    fill: "#111",
+                    stroke: prTriggered ? '#818cf8' : 'rgba(245,245,245,0.08)',
                     strokeWidth: "1.5",
                     style: {
                         transition: 'border-color 0.3s ease'
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 649,
+                    lineNumber: 730,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "230",
-                    y: "47",
-                    fill: prTriggered ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.3)',
-                    fontFamily: "monospace",
-                    fontSize: "8",
+                    y: "48",
+                    fill: prTriggered ? '#818cf8' : 'rgba(245,245,245,0.3)',
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8.5",
                     fontWeight: "bold",
                     textAnchor: "middle",
                     style: {
                         transition: 'color 0.3s ease'
                     },
-                    children: prTriggered ? `LLM SCAN: ${prProgress}%` : 'LLM ANALYZER'
+                    children: prTriggered ? `SCANNING: ${prProgress}%` : 'LLM_AGENT_CORE'
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 650,
+                    lineNumber: 731,
                     columnNumber: 9
                 }, this),
                 prTriggered && prProgress > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: prProgress < 40 ? 30 + prProgress / 40 * 90 : prProgress < 85 ? 120 + (prProgress - 40) / 45 * 110 : 230 + (prProgress - 85) / 15 * 110,
                     cy: prProgress < 40 ? 90 : prProgress < 85 ? 90 - (prProgress - 40) / 45 * 45 : 45 + (prProgress - 85) / 15 * 45,
-                    r: "4.5",
-                    fill: "var(--accent-amber, #ffb400)",
+                    r: "5",
+                    fill: "#818cf8",
                     style: {
-                        filter: 'drop-shadow(0 0 4px var(--accent-amber, #ffb400))'
+                        filter: 'drop-shadow(0 0 5px #818cf8)'
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 656,
+                    lineNumber: 737,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
@@ -8328,87 +8766,88 @@ function ProjectSchematic({ id }) {
                             width: "130",
                             height: "20",
                             rx: "3",
-                            fill: "#181818",
-                            stroke: "var(--accent-amber, #ffb400)",
+                            fill: "#111",
+                            stroke: "#818cf8",
                             strokeWidth: "1"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 682,
+                            lineNumber: 763,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                             x: "200",
                             y: "121",
-                            fill: "var(--accent-amber, #ffb400)",
-                            fontFamily: "monospace",
+                            fill: "#818cf8",
+                            fontFamily: "var(--font-jetbrains-mono, monospace)",
                             fontSize: "7.5",
                             fontWeight: "bold",
                             textAnchor: "middle",
-                            children: "[ PUSH WEBHOOK EVENT ]"
+                            children: "[ SEND WEBHOOK EVENT ]"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                            lineNumber: 683,
+                            lineNumber: 764,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 678,
+                    lineNumber: 759,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                    x: "20",
-                    y: "137",
-                    width: "360",
-                    height: "34",
-                    fill: "#080808",
-                    stroke: "rgba(245,245,245,0.03)",
+                    x: "25",
+                    y: "132",
+                    width: "350",
+                    height: "36",
+                    fill: "#050505",
+                    stroke: "rgba(129,140,248,0.06)",
                     rx: "2"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 687,
+                    lineNumber: 768,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "30",
-                    y: "148",
+                    x: "35",
+                    y: "144",
                     fill: "rgba(245,245,245,0.3)",
-                    fontFamily: "monospace",
-                    fontSize: "6.5",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
                     children: prLogs[1]
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 688,
+                    lineNumber: 769,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "30",
-                    y: "160",
-                    fill: "var(--accent-amber, #ffb400)",
-                    fontFamily: "monospace",
-                    fontSize: "6.5",
+                    x: "35",
+                    y: "157",
+                    fill: "#818cf8",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    fontWeight: "bold",
                     children: prLogs[0]
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 691,
+                    lineNumber: 772,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "15",
-                    y: "20",
-                    fill: "rgba(255,180,0,0.4)",
-                    fontFamily: "monospace",
+                    y: "22",
+                    fill: "rgba(129,140,248,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "8",
-                    children: "GITHUB PR WEBHOOK PIPELINE"
+                    children: "GITHUB WEBHOOK PR AUTOMATION PIPELINE"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                    lineNumber: 695,
+                    lineNumber: 776,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ProjectsSection.tsx",
-            lineNumber: 632,
+            lineNumber: 696,
             columnNumber: 7
         }, this);
     }
@@ -8446,6 +8885,53 @@ const getProjectBgImage = (id)=>{
             return '/code_chatbot_bg.png';
         default:
             return '';
+    }
+};
+const projectThemes = {
+    '01': {
+        primary: '#ffb400',
+        primaryMuted: 'rgba(255, 180, 0, 0.15)',
+        primaryMutedLight: 'rgba(255, 180, 0, 0.03)',
+        primaryMutedDeep: 'rgba(255, 180, 0, 0.3)',
+        accent: '#ffb400',
+        glow: 'rgba(255, 180, 0, 0.4)',
+        glowDeep: 'rgba(255, 180, 0, 0.8)'
+    },
+    '02': {
+        primary: '#ef4444',
+        primaryMuted: 'rgba(239, 68, 68, 0.15)',
+        primaryMutedLight: 'rgba(239, 68, 68, 0.03)',
+        primaryMutedDeep: 'rgba(239, 68, 68, 0.3)',
+        accent: '#ef4444',
+        glow: 'rgba(239, 68, 68, 0.4)',
+        glowDeep: 'rgba(239, 68, 68, 0.8)'
+    },
+    '03': {
+        primary: '#58c4dc',
+        primaryMuted: 'rgba(88, 196, 220, 0.15)',
+        primaryMutedLight: 'rgba(88, 196, 220, 0.03)',
+        primaryMutedDeep: 'rgba(88, 196, 220, 0.3)',
+        accent: '#58c4dc',
+        glow: 'rgba(88, 196, 220, 0.4)',
+        glowDeep: 'rgba(88, 196, 220, 0.8)'
+    },
+    '04': {
+        primary: '#10b981',
+        primaryMuted: 'rgba(16, 185, 129, 0.15)',
+        primaryMutedLight: 'rgba(16, 185, 129, 0.03)',
+        primaryMutedDeep: 'rgba(16, 185, 129, 0.3)',
+        accent: '#10b981',
+        glow: 'rgba(16, 185, 129, 0.4)',
+        glowDeep: 'rgba(16, 185, 129, 0.8)'
+    },
+    '05': {
+        primary: '#818cf8',
+        primaryMuted: 'rgba(129, 140, 248, 0.15)',
+        primaryMutedLight: 'rgba(129, 140, 248, 0.03)',
+        primaryMutedDeep: 'rgba(129, 140, 248, 0.3)',
+        accent: '#818cf8',
+        glow: 'rgba(129, 140, 248, 0.4)',
+        glowDeep: 'rgba(129, 140, 248, 0.8)'
     }
 };
 function ProjectsSection() {
@@ -8511,10 +8997,17 @@ function ProjectsSection() {
         }
     }["ProjectsSection.useEffect"], []);
     const activeIndex = Math.min(projects.length - 1, Math.floor(scrollProgress * projects.length * 0.999));
+    const activeTheme = projectThemes[activeProjectId] || projectThemes['01'];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "projects",
         ref: sectionRef,
         className: "projects-scroll-section",
+        style: {
+            '--active-primary': activeTheme.primary,
+            '--active-primary-muted': activeTheme.primaryMuted,
+            '--active-primary-muted-deep': activeTheme.primaryMutedDeep,
+            '--active-glow': activeTheme.glow
+        },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "projects-sticky-viewport",
@@ -8533,7 +9026,7 @@ function ProjectsSection() {
                                 children: "// 02 / WORK"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 810,
+                                lineNumber: 957,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -8541,13 +9034,13 @@ function ProjectsSection() {
                                 children: "SELECTED WORK"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 811,
+                                lineNumber: 958,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                        lineNumber: 801,
+                        lineNumber: 948,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8555,26 +9048,48 @@ function ProjectsSection() {
                         style: {
                             transform: `translateX(-${scrollProgress * (projects.length - 1) * 100}vw)`
                         },
-                        children: projects.map((project)=>{
+                        children: projects.map((project, idx)=>{
                             const details = caseStudiesData[project.id];
+                            const theme = projectThemes[project.id];
+                            // Calculate parallax bgOffset
+                            const panelCenterProgress = idx / (projects.length - 1);
+                            const offsetFromCenter = scrollProgress - panelCenterProgress;
+                            const bgOffset = -offsetFromCenter * 100; // max 100px shift
                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "project-slide-panel",
+                                style: {
+                                    '--theme-primary': theme.primary,
+                                    '--theme-primary-muted': theme.primaryMuted,
+                                    '--theme-primary-muted-light': theme.primaryMutedLight,
+                                    '--theme-primary-muted-deep': theme.primaryMutedDeep,
+                                    '--theme-accent': theme.accent,
+                                    '--theme-glow': theme.glow,
+                                    '--theme-glow-deep': theme.glowDeep
+                                },
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "project-panel-bg",
                                         style: {
-                                            backgroundImage: `url(${getProjectBgImage(project.id)})`
+                                            backgroundImage: `url(${getProjectBgImage(project.id)})`,
+                                            transform: `translateX(${bgOffset}px) scale(1.15)`
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                        lineNumber: 823,
+                                        lineNumber: 989,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "project-panel-bg-overlay"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                        lineNumber: 827,
+                                        lineNumber: 996,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "project-panel-grid-overlay"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ProjectsSection.tsx",
+                                        lineNumber: 997,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8591,7 +9106,7 @@ function ProjectsSection() {
                                                                 children: getProjectCode(project.id)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                lineNumber: 833,
+                                                                lineNumber: 1003,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -8599,13 +9114,13 @@ function ProjectsSection() {
                                                                 children: project.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                lineNumber: 834,
+                                                                lineNumber: 1004,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                        lineNumber: 832,
+                                                        lineNumber: 1002,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -8613,7 +9128,7 @@ function ProjectsSection() {
                                                         children: project.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                        lineNumber: 837,
+                                                        lineNumber: 1007,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8624,26 +9139,26 @@ function ProjectsSection() {
                                                                 children: "// CORE DIAGRAM & SIMULATION"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                lineNumber: 840,
+                                                                lineNumber: 1010,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ProjectSchematic, {
                                                                 id: project.id
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                lineNumber: 841,
+                                                                lineNumber: 1011,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                        lineNumber: 839,
+                                                        lineNumber: 1009,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                lineNumber: 831,
+                                                lineNumber: 1001,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8659,7 +9174,7 @@ function ProjectsSection() {
                                                                     children: "// ROLE:"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 851,
+                                                                    lineNumber: 1021,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -8667,13 +9182,13 @@ function ProjectsSection() {
                                                                     children: details.role
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 852,
+                                                                    lineNumber: 1022,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                            lineNumber: 850,
+                                                            lineNumber: 1020,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8687,7 +9202,7 @@ function ProjectsSection() {
                                                                             children: "KEY CHALLENGES"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 857,
+                                                                            lineNumber: 1027,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -8696,18 +9211,18 @@ function ProjectsSection() {
                                                                                     children: c
                                                                                 }, i, false, {
                                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                                    lineNumber: 859,
+                                                                                    lineNumber: 1029,
                                                                                     columnNumber: 65
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 858,
+                                                                            lineNumber: 1028,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 856,
+                                                                    lineNumber: 1026,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8718,7 +9233,7 @@ function ProjectsSection() {
                                                                             children: "SOLUTIONS"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 864,
+                                                                            lineNumber: 1034,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -8727,18 +9242,18 @@ function ProjectsSection() {
                                                                                     children: s
                                                                                 }, i, false, {
                                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                                    lineNumber: 866,
+                                                                                    lineNumber: 1036,
                                                                                     columnNumber: 64
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 865,
+                                                                            lineNumber: 1035,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 863,
+                                                                    lineNumber: 1033,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8749,33 +9264,33 @@ function ProjectsSection() {
                                                                             children: "OUTCOMES & METRICS"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 871,
+                                                                            lineNumber: 1041,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                                                            className: "detail-sec-list amber-text",
+                                                                            className: "detail-sec-list theme-text",
                                                                             children: details.metrics.map((m, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                                     children: m
                                                                                 }, i, false, {
                                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                                    lineNumber: 873,
+                                                                                    lineNumber: 1043,
                                                                                     columnNumber: 62
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 872,
+                                                                            lineNumber: 1042,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 870,
+                                                                    lineNumber: 1040,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                            lineNumber: 855,
+                                                            lineNumber: 1025,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8786,7 +9301,7 @@ function ProjectsSection() {
                                                                     children: "SYSTEM SPECIFICATION"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 879,
+                                                                    lineNumber: 1049,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8796,18 +9311,18 @@ function ProjectsSection() {
                                                                             children: t
                                                                         }, t, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 882,
+                                                                            lineNumber: 1052,
                                                                             columnNumber: 31
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 880,
+                                                                    lineNumber: 1050,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                            lineNumber: 878,
+                                                            lineNumber: 1048,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8824,46 +9339,46 @@ function ProjectsSection() {
                                                                     children: "EXPLORE CODEBASE   →"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 889,
+                                                                    lineNumber: 1059,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                lineNumber: 888,
+                                                                lineNumber: 1058,
                                                                 columnNumber: 27
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                            lineNumber: 887,
+                                                            lineNumber: 1057,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                    lineNumber: 848,
+                                                    lineNumber: 1018,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                lineNumber: 846,
+                                                lineNumber: 1016,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                        lineNumber: 828,
+                                        lineNumber: 998,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, project.id, true, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 822,
+                                lineNumber: 976,
                                 columnNumber: 15
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                        lineNumber: 815,
+                        lineNumber: 962,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8878,12 +9393,12 @@ function ProjectsSection() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 913,
+                                    lineNumber: 1083,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 912,
+                                lineNumber: 1082,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -8902,7 +9417,7 @@ function ProjectsSection() {
                                                 children: p.id
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                lineNumber: 928,
+                                                lineNumber: 1098,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -8910,31 +9425,31 @@ function ProjectsSection() {
                                                 children: p.title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                lineNumber: 929,
+                                                lineNumber: 1099,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, p.id, true, {
                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                        lineNumber: 923,
+                                        lineNumber: 1093,
                                         columnNumber: 17
                                     }, this);
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 918,
+                                lineNumber: 1088,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                        lineNumber: 911,
+                        lineNumber: 1081,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                lineNumber: 798,
+                lineNumber: 945,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -8944,6 +9459,7 @@ function ProjectsSection() {
           height: 500vh; /* 5 projects * 100vh runway */
           background-color: #0a0a0a;
           box-sizing: border-box;
+          transition: background-color 0.6s ease;
         }
 
         .projects-sticky-viewport {
@@ -8970,9 +9486,10 @@ function ProjectsSection() {
           font-family: 'JetBrains Mono', monospace;
           font-size: 0.7rem;
           letter-spacing: 0.3em;
-          color: #ffb400;
+          color: var(--active-primary);
           margin-bottom: 0.5rem;
           text-transform: uppercase;
+          transition: color 0.4s ease;
         }
 
         .projects-hud-title {
@@ -9019,6 +9536,7 @@ function ProjectsSection() {
           mix-blend-mode: overlay;
           pointer-events: none;
           z-index: 1;
+          transition: transform 0.1s ease-out;
         }
 
         .project-panel-bg-overlay {
@@ -9030,6 +9548,23 @@ function ProjectsSection() {
           background: radial-gradient(circle, rgba(10, 10, 10, 0.4) 30%, rgba(10, 10, 10, 0.95) 90%);
           pointer-events: none;
           z-index: 2;
+        }
+
+        .project-panel-grid-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: 
+            radial-gradient(var(--theme-primary-muted-light) 1px, transparent 1px),
+            linear-gradient(to right, rgba(255,255,255,0.015) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.015) 1px, transparent 1px);
+          background-size: 32px 32px;
+          opacity: 0.45;
+          pointer-events: none;
+          z-index: 2;
+          transition: background-image 0.6s ease;
         }
 
         .project-panel-grid {
@@ -9063,8 +9598,9 @@ function ProjectsSection() {
           font-family: 'JetBrains Mono', monospace;
           font-size: 1.2rem;
           font-weight: 700;
-          color: #ffb400;
+          color: var(--theme-primary);
           letter-spacing: 0.1em;
+          transition: color 0.4s ease;
         }
 
         .project-panel-title {
@@ -9136,7 +9672,8 @@ function ProjectsSection() {
         }
 
         .detail-meta-val {
-          color: #ffb400;
+          color: var(--theme-primary);
+          transition: color 0.4s ease;
         }
 
         .details-scrollable-area {
@@ -9189,9 +9726,10 @@ function ProjectsSection() {
           color: rgba(245, 245, 245, 0.65);
         }
 
-        .detail-sec-list.amber-text li {
-          color: #ffb400 !important;
+        .detail-sec-list.theme-text li {
+          color: var(--theme-primary) !important;
           font-weight: 400;
+          transition: color 0.4s ease;
         }
 
         .specs-section {
@@ -9228,8 +9766,8 @@ function ProjectsSection() {
           font-family: 'JetBrains Mono', monospace;
           font-size: 0.65rem;
           letter-spacing: 0.15em;
-          color: #ffb400;
-          border: 1px solid rgba(255, 180, 0, 0.3);
+          color: var(--theme-primary);
+          border: 1px solid var(--theme-primary-muted-deep);
           background: transparent;
           border-radius: 4px;
           padding: 0.7rem 1.6rem;
@@ -9240,8 +9778,9 @@ function ProjectsSection() {
         }
 
         .detail-github-btn:hover {
-          background: #ffb400 !important;
+          background: var(--theme-primary) !important;
           color: #0a0a0a !important;
+          box-shadow: 0 0 15px var(--theme-glow);
         }
 
         /* Progress HUD styling */
@@ -9268,12 +9807,12 @@ function ProjectsSection() {
 
         .hud-fill-line {
           height: 100%;
-          background: #ffb400;
-          box-shadow: 0 0 8px rgba(255, 180, 0, 0.5);
+          background: var(--active-primary);
+          box-shadow: 0 0 10px var(--active-glow);
           position: absolute;
           left: 0;
           top: 0;
-          transition: width 0.1s ease-out;
+          transition: width 0.1s ease-out, background 0.4s ease, box-shadow 0.4s ease;
         }
 
         .hud-ticks-container {
@@ -9307,14 +9846,14 @@ function ProjectsSection() {
         }
 
         .hud-tick-item.passed::before {
-          background: #ffb400;
-          box-shadow: 0 0 8px #ffb400;
+          background: var(--active-primary);
+          box-shadow: 0 0 8px var(--active-glow);
         }
 
         .hud-tick-item.current::before {
           transform: scale(1.4);
-          background: #ffb400;
-          box-shadow: 0 0 12px #ffb400;
+          background: var(--active-primary);
+          box-shadow: 0 0 12px var(--active-glow);
         }
 
         .tick-number {
@@ -9329,7 +9868,7 @@ function ProjectsSection() {
         }
 
         .hud-tick-item.current .tick-number {
-          color: #ffb400;
+          color: var(--active-primary);
           font-weight: 700;
         }
 
@@ -9349,7 +9888,7 @@ function ProjectsSection() {
         }
 
         .hud-tick-item.current .tick-title {
-          color: #ffb400;
+          color: var(--active-primary);
           font-size: 1.05rem;
         }
 
@@ -9417,13 +9956,13 @@ function ProjectsSection() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                lineNumber: 938,
+                lineNumber: 1108,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ProjectsSection.tsx",
-        lineNumber: 792,
+        lineNumber: 933,
         columnNumber: 5
     }, this);
 }

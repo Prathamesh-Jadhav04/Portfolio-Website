@@ -309,14 +309,36 @@ function ProjectSchematic({ id }: { id: string }) {
         viewBox="0 0 400 180" 
         onMouseMove={handleMouseMove01}
         onMouseLeave={() => setMousePos({ x: 200, y: 140 })}
-        style={{ background: '#121212', border: '1px solid rgba(255,180,0,0.1)', borderRadius: '6px', margin: '1.5rem 0', cursor: 'crosshair' }}
+        style={{ background: '#090909', border: '1px solid rgba(255,180,0,0.15)', borderRadius: '6px', margin: '1.5rem 0', cursor: 'crosshair', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
       >
+        <style>{`
+          @keyframes glowPulse {
+            0%, 100% { filter: drop-shadow(0 0 2px rgba(255,180,0,0.4)); opacity: 0.8; }
+            50% { filter: drop-shadow(0 0 10px rgba(255,180,0,0.9)); opacity: 1; }
+          }
+          .active-node-glow { animation: glowPulse 2s infinite ease-in-out; }
+        `}</style>
         {/* Background Grid Lines */}
-        <g stroke="rgba(245,245,245,0.02)" strokeWidth="1">
+        <g stroke="rgba(255,180,0,0.03)" strokeWidth="0.5">
+          <line x1="0" y1="20" x2="400" y2="20" />
           <line x1="0" y1="40" x2="400" y2="40" />
+          <line x1="0" y1="65" x2="400" y2="65" />
           <line x1="0" y1="90" x2="400" y2="90" />
+          <line x1="0" y1="115" x2="400" y2="115" />
           <line x1="0" y1="140" x2="400" y2="140" />
+          <line x1="50" y1="0" x2="50" y2="180" />
+          <line x1="100" y1="0" x2="100" y2="180" />
+          <line x1="150" y1="0" x2="150" y2="180" />
+          <line x1="200" y1="0" x2="200" y2="180" />
+          <line x1="250" y1="0" x2="250" y2="180" />
+          <line x1="300" y1="0" x2="300" y2="180" />
+          <line x1="350" y1="0" x2="350" y2="180" />
         </g>
+        
+        {/* Layer markers */}
+        <text x="390" y="43" fill="rgba(255,180,0,0.15)" fontFamily="monospace" fontSize="5.5" textAnchor="end">LAYER_2 (COARSE)</text>
+        <text x="390" y="93" fill="rgba(255,180,0,0.15)" fontFamily="monospace" fontSize="5.5" textAnchor="end">LAYER_1 (INTER)</text>
+        <text x="390" y="143" fill="rgba(255,180,0,0.15)" fontFamily="monospace" fontSize="5.5" textAnchor="end">LAYER_0 (FINE)</text>
 
         {/* Graph Connections */}
         <g stroke="rgba(245, 245, 245, 0.05)" strokeWidth="1">
@@ -335,63 +357,58 @@ function ProjectSchematic({ id }: { id: string }) {
           <line x1="330" y1="90" x2="350" y2="140" />
 
           {/* Peer connection horizontal lines */}
-          <line x1="100" y1="40" x2="300" y2="40" strokeDasharray="3" />
-          <line x1="70" y1="90" x2="200" y2="90" strokeDasharray="3" />
-          <line x1="200" y1="90" x2="330" y2="90" strokeDasharray="3" />
-          <line x1="50" y1="140" x2="150" y2="140" strokeDasharray="2" />
-          <line x1="150" y1="140" x2="250" y2="140" strokeDasharray="2" />
-          <line x1="250" y1="140" x2="350" y2="140" strokeDasharray="2" />
+          <line x1="100" y1="40" x2="300" y2="40" strokeDasharray="4" />
+          <line x1="70" y1="90" x2="200" y2="90" strokeDasharray="4" />
+          <line x1="200" y1="90" x2="330" y2="90" strokeDasharray="4" />
         </g>
 
         {/* Dynamic Traversal Highlight Paths */}
         {mousePos && (
-          <g stroke="var(--accent-amber, #ffb400)" strokeWidth="2" fill="none" style={{ filter: 'drop-shadow(0 0 3px rgba(255,180,0,0.4))' }}>
-            {/* E to H highlight */}
-            <line x1={activeE.x} y1={activeE.y} x2={activeH.x} y2={activeH.y} />
-            {/* H to G highlight */}
-            <line x1={activeH.x} y1={activeH.y} x2={activeG.x} y2={activeG.y} />
+          <g stroke="var(--accent-amber, #ffb400)" strokeWidth="1.5" fill="none">
+            <line x1={activeE.x} y1={activeE.y} x2={activeH.x} y2={activeH.y} style={{ filter: 'drop-shadow(0 0 4px rgba(255,180,0,0.6))' }} />
+            <line x1={activeH.x} y1={activeH.y} x2={activeG.x} y2={activeG.y} style={{ filter: 'drop-shadow(0 0 4px rgba(255,180,0,0.6))' }} />
           </g>
         )}
 
         {/* Nodes */}
-        {/* Layer 0 (Entry) */}
-        <circle cx="100" cy="40" r="6" fill={activeE.label === 'E1' ? 'var(--accent-amber, #ffb400)' : '#333'} stroke="#121212" strokeWidth="1.5" />
-        <circle cx="300" cy="40" r="6" fill={activeE.label === 'E2' ? 'var(--accent-amber, #ffb400)' : '#333'} stroke="#121212" strokeWidth="1.5" />
+        {/* Layer 2 (Entry) */}
+        <circle cx="100" cy="40" r="7" fill={activeE.label === 'E1' ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke={activeE.label === 'E1' ? '#ffb400' : 'rgba(255,255,255,0.1)'} strokeWidth="1" className={activeE.label === 'E1' ? 'active-node-glow' : ''} />
+        <circle cx="300" cy="40" r="7" fill={activeE.label === 'E2' ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke={activeE.label === 'E2' ? '#ffb400' : 'rgba(255,255,255,0.1)'} strokeWidth="1" className={activeE.label === 'E2' ? 'active-node-glow' : ''} />
 
         {/* Layer 1 */}
-        <circle cx="70" cy="90" r="5" fill={activeH.label === 'H1' ? 'var(--accent-amber, #ffb400)' : '#444'} stroke="#121212" strokeWidth="1.5" />
-        <circle cx="200" cy="90" r="5" fill={activeH.label === 'H2' ? 'var(--accent-amber, #ffb400)' : '#444'} stroke="#121212" strokeWidth="1.5" />
-        <circle cx="330" cy="90" r="5" fill={activeH.label === 'H3' ? 'var(--accent-amber, #ffb400)' : '#444'} stroke="#121212" strokeWidth="1.5" />
+        <circle cx="70" cy="90" r="6" fill={activeH.label === 'H1' ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke={activeH.label === 'H1' ? '#ffb400' : 'rgba(255,255,255,0.1)'} strokeWidth="1" className={activeH.label === 'H1' ? 'active-node-glow' : ''} />
+        <circle cx="200" cy="90" r="6" fill={activeH.label === 'H2' ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke={activeH.label === 'H2' ? '#ffb400' : 'rgba(255,255,255,0.1)'} strokeWidth="1" className={activeH.label === 'H2' ? 'active-node-glow' : ''} />
+        <circle cx="330" cy="90" r="6" fill={activeH.label === 'H3' ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke={activeH.label === 'H3' ? '#ffb400' : 'rgba(255,255,255,0.1)'} strokeWidth="1" className={activeH.label === 'H3' ? 'active-node-glow' : ''} />
 
-        {/* Layer 2 */}
-        <circle cx="50" cy="140" r="4.5" fill={activeG.id === 1 ? 'var(--accent-amber, #ffb400)' : '#555'} stroke="#121212" strokeWidth="1" />
-        <circle cx="150" cy="140" r="4.5" fill={activeG.id === 2 ? 'var(--accent-amber, #ffb400)' : '#555'} stroke="#121212" strokeWidth="1" />
-        <circle cx="250" cy="140" r="4.5" fill={activeG.id === 3 ? 'var(--accent-amber, #ffb400)' : '#555'} stroke="#121212" strokeWidth="1" />
-        <circle cx="350" cy="140" r="4.5" fill={activeG.id === 4 ? 'var(--accent-amber, #ffb400)' : '#555'} stroke="#121212" strokeWidth="1" />
+        {/* Layer 0 */}
+        <circle cx="50" cy="140" r="5" fill={activeG.id === 1 ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke={activeG.id === 1 ? '#ffb400' : 'rgba(255,255,255,0.1)'} strokeWidth="1" className={activeG.id === 1 ? 'active-node-glow' : ''} />
+        <circle cx="150" cy="140" r="5" fill={activeG.id === 2 ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke={activeG.id === 2 ? '#ffb400' : 'rgba(255,255,255,0.1)'} strokeWidth="1" className={activeG.id === 2 ? 'active-node-glow' : ''} />
+        <circle cx="250" cy="140" r="5" fill={activeG.id === 3 ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke={activeG.id === 3 ? '#ffb400' : 'rgba(255,255,255,0.1)'} strokeWidth="1" className={activeG.id === 3 ? 'active-node-glow' : ''} />
+        <circle cx="350" cy="140" r="5" fill={activeG.id === 4 ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke={activeG.id === 4 ? '#ffb400' : 'rgba(255,255,255,0.1)'} strokeWidth="1" className={activeG.id === 4 ? 'active-node-glow' : ''} />
 
         {/* Target Cursor Tracking Dot */}
         {mousePos && (
           <g>
-            <line x1={mousePos.x} y1="0" x2={mousePos.x} y2="180" stroke="rgba(255,180,0,0.15)" strokeWidth="0.5" strokeDasharray="2" />
-            <line x1="0" y1={mousePos.y} x2="400" y2={mousePos.y} stroke="rgba(255,180,0,0.15)" strokeWidth="0.5" strokeDasharray="2" />
+            <line x1={mousePos.x} y1="0" x2={mousePos.x} y2="180" stroke="rgba(255,180,0,0.18)" strokeWidth="0.75" strokeDasharray="3 3" />
+            <line x1="0" y1={mousePos.y} x2="400" y2={mousePos.y} stroke="rgba(255,180,0,0.18)" strokeWidth="0.75" strokeDasharray="3 3" />
             <circle cx={mousePos.x} cy={mousePos.y} r="3" fill="#ffffff" style={{ filter: 'drop-shadow(0 0 5px #fff)' }} />
           </g>
         )}
 
         {/* Titles / Legends */}
-        <text x="15" y="20" fill="rgba(255,180,0,0.4)" fontFamily="monospace" fontSize="8">HNSW LAYERED SEARCH TOPOLOGY [MOVE CURSOR]</text>
-        <text x="385" y="20" fill="rgba(245,245,245,0.2)" fontFamily="monospace" fontSize="7" textAnchor="end">NURO_INDEX: ACTIVE</text>
+        <text x="15" y="22" fill="rgba(255,180,0,0.45)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="8" letterSpacing="0.05em">HNSW INDEX TRAVERSAL CONSOLE [MOVE CURSOR]</text>
+        <text x="385" y="22" fill="rgba(245,245,245,0.2)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7" textAnchor="end">NURO_INDEX: ACTIVE</text>
         
         {/* Dynamic Log Footer */}
-        <rect x="0" y="160" width="400" height="20" fill="#0c0c0c" opacity="0.9" />
-        <line x1="0" y1="160" x2="400" y2="160" stroke="rgba(255,255,255,0.03)" />
+        <rect x="0" y="160" width="400" height="20" fill="#050505" opacity="0.95" />
+        <line x1="0" y1="160" x2="400" y2="160" stroke="rgba(255,255,255,0.05)" />
         {mousePos ? (
-          <text x="15" y="172" fill="var(--accent-amber, #ffb400)" fontFamily="monospace" fontSize="6.8">
-            SEARCH_VEC: [{Math.round(mousePos.x)}, {Math.round(mousePos.y)}] // PATH: {activeE.label}➔{activeH.label}➔{activeG.label} // COS_SIM: {sim.toFixed(4)}
+          <text x="15" y="173" fill="var(--accent-amber, #ffb400)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7">
+            SEARCH_VEC: [{Math.round(mousePos.x)}, {Math.round(mousePos.y)}] // PATH: {activeE.label} ➔ {activeH.label} ➔ {activeG.label} // SIMILARITY: {sim.toFixed(4)}
           </text>
         ) : (
-          <text x="15" y="172" fill="rgba(245,245,245,0.3)" fontFamily="monospace" fontSize="6.8">
-            HOVER GRAPH TO INITIATE COARSE-TO-FINE VECTOR TRAVERSAL
+          <text x="15" y="173" fill="rgba(245,245,245,0.4)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7">
+            HOVER GRAPH TO RUN NEAREST-NEIGHBOR HNSW INDEXING
           </text>
         )}
       </svg>
@@ -403,38 +420,56 @@ function ProjectSchematic({ id }: { id: string }) {
         width="100%" 
         height="180" 
         viewBox="0 0 400 180" 
-        style={{ background: '#121212', border: '1px solid rgba(255,180,0,0.1)', borderRadius: '6px', margin: '1.5rem 0' }}
+        style={{ background: '#090909', border: '1px solid rgba(239,68,68,0.15)', borderRadius: '6px', margin: '1.5rem 0', overflow: 'hidden' }}
       >
-        {/* Base UI boxes */}
-        <g stroke="rgba(255,180,0,0.15)" strokeWidth="1" fill="none">
-          <rect x="20" y="50" width="80" height="40" rx="4" fill="#151515" />
-          <rect x="150" y="50" width="100" height="40" rx="4" fill="#151515" />
-          <rect x="300" y="50" width="80" height="40" rx="4" fill="#151515" />
-          <path d="M 100 70 L 150 70" stroke="#ffb400" strokeWidth="1" />
-          <path d="M 250 70 L 300 70" stroke="#ffb400" strokeWidth="1" />
+        <style>{`
+          @keyframes pulseDpiNode { 0%, 100% { fill: rgba(239,68,68,0.08); stroke: rgba(239,68,68,0.3); } 50% { fill: rgba(239,68,68,0.2); stroke: rgba(239,68,68,0.85); } }
+          @keyframes packetDash { to { stroke-dashoffset: -20; } }
+          .queue-node { animation: pulseDpiNode 2s infinite ease-in-out; }
+          .dpi-stream-dash { stroke-dasharray: 6 3; animation: packetDash 0.8s linear infinite; }
+        `}</style>
+        {/* Technical grid */}
+        <g stroke="rgba(239,68,68,0.02)" strokeWidth="0.5">
+          <line x1="0" y1="40" x2="400" y2="40" />
+          <line x1="0" y1="80" x2="400" y2="80" />
+          <line x1="0" y1="120" x2="400" y2="120" />
+          <line x1="100" y1="0" x2="100" y2="180" />
+          <line x1="200" y1="0" x2="200" y2="180" />
+          <line x1="300" y1="0" x2="300" y2="180" />
         </g>
 
+        {/* Base UI boxes */}
+        <g stroke="rgba(239,68,68,0.2)" strokeWidth="1" fill="rgba(239,68,68,0.01)">
+          <rect x="25" y="45" width="70" height="35" rx="3" />
+          <rect x="155" y="45" width="90" height="35" rx="3" className="queue-node" />
+          <rect x="305" y="45" width="70" height="35" rx="3" />
+        </g>
+        
+        {/* Connection streams */}
+        <path d="M 95 62 L 155 62" stroke="#ef4444" strokeWidth="1.5" className="dpi-stream-dash" />
+        <path d="M 245 62 L 305 62" stroke="#ef4444" strokeWidth="1.5" className="dpi-stream-dash" />
+
         {/* Labels inside boxes */}
-        <text x="60" y="74" fill="#f5f5f5" fontFamily="monospace" fontSize="8.5" fontWeight="bold" textAnchor="middle">libpcap</text>
-        <text x="200" y="74" fill="var(--accent-amber, #ffb400)" fontFamily="monospace" fontSize="8.5" fontWeight="bold" textAnchor="middle">parser-queue</text>
-        <text x="340" y="74" fill="#f5f5f5" fontFamily="monospace" fontSize="8.5" fontWeight="bold" textAnchor="middle">TLS SNI</text>
+        <text x="60" y="66" fill="#f5f5f5" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="8.5" fontWeight="bold" textAnchor="middle">LIBPCAP</text>
+        <text x="200" y="66" fill="#ef4444" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="8" fontWeight="bold" textAnchor="middle">RING_BUFFER</text>
+        <text x="340" y="66" fill="#f5f5f5" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="8.5" fontWeight="bold" textAnchor="middle">TLS_SNI</text>
 
         {/* Render animated packet dots */}
         {packets.map((p) => {
           let px = 60;
           if (p.progress < 50) {
-            px = 60 + (p.progress / 50) * 140;
+            px = 60 + (p.progress / 50) * 95;
           } else {
-            px = 200 + ((p.progress - 50) / 50) * 140;
+            px = 155 + ((p.progress - 50) / 50) * 150;
           }
           return (
             <circle
               key={p.id}
               cx={px}
-              cy="70"
+              cy="62"
               r="4.5"
-              fill={p.type === 'TLS' ? 'var(--accent-amber, #ffb400)' : '#f5f5f5'}
-              style={{ filter: 'drop-shadow(0 0 3px var(--accent-amber, #ffb400))' }}
+              fill={p.type === 'TLS' ? '#ef4444' : '#f5f5f5'}
+              style={{ filter: 'drop-shadow(0 0 4px #ef4444)' }}
             />
           );
         })}
@@ -444,21 +479,21 @@ function ProjectSchematic({ id }: { id: string }) {
           onClick={handleInjectPacket}
           style={{ cursor: 'pointer' }}
         >
-          <rect x="140" y="105" width="120" height="22" rx="3" fill="#181818" stroke="var(--accent-amber, #ffb400)" strokeWidth="1" style={{ transition: 'all 0.2s ease' }} />
-          <text x="200" y="119" fill="var(--accent-amber, #ffb400)" fontFamily="monospace" fontSize="8" fontWeight="bold" textAnchor="middle">[ INJECT PACKET ]</text>
+          <rect x="140" y="98" width="120" height="22" rx="3" fill="#111" stroke="#ef4444" strokeWidth="1" />
+          <text x="200" y="112" fill="#ef4444" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="8" fontWeight="bold" textAnchor="middle">[ INJECT PACKET ]</text>
         </g>
 
         {/* Console Log Feed */}
-        <rect x="20" y="137" width="360" height="34" fill="#080808" stroke="rgba(245,245,245,0.03)" rx="2" />
-        <text x="30" y="148" fill="rgba(245,245,245,0.3)" fontFamily="monospace" fontSize="6.5">
+        <rect x="25" y="132" width="350" height="36" fill="#050505" stroke="rgba(239,68,68,0.06)" rx="2" />
+        <text x="35" y="144" fill="rgba(245,245,245,0.3)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7">
           {dpiLogs[1]}
         </text>
-        <text x="30" y="160" fill="var(--accent-amber, #ffb400)" fontFamily="monospace" fontSize="6.5">
+        <text x="35" y="157" fill="#ef4444" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7" fontWeight="bold">
           {dpiLogs[0]}
         </text>
 
-        <text x="15" y="20" fill="rgba(255,180,0,0.4)" fontFamily="monospace" fontSize="8">DPI STREAM INGESTION FLOW</text>
-        <text x="385" y="20" fill="rgba(245,245,245,0.25)" fontFamily="monospace" fontSize="7" textAnchor="end">STATUS: CAPTURING</text>
+        <text x="15" y="22" fill="rgba(239,68,68,0.4)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="8">DPI PACKET PARSING CORE [CLICK INJECT]</text>
+        <text x="385" y="22" fill="rgba(245,245,245,0.25)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7" textAnchor="end">CAPTURING</text>
       </svg>
     );
   }
@@ -468,15 +503,22 @@ function ProjectSchematic({ id }: { id: string }) {
         width="100%" 
         height="180" 
         viewBox="0 0 400 180" 
-        style={{ background: '#121212', border: '1px solid rgba(255,180,0,0.1)', borderRadius: '6px', margin: '1.5rem 0' }}
+        style={{ background: '#090909', border: '1px solid rgba(88,196,220,0.15)', borderRadius: '6px', margin: '1.5rem 0', overflow: 'hidden' }}
       >
+        <style>{`
+          @keyframes glowCyanCard {
+            0%, 100% { filter: drop-shadow(0 0 2px rgba(88,196,220,0.2)); }
+            50% { filter: drop-shadow(0 0 10px rgba(88,196,220,0.6)); }
+          }
+          .cyan-card-glow { animation: glowCyanCard 2s infinite ease-in-out; }
+        `}</style>
         {/* Search header container */}
-        <rect x="20" y="35" width="360" height="18" rx="2" fill="#181818" stroke="rgba(245,245,245,0.05)" />
-        <text x="32" y="46" fill={hoveredCard ? '#f5f5f5' : 'rgba(245,245,245,0.25)'} fontFamily="monospace" fontSize="7" style={{ transition: 'color 0.3s ease' }}>
-          {hoveredCard === 'left' && 'SEARCH MATCH: "SPIDERMAN: INTO THE MULTIVERSE" (2018)'}
-          {hoveredCard === 'middle' && 'SEARCH MATCH: "ATTACK ON TITAN: SEASON 4" (2020)'}
-          {hoveredCard === 'right' && 'SEARCH MATCH: "THE DARK KNIGHT" (2008)'}
-          {!hoveredCard && 'HOVER CARDS BELOW TO RUN DISCOVERY PIPELINE...'}
+        <rect x="20" y="35" width="360" height="18" rx="2" fill="#111" stroke="rgba(88,196,220,0.1)" />
+        <text x="32" y="46" fill={hoveredCard ? '#58c4dc' : 'rgba(245,245,245,0.3)'} fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7.5" style={{ transition: 'color 0.3s ease', fontWeight: hoveredCard ? 'bold' : 'normal' }}>
+          {hoveredCard === 'left' && 'MATCH: "SPIDERMAN: INTO THE MULTIVERSE" (REDIS_CACHE)'}
+          {hoveredCard === 'middle' && 'MATCH: "ATTACK ON TITAN: SEASON 4" (JIKAN_API_FETCH)'}
+          {hoveredCard === 'right' && 'MATCH: "THE DARK KNIGHT" (TMDB_V3_DB)'}
+          {!hoveredCard && 'HOVER DISCOVERY CARDS FOR MEDIA GRAPH FETCH...'}
         </text>
 
         {/* 3 Grid Cards */}
@@ -488,18 +530,20 @@ function ProjectSchematic({ id }: { id: string }) {
           >
             <rect 
               x="20" y="62" width="105" height="85" rx="4" 
-              fill={hoveredCard === 'left' ? 'rgba(255,180,0,0.03)' : '#151515'} 
-              stroke={hoveredCard === 'left' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.06)'} 
+              fill={hoveredCard === 'left' ? 'rgba(88,196,220,0.03)' : '#111'} 
+              stroke={hoveredCard === 'left' ? '#58c4dc' : 'rgba(245,245,245,0.06)'} 
               strokeWidth="1"
               style={{ transition: 'all 0.3s ease' }}
+              className={hoveredCard === 'left' ? 'cyan-card-glow' : ''}
             />
-            {/* Play Button inside card */}
+            {/* Draw movie graphic sketch */}
+            <rect x="35" y="75" width="75" height="40" fill="none" stroke={hoveredCard === 'left' ? 'rgba(88,196,220,0.3)' : 'rgba(245,245,245,0.08)'} strokeWidth="1" />
             <polygon 
-              points="67,98 67,112 79,105" 
-              fill={hoveredCard === 'left' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.2)'} 
+              points="67,88 67,102 79,95" 
+              fill={hoveredCard === 'left' ? '#58c4dc' : 'rgba(245,245,245,0.2)'} 
               style={{ transition: 'fill 0.3s ease' }}
             />
-            <text x="72" y="80" fill={hoveredCard === 'left' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.4)'} fontFamily="monospace" fontSize="7" textAnchor="middle" style={{ transition: 'color 0.3s ease' }}>01 / SCI-FI</text>
+            <text x="72" y="132" fill={hoveredCard === 'left' ? '#58c4dc' : 'rgba(245,245,245,0.4)'} fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7" textAnchor="middle" style={{ transition: 'color 0.3s ease' }}>01 / SCI-FI</text>
           </g>
 
           {/* Card Middle */}
@@ -509,17 +553,19 @@ function ProjectSchematic({ id }: { id: string }) {
           >
             <rect 
               x="147" y="62" width="105" height="85" rx="4" 
-              fill={hoveredCard === 'middle' ? 'rgba(255,180,0,0.03)' : '#151515'} 
-              stroke={hoveredCard === 'middle' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.06)'} 
+              fill={hoveredCard === 'middle' ? 'rgba(88,196,220,0.03)' : '#111'} 
+              stroke={hoveredCard === 'middle' ? '#58c4dc' : 'rgba(245,245,245,0.06)'} 
               strokeWidth="1"
               style={{ transition: 'all 0.3s ease' }}
+              className={hoveredCard === 'middle' ? 'cyan-card-glow' : ''}
             />
+            <rect x="162" y="75" width="75" height="40" fill="none" stroke={hoveredCard === 'middle' ? 'rgba(88,196,220,0.3)' : 'rgba(245,245,245,0.08)'} strokeWidth="1" />
             <polygon 
-              points="194,98 194,112 206,105" 
-              fill={hoveredCard === 'middle' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.2)'} 
+              points="194,88 194,102 206,95" 
+              fill={hoveredCard === 'middle' ? '#58c4dc' : 'rgba(245,245,245,0.2)'} 
               style={{ transition: 'fill 0.3s ease' }}
             />
-            <text x="200" y="80" fill={hoveredCard === 'middle' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.4)'} fontFamily="monospace" fontSize="7" textAnchor="middle" style={{ transition: 'color 0.3s ease' }}>02 / ANIME</text>
+            <text x="200" y="132" fill={hoveredCard === 'middle' ? '#58c4dc' : 'rgba(245,245,245,0.4)'} fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7" textAnchor="middle" style={{ transition: 'color 0.3s ease' }}>02 / ANIME</text>
           </g>
 
           {/* Card Right */}
@@ -529,31 +575,33 @@ function ProjectSchematic({ id }: { id: string }) {
           >
             <rect 
               x="275" y="62" width="105" height="85" rx="4" 
-              fill={hoveredCard === 'right' ? 'rgba(255,180,0,0.03)' : '#151515'} 
-              stroke={hoveredCard === 'right' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.06)'} 
+              fill={hoveredCard === 'right' ? 'rgba(88,196,220,0.03)' : '#111'} 
+              stroke={hoveredCard === 'right' ? '#58c4dc' : 'rgba(245,245,245,0.06)'} 
               strokeWidth="1"
               style={{ transition: 'all 0.3s ease' }}
+              className={hoveredCard === 'right' ? 'cyan-card-glow' : ''}
             />
+            <rect x="290" y="75" width="75" height="40" fill="none" stroke={hoveredCard === 'right' ? 'rgba(88,196,220,0.3)' : 'rgba(245,245,245,0.08)'} strokeWidth="1" />
             <polygon 
-              points="322,98 322,112 334,105" 
-              fill={hoveredCard === 'right' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.2)'} 
+              points="322,88 322,102 334,95" 
+              fill={hoveredCard === 'right' ? '#58c4dc' : 'rgba(245,245,245,0.2)'} 
               style={{ transition: 'fill 0.3s ease' }}
             />
-            <text x="327" y="80" fill={hoveredCard === 'right' ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.4)'} fontFamily="monospace" fontSize="7" textAnchor="middle" style={{ transition: 'color 0.3s ease' }}>03 / ACTION</text>
+            <text x="327" y="132" fill={hoveredCard === 'right' ? '#58c4dc' : 'rgba(245,245,245,0.4)'} fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7" textAnchor="middle" style={{ transition: 'color 0.3s ease' }}>03 / ACTION</text>
           </g>
         </g>
 
         {/* Footer log */}
-        <rect x="0" y="160" width="400" height="20" fill="#0c0c0c" />
-        <line x1="0" y1="160" x2="400" y2="160" stroke="rgba(255,255,255,0.03)" />
-        <text x="15" y="172" fill={hoveredCard ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.3)'} fontFamily="monospace" fontSize="6.8">
-          {hoveredCard === 'left' && 'API_DISCOVERY: JIKAN_V4 & TMDB_V3 FETCH // SCORE: 9.1 // RESP: 142ms'}
-          {hoveredCard === 'middle' && 'API_DISCOVERY: JIKAN_V4 & TMDB_V3 FETCH // SCORE: 9.5 // RESP: 189ms'}
-          {hoveredCard === 'right' && 'API_DISCOVERY: JIKAN_V4 & TMDB_V3 FETCH // SCORE: 9.0 // RESP: 110ms'}
-          {!hoveredCard && 'DISCOVERY_ROUTING: LISTENER ONLINE // REDIS CACHE: INLINE'}
+        <rect x="0" y="160" width="400" height="20" fill="#050505" />
+        <line x1="0" y1="160" x2="400" y2="160" stroke="rgba(255,255,255,0.05)" />
+        <text x="15" y="173" fill={hoveredCard ? '#58c4dc' : 'rgba(245,245,245,0.4)'} fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7">
+          {hoveredCard === 'left' && 'API_DISCOVERY: REDIS_CACHE HIT // LATENCY: 3ms // STATS: CACHE_HEALTH_100%'}
+          {hoveredCard === 'middle' && 'API_DISCOVERY: JIKAN_V4 ROUTE // LATENCY: 220ms // REST_PAYLOAD: 42KB'}
+          {hoveredCard === 'right' && 'API_DISCOVERY: TMDB_V3 ROUTE // LATENCY: 140ms // MATCH_CONFIDENCE: 98%'}
+          {!hoveredCard && 'DISCOVERY_ROUTING: SERVICE LISTENING // REDIS KEY_SPACER: STANDBY'}
         </text>
 
-        <text x="15" y="20" fill="rgba(255,180,0,0.4)" fontFamily="monospace" fontSize="8">IMMERSIVE MEDIA CATALOG GRID</text>
+        <text x="15" y="22" fill="rgba(88,196,220,0.4)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="8">IMMERSIVE MEDIA CATALOG GATEWAY [HOVER CARDS]</text>
       </svg>
     );
   }
@@ -563,26 +611,42 @@ function ProjectSchematic({ id }: { id: string }) {
         width="100%" 
         height="180" 
         viewBox="0 0 400 180" 
-        style={{ background: '#121212', border: '1px solid rgba(255,180,0,0.1)', borderRadius: '6px', margin: '1.5rem 0' }}
+        style={{ background: '#090909', border: '1px solid rgba(16,185,129,0.15)', borderRadius: '6px', margin: '1.5rem 0', overflow: 'hidden' }}
       >
+        <style>{`
+          @keyframes chartPulse { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.35; } }
+          .chart-area { animation: chartPulse 3s infinite ease-in-out; }
+        `}</style>
         {/* Graph grids */}
-        <g stroke="rgba(245,245,245,0.02)" strokeWidth="1">
+        <g stroke="rgba(16,185,129,0.02)" strokeWidth="0.5">
           <line x1="40" y1="40" x2="360" y2="40" />
           <line x1="40" y1="80" x2="360" y2="80" />
           <line x1="40" y1="120" x2="360" y2="120" />
+          <line x1="120" y1="20" x2="120" y2="140" />
+          <line x1="200" y1="20" x2="200" y2="140" />
+          <line x1="280" y1="20" x2="280" y2="140" />
         </g>
         <line x1="40" y1="20" x2="40" y2="140" stroke="rgba(245,245,245,0.15)" strokeWidth="1" />
         <line x1="40" y1="140" x2="370" y2="140" stroke="rgba(245,245,245,0.15)" strokeWidth="1" />
 
-        {/* Dynamic path curve */}
+        {/* Dynamic paths and Area Under Curves */}
         {activeMode === 'SAVE' && (
-          <path d="M 40 130 L 100 115 L 180 100 L 260 88 L 340 75" fill="none" stroke="var(--accent-amber, #ffb400)" strokeWidth="2.5" style={{ transition: 'all 0.5s ease' }} />
+          <>
+            <path d="M 40 130 L 100 115 L 180 100 L 260 88 L 340 75 L 340 140 L 40 140 Z" fill="rgba(16,185,129,0.03)" className="chart-area" />
+            <path d="M 40 130 L 100 115 L 180 100 L 260 88 L 340 75" fill="none" stroke="#10b981" strokeWidth="2.5" style={{ transition: 'all 0.5s ease' }} />
+          </>
         )}
         {activeMode === 'BALANCE' && (
-          <path d="M 40 130 Q 90 110 140 90 T 240 60 T 340 30" fill="none" stroke="var(--accent-amber, #ffb400)" strokeWidth="2.5" style={{ transition: 'all 0.5s ease' }} />
+          <>
+            <path d="M 40 130 Q 90 110 140 90 T 240 60 T 340 30 L 340 140 L 40 140 Z" fill="rgba(16,185,129,0.03)" className="chart-area" />
+            <path d="M 40 130 Q 90 110 140 90 T 240 60 T 340 30" fill="none" stroke="#10b981" strokeWidth="2.5" style={{ transition: 'all 0.5s ease' }} />
+          </>
         )}
         {activeMode === 'INVEST' && (
-          <path d="M 40 130 Q 90 125 140 120 T 240 70 T 340 15" fill="none" stroke="var(--accent-amber, #ffb400)" strokeWidth="2.5" style={{ transition: 'all 0.5s ease' }} />
+          <>
+            <path d="M 40 130 Q 90 125 140 120 T 240 70 T 340 15 L 340 140 L 40 140 Z" fill="rgba(16,185,129,0.03)" className="chart-area" />
+            <path d="M 40 130 Q 90 125 140 120 T 240 70 T 340 15" fill="none" stroke="#10b981" strokeWidth="2.5" style={{ transition: 'all 0.5s ease' }} />
+          </>
         )}
 
         {/* Target end circle */}
@@ -590,39 +654,39 @@ function ProjectSchematic({ id }: { id: string }) {
           cx="340" 
           cy={activeMode === 'SAVE' ? 75 : activeMode === 'BALANCE' ? 30 : 15} 
           r="4.5" 
-          fill="var(--accent-amber, #ffb400)" 
-          style={{ filter: 'drop-shadow(0 0 4px var(--accent-amber, #ffb400))', transition: 'cy 0.5s ease' }} 
+          fill="#10b981" 
+          style={{ filter: 'drop-shadow(0 0 5px #10b981)', transition: 'cy 0.5s ease' }} 
         />
 
         {/* Interactive Mode Switches */}
         <g style={{ cursor: 'pointer' }}>
           {/* SAVE */}
           <g onClick={(e) => { e.stopPropagation(); setActiveMode('SAVE'); }}>
-            <rect x="75" y="148" width="65" height="18" rx="2" fill={activeMode === 'SAVE' ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke="rgba(255,180,0,0.2)" strokeWidth="0.5" />
-            <text x="107.5" y="160" fill={activeMode === 'SAVE' ? '#0a0a0a' : 'rgba(245,245,245,0.5)'} fontFamily="monospace" fontSize="7.5" fontWeight="bold" textAnchor="middle">SAVINGS</text>
+            <rect x="75" y="148" width="65" height="18" rx="2" fill={activeMode === 'SAVE' ? '#10b981' : '#111'} stroke="rgba(16,185,129,0.2)" strokeWidth="0.5" />
+            <text x="107.5" y="160" fill={activeMode === 'SAVE' ? '#0a0a0a' : 'rgba(245,245,245,0.5)'} fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7.5" fontWeight="bold" textAnchor="middle">SAVINGS</text>
           </g>
 
           {/* BALANCE */}
           <g onClick={(e) => { e.stopPropagation(); setActiveMode('BALANCE'); }}>
-            <rect x="155" y="148" width="75" height="18" rx="2" fill={activeMode === 'BALANCE' ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke="rgba(255,180,0,0.2)" strokeWidth="0.5" />
-            <text x="192.5" y="160" fill={activeMode === 'BALANCE' ? '#0a0a0a' : 'rgba(245,245,245,0.5)'} fontFamily="monospace" fontSize="7.5" fontWeight="bold" textAnchor="middle">BALANCED</text>
+            <rect x="155" y="148" width="75" height="18" rx="2" fill={activeMode === 'BALANCE' ? '#10b981' : '#111'} stroke="rgba(16,185,129,0.2)" strokeWidth="0.5" />
+            <text x="192.5" y="160" fill={activeMode === 'BALANCE' ? '#0a0a0a' : 'rgba(245,245,245,0.5)'} fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7.5" fontWeight="bold" textAnchor="middle">BALANCED</text>
           </g>
 
           {/* INVEST */}
           <g onClick={(e) => { e.stopPropagation(); setActiveMode('INVEST'); }}>
-            <rect x="245" y="148" width="75" height="18" rx="2" fill={activeMode === 'INVEST' ? 'var(--accent-amber, #ffb400)' : '#181818'} stroke="rgba(255,180,0,0.2)" strokeWidth="0.5" />
-            <text x="282.5" y="160" fill={activeMode === 'INVEST' ? '#0a0a0a' : 'rgba(245,245,245,0.5)'} fontFamily="monospace" fontSize="7.5" fontWeight="bold" textAnchor="middle">AGGRESSIVE</text>
+            <rect x="245" y="148" width="75" height="18" rx="2" fill={activeMode === 'INVEST' ? '#10b981' : '#111'} stroke="rgba(16,185,129,0.2)" strokeWidth="0.5" />
+            <text x="282.5" y="160" fill={activeMode === 'INVEST' ? '#0a0a0a' : 'rgba(245,245,245,0.5)'} fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7.5" fontWeight="bold" textAnchor="middle">AGGRESSIVE</text>
           </g>
         </g>
 
-        <text x="15" y="20" fill="rgba(255,180,0,0.4)" fontFamily="monospace" fontSize="8">WEALTH GROWTH RATE PREVIEW</text>
-        <text x="345" y="25" fill="#ffb400" fontFamily="monospace" fontSize="7">GROWTH</text>
+        <text x="15" y="22" fill="rgba(16,185,129,0.45)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="8">WEALTH COMPOUND GROWTH PREVIEW [CLICK PRESETS]</text>
+        <text x="345" y="25" fill="#10b981" fontFamily="var(--font-bebas-neue, sans-serif)" fontSize="9" letterSpacing="0.05em">GROWTH</text>
 
         {/* Dynamic parameters footer */}
-        <text x="15" y="132" fill="rgba(245,245,245,0.25)" fontFamily="monospace" fontSize="6.5">
-          {activeMode === 'SAVE' && 'PLAN: SAFE SAVINGS // GROWTH APY: +4.5% // STABILITY: 100%'}
-          {activeMode === 'BALANCE' && 'PLAN: EQUITIES & SAVINGS // GROWTH APY: +8.2% // STABILITY: 70%'}
-          {activeMode === 'INVEST' && 'PLAN: ALPHA STOCKS & VECTOR ASSETS // GROWTH APY: +22.4% // STABILITY: 30%'}
+        <text x="15" y="132" fill="rgba(245,245,245,0.4)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7">
+          {activeMode === 'SAVE' && 'STRATEGY: LIQUID ASSETS // YIELD APY: +4.8% // RISK PROFILE: LOW'}
+          {activeMode === 'BALANCE' && 'STRATEGY: EQUITIES INDEX & CASH // YIELD APY: +8.5% // RISK PROFILE: MODERATE'}
+          {activeMode === 'INVEST' && 'STRATEGY: ALPHA STOCKS & HIGH-MUTABLE DBs // YIELD APY: +24.6% // RISK PROFILE: HIGH'}
         </text>
       </svg>
     );
@@ -633,22 +697,39 @@ function ProjectSchematic({ id }: { id: string }) {
         width="100%" 
         height="180" 
         viewBox="0 0 400 180" 
-        style={{ background: '#121212', border: '1px solid rgba(255,180,0,0.1)', borderRadius: '6px', margin: '1.5rem 0' }}
+        style={{ background: '#090909', border: '1px solid rgba(129,140,248,0.15)', borderRadius: '6px', margin: '1.5rem 0', overflow: 'hidden' }}
       >
+        <style>{`
+          @keyframes prFlowPulse {
+            0% { stroke-dashoffset: 20; }
+            100% { stroke-dashoffset: 0; }
+          }
+          .pr-stream-dash { stroke-dasharray: 5 3; animation: prFlowPulse 1s linear infinite; }
+        `}</style>
+        {/* Technical grids */}
+        <g stroke="rgba(129,140,248,0.02)" strokeWidth="0.5">
+          <line x1="0" y1="40" x2="400" y2="40" />
+          <line x1="0" y1="80" x2="400" y2="80" />
+          <line x1="0" y1="120" x2="400" y2="120" />
+          <line x1="100" y1="0" x2="100" y2="180" />
+          <line x1="200" y1="0" x2="200" y2="180" />
+          <line x1="300" y1="0" x2="300" y2="180" />
+        </g>
+
         {/* Pipeline drawing */}
         <g stroke="rgba(245,245,245,0.06)" strokeWidth="1.5" fill="none">
           <line x1="30" y1="90" x2="370" y2="90" />
           <path d="M 120 90 C 140 90, 160 45, 180 45 L 280 45 C 300 45, 320 90, 340 90" strokeDasharray="3" />
         </g>
 
-        {/* Webhook Hub visual */}
-        <circle cx="120" cy="90" r="4.5" fill="#555" />
-        <circle cx="340" cy="90" r="4.5" fill="#555" />
+        {/* Webhook Hub nodes */}
+        <circle cx="120" cy="90" r="5.5" fill="#181818" stroke="rgba(245,245,245,0.2)" />
+        <circle cx="340" cy="90" r="5.5" fill="#181818" stroke="rgba(245,245,245,0.2)" />
         
         {/* LLM Engine Server Unit */}
-        <rect x="180" y="27" width="100" height="35" rx="3" fill="#181818" stroke={prTriggered ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.08)'} strokeWidth="1.5" style={{ transition: 'border-color 0.3s ease' }} />
-        <text x="230" y="47" fill={prTriggered ? 'var(--accent-amber, #ffb400)' : 'rgba(245,245,245,0.3)'} fontFamily="monospace" fontSize="8" fontWeight="bold" textAnchor="middle" style={{ transition: 'color 0.3s ease' }}>
-          {prTriggered ? `LLM SCAN: ${prProgress}%` : 'LLM ANALYZER'}
+        <rect x="180" y="27" width="100" height="35" rx="3" fill="#111" stroke={prTriggered ? '#818cf8' : 'rgba(245,245,245,0.08)'} strokeWidth="1.5" style={{ transition: 'border-color 0.3s ease' }} />
+        <text x="230" y="48" fill={prTriggered ? '#818cf8' : 'rgba(245,245,245,0.3)'} fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="8.5" fontWeight="bold" textAnchor="middle" style={{ transition: 'color 0.3s ease' }}>
+          {prTriggered ? `SCANNING: ${prProgress}%` : 'LLM_AGENT_CORE'}
         </text>
 
         {/* Ingested webhook pulse animation */}
@@ -668,9 +749,9 @@ function ProjectSchematic({ id }: { id: string }) {
                 ? 90 - ((prProgress - 40) / 45) * 45
                 : 45 + ((prProgress - 85) / 15) * 45
             }
-            r="4.5"
-            fill="var(--accent-amber, #ffb400)"
-            style={{ filter: 'drop-shadow(0 0 4px var(--accent-amber, #ffb400))' }}
+            r="5"
+            fill="#818cf8"
+            style={{ filter: 'drop-shadow(0 0 5px #818cf8)' }}
           />
         )}
 
@@ -679,20 +760,20 @@ function ProjectSchematic({ id }: { id: string }) {
           onClick={handleTriggerWebhook}
           style={{ cursor: prTriggered && prProgress < 100 ? 'not-allowed' : 'pointer' }}
         >
-          <rect x="135" y="108" width="130" height="20" rx="3" fill="#181818" stroke="var(--accent-amber, #ffb400)" strokeWidth="1" />
-          <text x="200" y="121" fill="var(--accent-amber, #ffb400)" fontFamily="monospace" fontSize="7.5" fontWeight="bold" textAnchor="middle">[ PUSH WEBHOOK EVENT ]</text>
+          <rect x="135" y="108" width="130" height="20" rx="3" fill="#111" stroke="#818cf8" strokeWidth="1" />
+          <text x="200" y="121" fill="#818cf8" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7.5" fontWeight="bold" textAnchor="middle">[ SEND WEBHOOK EVENT ]</text>
         </g>
 
         {/* Logs terminal feed */}
-        <rect x="20" y="137" width="360" height="34" fill="#080808" stroke="rgba(245,245,245,0.03)" rx="2" />
-        <text x="30" y="148" fill="rgba(245,245,245,0.3)" fontFamily="monospace" fontSize="6.5">
+        <rect x="25" y="132" width="350" height="36" fill="#050505" stroke="rgba(129,140,248,0.06)" rx="2" />
+        <text x="35" y="144" fill="rgba(245,245,245,0.3)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7">
           {prLogs[1]}
         </text>
-        <text x="30" y="160" fill="var(--accent-amber, #ffb400)" fontFamily="monospace" fontSize="6.5">
+        <text x="35" y="157" fill="#818cf8" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="7" fontWeight="bold">
           {prLogs[0]}
         </text>
 
-        <text x="15" y="20" fill="rgba(255,180,0,0.4)" fontFamily="monospace" fontSize="8">GITHUB PR WEBHOOK PIPELINE</text>
+        <text x="15" y="22" fill="rgba(129,140,248,0.4)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="8">GITHUB WEBHOOK PR AUTOMATION PIPELINE</text>
       </svg>
     );
   }
@@ -719,6 +800,64 @@ const getProjectBgImage = (id: string) => {
     case '05': return '/code_chatbot_bg.png';
     default: return '';
   }
+};
+
+interface ProjectTheme {
+  primary: string;
+  primaryMuted: string;
+  primaryMutedLight: string;
+  primaryMutedDeep: string;
+  accent: string;
+  glow: string;
+  glowDeep: string;
+}
+
+const projectThemes: Record<string, ProjectTheme> = {
+  '01': {
+    primary: '#ffb400',
+    primaryMuted: 'rgba(255, 180, 0, 0.15)',
+    primaryMutedLight: 'rgba(255, 180, 0, 0.03)',
+    primaryMutedDeep: 'rgba(255, 180, 0, 0.3)',
+    accent: '#ffb400',
+    glow: 'rgba(255, 180, 0, 0.4)',
+    glowDeep: 'rgba(255, 180, 0, 0.8)',
+  },
+  '02': {
+    primary: '#ef4444',
+    primaryMuted: 'rgba(239, 68, 68, 0.15)',
+    primaryMutedLight: 'rgba(239, 68, 68, 0.03)',
+    primaryMutedDeep: 'rgba(239, 68, 68, 0.3)',
+    accent: '#ef4444',
+    glow: 'rgba(239, 68, 68, 0.4)',
+    glowDeep: 'rgba(239, 68, 68, 0.8)',
+  },
+  '03': {
+    primary: '#58c4dc',
+    primaryMuted: 'rgba(88, 196, 220, 0.15)',
+    primaryMutedLight: 'rgba(88, 196, 220, 0.03)',
+    primaryMutedDeep: 'rgba(88, 196, 220, 0.3)',
+    accent: '#58c4dc',
+    glow: 'rgba(88, 196, 220, 0.4)',
+    glowDeep: 'rgba(88, 196, 220, 0.8)',
+  },
+  '04': {
+    primary: '#10b981',
+    primaryMuted: 'rgba(16, 185, 129, 0.15)',
+    primaryMutedLight: 'rgba(16, 185, 129, 0.03)',
+    primaryMutedDeep: 'rgba(16, 185, 129, 0.3)',
+    accent: '#10b981',
+    glow: 'rgba(16, 185, 129, 0.4)',
+    glowDeep: 'rgba(16, 185, 129, 0.8)',
+  },
+  '05': {
+    primary: '#818cf8',
+    primaryMuted: 'rgba(129, 140, 248, 0.15)',
+    primaryMutedLight: 'rgba(129, 140, 248, 0.03)',
+    primaryMutedDeep: 'rgba(129, 140, 248, 0.3)',
+    accent: '#818cf8',
+    glow: 'rgba(129, 140, 248, 0.4)',
+    glowDeep: 'rgba(129, 140, 248, 0.8)',
+  },
 };
 
 export function ProjectsSection() {
@@ -788,11 +927,19 @@ export function ProjectsSection() {
     Math.floor(scrollProgress * projects.length * 0.999)
   );
 
+  const activeTheme = projectThemes[activeProjectId] || projectThemes['01'];
+
   return (
     <section
       id="projects"
       ref={sectionRef}
       className="projects-scroll-section"
+      style={{
+        '--active-primary': activeTheme.primary,
+        '--active-primary-muted': activeTheme.primaryMuted,
+        '--active-primary-muted-deep': activeTheme.primaryMutedDeep,
+        '--active-glow': activeTheme.glow,
+      } as React.CSSProperties}
     >
       {/* Sticky Viewport Container */}
       <div className="projects-sticky-viewport">
@@ -816,15 +963,38 @@ export function ProjectsSection() {
           className="projects-horizontal-rail" 
           style={{ transform: `translateX(-${scrollProgress * (projects.length - 1) * 100}vw)` }}
         >
-          {projects.map((project) => {
+          {projects.map((project, idx) => {
             const details = caseStudiesData[project.id];
+            const theme = projectThemes[project.id];
+            
+            // Calculate parallax bgOffset
+            const panelCenterProgress = idx / (projects.length - 1);
+            const offsetFromCenter = scrollProgress - panelCenterProgress;
+            const bgOffset = -offsetFromCenter * 100; // max 100px shift
+
             return (
-              <div key={project.id} className="project-slide-panel">
+              <div 
+                key={project.id} 
+                className="project-slide-panel"
+                style={{
+                  '--theme-primary': theme.primary,
+                  '--theme-primary-muted': theme.primaryMuted,
+                  '--theme-primary-muted-light': theme.primaryMutedLight,
+                  '--theme-primary-muted-deep': theme.primaryMutedDeep,
+                  '--theme-accent': theme.accent,
+                  '--theme-glow': theme.glow,
+                  '--theme-glow-deep': theme.glowDeep,
+                } as React.CSSProperties}
+              >
                 <div 
                   className="project-panel-bg" 
-                  style={{ backgroundImage: `url(${getProjectBgImage(project.id)})` }}
+                  style={{ 
+                    backgroundImage: `url(${getProjectBgImage(project.id)})`,
+                    transform: `translateX(${bgOffset}px) scale(1.15)`
+                  }}
                 />
                 <div className="project-panel-bg-overlay" />
+                <div className="project-panel-grid-overlay" />
                 <div className="project-panel-grid">
                   
                   {/* Left Column: ID, Title, Description, and Interactive Schematic */}
@@ -869,7 +1039,7 @@ export function ProjectsSection() {
 
                           <div className="detail-section">
                             <h4 className="detail-sec-title">OUTCOMES & METRICS</h4>
-                            <ul className="detail-sec-list amber-text">
+                            <ul className="detail-sec-list theme-text">
                               {details.metrics.map((m, i) => <li key={i}>{m}</li>)}
                             </ul>
                           </div>
@@ -941,6 +1111,7 @@ export function ProjectsSection() {
           height: 500vh; /* 5 projects * 100vh runway */
           background-color: #0a0a0a;
           box-sizing: border-box;
+          transition: background-color 0.6s ease;
         }
 
         .projects-sticky-viewport {
@@ -967,9 +1138,10 @@ export function ProjectsSection() {
           font-family: 'JetBrains Mono', monospace;
           font-size: 0.7rem;
           letter-spacing: 0.3em;
-          color: #ffb400;
+          color: var(--active-primary);
           margin-bottom: 0.5rem;
           text-transform: uppercase;
+          transition: color 0.4s ease;
         }
 
         .projects-hud-title {
@@ -1016,6 +1188,7 @@ export function ProjectsSection() {
           mix-blend-mode: overlay;
           pointer-events: none;
           z-index: 1;
+          transition: transform 0.1s ease-out;
         }
 
         .project-panel-bg-overlay {
@@ -1027,6 +1200,23 @@ export function ProjectsSection() {
           background: radial-gradient(circle, rgba(10, 10, 10, 0.4) 30%, rgba(10, 10, 10, 0.95) 90%);
           pointer-events: none;
           z-index: 2;
+        }
+
+        .project-panel-grid-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: 
+            radial-gradient(var(--theme-primary-muted-light) 1px, transparent 1px),
+            linear-gradient(to right, rgba(255,255,255,0.015) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.015) 1px, transparent 1px);
+          background-size: 32px 32px;
+          opacity: 0.45;
+          pointer-events: none;
+          z-index: 2;
+          transition: background-image 0.6s ease;
         }
 
         .project-panel-grid {
@@ -1060,8 +1250,9 @@ export function ProjectsSection() {
           font-family: 'JetBrains Mono', monospace;
           font-size: 1.2rem;
           font-weight: 700;
-          color: #ffb400;
+          color: var(--theme-primary);
           letter-spacing: 0.1em;
+          transition: color 0.4s ease;
         }
 
         .project-panel-title {
@@ -1133,7 +1324,8 @@ export function ProjectsSection() {
         }
 
         .detail-meta-val {
-          color: #ffb400;
+          color: var(--theme-primary);
+          transition: color 0.4s ease;
         }
 
         .details-scrollable-area {
@@ -1186,9 +1378,10 @@ export function ProjectsSection() {
           color: rgba(245, 245, 245, 0.65);
         }
 
-        .detail-sec-list.amber-text li {
-          color: #ffb400 !important;
+        .detail-sec-list.theme-text li {
+          color: var(--theme-primary) !important;
           font-weight: 400;
+          transition: color 0.4s ease;
         }
 
         .specs-section {
@@ -1225,8 +1418,8 @@ export function ProjectsSection() {
           font-family: 'JetBrains Mono', monospace;
           font-size: 0.65rem;
           letter-spacing: 0.15em;
-          color: #ffb400;
-          border: 1px solid rgba(255, 180, 0, 0.3);
+          color: var(--theme-primary);
+          border: 1px solid var(--theme-primary-muted-deep);
           background: transparent;
           border-radius: 4px;
           padding: 0.7rem 1.6rem;
@@ -1237,8 +1430,9 @@ export function ProjectsSection() {
         }
 
         .detail-github-btn:hover {
-          background: #ffb400 !important;
+          background: var(--theme-primary) !important;
           color: #0a0a0a !important;
+          box-shadow: 0 0 15px var(--theme-glow);
         }
 
         /* Progress HUD styling */
@@ -1265,12 +1459,12 @@ export function ProjectsSection() {
 
         .hud-fill-line {
           height: 100%;
-          background: #ffb400;
-          box-shadow: 0 0 8px rgba(255, 180, 0, 0.5);
+          background: var(--active-primary);
+          box-shadow: 0 0 10px var(--active-glow);
           position: absolute;
           left: 0;
           top: 0;
-          transition: width 0.1s ease-out;
+          transition: width 0.1s ease-out, background 0.4s ease, box-shadow 0.4s ease;
         }
 
         .hud-ticks-container {
@@ -1304,14 +1498,14 @@ export function ProjectsSection() {
         }
 
         .hud-tick-item.passed::before {
-          background: #ffb400;
-          box-shadow: 0 0 8px #ffb400;
+          background: var(--active-primary);
+          box-shadow: 0 0 8px var(--active-glow);
         }
 
         .hud-tick-item.current::before {
           transform: scale(1.4);
-          background: #ffb400;
-          box-shadow: 0 0 12px #ffb400;
+          background: var(--active-primary);
+          box-shadow: 0 0 12px var(--active-glow);
         }
 
         .tick-number {
@@ -1326,7 +1520,7 @@ export function ProjectsSection() {
         }
 
         .hud-tick-item.current .tick-number {
-          color: #ffb400;
+          color: var(--active-primary);
           font-weight: 700;
         }
 
@@ -1346,7 +1540,7 @@ export function ProjectsSection() {
         }
 
         .hud-tick-item.current .tick-title {
-          color: #ffb400;
+          color: var(--active-primary);
           font-size: 1.05rem;
         }
 
@@ -1415,3 +1609,4 @@ export function ProjectsSection() {
     </section>
   );
 }
+
