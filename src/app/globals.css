@@ -356,9 +356,18 @@
 .hero-text-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  margin-top: -3rem; /* Shift upwards slightly */
+  align-items: center;
+  text-align: center;
+  margin-top: -2rem; /* Shifted down to prevent badge from going off screen */
+}
+
+.year-badge-wrapper {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeUp 1.2s var(--transition-cinematic) 1.8s forwards; /* Delayed until loader clears viewport */
+  display: inline-block;
+  position: relative;
+  z-index: 10;
 }
 
 .year-badge {
@@ -367,9 +376,6 @@
   letter-spacing: 0.3em;
   color: var(--accent-amber);
   margin-bottom: 1.5rem; /* Restored margin */
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1.8s var(--transition-cinematic) 0.1s forwards; /* Increased duration to 1.8s */
 }
 
 .hero-headline {
@@ -382,8 +388,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   user-select: none;
   -webkit-user-select: none;
 }

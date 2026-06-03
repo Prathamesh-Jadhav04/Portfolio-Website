@@ -10,13 +10,16 @@ interface ScramblerTextProps {
 export function ScramblerText({ text, className }: ScramblerTextProps) {
   const [displayText, setDisplayText] = useState(text);
   const [isHovered, setIsHovered] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (!isHovered) {
-      setDisplayText(text);
-      return;
-    }
+    setMounted(true);
+  }, []);
 
+  useEffect(() => {
+    if (!mounted) return;
+
+    // Trigger scramble if hovered, or run once on initial component mount
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let iterations = 0;
     const interval = setInterval(() => {
@@ -24,7 +27,7 @@ export function ScramblerText({ text, className }: ScramblerTextProps) {
         text
           .split('')
           .map((char, index) => {
-            if (char === ' ' || char === '.' || char === '/' || char === '-' || char === '_') return char;
+            if ([' ', '.', '/', '-', '_', ',', '—'].includes(char)) return char;
             if (index < iterations) return text[index];
             return chars[Math.floor(Math.random() * chars.length)];
           })
@@ -39,7 +42,7 @@ export function ScramblerText({ text, className }: ScramblerTextProps) {
     }, 25);
 
     return () => clearInterval(interval);
-  }, [isHovered, text]);
+  }, [isHovered, text, mounted]);
 
   return (
     <span 

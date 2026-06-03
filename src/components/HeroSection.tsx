@@ -197,7 +197,6 @@ export function HeroSection() {
 
       {/* Floating System Diagnostic Logs HUD */}
       <SystemLogsHUD />
-
       <div className="video-container">
         <video
           autoPlay
@@ -213,14 +212,15 @@ export function HeroSection() {
         </video>
         <div className="video-overlay" />
       </div>
-
       <div className="hero-content container">
         <div className="hero-text-wrapper">
-          <Magnetic range={30} strength={0.2}>
-            <div className="year-badge" style={{ display: 'inline-block' }}>
-              <ScramblerText text="EST. 2022" />
-            </div>
-          </Magnetic>
+          <div className="year-badge-wrapper">
+            <Magnetic range={60} strength={0.35}>
+              <div className="year-badge" style={{ display: 'inline-block' }}>
+                <ScramblerText text="EST. 2022 — CHHATRAPATI SAMBHAJINAGAR, INDIA" />
+              </div>
+            </Magnetic>
+          </div>
 
           <h1 className="hero-headline">
             <div className="line">
@@ -256,7 +256,7 @@ export function HeroSection() {
           padding: 0.35rem 0.85rem !important;
           border-radius: 4px;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-          margin-top: 1.5rem !important; /* Lowered position slightly */
+          margin-top: 0 !important; /* Fixed offset */
           margin-bottom: 2rem !important; /* Added space before title */
           cursor: pointer;
         }
