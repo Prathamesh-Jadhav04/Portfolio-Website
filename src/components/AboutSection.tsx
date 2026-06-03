@@ -197,11 +197,287 @@ function ProjectSchematic({ id }: { id: number }) {
   return null;
 }
 
+interface Tag {
+  text: string;
+  x: number;
+  y: number;
+  z: number;
+}
+
+function TechSphere({ onHoverChange }: { onHoverChange: (hovering: boolean) => void }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [tags, setTags] = useState<Tag[]>([]);
+  const mouseRef = useRef({ x: 0, y: 0 });
+  const isHoveredRef = useRef(false);
+  const isDraggingRef = useRef(false);
+  const dragStartRef = useRef({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+
+  const skillsList = [
+    'React', 'Next.js', 'Node.js', 'TypeScript', 'JavaScript', 
+    'Python', 'Rust', 'C Language', 'C++', 'FastAPI', 
+    'LangChain', 'OpenAI API', 'HNSW Graph', 'Vector DB', 'RAG Pipelines',
+    'SQL Databases', 'NoSQL', 'MongoDB', 'Redis', 'Docker', 
+    'Git', 'Linux', 'Shell Scripting', 'ETL Pipelines', 'Scikit-Learn', 
+    'Pandas', 'NumPy', 'Multithreading', 'Scapy', 'Network Protocols'
+  ];
+  const skills = Array.from(new Set(skillsList));
+
+  useEffect(() => {
+    const radius = 130;
+    const N = skills.length;
+    const initialTags: Tag[] = skills.map((text, i) => {
+      const k = -1 + (2 * (i + 1) - 1) / N;
+      const phi = Math.acos(k);
+      const theta = Math.sqrt(N * Math.PI) * phi;
+
+      return {
+        text,
+        x: radius * Math.sin(phi) * Math.cos(theta),
+        y: radius * Math.sin(phi) * Math.sin(theta),
+        z: radius * Math.cos(phi),
+      };
+    });
+    setTags(initialTags);
+  }, []);
+
+  useEffect(() => {
+    let rafId: number;
+    let angleX = 0.002;
+    let angleY = 0.002;
+
+    const update = () => {
+      if (isDraggingRef.current) {
+        rafId = requestAnimationFrame(update);
+        return;
+      }
+
+      if (isHoveredRef.current) {
+        angleX = -mouseRef.current.y * 0.00004;
+        angleY = mouseRef.current.x * 0.00004;
+      } else {
+        angleX = angleX * 0.98 + 0.001 * 0.02;
+        angleY = angleY * 0.98 + 0.0015 * 0.02;
+      }
+
+      setTags((prevTags) => {
+        return prevTags.map((tag) => {
+          const cosX = Math.cos(angleX);
+          const sinX = Math.sin(angleX);
+          const y1 = tag.y * cosX - tag.z * sinX;
+          const z1 = tag.y * sinX + tag.z * cosX;
+
+          const cosY = Math.cos(angleY);
+          const sinY = Math.sin(angleY);
+          const x2 = tag.x * cosY + z1 * sinY;
+          const z2 = -tag.x * sinY + z1 * cosY;
+
+          return { ...tag, x: x2, y: y1, z: z2 };
+        });
+      });
+
+      rafId = requestAnimationFrame(update);
+    };
+
+    rafId = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    isDraggingRef.current = true;
+    dragStartRef.current = {
+      x: e.clientX,
+      y: e.clientY
+    };
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    isDraggingRef.current = false;
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    isDraggingRef.current = true;
+    setIsDragging(true);
+    if (e.touches.length > 0) {
+      dragStartRef.current = {
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY
+      };
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!containerRef.current || e.touches.length === 0) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    
+    const clientX = e.touches[0].clientX;
+    const clientY = e.touches[0].clientY;
+
+    mouseRef.current = {
+      x: clientX - cx,
+      y: clientY - cy,
+    };
+
+    if (isDraggingRef.current) {
+      const deltaX = clientX - dragStartRef.current.x;
+      const deltaY = clientY - dragStartRef.current.y;
+      
+      dragStartRef.current = {
+        x: clientX,
+        y: clientY
+      };
+
+      const dragFactor = 0.006;
+      const angleXVal = -deltaY * dragFactor;
+      const angleYVal = deltaX * dragFactor;
+
+      setTags((prevTags) => {
+        return prevTags.map((tag) => {
+          const cosX = Math.cos(angleXVal);
+          const sinX = Math.sin(angleXVal);
+          const y1 = tag.y * cosX - tag.z * sinX;
+          const z1 = tag.y * sinX + tag.z * cosX;
+
+          const cosY = Math.cos(angleYVal);
+          const sinY = Math.sin(angleYVal);
+          const x2 = tag.x * cosY + z1 * sinY;
+          const z2 = -tag.x * sinY + z1 * cosY;
+
+          return { ...tag, x: x2, y: y1, z: z2 };
+        });
+      });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    
+    mouseRef.current = {
+      x: e.clientX - cx,
+      y: e.clientY - cy,
+    };
+
+    if (isDraggingRef.current) {
+      const deltaX = e.clientX - dragStartRef.current.x;
+      const deltaY = e.clientY - dragStartRef.current.y;
+      
+      dragStartRef.current = {
+        x: e.clientX,
+        y: e.clientY
+      };
+
+      const dragFactor = 0.005;
+      const angleXVal = -deltaY * dragFactor;
+      const angleYVal = deltaX * dragFactor;
+
+      setTags((prevTags) => {
+        return prevTags.map((tag) => {
+          const cosX = Math.cos(angleXVal);
+          const sinX = Math.sin(angleXVal);
+          const y1 = tag.y * cosX - tag.z * sinX;
+          const z1 = tag.y * sinX + tag.z * cosX;
+
+          const cosY = Math.cos(angleYVal);
+          const sinY = Math.sin(angleYVal);
+          const x2 = tag.x * cosY + z1 * sinY;
+          const z2 = -tag.x * sinY + z1 * cosY;
+
+          return { ...tag, x: x2, y: y1, z: z2 };
+        });
+      });
+    }
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={() => {
+        isHoveredRef.current = false;
+        onHoverChange(false);
+        handleMouseUp();
+      }}
+      onMouseEnter={() => {
+        isHoveredRef.current = true;
+        onHoverChange(true);
+      }}
+      onTouchStart={(e) => {
+        onHoverChange(true);
+        handleTouchStart(e);
+      }}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={() => {
+        onHoverChange(false);
+        handleMouseUp();
+      }}
+      onDragStart={(e) => e.preventDefault()}
+      style={{
+        position: 'relative',
+        width: '320px',
+        height: '320px',
+        cursor: isDragging ? 'grabbing' : 'grab',
+        userSelect: 'none',
+        touchAction: 'none',
+      }}
+    >
+      {tags.map((tag, idx) => {
+        const radius = 130;
+        const depth = 280;
+        const scale = (depth + tag.z) / depth;
+        const left = 160 + tag.x * scale;
+        const top = 160 + tag.y * scale;
+        
+        const opacity = (tag.z + radius) / (2 * radius) * 0.8 + 0.2;
+        const zIndex = Math.round(tag.z + radius);
+
+        return (
+          <span
+            key={idx}
+            style={{
+              position: 'absolute',
+              left: `${left}px`,
+              top: `${top}px`,
+              transform: `translate(-50%, -50%) scale(${scale})`,
+              fontSize: '0.75rem',
+              fontFamily: 'var(--font-jetbrains-mono, monospace)',
+              fontWeight: tag.z > 0 ? 500 : 300,
+              color: tag.z > 0 ? 'var(--accent-amber, #ffb400)' : 'rgba(245, 245, 245, 0.35)',
+              opacity: opacity,
+              zIndex: zIndex,
+              whiteSpace: 'nowrap',
+              textTransform: 'uppercase',
+              pointerEvents: tag.z > 0 ? 'auto' : 'none',
+              background: tag.z > 0 ? 'rgba(255, 180, 0, 0.04)' : 'transparent',
+              border: tag.z > 0 ? '1px solid rgba(255, 180, 0, 0.15)' : '1px solid transparent',
+              borderRadius: '4px',
+              padding: '0.2rem 0.5rem',
+              transition: 'color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease',
+              boxShadow: tag.z > 40 ? '0 0 10px rgba(255, 180, 0, 0.08)' : 'none',
+            }}
+          >
+            {tag.text}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
 export function AboutSection() {
   const [activeYear, setActiveYear] = useState<string>('2022');
   const [activeCardId, setActiveCardId] = useState<number>(1);
   const [expandedCardId, setExpandedCardId] = useState<number | null>(1);
   const [isSectionInView, setIsSectionInView] = useState(false);
+  const [isHoveringSphere, setIsHoveringSphere] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -278,6 +554,7 @@ export function AboutSection() {
     // Scroll stop snap-alignment handler - runs only when section is active in viewport
     let scrollTimeout: NodeJS.Timeout;
     const handleScrollSnap = () => {
+      if (isHoveringSphere) return; // Prevent autoscroll snapping while interacting with the 3D Sphere
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         const activeCard = sectionRef.current?.querySelector('.timeline-card.active') as HTMLElement;
@@ -302,7 +579,7 @@ export function AboutSection() {
       window.removeEventListener('scroll', handleScrollSnap);
       clearTimeout(scrollTimeout);
     };
-  }, [isSectionInView]);
+  }, [isSectionInView, isHoveringSphere]);
 
   const toggleExpand = (id: number, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -418,26 +695,10 @@ export function AboutSection() {
                   From custom HNSW indexing to systems-level multi-threaded network analysis, I focus on building scalable, low-latency architectures that bridge AI research and robust production systems.
                 </p>
 
-                {/* Tech Badges */}
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-                  {['Vector Search', 'RAG Pipelines', 'GenAI APIs', 'Network Systems', 'Performance Tuning'].map((skill) => (
-                    <span
-                      key={skill}
-                      style={{
-                        fontFamily: 'var(--font-jetbrains-mono, "JetBrains Mono", monospace)',
-                        fontSize: '0.65rem',
-                        letterSpacing: '0.08em',
-                        color: 'var(--accent-amber, #ffb400)',
-                        background: 'rgba(255, 180, 0, 0.05)',
-                        border: '1px solid rgba(255, 180, 0, 0.12)',
-                        borderRadius: '4px',
-                        padding: '0.35rem 0.75rem',
-                        textTransform: 'uppercase',
-                      }}
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                {/* 3D Spinning Tech Stack Sphere */}
+                <div className="about-tech-sphere-container">
+                  <div className="sphere-hud-label">// DRAG & ORBIT TECHNICAL CORE</div>
+                  <TechSphere onHoverChange={setIsHoveringSphere} />
                 </div>
               </div>
             </div>
@@ -592,6 +853,32 @@ export function AboutSection() {
         .animate-on-scroll.in-view {
           opacity: 1 !important;
           transform: translateY(0) !important;
+        }
+
+        .about-tech-sphere-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-top: 3rem;
+          padding: 2.5rem 1rem;
+          background: rgba(245, 245, 245, 0.01);
+          border: 1px solid rgba(245, 245, 245, 0.03);
+          border-radius: 8px;
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          user-select: none;
+        }
+
+        .sphere-hud-label {
+          font-family: var(--font-jetbrains-mono, "JetBrains Mono", monospace);
+          font-size: 0.6rem;
+          letter-spacing: 0.15em;
+          color: rgba(245, 245, 245, 0.2);
+          text-transform: uppercase;
+          margin-bottom: 2rem;
+          pointer-events: none;
         }
 
         /* 2-column Grid configuration */

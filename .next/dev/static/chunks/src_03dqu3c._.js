@@ -726,7 +726,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 ;
-var _s = __turbopack_context__.k.signature();
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
 'use client';
 ;
 const timelineEvents = [
@@ -1692,12 +1692,309 @@ function ProjectSchematic({ id }) {
     return null;
 }
 _c = ProjectSchematic;
-function AboutSection() {
+function TechSphere({ onHoverChange }) {
     _s();
+    const containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const [tags, setTags] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const mouseRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])({
+        x: 0,
+        y: 0
+    });
+    const isHoveredRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(false);
+    const isDraggingRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(false);
+    const dragStartRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])({
+        x: 0,
+        y: 0
+    });
+    const [isDragging, setIsDragging] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const skillsList = [
+        'React',
+        'Next.js',
+        'Node.js',
+        'TypeScript',
+        'JavaScript',
+        'Python',
+        'Rust',
+        'C Language',
+        'C++',
+        'FastAPI',
+        'LangChain',
+        'OpenAI API',
+        'HNSW Graph',
+        'Vector DB',
+        'RAG Pipelines',
+        'SQL Databases',
+        'NoSQL',
+        'MongoDB',
+        'Redis',
+        'Docker',
+        'Git',
+        'Linux',
+        'Shell Scripting',
+        'ETL Pipelines',
+        'Scikit-Learn',
+        'Pandas',
+        'NumPy',
+        'Multithreading',
+        'Scapy',
+        'Network Protocols'
+    ];
+    const skills = Array.from(new Set(skillsList));
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "TechSphere.useEffect": ()=>{
+            const radius = 130;
+            const N = skills.length;
+            const initialTags = skills.map({
+                "TechSphere.useEffect.initialTags": (text, i)=>{
+                    const k = -1 + (2 * (i + 1) - 1) / N;
+                    const phi = Math.acos(k);
+                    const theta = Math.sqrt(N * Math.PI) * phi;
+                    return {
+                        text,
+                        x: radius * Math.sin(phi) * Math.cos(theta),
+                        y: radius * Math.sin(phi) * Math.sin(theta),
+                        z: radius * Math.cos(phi)
+                    };
+                }
+            }["TechSphere.useEffect.initialTags"]);
+            setTags(initialTags);
+        }
+    }["TechSphere.useEffect"], []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "TechSphere.useEffect": ()=>{
+            let rafId;
+            let angleX = 0.002;
+            let angleY = 0.002;
+            const update = {
+                "TechSphere.useEffect.update": ()=>{
+                    if (isDraggingRef.current) {
+                        rafId = requestAnimationFrame(update);
+                        return;
+                    }
+                    if (isHoveredRef.current) {
+                        angleX = -mouseRef.current.y * 0.00004;
+                        angleY = mouseRef.current.x * 0.00004;
+                    } else {
+                        angleX = angleX * 0.98 + 0.001 * 0.02;
+                        angleY = angleY * 0.98 + 0.0015 * 0.02;
+                    }
+                    setTags({
+                        "TechSphere.useEffect.update": (prevTags)=>{
+                            return prevTags.map({
+                                "TechSphere.useEffect.update": (tag)=>{
+                                    const cosX = Math.cos(angleX);
+                                    const sinX = Math.sin(angleX);
+                                    const y1 = tag.y * cosX - tag.z * sinX;
+                                    const z1 = tag.y * sinX + tag.z * cosX;
+                                    const cosY = Math.cos(angleY);
+                                    const sinY = Math.sin(angleY);
+                                    const x2 = tag.x * cosY + z1 * sinY;
+                                    const z2 = -tag.x * sinY + z1 * cosY;
+                                    return {
+                                        ...tag,
+                                        x: x2,
+                                        y: y1,
+                                        z: z2
+                                    };
+                                }
+                            }["TechSphere.useEffect.update"]);
+                        }
+                    }["TechSphere.useEffect.update"]);
+                    rafId = requestAnimationFrame(update);
+                }
+            }["TechSphere.useEffect.update"];
+            rafId = requestAnimationFrame(update);
+            return ({
+                "TechSphere.useEffect": ()=>cancelAnimationFrame(rafId)
+            })["TechSphere.useEffect"];
+        }
+    }["TechSphere.useEffect"], []);
+    const handleMouseDown = (e)=>{
+        setIsDragging(true);
+        isDraggingRef.current = true;
+        dragStartRef.current = {
+            x: e.clientX,
+            y: e.clientY
+        };
+    };
+    const handleMouseUp = ()=>{
+        setIsDragging(false);
+        isDraggingRef.current = false;
+    };
+    const handleTouchStart = (e)=>{
+        isDraggingRef.current = true;
+        setIsDragging(true);
+        if (e.touches.length > 0) {
+            dragStartRef.current = {
+                x: e.touches[0].clientX,
+                y: e.touches[0].clientY
+            };
+        }
+    };
+    const handleTouchMove = (e)=>{
+        if (!containerRef.current || e.touches.length === 0) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const clientX = e.touches[0].clientX;
+        const clientY = e.touches[0].clientY;
+        mouseRef.current = {
+            x: clientX - cx,
+            y: clientY - cy
+        };
+        if (isDraggingRef.current) {
+            const deltaX = clientX - dragStartRef.current.x;
+            const deltaY = clientY - dragStartRef.current.y;
+            dragStartRef.current = {
+                x: clientX,
+                y: clientY
+            };
+            const dragFactor = 0.006;
+            const angleXVal = -deltaY * dragFactor;
+            const angleYVal = deltaX * dragFactor;
+            setTags((prevTags)=>{
+                return prevTags.map((tag)=>{
+                    const cosX = Math.cos(angleXVal);
+                    const sinX = Math.sin(angleXVal);
+                    const y1 = tag.y * cosX - tag.z * sinX;
+                    const z1 = tag.y * sinX + tag.z * cosX;
+                    const cosY = Math.cos(angleYVal);
+                    const sinY = Math.sin(angleYVal);
+                    const x2 = tag.x * cosY + z1 * sinY;
+                    const z2 = -tag.x * sinY + z1 * cosY;
+                    return {
+                        ...tag,
+                        x: x2,
+                        y: y1,
+                        z: z2
+                    };
+                });
+            });
+        }
+    };
+    const handleMouseMove = (e)=>{
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        mouseRef.current = {
+            x: e.clientX - cx,
+            y: e.clientY - cy
+        };
+        if (isDraggingRef.current) {
+            const deltaX = e.clientX - dragStartRef.current.x;
+            const deltaY = e.clientY - dragStartRef.current.y;
+            dragStartRef.current = {
+                x: e.clientX,
+                y: e.clientY
+            };
+            const dragFactor = 0.005;
+            const angleXVal = -deltaY * dragFactor;
+            const angleYVal = deltaX * dragFactor;
+            setTags((prevTags)=>{
+                return prevTags.map((tag)=>{
+                    const cosX = Math.cos(angleXVal);
+                    const sinX = Math.sin(angleXVal);
+                    const y1 = tag.y * cosX - tag.z * sinX;
+                    const z1 = tag.y * sinX + tag.z * cosX;
+                    const cosY = Math.cos(angleYVal);
+                    const sinY = Math.sin(angleYVal);
+                    const x2 = tag.x * cosY + z1 * sinY;
+                    const z2 = -tag.x * sinY + z1 * cosY;
+                    return {
+                        ...tag,
+                        x: x2,
+                        y: y1,
+                        z: z2
+                    };
+                });
+            });
+        }
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        ref: containerRef,
+        onMouseMove: handleMouseMove,
+        onMouseDown: handleMouseDown,
+        onMouseUp: handleMouseUp,
+        onMouseLeave: ()=>{
+            isHoveredRef.current = false;
+            onHoverChange(false);
+            handleMouseUp();
+        },
+        onMouseEnter: ()=>{
+            isHoveredRef.current = true;
+            onHoverChange(true);
+        },
+        onTouchStart: (e)=>{
+            onHoverChange(true);
+            handleTouchStart(e);
+        },
+        onTouchMove: handleTouchMove,
+        onTouchEnd: ()=>{
+            onHoverChange(false);
+            handleMouseUp();
+        },
+        onDragStart: (e)=>e.preventDefault(),
+        style: {
+            position: 'relative',
+            width: '320px',
+            height: '320px',
+            cursor: isDragging ? 'grabbing' : 'grab',
+            userSelect: 'none',
+            touchAction: 'none'
+        },
+        children: tags.map((tag, idx)=>{
+            const radius = 130;
+            const depth = 280;
+            const scale = (depth + tag.z) / depth;
+            const left = 160 + tag.x * scale;
+            const top = 160 + tag.y * scale;
+            const opacity = (tag.z + radius) / (2 * radius) * 0.8 + 0.2;
+            const zIndex = Math.round(tag.z + radius);
+            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                style: {
+                    position: 'absolute',
+                    left: `${left}px`,
+                    top: `${top}px`,
+                    transform: `translate(-50%, -50%) scale(${scale})`,
+                    fontSize: '0.75rem',
+                    fontFamily: 'var(--font-jetbrains-mono, monospace)',
+                    fontWeight: tag.z > 0 ? 500 : 300,
+                    color: tag.z > 0 ? 'var(--accent-amber, #ffb400)' : 'rgba(245, 245, 245, 0.35)',
+                    opacity: opacity,
+                    zIndex: zIndex,
+                    whiteSpace: 'nowrap',
+                    textTransform: 'uppercase',
+                    pointerEvents: tag.z > 0 ? 'auto' : 'none',
+                    background: tag.z > 0 ? 'rgba(255, 180, 0, 0.04)' : 'transparent',
+                    border: tag.z > 0 ? '1px solid rgba(255, 180, 0, 0.15)' : '1px solid transparent',
+                    borderRadius: '4px',
+                    padding: '0.2rem 0.5rem',
+                    transition: 'color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease',
+                    boxShadow: tag.z > 40 ? '0 0 10px rgba(255, 180, 0, 0.08)' : 'none'
+                },
+                children: tag.text
+            }, idx, false, {
+                fileName: "[project]/src/components/AboutSection.tsx",
+                lineNumber: 443,
+                columnNumber: 11
+            }, this);
+        })
+    }, void 0, false, {
+        fileName: "[project]/src/components/AboutSection.tsx",
+        lineNumber: 399,
+        columnNumber: 5
+    }, this);
+}
+_s(TechSphere, "rQ3LT4bAe213As9gTM91XKZlpCI=");
+_c1 = TechSphere;
+function AboutSection() {
+    _s1();
     const [activeYear, setActiveYear] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('2022');
     const [activeCardId, setActiveCardId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
     const [expandedCardId, setExpandedCardId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
     const [isSectionInView, setIsSectionInView] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isHoveringSphere, setIsHoveringSphere] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AboutSection.useEffect": ()=>{
@@ -1779,6 +2076,7 @@ function AboutSection() {
             let scrollTimeout;
             const handleScrollSnap = {
                 "AboutSection.useEffect.handleScrollSnap": ()=>{
+                    if (isHoveringSphere) return; // Prevent autoscroll snapping while interacting with the 3D Sphere
                     clearTimeout(scrollTimeout);
                     scrollTimeout = setTimeout({
                         "AboutSection.useEffect.handleScrollSnap": ()=>{
@@ -1808,7 +2106,8 @@ function AboutSection() {
             })["AboutSection.useEffect"];
         }
     }["AboutSection.useEffect"], [
-        isSectionInView
+        isSectionInView,
+        isHoveringSphere
     ]);
     const toggleExpand = (id, e)=>{
         e.stopPropagation();
@@ -1864,7 +2163,7 @@ function AboutSection() {
                         children: "01 / Origin"
                     }, void 0, false, {
                         fileName: "[project]/src/components/AboutSection.tsx",
-                        lineNumber: 345,
+                        lineNumber: 622,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1893,7 +2192,7 @@ function AboutSection() {
                                                     "BUILDING",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 382,
+                                                        lineNumber: 659,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1903,19 +2202,19 @@ function AboutSection() {
                                                         children: "THINGS"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 383,
+                                                        lineNumber: 660,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 384,
+                                                        lineNumber: 661,
                                                         columnNumber: 17
                                                     }, this),
                                                     "THAT MATTER."
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                lineNumber: 368,
+                                                lineNumber: 645,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1938,7 +2237,7 @@ function AboutSection() {
                                                         children: "I'm Prathamesh Jadhav — an engineering-focused AI/ML developer specializing in building production-grade vector databases, RAG pipelines, and intelligent API systems."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 396,
+                                                        lineNumber: 673,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1953,55 +2252,43 @@ function AboutSection() {
                                                         children: "From custom HNSW indexing to systems-level multi-threaded network analysis, I focus on building scalable, low-latency architectures that bridge AI research and robust production systems."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 408,
+                                                        lineNumber: 685,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        style: {
-                                                            display: 'flex',
-                                                            gap: '0.5rem',
-                                                            flexWrap: 'wrap',
-                                                            marginBottom: '3rem'
-                                                        },
+                                                        className: "about-tech-sphere-container",
                                                         children: [
-                                                            'Vector Search',
-                                                            'RAG Pipelines',
-                                                            'GenAI APIs',
-                                                            'Network Systems',
-                                                            'Performance Tuning'
-                                                        ].map((skill)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                style: {
-                                                                    fontFamily: 'var(--font-jetbrains-mono, "JetBrains Mono", monospace)',
-                                                                    fontSize: '0.65rem',
-                                                                    letterSpacing: '0.08em',
-                                                                    color: 'var(--accent-amber, #ffb400)',
-                                                                    background: 'rgba(255, 180, 0, 0.05)',
-                                                                    border: '1px solid rgba(255, 180, 0, 0.12)',
-                                                                    borderRadius: '4px',
-                                                                    padding: '0.35rem 0.75rem',
-                                                                    textTransform: 'uppercase'
-                                                                },
-                                                                children: skill
-                                                            }, skill, false, {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "sphere-hud-label",
+                                                                children: "// DRAG & ORBIT TECHNICAL CORE"
+                                                            }, void 0, false, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 424,
-                                                                columnNumber: 21
-                                                            }, this))
-                                                    }, void 0, false, {
+                                                                lineNumber: 700,
+                                                                columnNumber: 19
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TechSphere, {
+                                                                onHoverChange: setIsHoveringSphere
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/AboutSection.tsx",
+                                                                lineNumber: 701,
+                                                                columnNumber: 19
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 422,
+                                                        lineNumber: 699,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                lineNumber: 388,
+                                                lineNumber: 665,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                        lineNumber: 367,
+                                        lineNumber: 644,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2020,7 +2307,7 @@ function AboutSection() {
                                         children: "// Interactive Journey & Milestones (Click Overview to Expand)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                        lineNumber: 446,
+                                        lineNumber: 707,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2046,14 +2333,14 @@ function AboutSection() {
                                                                 children: event.year
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 485,
+                                                                lineNumber: 746,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: `timeline-dot ${isActive ? 'active' : ''}`
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 490,
+                                                                lineNumber: 751,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2069,7 +2356,7 @@ function AboutSection() {
                                                                         children: event.title
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                                        lineNumber: 493,
+                                                                        lineNumber: 754,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2086,13 +2373,13 @@ function AboutSection() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                                        lineNumber: 496,
+                                                                        lineNumber: 757,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 492,
+                                                                lineNumber: 753,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2118,7 +2405,7 @@ function AboutSection() {
                                                                         children: event.teaser
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                                        lineNumber: 502,
+                                                                        lineNumber: 763,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2141,19 +2428,19 @@ function AboutSection() {
                                                                         children: isExpanded ? '[ - CLOSE ]' : '[ + OVERVIEW ]'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                                        lineNumber: 507,
+                                                                        lineNumber: 768,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 501,
+                                                                lineNumber: 762,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 483,
+                                                        lineNumber: 744,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2175,14 +2462,14 @@ function AboutSection() {
                                                                     children: event.description
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                                    lineNumber: 533,
+                                                                    lineNumber: 794,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ProjectSchematic, {
                                                                     id: event.id
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                                    lineNumber: 538,
+                                                                    lineNumber: 799,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 event.details && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2190,7 +2477,7 @@ function AboutSection() {
                                                                     children: event.details
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                                    lineNumber: 541,
+                                                                    lineNumber: 802,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2214,41 +2501,41 @@ function AboutSection() {
                                                                             children: t
                                                                         }, t, false, {
                                                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                                                            lineNumber: 549,
+                                                                            lineNumber: 810,
                                                                             columnNumber: 29
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                                    lineNumber: 547,
+                                                                    lineNumber: 808,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                                            lineNumber: 532,
+                                                            lineNumber: 793,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 531,
+                                                        lineNumber: 792,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, event.id, true, {
                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                lineNumber: 470,
+                                                lineNumber: 731,
                                                 columnNumber: 19
                                             }, this);
                                         })
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                        lineNumber: 464,
+                                        lineNumber: 725,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                lineNumber: 365,
+                                lineNumber: 642,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2261,7 +2548,7 @@ function AboutSection() {
                                             children: "YEAR"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                            lineNumber: 577,
+                                            lineNumber: 838,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2269,7 +2556,7 @@ function AboutSection() {
                                             children: activeYear
                                         }, activeYear, false, {
                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                            lineNumber: 578,
+                                            lineNumber: 839,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2279,50 +2566,50 @@ function AboutSection() {
                                                     children: "// 19.0760° N, 72.8777° E"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                    lineNumber: 582,
+                                                    lineNumber: 843,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "// CORE_SYSTEM_INDEXING: ACTIVE"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                    lineNumber: 583,
+                                                    lineNumber: 844,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "// INDEX: HNSW_INDEX_FOUND"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                    lineNumber: 584,
+                                                    lineNumber: 845,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                            lineNumber: 581,
+                                            lineNumber: 842,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                    lineNumber: 576,
+                                    lineNumber: 837,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                lineNumber: 575,
+                                lineNumber: 836,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/AboutSection.tsx",
-                        lineNumber: 363,
+                        lineNumber: 640,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/AboutSection.tsx",
-                lineNumber: 343,
+                lineNumber: 620,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -2330,6 +2617,32 @@ function AboutSection() {
         .animate-on-scroll.in-view {
           opacity: 1 !important;
           transform: translateY(0) !important;
+        }
+
+        .about-tech-sphere-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-top: 3rem;
+          padding: 2.5rem 1rem;
+          background: rgba(245, 245, 245, 0.01);
+          border: 1px solid rgba(245, 245, 245, 0.03);
+          border-radius: 8px;
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          user-select: none;
+        }
+
+        .sphere-hud-label {
+          font-family: var(--font-jetbrains-mono, "JetBrains Mono", monospace);
+          font-size: 0.6rem;
+          letter-spacing: 0.15em;
+          color: rgba(245, 245, 245, 0.2);
+          text-transform: uppercase;
+          margin-bottom: 2rem;
+          pointer-events: none;
         }
 
         /* 2-column Grid configuration */
@@ -2581,21 +2894,22 @@ function AboutSection() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/components/AboutSection.tsx",
-                lineNumber: 591,
+                lineNumber: 852,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/AboutSection.tsx",
-        lineNumber: 330,
+        lineNumber: 607,
         columnNumber: 5
     }, this);
 }
-_s(AboutSection, "uvIYewDkRi8G3w51dEGGgTtSVP4=");
-_c1 = AboutSection;
-var _c, _c1;
+_s1(AboutSection, "3TkIAWl9+VaZf0Qhp7Nmt/q/QQI=");
+_c2 = AboutSection;
+var _c, _c1, _c2;
 __turbopack_context__.k.register(_c, "ProjectSchematic");
-__turbopack_context__.k.register(_c1, "AboutSection");
+__turbopack_context__.k.register(_c1, "TechSphere");
+__turbopack_context__.k.register(_c2, "AboutSection");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
