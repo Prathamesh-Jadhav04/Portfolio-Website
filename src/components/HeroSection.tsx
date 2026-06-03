@@ -79,7 +79,8 @@ function ParticleBackground() {
       }
 
       // Draw and update particles
-      particles.forEach((p) => {
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
 
@@ -99,8 +100,8 @@ function ParticleBackground() {
         ctx.fillStyle = 'rgba(255, 180, 0, 0.15)';
         ctx.fill();
 
-        particles.forEach((p2) => {
-          if (p === p2) return;
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
@@ -114,7 +115,7 @@ function ParticleBackground() {
             ctx.lineTo(p2.x, p2.y);
             ctx.stroke();
           }
-        });
+        }
 
         if (distMouse < 180) {
           const alpha = (180 - distMouse) / 180 * 0.15;
@@ -125,7 +126,7 @@ function ParticleBackground() {
           ctx.lineTo(mouseRef.current.x, mouseRef.current.y);
           ctx.stroke();
         }
-      });
+      }
 
       animationFrameId = requestAnimationFrame(animate);
     };

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Inter, JetBrains_Mono } from "next/font/google";
+import { Bebas_Neue, Inter, JetBrains_Mono, Comfortaa } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 
@@ -22,6 +22,12 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400"],
 });
 
+const comfortaa = Comfortaa({
+  variable: "--font-comfortaa",
+  subsets: ["latin"],
+  weight: ["500"],
+});
+
 export const metadata: Metadata = {
   title: "Prathamesh Jadhav | AI/ML Engineer & Data Scientist",
   description: "Engineering-focused AI/ML developer specializing in scalable low-latency infrastructure, custom vector databases, and RAG pipelines.",
@@ -35,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bebasNeue.variable} ${inter.variable} ${jetbrainsMono.variable} h-full`}
+      className={`${bebasNeue.variable} ${inter.variable} ${jetbrainsMono.variable} ${comfortaa.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-[#0a0a0a] text-[#f5f5f5]">
         <SmoothScroll>

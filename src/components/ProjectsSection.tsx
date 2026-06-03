@@ -889,36 +889,67 @@ export function ProjectsSection() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+    let rafId: number | null = null;
+
+    const update = () => {
       const track = sectionRef.current;
-      if (!track) return;
+      if (track) {
+        const rect = track.getBoundingClientRect();
+        const viewHeight = window.innerHeight;
+        
+        const totalScrollableHeight = rect.height - viewHeight;
+        if (totalScrollableHeight > 0) {
+          let progress = -rect.top / totalScrollableHeight;
+          progress = Math.max(0, Math.min(1, progress));
+          
+          setScrollProgress(progress);
 
-      const rect = track.getBoundingClientRect();
-      const viewHeight = window.innerHeight;
-      
-      const totalScrollableHeight = rect.height - viewHeight;
-      if (totalScrollableHeight <= 0) return;
+          // Set active project index
+          const idx = Math.min(
+            projects.length - 1,
+            Math.floor(progress * projects.length * 0.999)
+          );
+          setActiveProjectId(projects[idx].id);
+        }
+      }
+      ticking = false;
+    };
 
-      let progress = -rect.top / totalScrollableHeight;
-      progress = Math.max(0, Math.min(1, progress));
-      
-      setScrollProgress(progress);
-
-      // Set active project index
-      const idx = Math.min(
-        projects.length - 1,
-        Math.floor(progress * projects.length * 0.999)
-      );
-      setActiveProjectId(projects[idx].id);
+    const handleScroll = () => {
+      if (!ticking) {
+        rafId = window.requestAnimationFrame(update);
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll);
-    handleScroll();
+    
+    // Initial run
+    const track = sectionRef.current;
+    if (track) {
+      const rect = track.getBoundingClientRect();
+      const viewHeight = window.innerHeight;
+      const totalScrollableHeight = rect.height - viewHeight;
+      if (totalScrollableHeight > 0) {
+        let progress = -rect.top / totalScrollableHeight;
+        progress = Math.max(0, Math.min(1, progress));
+        setScrollProgress(progress);
+        const idx = Math.min(
+          projects.length - 1,
+          Math.floor(progress * projects.length * 0.999)
+        );
+        setActiveProjectId(projects[idx].id);
+      }
+    }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+      }
     };
   }, []);
 

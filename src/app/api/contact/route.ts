@@ -2,7 +2,18 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    const { name, email, subject, message } = await request.json();
+    let body;
+    try {
+      body = await request.json();
+    } catch (e) {
+      console.warn('[Contact API Warning] Empty or invalid JSON payload received.');
+      return NextResponse.json(
+        { error: 'Invalid request. JSON payload is required.' },
+        { status: 400 }
+      );
+    }
+
+    const { name, email, subject, message } = body || {};
 
     // Validate fields
     if (!name || !email || !subject || !message) {
@@ -13,7 +24,7 @@ export async function POST(request: Request) {
     }
 
     const resendApiKey = process.env.RESEND_API_KEY;
-    const recipientEmail = process.env.CONTACT_RECEIVER_EMAIL || 'Prathamesh.Jadhav.Office@gmail.com';
+    const recipientEmail = (process.env.CONTACT_RECEIVER_EMAIL || 'Prathamesh.Jadhav.Office@gmail.com').toLowerCase();
     const senderEmail = process.env.CONTACT_SENDER_EMAIL || 'onboarding@resend.dev';
 
     console.log(`[Contact Form Ingestion] Received from ${name} (${email}): Subject: "${subject}"`);

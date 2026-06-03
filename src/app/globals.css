@@ -533,3 +533,44 @@ html.lenis, html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+/* =============================================
+   SECONDARY TEXT OVERRIDES: COMFORTAA MEDIUM
+   ============================================= */
+.sphere-tag,
+.projects-hud-label,
+.project-panel-code,
+.schematic-label,
+.detail-row,
+.detail-meta-label,
+.detail-meta-val,
+.detail-sec-title,
+.detail-badge,
+.detail-github-btn,
+.tick-number,
+.tick-title,
+.contact-hud-label,
+.terminal-title,
+.blinking-dot-container,
+.readout-row,
+.console-form-header,
+.console-form-group-header,
+.transmit-submit-btn,
+.terminal-log-line,
+.footer-copyright-text,
+.nav-link,
+.console-hint-text,
+.hero-hud-logs,
+.year-badge,
+.scroll-explore,
+.sphere-hud-label,
+.expand-trigger-btn,
+.card-index,
+.mobile-year-badge,
+.sticky-year-label,
+.hud-visualizer-header,
+.hud-indicator,
+.nav-logo-sub {
+  font-family: var(--font-comfortaa), 'Comfortaa', sans-serif !important;
+  font-weight: 500 !important; /* Medium weight */
+}

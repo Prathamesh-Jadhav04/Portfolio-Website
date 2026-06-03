@@ -475,24 +475,167 @@ interface Tag {
   z: number;
 }
 
+const skillsList = [
+  'React', 'Next.js', 'Node.js', 'TypeScript', 'JavaScript', 
+  'HTML', 'CSS', 'Python', 'Rust', 'C Language', 'C++', 'FastAPI', 
+  'LangChain', 'OpenAI API', 'HNSW Graph', 'Vector DB', 'RAG Pipelines',
+  'SQL Databases', 'NoSQL', 'MongoDB', 'Redis', 'Docker', 
+  'Git', 'Linux', 'Shell Scripting', 'ETL Pipelines', 'Scikit-Learn', 
+  'Pandas', 'NumPy', 'Multithreading', 'Scapy', 'Network Protocols'
+];
+const skills = Array.from(new Set(skillsList));
+
+// Precompute static meta properties for tag styling to prevent repeated calculations per frame
+const tagsMeta = skills.map((text) => {
+  const isBasicWeb = ['HTML', 'CSS', 'JavaScript'].includes(text);
+  const isFrontendWeb = ['React', 'Next.js', 'TypeScript'].includes(text);
+  const isBackendDB = ['Node.js', 'FastAPI', 'SQL Databases', 'NoSQL', 'MongoDB', 'Redis'].includes(text);
+  const isAIML = ['Python', 'Pandas', 'NumPy', 'Scikit-Learn', 'LangChain', 'OpenAI API', 'HNSW Graph', 'Vector DB', 'RAG Pipelines', 'ETL Pipelines'].includes(text);
+  const isSystemsDevOps = ['Rust', 'C Language', 'C++', 'Docker', 'Git', 'Linux', 'Shell Scripting', 'Multithreading', 'Scapy', 'Network Protocols'].includes(text);
+
+  let activeColor = '#cbd5e1'; // Fallback Slate
+  let activeBg = 'rgba(203, 213, 225, 0.05)';
+  let activeBorder = '1px solid rgba(203, 213, 225, 0.25)';
+  let activeGlow = 'none';
+
+  if (isBasicWeb) {
+    if (text === 'HTML') {
+      activeColor = '#ff6d3b'; // Coral/Orange HTML
+    } else if (text === 'CSS') {
+      activeColor = '#ffb33b'; // Warm Yellow-Orange CSS
+    } else {
+      activeColor = '#f5e050'; // Bright Yellow JavaScript
+    }
+    const rgb = activeColor === '#ff6d3b' ? '255, 109, 59' : activeColor === '#ffb33b' ? '255, 179, 59' : '245, 224, 80';
+    activeBg = `rgba(${rgb}, 0.05)`;
+    activeBorder = `1px solid rgba(${rgb}, 0.25)`;
+    activeGlow = `0 0 15px rgba(${rgb}, 0.15)`;
+  } else if (isFrontendWeb) {
+    if (text === 'React') {
+      activeColor = '#58c4dc'; // React Cyan
+    } else if (text === 'Next.js') {
+      activeColor = '#a5f3fc'; // Bright Cyan-white
+    } else {
+      activeColor = '#3178c6'; // TypeScript Royal Blue
+    }
+    const rgb = activeColor === '#58c4dc' ? '88, 196, 220' : activeColor === '#a5f3fc' ? '165, 243, 252' : '49, 120, 198';
+    activeBg = `rgba(${rgb}, 0.05)`;
+    activeBorder = `1px solid rgba(${rgb}, 0.25)`;
+    activeGlow = `0 0 15px rgba(${rgb}, 0.15)`;
+  } else if (isBackendDB) {
+    if (text === 'Redis') {
+      activeColor = '#f87171'; // Redis Coral Red
+    } else if (text === 'MongoDB') {
+      activeColor = '#10b981'; // Mongo Emerald Green
+    } else if (text === 'FastAPI') {
+      activeColor = '#2dd4bf'; // Teal
+    } else {
+      activeColor = '#4ade80'; // Node/SQL Bright Green
+    }
+    const rgb = activeColor === '#f87171' ? '248, 113, 113' : activeColor === '#10b981' ? '16, 185, 129' : activeColor === '#2dd4bf' ? '45, 212, 191' : '74, 222, 128';
+    activeBg = `rgba(${rgb}, 0.05)`;
+    activeBorder = `1px solid rgba(${rgb}, 0.25)`;
+    activeGlow = `0 0 15px rgba(${rgb}, 0.15)`;
+  } else if (isAIML) {
+    if (text === 'Python') {
+      activeColor = '#60a5fa'; // Soft Sky Blue
+    } else if (text === 'RAG Pipelines' || text === 'Vector DB') {
+      activeColor = '#fb923c'; // Warm Orange
+    } else {
+      activeColor = 'var(--accent-amber, #ffb400)'; // Signature Amber
+    }
+    const rgb = activeColor === '#60a5fa' ? '96, 165, 250' : activeColor === '#fb923c' ? '251, 146, 60' : '255, 180, 0';
+    activeBg = `rgba(${rgb}, 0.05)`;
+    activeBorder = `1px solid rgba(${rgb}, 0.25)`;
+    activeGlow = `0 0 15px rgba(${rgb}, 0.15)`;
+  } else if (isSystemsDevOps) {
+    if (text === 'Rust') {
+      activeColor = '#ef4444'; // Crimson Rust
+    } else if (text === 'Docker' || text === 'Git') {
+      activeColor = '#818cf8'; // Soft Indigo
+    } else if (text === 'Linux' || text === 'Shell Scripting') {
+      activeColor = '#c084fc'; // Purple
+    } else {
+      activeColor = '#a78bfa'; // Lavender/Violet
+    }
+    const rgb = activeColor === '#ef4444' ? '239, 68, 68' : activeColor === '#818cf8' ? '129, 140, 248' : activeColor === '#c084fc' ? '192, 132, 252' : '167, 139, 250';
+    activeBg = `rgba(${rgb}, 0.05)`;
+    activeBorder = `1px solid rgba(${rgb}, 0.25)`;
+    activeGlow = `0 0 15px rgba(${rgb}, 0.15)`;
+  }
+
+  return {
+    text,
+    activeColor,
+    activeBg,
+    activeBorder,
+    activeGlow
+  };
+});
+
 function TechSphere({ onHoverChange }: { onHoverChange: (hovering: boolean) => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [tags, setTags] = useState<Tag[]>([]);
   const mouseRef = useRef({ x: 0, y: 0 });
   const isHoveredRef = useRef(false);
   const isDraggingRef = useRef(false);
   const dragStartRef = useRef({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
 
-  const skillsList = [
-    'React', 'Next.js', 'Node.js', 'TypeScript', 'JavaScript', 
-    'HTML', 'CSS', 'Python', 'Rust', 'C Language', 'C++', 'FastAPI', 
-    'LangChain', 'OpenAI API', 'HNSW Graph', 'Vector DB', 'RAG Pipelines',
-    'SQL Databases', 'NoSQL', 'MongoDB', 'Redis', 'Docker', 
-    'Git', 'Linux', 'Shell Scripting', 'ETL Pipelines', 'Scikit-Learn', 
-    'Pandas', 'NumPy', 'Multithreading', 'Scapy', 'Network Protocols'
-  ];
-  const skills = Array.from(new Set(skillsList));
+  // Store coordinates in a mutable ref to bypass React state cycles
+  const tagsRef = useRef<Tag[]>([]);
+  // Store DOM references to update tag styles directly
+  const elementsRef = useRef<(HTMLSpanElement | null)[]>([]);
+
+  const rotateSphere = (angX: number, angY: number) => {
+    if (tagsRef.current.length === 0) return;
+    const cosX = Math.cos(angX);
+    const sinX = Math.sin(angX);
+    const cosY = Math.cos(angY);
+    const sinY = Math.sin(angY);
+    const radius = 130;
+    const depth = 280;
+
+    tagsRef.current.forEach((tag, idx) => {
+      const y1 = tag.y * cosX - tag.z * sinX;
+      const z1 = tag.y * sinX + tag.z * cosX;
+      const x2 = tag.x * cosY + z1 * sinY;
+      const z2 = -tag.x * sinY + z1 * cosY;
+
+      tag.x = x2;
+      tag.y = y1;
+      tag.z = z2;
+
+      const el = elementsRef.current[idx];
+      if (el) {
+        const meta = tagsMeta[idx];
+        const scale = (depth + tag.z) / depth;
+        const left = 160 + tag.x * scale;
+        const top = 160 + tag.y * scale;
+        
+        const opacity = (tag.z + radius) / (2 * radius) * 0.8 + 0.2;
+        const zIndex = Math.round(tag.z + radius);
+        const isFront = tag.z > 0;
+        
+        let blurAmount = 0;
+        if (tag.z < -20) {
+          blurAmount = Math.min(2.5, (Math.abs(tag.z) - 20) * 0.015);
+        }
+
+        el.style.left = `${left}px`;
+        el.style.top = `${top}px`;
+        el.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        el.style.opacity = `${opacity}`;
+        el.style.zIndex = `${zIndex}`;
+        el.style.fontWeight = isFront ? '500' : '300';
+        el.style.color = isFront ? meta.activeColor : 'rgba(245, 245, 245, 0.25)';
+        el.style.pointerEvents = isFront ? 'auto' : 'none';
+        el.style.background = isFront ? meta.activeBg : 'transparent';
+        el.style.border = isFront ? meta.activeBorder : '1px solid transparent';
+        el.style.boxShadow = isFront ? meta.activeGlow : 'none';
+        el.style.filter = blurAmount > 0 ? `blur(${blurAmount}px)` : 'none';
+      }
+    });
+  };
 
   useEffect(() => {
     const radius = 130;
@@ -509,7 +652,8 @@ function TechSphere({ onHoverChange }: { onHoverChange: (hovering: boolean) => v
         z: radius * Math.cos(phi),
       };
     });
-    setTags(initialTags);
+    tagsRef.current = initialTags;
+    rotateSphere(0, 0);
   }, []);
 
   useEffect(() => {
@@ -531,22 +675,7 @@ function TechSphere({ onHoverChange }: { onHoverChange: (hovering: boolean) => v
         angleY = angleY * 0.98 + 0.0015 * 0.02;
       }
 
-      setTags((prevTags) => {
-        return prevTags.map((tag) => {
-          const cosX = Math.cos(angleX);
-          const sinX = Math.sin(angleX);
-          const y1 = tag.y * cosX - tag.z * sinX;
-          const z1 = tag.y * sinX + tag.z * cosX;
-
-          const cosY = Math.cos(angleY);
-          const sinY = Math.sin(angleY);
-          const x2 = tag.x * cosY + z1 * sinY;
-          const z2 = -tag.x * sinY + z1 * cosY;
-
-          return { ...tag, x: x2, y: y1, z: z2 };
-        });
-      });
-
+      rotateSphere(angleX, angleY);
       rafId = requestAnimationFrame(update);
     };
 
@@ -606,21 +735,7 @@ function TechSphere({ onHoverChange }: { onHoverChange: (hovering: boolean) => v
       const angleXVal = -deltaY * dragFactor;
       const angleYVal = deltaX * dragFactor;
 
-      setTags((prevTags) => {
-        return prevTags.map((tag) => {
-          const cosX = Math.cos(angleXVal);
-          const sinX = Math.sin(angleXVal);
-          const y1 = tag.y * cosX - tag.z * sinX;
-          const z1 = tag.y * sinX + tag.z * cosX;
-
-          const cosY = Math.cos(angleYVal);
-          const sinY = Math.sin(angleYVal);
-          const x2 = tag.x * cosY + z1 * sinY;
-          const z2 = -tag.x * sinY + z1 * cosY;
-
-          return { ...tag, x: x2, y: y1, z: z2 };
-        });
-      });
+      rotateSphere(angleXVal, angleYVal);
     }
   };
 
@@ -648,21 +763,7 @@ function TechSphere({ onHoverChange }: { onHoverChange: (hovering: boolean) => v
       const angleXVal = -deltaY * dragFactor;
       const angleYVal = deltaX * dragFactor;
 
-      setTags((prevTags) => {
-        return prevTags.map((tag) => {
-          const cosX = Math.cos(angleXVal);
-          const sinX = Math.sin(angleXVal);
-          const y1 = tag.y * cosX - tag.z * sinX;
-          const z1 = tag.y * sinX + tag.z * cosX;
-
-          const cosY = Math.cos(angleYVal);
-          const sinY = Math.sin(angleYVal);
-          const x2 = tag.x * cosY + z1 * sinY;
-          const z2 = -tag.x * sinY + z1 * cosY;
-
-          return { ...tag, x: x2, y: y1, z: z2 };
-        });
-      });
+      rotateSphere(angleXVal, angleYVal);
     }
   };
 
@@ -700,132 +801,31 @@ function TechSphere({ onHoverChange }: { onHoverChange: (hovering: boolean) => v
         touchAction: 'none',
       }}
     >
-      {tags.map((tag, idx) => {
-        const radius = 130;
-        const depth = 280;
-        const scale = (depth + tag.z) / depth;
-        const left = 160 + tag.x * scale;
-        const top = 160 + tag.y * scale;
-        
-        const opacity = (tag.z + radius) / (2 * radius) * 0.8 + 0.2;
-        const zIndex = Math.round(tag.z + radius);
-
-        // Classify tag for premium multi-tone theme
-        const isBasicWeb = ['HTML', 'CSS', 'JavaScript'].includes(tag.text);
-        const isFrontendWeb = ['React', 'Next.js', 'TypeScript'].includes(tag.text);
-        const isBackendDB = ['Node.js', 'FastAPI', 'SQL Databases', 'NoSQL', 'MongoDB', 'Redis'].includes(tag.text);
-        const isAIML = ['Python', 'Pandas', 'NumPy', 'Scikit-Learn', 'LangChain', 'OpenAI API', 'HNSW Graph', 'Vector DB', 'RAG Pipelines', 'ETL Pipelines'].includes(tag.text);
-        const isSystemsDevOps = ['Rust', 'C Language', 'C++', 'Docker', 'Git', 'Linux', 'Shell Scripting', 'Multithreading', 'Scapy', 'Network Protocols'].includes(tag.text);
-
-        let activeColor = '#cbd5e1'; // Fallback Slate
-        let activeBg = 'rgba(203, 213, 225, 0.05)';
-        let activeBorder = '1px solid rgba(203, 213, 225, 0.25)';
-        let activeGlow = 'none';
-
-        if (isBasicWeb) {
-          // Warm sunset/gold tones (HTML/CSS/JS matching but distinct)
-          if (tag.text === 'HTML') {
-            activeColor = '#ff6d3b'; // Coral/Orange HTML
-          } else if (tag.text === 'CSS') {
-            activeColor = '#ffb33b'; // Warm Yellow-Orange CSS
-          } else {
-            activeColor = '#f5e050'; // Bright Yellow JavaScript
-          }
-          activeBg = `rgba(${activeColor === '#ff6d3b' ? '255, 109, 59' : activeColor === '#ffb33b' ? '255, 179, 59' : '245, 224, 80'}, 0.05)`;
-          activeBorder = `1px solid rgba(${activeColor === '#ff6d3b' ? '255, 109, 59' : activeColor === '#ffb33b' ? '255, 179, 59' : '245, 224, 80'}, 0.25)`;
-          activeGlow = `0 0 15px rgba(${activeColor === '#ff6d3b' ? '255, 109, 59' : activeColor === '#ffb33b' ? '255, 179, 59' : '245, 224, 80'}, 0.15)`;
-        } else if (isFrontendWeb) {
-          // Cool tech cyan/blue tones (React/Next/TS)
-          if (tag.text === 'React') {
-            activeColor = '#58c4dc'; // React Cyan
-          } else if (tag.text === 'Next.js') {
-            activeColor = '#a5f3fc'; // Bright Cyan-white
-          } else {
-            activeColor = '#3178c6'; // TypeScript Royal Blue
-          }
-          activeBg = `rgba(${activeColor === '#58c4dc' ? '88, 196, 220' : activeColor === '#a5f3fc' ? '165, 243, 252' : '49, 120, 198'}, 0.05)`;
-          activeBorder = `1px solid rgba(${activeColor === '#58c4dc' ? '88, 196, 220' : activeColor === '#a5f3fc' ? '165, 243, 252' : '49, 120, 198'}, 0.25)`;
-          activeGlow = `0 0 15px rgba(${activeColor === '#58c4dc' ? '88, 196, 220' : activeColor === '#a5f3fc' ? '165, 243, 252' : '49, 120, 198'}, 0.15)`;
-        } else if (isBackendDB) {
-          // Backend/DB minty green tones
-          if (tag.text === 'Redis') {
-            activeColor = '#f87171'; // Redis Coral Red
-          } else if (tag.text === 'MongoDB') {
-            activeColor = '#10b981'; // Mongo Emerald Green
-          } else if (tag.text === 'FastAPI') {
-            activeColor = '#2dd4bf'; // Teal
-          } else {
-            activeColor = '#4ade80'; // Node/SQL Bright Green
-          }
-          activeBg = `rgba(${activeColor === '#f87171' ? '248, 113, 113' : activeColor === '#10b981' ? '16, 185, 129' : activeColor === '#2dd4bf' ? '45, 212, 191' : '74, 222, 128'}, 0.05)`;
-          activeBorder = `1px solid rgba(${activeColor === '#f87171' ? '248, 113, 113' : activeColor === '#10b981' ? '16, 185, 129' : activeColor === '#2dd4bf' ? '45, 212, 191' : '74, 222, 128'}, 0.25)`;
-          activeGlow = `0 0 15px rgba(${activeColor === '#f87171' ? '248, 113, 113' : activeColor === '#10b981' ? '16, 185, 129' : activeColor === '#2dd4bf' ? '45, 212, 191' : '74, 222, 128'}, 0.15)`;
-        } else if (isAIML) {
-          // AI/ML Warm Amber and Python Blue-Yellow
-          if (tag.text === 'Python') {
-            activeColor = '#60a5fa'; // Soft Sky Blue
-          } else if (tag.text === 'RAG Pipelines' || tag.text === 'Vector DB') {
-            activeColor = '#fb923c'; // Warm Orange
-          } else {
-            activeColor = 'var(--accent-amber, #ffb400)'; // Signature Amber
-          }
-          activeBg = `rgba(${activeColor === '#60a5fa' ? '96, 165, 250' : activeColor === '#fb923c' ? '251, 146, 60' : '255, 180, 0'}, 0.05)`;
-          activeBorder = `1px solid rgba(${activeColor === '#60a5fa' ? '96, 165, 250' : activeColor === '#fb923c' ? '251, 146, 60' : '255, 180, 0'}, 0.25)`;
-          activeGlow = `0 0 15px rgba(${activeColor === '#60a5fa' ? '96, 165, 250' : activeColor === '#fb923c' ? '251, 146, 60' : '255, 180, 0'}, 0.15)`;
-        } else if (isSystemsDevOps) {
-          // Systems/DevOps Indigo, Violet & Crimson Red
-          if (tag.text === 'Rust') {
-            activeColor = '#ef4444'; // Crimson Rust
-          } else if (tag.text === 'Docker' || tag.text === 'Git') {
-            activeColor = '#818cf8'; // Soft Indigo
-          } else if (tag.text === 'Linux' || tag.text === 'Shell Scripting') {
-            activeColor = '#c084fc'; // Purple
-          } else {
-            activeColor = '#a78bfa'; // Lavender/Violet
-          }
-          activeBg = `rgba(${activeColor === '#ef4444' ? '239, 68, 68' : activeColor === '#818cf8' ? '129, 140, 248' : activeColor === '#c084fc' ? '192, 132, 252' : '167, 139, 250'}, 0.05)`;
-          activeBorder = `1px solid rgba(${activeColor === '#ef4444' ? '239, 68, 68' : activeColor === '#818cf8' ? '129, 140, 248' : activeColor === '#c084fc' ? '192, 132, 252' : '167, 139, 250'}, 0.25)`;
-          activeGlow = `0 0 15px rgba(${activeColor === '#ef4444' ? '239, 68, 68' : activeColor === '#818cf8' ? '129, 140, 248' : activeColor === '#c084fc' ? '192, 132, 252' : '167, 139, 250'}, 0.15)`;
-        }
-
-        const isFront = tag.z > 0;
-        
-        // Depth of field blur calculation
-        let blurAmount = 0;
-        if (tag.z < -20) {
-          blurAmount = Math.min(2.5, (Math.abs(tag.z) - 20) * 0.015);
-        }
-
-        return (
-          <span
-            key={idx}
-            style={{
-              position: 'absolute',
-              left: `${left}px`,
-              top: `${top}px`,
-              transform: `translate(-50%, -50%) scale(${scale})`,
-              fontSize: '0.72rem',
-              fontFamily: 'var(--font-jetbrains-mono, monospace)',
-              fontWeight: isFront ? 500 : 300,
-              color: isFront ? activeColor : 'rgba(245, 245, 245, 0.25)',
-              opacity: opacity,
-              zIndex: zIndex,
-              whiteSpace: 'nowrap',
-              textTransform: 'uppercase',
-              pointerEvents: isFront ? 'auto' : 'none',
-              background: isFront ? activeBg : 'transparent',
-              border: isFront ? activeBorder : '1px solid transparent',
-              borderRadius: '4px',
-              padding: '0.2rem 0.5rem',
-              transition: 'color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease',
-              boxShadow: isFront ? activeGlow : 'none',
-              filter: blurAmount > 0 ? `blur(${blurAmount}px)` : 'none',
-            }}
-          >
-            {tag.text}
-          </span>
-        );
-      })}
+      {skills.map((text, idx) => (
+        <span
+          key={idx}
+          ref={(el) => {
+            elementsRef.current[idx] = el;
+          }}
+          className="sphere-tag"
+          style={{
+            position: 'absolute',
+            fontSize: '0.72rem',
+            whiteSpace: 'nowrap',
+            textTransform: 'uppercase',
+            borderRadius: '4px',
+            padding: '0.2rem 0.5rem',
+            transition: 'color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease',
+            left: '160px',
+            top: '160px',
+            transform: 'translate(-50%, -50%) scale(1)',
+            opacity: 0,
+            pointerEvents: 'none',
+          }}
+        >
+          {text}
+        </span>
+      ))}
     </div>
   );
 }

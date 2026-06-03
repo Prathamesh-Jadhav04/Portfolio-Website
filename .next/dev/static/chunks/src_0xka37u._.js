@@ -759,51 +759,48 @@ function ParticleBackground() {
                         ctx.stroke();
                     }
                     // Draw and update particles
-                    particles.forEach({
-                        "ParticleBackground.useEffect.animate": (p)=>{
-                            p.x += p.vx;
-                            p.y += p.vy;
-                            if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-                            const dxMouse = mouseRef.current.x - p.x;
-                            const dyMouse = mouseRef.current.y - p.y;
-                            const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
-                            if (distMouse < 200) {
-                                p.x += dxMouse / distMouse * 0.3;
-                                p.y += dyMouse / distMouse * 0.3;
-                            }
-                            ctx.beginPath();
-                            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                            ctx.fillStyle = 'rgba(255, 180, 0, 0.15)';
-                            ctx.fill();
-                            particles.forEach({
-                                "ParticleBackground.useEffect.animate": (p2)=>{
-                                    if (p === p2) return;
-                                    const dx = p.x - p2.x;
-                                    const dy = p.y - p2.y;
-                                    const dist = Math.sqrt(dx * dx + dy * dy);
-                                    if (dist < 130) {
-                                        const alpha = (130 - dist) / 130 * 0.07;
-                                        ctx.strokeStyle = `rgba(255, 180, 0, ${alpha})`;
-                                        ctx.lineWidth = 0.5;
-                                        ctx.beginPath();
-                                        ctx.moveTo(p.x, p.y);
-                                        ctx.lineTo(p2.x, p2.y);
-                                        ctx.stroke();
-                                    }
-                                }
-                            }["ParticleBackground.useEffect.animate"]);
-                            if (distMouse < 180) {
-                                const alpha = (180 - distMouse) / 180 * 0.15;
+                    for(let i = 0; i < particles.length; i++){
+                        const p = particles[i];
+                        p.x += p.vx;
+                        p.y += p.vy;
+                        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                        const dxMouse = mouseRef.current.x - p.x;
+                        const dyMouse = mouseRef.current.y - p.y;
+                        const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+                        if (distMouse < 200) {
+                            p.x += dxMouse / distMouse * 0.3;
+                            p.y += dyMouse / distMouse * 0.3;
+                        }
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(255, 180, 0, 0.15)';
+                        ctx.fill();
+                        for(let j = i + 1; j < particles.length; j++){
+                            const p2 = particles[j];
+                            const dx = p.x - p2.x;
+                            const dy = p.y - p2.y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            if (dist < 130) {
+                                const alpha = (130 - dist) / 130 * 0.07;
                                 ctx.strokeStyle = `rgba(255, 180, 0, ${alpha})`;
-                                ctx.lineWidth = 0.6;
+                                ctx.lineWidth = 0.5;
                                 ctx.beginPath();
                                 ctx.moveTo(p.x, p.y);
-                                ctx.lineTo(mouseRef.current.x, mouseRef.current.y);
+                                ctx.lineTo(p2.x, p2.y);
                                 ctx.stroke();
                             }
                         }
-                    }["ParticleBackground.useEffect.animate"]);
+                        if (distMouse < 180) {
+                            const alpha = (180 - distMouse) / 180 * 0.15;
+                            ctx.strokeStyle = `rgba(255, 180, 0, ${alpha})`;
+                            ctx.lineWidth = 0.6;
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(mouseRef.current.x, mouseRef.current.y);
+                            ctx.stroke();
+                        }
+                    }
                     animationFrameId = requestAnimationFrame(animate);
                 }
             }["ParticleBackground.useEffect.animate"];
@@ -831,7 +828,7 @@ function ParticleBackground() {
         }
     }, void 0, false, {
         fileName: "[project]/src/components/HeroSection.tsx",
-        lineNumber: 144,
+        lineNumber: 145,
         columnNumber: 5
     }, this);
 }
@@ -873,7 +870,7 @@ function SystemLogsHUD() {
                 children: "// PRATHAMESH_JADHAV_PORTFOLIO"
             }, void 0, false, {
                 fileName: "[project]/src/components/HeroSection.tsx",
-                lineNumber: 182,
+                lineNumber: 183,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -885,13 +882,13 @@ function SystemLogsHUD() {
                         children: "OPERATIONAL"
                     }, void 0, false, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 183,
+                        lineNumber: 184,
                         columnNumber: 48
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/HeroSection.tsx",
-                lineNumber: 183,
+                lineNumber: 184,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -905,25 +902,8 @@ function SystemLogsHUD() {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 184,
-                        columnNumber: 47
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/HeroSection.tsx",
-                lineNumber: 184,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "hud-line",
-                children: [
-                    "ACTIVE NODE: ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        children: "NODE_AI_26_01"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/HeroSection.tsx",
                         lineNumber: 185,
-                        columnNumber: 46
+                        columnNumber: 47
                     }, this)
                 ]
             }, void 0, true, {
@@ -934,24 +914,41 @@ function SystemLogsHUD() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "hud-line",
                 children: [
-                    "SYS_TIME: ",
+                    "ACTIVE NODE: ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        children: time || '--:--:--'
+                        children: "NODE_AI_26_01"
                     }, void 0, false, {
                         fileName: "[project]/src/components/HeroSection.tsx",
                         lineNumber: 186,
-                        columnNumber: 43
+                        columnNumber: 46
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/HeroSection.tsx",
                 lineNumber: 186,
                 columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "hud-line",
+                children: [
+                    "SYS_TIME: ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        children: time || '--:--:--'
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/HeroSection.tsx",
+                        lineNumber: 187,
+                        columnNumber: 43
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/HeroSection.tsx",
+                lineNumber: 187,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/HeroSection.tsx",
-        lineNumber: 181,
+        lineNumber: 182,
         columnNumber: 5
     }, this);
 }
@@ -964,12 +961,12 @@ function HeroSection() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ParticleBackground, {}, void 0, false, {
                 fileName: "[project]/src/components/HeroSection.tsx",
-                lineNumber: 195,
+                lineNumber: 196,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SystemLogsHUD, {}, void 0, false, {
                 fileName: "[project]/src/components/HeroSection.tsx",
-                lineNumber: 198,
+                lineNumber: 199,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -986,25 +983,25 @@ function HeroSection() {
                             type: "video/mp4"
                         }, void 0, false, {
                             fileName: "[project]/src/components/HeroSection.tsx",
-                            lineNumber: 208,
+                            lineNumber: 209,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 201,
+                        lineNumber: 202,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "video-overlay"
                     }, void 0, false, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 213,
+                        lineNumber: 214,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/HeroSection.tsx",
-                lineNumber: 200,
+                lineNumber: 201,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1025,17 +1022,17 @@ function HeroSection() {
                                         text: "EST. 2022"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HeroSection.tsx",
-                                        lineNumber: 220,
+                                        lineNumber: 221,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 219,
+                                    lineNumber: 220,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 218,
+                                lineNumber: 219,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1047,12 +1044,12 @@ function HeroSection() {
                                             children: "I BUILD."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/HeroSection.tsx",
-                                            lineNumber: 226,
+                                            lineNumber: 227,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HeroSection.tsx",
-                                        lineNumber: 225,
+                                        lineNumber: 226,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1061,12 +1058,12 @@ function HeroSection() {
                                             children: "I SHIP."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/HeroSection.tsx",
-                                            lineNumber: 229,
+                                            lineNumber: 230,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HeroSection.tsx",
-                                        lineNumber: 228,
+                                        lineNumber: 229,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1075,18 +1072,18 @@ function HeroSection() {
                                             children: "I OPTIMIZE."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/HeroSection.tsx",
-                                            lineNumber: 232,
+                                            lineNumber: 233,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HeroSection.tsx",
-                                        lineNumber: 231,
+                                        lineNumber: 232,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 224,
+                                lineNumber: 225,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1095,18 +1092,18 @@ function HeroSection() {
                                     text: "AI/ML Developer. Data Scientist. GenAI Engineer."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 237,
+                                    lineNumber: 238,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/HeroSection.tsx",
-                                lineNumber: 236,
+                                lineNumber: 237,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 217,
+                        lineNumber: 218,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Magnetic$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Magnetic"], {
@@ -1120,36 +1117,36 @@ function HeroSection() {
                                         text: "SCROLL TO EXPLORE"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HeroSection.tsx",
-                                        lineNumber: 244,
+                                        lineNumber: 245,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 243,
+                                    lineNumber: 244,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "scroll-line"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/HeroSection.tsx",
-                                    lineNumber: 246,
+                                    lineNumber: 247,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/HeroSection.tsx",
-                            lineNumber: 242,
+                            lineNumber: 243,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/HeroSection.tsx",
-                        lineNumber: 241,
+                        lineNumber: 242,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/HeroSection.tsx",
-                lineNumber: 216,
+                lineNumber: 217,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -1225,13 +1222,13 @@ function HeroSection() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/components/HeroSection.tsx",
-                lineNumber: 251,
+                lineNumber: 252,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/HeroSection.tsx",
-        lineNumber: 193,
+        lineNumber: 194,
         columnNumber: 5
     }, this);
 }
@@ -3586,10 +3583,165 @@ function ProjectSchematic({ id }) {
     return null;
 }
 _c = ProjectSchematic;
+const skillsList = [
+    'React',
+    'Next.js',
+    'Node.js',
+    'TypeScript',
+    'JavaScript',
+    'HTML',
+    'CSS',
+    'Python',
+    'Rust',
+    'C Language',
+    'C++',
+    'FastAPI',
+    'LangChain',
+    'OpenAI API',
+    'HNSW Graph',
+    'Vector DB',
+    'RAG Pipelines',
+    'SQL Databases',
+    'NoSQL',
+    'MongoDB',
+    'Redis',
+    'Docker',
+    'Git',
+    'Linux',
+    'Shell Scripting',
+    'ETL Pipelines',
+    'Scikit-Learn',
+    'Pandas',
+    'NumPy',
+    'Multithreading',
+    'Scapy',
+    'Network Protocols'
+];
+const skills = Array.from(new Set(skillsList));
+// Precompute static meta properties for tag styling to prevent repeated calculations per frame
+const tagsMeta = skills.map((text)=>{
+    const isBasicWeb = [
+        'HTML',
+        'CSS',
+        'JavaScript'
+    ].includes(text);
+    const isFrontendWeb = [
+        'React',
+        'Next.js',
+        'TypeScript'
+    ].includes(text);
+    const isBackendDB = [
+        'Node.js',
+        'FastAPI',
+        'SQL Databases',
+        'NoSQL',
+        'MongoDB',
+        'Redis'
+    ].includes(text);
+    const isAIML = [
+        'Python',
+        'Pandas',
+        'NumPy',
+        'Scikit-Learn',
+        'LangChain',
+        'OpenAI API',
+        'HNSW Graph',
+        'Vector DB',
+        'RAG Pipelines',
+        'ETL Pipelines'
+    ].includes(text);
+    const isSystemsDevOps = [
+        'Rust',
+        'C Language',
+        'C++',
+        'Docker',
+        'Git',
+        'Linux',
+        'Shell Scripting',
+        'Multithreading',
+        'Scapy',
+        'Network Protocols'
+    ].includes(text);
+    let activeColor = '#cbd5e1'; // Fallback Slate
+    let activeBg = 'rgba(203, 213, 225, 0.05)';
+    let activeBorder = '1px solid rgba(203, 213, 225, 0.25)';
+    let activeGlow = 'none';
+    if (isBasicWeb) {
+        if (text === 'HTML') {
+            activeColor = '#ff6d3b'; // Coral/Orange HTML
+        } else if (text === 'CSS') {
+            activeColor = '#ffb33b'; // Warm Yellow-Orange CSS
+        } else {
+            activeColor = '#f5e050'; // Bright Yellow JavaScript
+        }
+        const rgb = activeColor === '#ff6d3b' ? '255, 109, 59' : activeColor === '#ffb33b' ? '255, 179, 59' : '245, 224, 80';
+        activeBg = `rgba(${rgb}, 0.05)`;
+        activeBorder = `1px solid rgba(${rgb}, 0.25)`;
+        activeGlow = `0 0 15px rgba(${rgb}, 0.15)`;
+    } else if (isFrontendWeb) {
+        if (text === 'React') {
+            activeColor = '#58c4dc'; // React Cyan
+        } else if (text === 'Next.js') {
+            activeColor = '#a5f3fc'; // Bright Cyan-white
+        } else {
+            activeColor = '#3178c6'; // TypeScript Royal Blue
+        }
+        const rgb = activeColor === '#58c4dc' ? '88, 196, 220' : activeColor === '#a5f3fc' ? '165, 243, 252' : '49, 120, 198';
+        activeBg = `rgba(${rgb}, 0.05)`;
+        activeBorder = `1px solid rgba(${rgb}, 0.25)`;
+        activeGlow = `0 0 15px rgba(${rgb}, 0.15)`;
+    } else if (isBackendDB) {
+        if (text === 'Redis') {
+            activeColor = '#f87171'; // Redis Coral Red
+        } else if (text === 'MongoDB') {
+            activeColor = '#10b981'; // Mongo Emerald Green
+        } else if (text === 'FastAPI') {
+            activeColor = '#2dd4bf'; // Teal
+        } else {
+            activeColor = '#4ade80'; // Node/SQL Bright Green
+        }
+        const rgb = activeColor === '#f87171' ? '248, 113, 113' : activeColor === '#10b981' ? '16, 185, 129' : activeColor === '#2dd4bf' ? '45, 212, 191' : '74, 222, 128';
+        activeBg = `rgba(${rgb}, 0.05)`;
+        activeBorder = `1px solid rgba(${rgb}, 0.25)`;
+        activeGlow = `0 0 15px rgba(${rgb}, 0.15)`;
+    } else if (isAIML) {
+        if (text === 'Python') {
+            activeColor = '#60a5fa'; // Soft Sky Blue
+        } else if (text === 'RAG Pipelines' || text === 'Vector DB') {
+            activeColor = '#fb923c'; // Warm Orange
+        } else {
+            activeColor = 'var(--accent-amber, #ffb400)'; // Signature Amber
+        }
+        const rgb = activeColor === '#60a5fa' ? '96, 165, 250' : activeColor === '#fb923c' ? '251, 146, 60' : '255, 180, 0';
+        activeBg = `rgba(${rgb}, 0.05)`;
+        activeBorder = `1px solid rgba(${rgb}, 0.25)`;
+        activeGlow = `0 0 15px rgba(${rgb}, 0.15)`;
+    } else if (isSystemsDevOps) {
+        if (text === 'Rust') {
+            activeColor = '#ef4444'; // Crimson Rust
+        } else if (text === 'Docker' || text === 'Git') {
+            activeColor = '#818cf8'; // Soft Indigo
+        } else if (text === 'Linux' || text === 'Shell Scripting') {
+            activeColor = '#c084fc'; // Purple
+        } else {
+            activeColor = '#a78bfa'; // Lavender/Violet
+        }
+        const rgb = activeColor === '#ef4444' ? '239, 68, 68' : activeColor === '#818cf8' ? '129, 140, 248' : activeColor === '#c084fc' ? '192, 132, 252' : '167, 139, 250';
+        activeBg = `rgba(${rgb}, 0.05)`;
+        activeBorder = `1px solid rgba(${rgb}, 0.25)`;
+        activeGlow = `0 0 15px rgba(${rgb}, 0.15)`;
+    }
+    return {
+        text,
+        activeColor,
+        activeBg,
+        activeBorder,
+        activeGlow
+    };
+});
 function TechSphere({ onHoverChange }) {
     _s();
     const containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const [tags, setTags] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const mouseRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])({
         x: 0,
         y: 0
@@ -3601,41 +3753,54 @@ function TechSphere({ onHoverChange }) {
         y: 0
     });
     const [isDragging, setIsDragging] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const skillsList = [
-        'React',
-        'Next.js',
-        'Node.js',
-        'TypeScript',
-        'JavaScript',
-        'HTML',
-        'CSS',
-        'Python',
-        'Rust',
-        'C Language',
-        'C++',
-        'FastAPI',
-        'LangChain',
-        'OpenAI API',
-        'HNSW Graph',
-        'Vector DB',
-        'RAG Pipelines',
-        'SQL Databases',
-        'NoSQL',
-        'MongoDB',
-        'Redis',
-        'Docker',
-        'Git',
-        'Linux',
-        'Shell Scripting',
-        'ETL Pipelines',
-        'Scikit-Learn',
-        'Pandas',
-        'NumPy',
-        'Multithreading',
-        'Scapy',
-        'Network Protocols'
-    ];
-    const skills = Array.from(new Set(skillsList));
+    // Store coordinates in a mutable ref to bypass React state cycles
+    const tagsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])([]);
+    // Store DOM references to update tag styles directly
+    const elementsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])([]);
+    const rotateSphere = (angX, angY)=>{
+        if (tagsRef.current.length === 0) return;
+        const cosX = Math.cos(angX);
+        const sinX = Math.sin(angX);
+        const cosY = Math.cos(angY);
+        const sinY = Math.sin(angY);
+        const radius = 130;
+        const depth = 280;
+        tagsRef.current.forEach((tag, idx)=>{
+            const y1 = tag.y * cosX - tag.z * sinX;
+            const z1 = tag.y * sinX + tag.z * cosX;
+            const x2 = tag.x * cosY + z1 * sinY;
+            const z2 = -tag.x * sinY + z1 * cosY;
+            tag.x = x2;
+            tag.y = y1;
+            tag.z = z2;
+            const el = elementsRef.current[idx];
+            if (el) {
+                const meta = tagsMeta[idx];
+                const scale = (depth + tag.z) / depth;
+                const left = 160 + tag.x * scale;
+                const top = 160 + tag.y * scale;
+                const opacity = (tag.z + radius) / (2 * radius) * 0.8 + 0.2;
+                const zIndex = Math.round(tag.z + radius);
+                const isFront = tag.z > 0;
+                let blurAmount = 0;
+                if (tag.z < -20) {
+                    blurAmount = Math.min(2.5, (Math.abs(tag.z) - 20) * 0.015);
+                }
+                el.style.left = `${left}px`;
+                el.style.top = `${top}px`;
+                el.style.transform = `translate(-50%, -50%) scale(${scale})`;
+                el.style.opacity = `${opacity}`;
+                el.style.zIndex = `${zIndex}`;
+                el.style.fontWeight = isFront ? '500' : '300';
+                el.style.color = isFront ? meta.activeColor : 'rgba(245, 245, 245, 0.25)';
+                el.style.pointerEvents = isFront ? 'auto' : 'none';
+                el.style.background = isFront ? meta.activeBg : 'transparent';
+                el.style.border = isFront ? meta.activeBorder : '1px solid transparent';
+                el.style.boxShadow = isFront ? meta.activeGlow : 'none';
+                el.style.filter = blurAmount > 0 ? `blur(${blurAmount}px)` : 'none';
+            }
+        });
+    };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "TechSphere.useEffect": ()=>{
             const radius = 130;
@@ -3653,7 +3818,8 @@ function TechSphere({ onHoverChange }) {
                     };
                 }
             }["TechSphere.useEffect.initialTags"]);
-            setTags(initialTags);
+            tagsRef.current = initialTags;
+            rotateSphere(0, 0);
         }
     }["TechSphere.useEffect"], []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -3674,28 +3840,7 @@ function TechSphere({ onHoverChange }) {
                         angleX = angleX * 0.98 + 0.001 * 0.02;
                         angleY = angleY * 0.98 + 0.0015 * 0.02;
                     }
-                    setTags({
-                        "TechSphere.useEffect.update": (prevTags)=>{
-                            return prevTags.map({
-                                "TechSphere.useEffect.update": (tag)=>{
-                                    const cosX = Math.cos(angleX);
-                                    const sinX = Math.sin(angleX);
-                                    const y1 = tag.y * cosX - tag.z * sinX;
-                                    const z1 = tag.y * sinX + tag.z * cosX;
-                                    const cosY = Math.cos(angleY);
-                                    const sinY = Math.sin(angleY);
-                                    const x2 = tag.x * cosY + z1 * sinY;
-                                    const z2 = -tag.x * sinY + z1 * cosY;
-                                    return {
-                                        ...tag,
-                                        x: x2,
-                                        y: y1,
-                                        z: z2
-                                    };
-                                }
-                            }["TechSphere.useEffect.update"]);
-                        }
-                    }["TechSphere.useEffect.update"]);
+                    rotateSphere(angleX, angleY);
                     rafId = requestAnimationFrame(update);
                 }
             }["TechSphere.useEffect.update"];
@@ -3748,24 +3893,7 @@ function TechSphere({ onHoverChange }) {
             const dragFactor = 0.006;
             const angleXVal = -deltaY * dragFactor;
             const angleYVal = deltaX * dragFactor;
-            setTags((prevTags)=>{
-                return prevTags.map((tag)=>{
-                    const cosX = Math.cos(angleXVal);
-                    const sinX = Math.sin(angleXVal);
-                    const y1 = tag.y * cosX - tag.z * sinX;
-                    const z1 = tag.y * sinX + tag.z * cosX;
-                    const cosY = Math.cos(angleYVal);
-                    const sinY = Math.sin(angleYVal);
-                    const x2 = tag.x * cosY + z1 * sinY;
-                    const z2 = -tag.x * sinY + z1 * cosY;
-                    return {
-                        ...tag,
-                        x: x2,
-                        y: y1,
-                        z: z2
-                    };
-                });
-            });
+            rotateSphere(angleXVal, angleYVal);
         }
     };
     const handleMouseMove = (e)=>{
@@ -3787,24 +3915,7 @@ function TechSphere({ onHoverChange }) {
             const dragFactor = 0.005;
             const angleXVal = -deltaY * dragFactor;
             const angleYVal = deltaX * dragFactor;
-            setTags((prevTags)=>{
-                return prevTags.map((tag)=>{
-                    const cosX = Math.cos(angleXVal);
-                    const sinX = Math.sin(angleXVal);
-                    const y1 = tag.y * cosX - tag.z * sinX;
-                    const z1 = tag.y * sinX + tag.z * cosX;
-                    const cosY = Math.cos(angleYVal);
-                    const sinY = Math.sin(angleYVal);
-                    const x2 = tag.x * cosY + z1 * sinY;
-                    const z2 = -tag.x * sinY + z1 * cosY;
-                    return {
-                        ...tag,
-                        x: x2,
-                        y: y1,
-                        z: z2
-                    };
-                });
-            });
+            rotateSphere(angleXVal, angleYVal);
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3839,169 +3950,38 @@ function TechSphere({ onHoverChange }) {
             userSelect: 'none',
             touchAction: 'none'
         },
-        children: tags.map((tag, idx)=>{
-            const radius = 130;
-            const depth = 280;
-            const scale = (depth + tag.z) / depth;
-            const left = 160 + tag.x * scale;
-            const top = 160 + tag.y * scale;
-            const opacity = (tag.z + radius) / (2 * radius) * 0.8 + 0.2;
-            const zIndex = Math.round(tag.z + radius);
-            // Classify tag for premium multi-tone theme
-            const isBasicWeb = [
-                'HTML',
-                'CSS',
-                'JavaScript'
-            ].includes(tag.text);
-            const isFrontendWeb = [
-                'React',
-                'Next.js',
-                'TypeScript'
-            ].includes(tag.text);
-            const isBackendDB = [
-                'Node.js',
-                'FastAPI',
-                'SQL Databases',
-                'NoSQL',
-                'MongoDB',
-                'Redis'
-            ].includes(tag.text);
-            const isAIML = [
-                'Python',
-                'Pandas',
-                'NumPy',
-                'Scikit-Learn',
-                'LangChain',
-                'OpenAI API',
-                'HNSW Graph',
-                'Vector DB',
-                'RAG Pipelines',
-                'ETL Pipelines'
-            ].includes(tag.text);
-            const isSystemsDevOps = [
-                'Rust',
-                'C Language',
-                'C++',
-                'Docker',
-                'Git',
-                'Linux',
-                'Shell Scripting',
-                'Multithreading',
-                'Scapy',
-                'Network Protocols'
-            ].includes(tag.text);
-            let activeColor = '#cbd5e1'; // Fallback Slate
-            let activeBg = 'rgba(203, 213, 225, 0.05)';
-            let activeBorder = '1px solid rgba(203, 213, 225, 0.25)';
-            let activeGlow = 'none';
-            if (isBasicWeb) {
-                // Warm sunset/gold tones (HTML/CSS/JS matching but distinct)
-                if (tag.text === 'HTML') {
-                    activeColor = '#ff6d3b'; // Coral/Orange HTML
-                } else if (tag.text === 'CSS') {
-                    activeColor = '#ffb33b'; // Warm Yellow-Orange CSS
-                } else {
-                    activeColor = '#f5e050'; // Bright Yellow JavaScript
-                }
-                activeBg = `rgba(${activeColor === '#ff6d3b' ? '255, 109, 59' : activeColor === '#ffb33b' ? '255, 179, 59' : '245, 224, 80'}, 0.05)`;
-                activeBorder = `1px solid rgba(${activeColor === '#ff6d3b' ? '255, 109, 59' : activeColor === '#ffb33b' ? '255, 179, 59' : '245, 224, 80'}, 0.25)`;
-                activeGlow = `0 0 15px rgba(${activeColor === '#ff6d3b' ? '255, 109, 59' : activeColor === '#ffb33b' ? '255, 179, 59' : '245, 224, 80'}, 0.15)`;
-            } else if (isFrontendWeb) {
-                // Cool tech cyan/blue tones (React/Next/TS)
-                if (tag.text === 'React') {
-                    activeColor = '#58c4dc'; // React Cyan
-                } else if (tag.text === 'Next.js') {
-                    activeColor = '#a5f3fc'; // Bright Cyan-white
-                } else {
-                    activeColor = '#3178c6'; // TypeScript Royal Blue
-                }
-                activeBg = `rgba(${activeColor === '#58c4dc' ? '88, 196, 220' : activeColor === '#a5f3fc' ? '165, 243, 252' : '49, 120, 198'}, 0.05)`;
-                activeBorder = `1px solid rgba(${activeColor === '#58c4dc' ? '88, 196, 220' : activeColor === '#a5f3fc' ? '165, 243, 252' : '49, 120, 198'}, 0.25)`;
-                activeGlow = `0 0 15px rgba(${activeColor === '#58c4dc' ? '88, 196, 220' : activeColor === '#a5f3fc' ? '165, 243, 252' : '49, 120, 198'}, 0.15)`;
-            } else if (isBackendDB) {
-                // Backend/DB minty green tones
-                if (tag.text === 'Redis') {
-                    activeColor = '#f87171'; // Redis Coral Red
-                } else if (tag.text === 'MongoDB') {
-                    activeColor = '#10b981'; // Mongo Emerald Green
-                } else if (tag.text === 'FastAPI') {
-                    activeColor = '#2dd4bf'; // Teal
-                } else {
-                    activeColor = '#4ade80'; // Node/SQL Bright Green
-                }
-                activeBg = `rgba(${activeColor === '#f87171' ? '248, 113, 113' : activeColor === '#10b981' ? '16, 185, 129' : activeColor === '#2dd4bf' ? '45, 212, 191' : '74, 222, 128'}, 0.05)`;
-                activeBorder = `1px solid rgba(${activeColor === '#f87171' ? '248, 113, 113' : activeColor === '#10b981' ? '16, 185, 129' : activeColor === '#2dd4bf' ? '45, 212, 191' : '74, 222, 128'}, 0.25)`;
-                activeGlow = `0 0 15px rgba(${activeColor === '#f87171' ? '248, 113, 113' : activeColor === '#10b981' ? '16, 185, 129' : activeColor === '#2dd4bf' ? '45, 212, 191' : '74, 222, 128'}, 0.15)`;
-            } else if (isAIML) {
-                // AI/ML Warm Amber and Python Blue-Yellow
-                if (tag.text === 'Python') {
-                    activeColor = '#60a5fa'; // Soft Sky Blue
-                } else if (tag.text === 'RAG Pipelines' || tag.text === 'Vector DB') {
-                    activeColor = '#fb923c'; // Warm Orange
-                } else {
-                    activeColor = 'var(--accent-amber, #ffb400)'; // Signature Amber
-                }
-                activeBg = `rgba(${activeColor === '#60a5fa' ? '96, 165, 250' : activeColor === '#fb923c' ? '251, 146, 60' : '255, 180, 0'}, 0.05)`;
-                activeBorder = `1px solid rgba(${activeColor === '#60a5fa' ? '96, 165, 250' : activeColor === '#fb923c' ? '251, 146, 60' : '255, 180, 0'}, 0.25)`;
-                activeGlow = `0 0 15px rgba(${activeColor === '#60a5fa' ? '96, 165, 250' : activeColor === '#fb923c' ? '251, 146, 60' : '255, 180, 0'}, 0.15)`;
-            } else if (isSystemsDevOps) {
-                // Systems/DevOps Indigo, Violet & Crimson Red
-                if (tag.text === 'Rust') {
-                    activeColor = '#ef4444'; // Crimson Rust
-                } else if (tag.text === 'Docker' || tag.text === 'Git') {
-                    activeColor = '#818cf8'; // Soft Indigo
-                } else if (tag.text === 'Linux' || tag.text === 'Shell Scripting') {
-                    activeColor = '#c084fc'; // Purple
-                } else {
-                    activeColor = '#a78bfa'; // Lavender/Violet
-                }
-                activeBg = `rgba(${activeColor === '#ef4444' ? '239, 68, 68' : activeColor === '#818cf8' ? '129, 140, 248' : activeColor === '#c084fc' ? '192, 132, 252' : '167, 139, 250'}, 0.05)`;
-                activeBorder = `1px solid rgba(${activeColor === '#ef4444' ? '239, 68, 68' : activeColor === '#818cf8' ? '129, 140, 248' : activeColor === '#c084fc' ? '192, 132, 252' : '167, 139, 250'}, 0.25)`;
-                activeGlow = `0 0 15px rgba(${activeColor === '#ef4444' ? '239, 68, 68' : activeColor === '#818cf8' ? '129, 140, 248' : activeColor === '#c084fc' ? '192, 132, 252' : '167, 139, 250'}, 0.15)`;
-            }
-            const isFront = tag.z > 0;
-            // Depth of field blur calculation
-            let blurAmount = 0;
-            if (tag.z < -20) {
-                blurAmount = Math.min(2.5, (Math.abs(tag.z) - 20) * 0.015);
-            }
-            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+        children: skills.map((text, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                ref: (el)=>{
+                    elementsRef.current[idx] = el;
+                },
+                className: "sphere-tag",
                 style: {
                     position: 'absolute',
-                    left: `${left}px`,
-                    top: `${top}px`,
-                    transform: `translate(-50%, -50%) scale(${scale})`,
                     fontSize: '0.72rem',
-                    fontFamily: 'var(--font-jetbrains-mono, monospace)',
-                    fontWeight: isFront ? 500 : 300,
-                    color: isFront ? activeColor : 'rgba(245, 245, 245, 0.25)',
-                    opacity: opacity,
-                    zIndex: zIndex,
                     whiteSpace: 'nowrap',
                     textTransform: 'uppercase',
-                    pointerEvents: isFront ? 'auto' : 'none',
-                    background: isFront ? activeBg : 'transparent',
-                    border: isFront ? activeBorder : '1px solid transparent',
                     borderRadius: '4px',
                     padding: '0.2rem 0.5rem',
                     transition: 'color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease',
-                    boxShadow: isFront ? activeGlow : 'none',
-                    filter: blurAmount > 0 ? `blur(${blurAmount}px)` : 'none'
+                    left: '160px',
+                    top: '160px',
+                    transform: 'translate(-50%, -50%) scale(1)',
+                    opacity: 0,
+                    pointerEvents: 'none'
                 },
-                children: tag.text
+                children: text
             }, idx, false, {
                 fileName: "[project]/src/components/AboutSection.tsx",
-                lineNumber: 800,
-                columnNumber: 11
-            }, this);
-        })
+                lineNumber: 805,
+                columnNumber: 9
+            }, this))
     }, void 0, false, {
         fileName: "[project]/src/components/AboutSection.tsx",
-        lineNumber: 670,
+        lineNumber: 771,
         columnNumber: 5
     }, this);
 }
-_s(TechSphere, "rQ3LT4bAe213As9gTM91XKZlpCI=");
+_s(TechSphere, "BWMbQpxjQPi+EI6AiGc7G3Tx1Z0=");
 _c1 = TechSphere;
 function DynamicHUDVisualizer({ activeId }) {
     const getTheme = ()=>{
@@ -8967,31 +8947,60 @@ function ProjectsSection() {
     }["ProjectsSection.useEffect"], []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "ProjectsSection.useEffect": ()=>{
+            let ticking = false;
+            let rafId = null;
+            const update = {
+                "ProjectsSection.useEffect.update": ()=>{
+                    const track = sectionRef.current;
+                    if (track) {
+                        const rect = track.getBoundingClientRect();
+                        const viewHeight = window.innerHeight;
+                        const totalScrollableHeight = rect.height - viewHeight;
+                        if (totalScrollableHeight > 0) {
+                            let progress = -rect.top / totalScrollableHeight;
+                            progress = Math.max(0, Math.min(1, progress));
+                            setScrollProgress(progress);
+                            // Set active project index
+                            const idx = Math.min(projects.length - 1, Math.floor(progress * projects.length * 0.999));
+                            setActiveProjectId(projects[idx].id);
+                        }
+                    }
+                    ticking = false;
+                }
+            }["ProjectsSection.useEffect.update"];
             const handleScroll = {
                 "ProjectsSection.useEffect.handleScroll": ()=>{
-                    const track = sectionRef.current;
-                    if (!track) return;
-                    const rect = track.getBoundingClientRect();
-                    const viewHeight = window.innerHeight;
-                    const totalScrollableHeight = rect.height - viewHeight;
-                    if (totalScrollableHeight <= 0) return;
-                    let progress = -rect.top / totalScrollableHeight;
-                    progress = Math.max(0, Math.min(1, progress));
-                    setScrollProgress(progress);
-                    // Set active project index
-                    const idx = Math.min(projects.length - 1, Math.floor(progress * projects.length * 0.999));
-                    setActiveProjectId(projects[idx].id);
+                    if (!ticking) {
+                        rafId = window.requestAnimationFrame(update);
+                        ticking = true;
+                    }
                 }
             }["ProjectsSection.useEffect.handleScroll"];
             window.addEventListener('scroll', handleScroll, {
                 passive: true
             });
             window.addEventListener('resize', handleScroll);
-            handleScroll();
+            // Initial run
+            const track = sectionRef.current;
+            if (track) {
+                const rect = track.getBoundingClientRect();
+                const viewHeight = window.innerHeight;
+                const totalScrollableHeight = rect.height - viewHeight;
+                if (totalScrollableHeight > 0) {
+                    let progress = -rect.top / totalScrollableHeight;
+                    progress = Math.max(0, Math.min(1, progress));
+                    setScrollProgress(progress);
+                    const idx = Math.min(projects.length - 1, Math.floor(progress * projects.length * 0.999));
+                    setActiveProjectId(projects[idx].id);
+                }
+            }
             return ({
                 "ProjectsSection.useEffect": ()=>{
                     window.removeEventListener('scroll', handleScroll);
                     window.removeEventListener('resize', handleScroll);
+                    if (rafId) {
+                        window.cancelAnimationFrame(rafId);
+                    }
                 }
             })["ProjectsSection.useEffect"];
         }
@@ -9026,7 +9035,7 @@ function ProjectsSection() {
                                 children: "// 02 / WORK"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 957,
+                                lineNumber: 988,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -9034,13 +9043,13 @@ function ProjectsSection() {
                                 children: "SELECTED WORK"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 958,
+                                lineNumber: 989,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                        lineNumber: 948,
+                        lineNumber: 979,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9075,21 +9084,21 @@ function ProjectsSection() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                        lineNumber: 989,
+                                        lineNumber: 1020,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "project-panel-bg-overlay"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                        lineNumber: 996,
+                                        lineNumber: 1027,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "project-panel-grid-overlay"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                        lineNumber: 997,
+                                        lineNumber: 1028,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9106,7 +9115,7 @@ function ProjectsSection() {
                                                                 children: getProjectCode(project.id)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                lineNumber: 1003,
+                                                                lineNumber: 1034,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -9114,13 +9123,13 @@ function ProjectsSection() {
                                                                 children: project.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                lineNumber: 1004,
+                                                                lineNumber: 1035,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                        lineNumber: 1002,
+                                                        lineNumber: 1033,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -9128,7 +9137,7 @@ function ProjectsSection() {
                                                         children: project.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                        lineNumber: 1007,
+                                                        lineNumber: 1038,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9139,26 +9148,26 @@ function ProjectsSection() {
                                                                 children: "// CORE DIAGRAM & SIMULATION"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                lineNumber: 1010,
+                                                                lineNumber: 1041,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ProjectSchematic, {
                                                                 id: project.id
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                lineNumber: 1011,
+                                                                lineNumber: 1042,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                        lineNumber: 1009,
+                                                        lineNumber: 1040,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                lineNumber: 1001,
+                                                lineNumber: 1032,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9174,7 +9183,7 @@ function ProjectsSection() {
                                                                     children: "// ROLE:"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 1021,
+                                                                    lineNumber: 1052,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -9182,13 +9191,13 @@ function ProjectsSection() {
                                                                     children: details.role
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 1022,
+                                                                    lineNumber: 1053,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                            lineNumber: 1020,
+                                                            lineNumber: 1051,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9202,7 +9211,7 @@ function ProjectsSection() {
                                                                             children: "KEY CHALLENGES"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 1027,
+                                                                            lineNumber: 1058,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -9211,18 +9220,18 @@ function ProjectsSection() {
                                                                                     children: c
                                                                                 }, i, false, {
                                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                                    lineNumber: 1029,
+                                                                                    lineNumber: 1060,
                                                                                     columnNumber: 65
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 1028,
+                                                                            lineNumber: 1059,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 1026,
+                                                                    lineNumber: 1057,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9233,7 +9242,7 @@ function ProjectsSection() {
                                                                             children: "SOLUTIONS"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 1034,
+                                                                            lineNumber: 1065,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -9242,18 +9251,18 @@ function ProjectsSection() {
                                                                                     children: s
                                                                                 }, i, false, {
                                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                                    lineNumber: 1036,
+                                                                                    lineNumber: 1067,
                                                                                     columnNumber: 64
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 1035,
+                                                                            lineNumber: 1066,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 1033,
+                                                                    lineNumber: 1064,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9264,7 +9273,7 @@ function ProjectsSection() {
                                                                             children: "OUTCOMES & METRICS"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 1041,
+                                                                            lineNumber: 1072,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -9273,24 +9282,24 @@ function ProjectsSection() {
                                                                                     children: m
                                                                                 }, i, false, {
                                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                                    lineNumber: 1043,
+                                                                                    lineNumber: 1074,
                                                                                     columnNumber: 62
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 1042,
+                                                                            lineNumber: 1073,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 1040,
+                                                                    lineNumber: 1071,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                            lineNumber: 1025,
+                                                            lineNumber: 1056,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9301,7 +9310,7 @@ function ProjectsSection() {
                                                                     children: "SYSTEM SPECIFICATION"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 1049,
+                                                                    lineNumber: 1080,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9311,18 +9320,18 @@ function ProjectsSection() {
                                                                             children: t
                                                                         }, t, false, {
                                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                            lineNumber: 1052,
+                                                                            lineNumber: 1083,
                                                                             columnNumber: 31
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 1050,
+                                                                    lineNumber: 1081,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                            lineNumber: 1048,
+                                                            lineNumber: 1079,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9339,46 +9348,46 @@ function ProjectsSection() {
                                                                     children: "EXPLORE CODEBASE   →"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                    lineNumber: 1059,
+                                                                    lineNumber: 1090,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                                lineNumber: 1058,
+                                                                lineNumber: 1089,
                                                                 columnNumber: 27
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                            lineNumber: 1057,
+                                                            lineNumber: 1088,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                    lineNumber: 1018,
+                                                    lineNumber: 1049,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                lineNumber: 1016,
+                                                lineNumber: 1047,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                        lineNumber: 998,
+                                        lineNumber: 1029,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, project.id, true, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 976,
+                                lineNumber: 1007,
                                 columnNumber: 15
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                        lineNumber: 962,
+                        lineNumber: 993,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9393,12 +9402,12 @@ function ProjectsSection() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ProjectsSection.tsx",
-                                    lineNumber: 1083,
+                                    lineNumber: 1114,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 1082,
+                                lineNumber: 1113,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -9417,7 +9426,7 @@ function ProjectsSection() {
                                                 children: p.id
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                lineNumber: 1098,
+                                                lineNumber: 1129,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -9425,31 +9434,31 @@ function ProjectsSection() {
                                                 children: p.title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                                lineNumber: 1099,
+                                                lineNumber: 1130,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, p.id, true, {
                                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                                        lineNumber: 1093,
+                                        lineNumber: 1124,
                                         columnNumber: 17
                                     }, this);
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                                lineNumber: 1088,
+                                lineNumber: 1119,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ProjectsSection.tsx",
-                        lineNumber: 1081,
+                        lineNumber: 1112,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                lineNumber: 945,
+                lineNumber: 976,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -9956,13 +9965,13 @@ function ProjectsSection() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/components/ProjectsSection.tsx",
-                lineNumber: 1108,
+                lineNumber: 1139,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ProjectsSection.tsx",
-        lineNumber: 933,
+        lineNumber: 964,
         columnNumber: 5
     }, this);
 }
@@ -10500,7 +10509,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Magnetic$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/Magnetic.tsx [app-client] (ecmascript)");
 ;
-var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
@@ -10609,8 +10618,160 @@ function SocialButton({ link }) {
 }
 _s(SocialButton, "V8YbV+gTZxGliGj1g0fftBlvsq4=");
 _c2 = SocialButton;
-function ContactSection() {
+function Oscilloscope() {
     _s1();
+    const [time, setTime] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    // Oscilloscope Animation Frame loop
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Oscilloscope.useEffect": ()=>{
+            let frameId;
+            const update = {
+                "Oscilloscope.useEffect.update": ()=>{
+                    setTime({
+                        "Oscilloscope.useEffect.update": (t)=>(t + 0.04) % (Math.PI * 2)
+                    }["Oscilloscope.useEffect.update"]);
+                    frameId = requestAnimationFrame(update);
+                }
+            }["Oscilloscope.useEffect.update"];
+            frameId = requestAnimationFrame(update);
+            return ({
+                "Oscilloscope.useEffect": ()=>cancelAnimationFrame(frameId)
+            })["Oscilloscope.useEffect"];
+        }
+    }["Oscilloscope.useEffect"], []);
+    const getWavePath1 = ()=>{
+        let points = [];
+        for(let x = 0; x <= 220; x += 4){
+            const y = 25 + Math.sin(x * 0.055 + time * 1.8) * 8;
+            points.push(`${x},${y}`);
+        }
+        return `M ${points.join(' L ')}`;
+    };
+    const getWavePath2 = ()=>{
+        let points = [];
+        for(let x = 0; x <= 220; x += 4){
+            const y = 25 + Math.sin(x * 0.045 - time * 1.4 + Math.PI / 3) * 5;
+            points.push(`${x},${y}`);
+        }
+        return `M ${points.join(' L ')}`;
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "console-oscilloscope-container",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "50",
+            viewBox: "0 0 220 50",
+            preserveAspectRatio: "none",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                    stroke: "rgba(255, 180, 0, 0.04)",
+                    strokeWidth: "0.5",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "12.5",
+                            x2: "220",
+                            y2: "12.5"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ContactSection.tsx",
+                            lineNumber: 112,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "25",
+                            x2: "220",
+                            y2: "25"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ContactSection.tsx",
+                            lineNumber: 113,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "37.5",
+                            x2: "220",
+                            y2: "37.5"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ContactSection.tsx",
+                            lineNumber: 114,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "55",
+                            y1: "0",
+                            x2: "55",
+                            y2: "50"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ContactSection.tsx",
+                            lineNumber: 115,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "110",
+                            y1: "0",
+                            x2: "110",
+                            y2: "50"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ContactSection.tsx",
+                            lineNumber: 116,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "165",
+                            y1: "0",
+                            x2: "165",
+                            y2: "50"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ContactSection.tsx",
+                            lineNumber: 117,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/ContactSection.tsx",
+                    lineNumber: 111,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: getWavePath2(),
+                    fill: "none",
+                    stroke: "rgba(255, 180, 0, 0.2)",
+                    strokeWidth: "0.8"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ContactSection.tsx",
+                    lineNumber: 120,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: getWavePath1(),
+                    fill: "none",
+                    stroke: "#ffb400",
+                    strokeWidth: "1.2",
+                    style: {
+                        filter: 'drop-shadow(0 0 3px rgba(255, 180, 0, 0.5))'
+                    }
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ContactSection.tsx",
+                    lineNumber: 122,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/ContactSection.tsx",
+            lineNumber: 109,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/src/components/ContactSection.tsx",
+        lineNumber: 108,
+        columnNumber: 5
+    }, this);
+}
+_s1(Oscilloscope, "5hWQWrdOaoNaY+yZN4rUVWF/ZFM=");
+_c3 = Oscilloscope;
+function ContactSection() {
+    _s2();
     const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const [visible, setVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
@@ -10621,8 +10782,6 @@ function ContactSection() {
     });
     const [status, setStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('idle');
     const [errorMsg, setErrorMsg] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
-    // Real-time oscilloscope oscillation
-    const [time, setTime] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     // Unique connection telemetry node generated on client mount
     const [sessionId, setSessionId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     // Transmission terminal logs
@@ -10644,24 +10803,6 @@ function ContactSection() {
             observer.observe(el);
             return ({
                 "ContactSection.useEffect": ()=>observer.disconnect()
-            })["ContactSection.useEffect"];
-        }
-    }["ContactSection.useEffect"], []);
-    // Oscilloscope Animation Frame loop
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "ContactSection.useEffect": ()=>{
-            let frameId;
-            const update = {
-                "ContactSection.useEffect.update": ()=>{
-                    setTime({
-                        "ContactSection.useEffect.update": (t)=>(t + 0.04) % (Math.PI * 2)
-                    }["ContactSection.useEffect.update"]);
-                    frameId = requestAnimationFrame(update);
-                }
-            }["ContactSection.useEffect.update"];
-            frameId = requestAnimationFrame(update);
-            return ({
-                "ContactSection.useEffect": ()=>cancelAnimationFrame(frameId)
             })["ContactSection.useEffect"];
         }
     }["ContactSection.useEffect"], []);
@@ -10759,23 +10900,6 @@ function ContactSection() {
             }, 1300);
         }
     };
-    // Generate SVG path for dual-channel oscilloscope
-    const getWavePath1 = ()=>{
-        let points = [];
-        for(let x = 0; x <= 220; x += 4){
-            const y = 25 + Math.sin(x * 0.055 + time * 1.8) * 8;
-            points.push(`${x},${y}`);
-        }
-        return `M ${points.join(' L ')}`;
-    };
-    const getWavePath2 = ()=>{
-        let points = [];
-        for(let x = 0; x <= 220; x += 4){
-            const y = 25 + Math.sin(x * 0.045 - time * 1.4 + Math.PI / 3) * 5;
-            points.push(`${x},${y}`);
-        }
-        return `M ${points.join(' L ')}`;
-    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "contact",
         className: "contact-section-container",
@@ -10784,7 +10908,7 @@ function ContactSection() {
                 className: "contact-grid-overlay"
             }, void 0, false, {
                 fileName: "[project]/src/components/ContactSection.tsx",
-                lineNumber: 218,
+                lineNumber: 243,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -10805,7 +10929,7 @@ function ContactSection() {
                                         children: "// 03 / BUILD"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                        lineNumber: 229,
+                                        lineNumber: 254,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -10813,7 +10937,7 @@ function ContactSection() {
                                         children: "ESTABLISH SECURE LINK"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                        lineNumber: 232,
+                                        lineNumber: 257,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -10821,7 +10945,7 @@ function ContactSection() {
                                         children: "Have an architectural challenge or scaling requirement? Initialize a secure socket transmission below."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                        lineNumber: 234,
+                                        lineNumber: 259,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -10835,7 +10959,7 @@ function ContactSection() {
                                                         children: "// LOG_RECEIVER_TELEMETRY.conf"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                                        lineNumber: 241,
+                                                        lineNumber: 266,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -10845,132 +10969,25 @@ function ContactSection() {
                                                                 className: "blinking-dot"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                                lineNumber: 243,
+                                                                lineNumber: 268,
                                                                 columnNumber: 19
                                                             }, this),
                                                             "STATUS: ESTABLISHED"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                                        lineNumber: 242,
+                                                        lineNumber: 267,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                lineNumber: 240,
+                                                lineNumber: 265,
                                                 columnNumber: 15
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "console-oscilloscope-container",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                    width: "100%",
-                                                    height: "50",
-                                                    viewBox: "0 0 220 50",
-                                                    preserveAspectRatio: "none",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
-                                                            stroke: "rgba(255, 180, 0, 0.04)",
-                                                            strokeWidth: "0.5",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                                                                    x1: "0",
-                                                                    y1: "12.5",
-                                                                    x2: "220",
-                                                                    y2: "12.5"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/ContactSection.tsx",
-                                                                    lineNumber: 253,
-                                                                    columnNumber: 21
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                                                                    x1: "0",
-                                                                    y1: "25",
-                                                                    x2: "220",
-                                                                    y2: "25"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/ContactSection.tsx",
-                                                                    lineNumber: 254,
-                                                                    columnNumber: 21
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                                                                    x1: "0",
-                                                                    y1: "37.5",
-                                                                    x2: "220",
-                                                                    y2: "37.5"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/ContactSection.tsx",
-                                                                    lineNumber: 255,
-                                                                    columnNumber: 21
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                                                                    x1: "55",
-                                                                    y1: "0",
-                                                                    x2: "55",
-                                                                    y2: "50"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/ContactSection.tsx",
-                                                                    lineNumber: 256,
-                                                                    columnNumber: 21
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                                                                    x1: "110",
-                                                                    y1: "0",
-                                                                    x2: "110",
-                                                                    y2: "50"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/ContactSection.tsx",
-                                                                    lineNumber: 257,
-                                                                    columnNumber: 21
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                                                                    x1: "165",
-                                                                    y1: "0",
-                                                                    x2: "165",
-                                                                    y2: "50"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/ContactSection.tsx",
-                                                                    lineNumber: 258,
-                                                                    columnNumber: 21
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 252,
-                                                            columnNumber: 19
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                            d: getWavePath2(),
-                                                            fill: "none",
-                                                            stroke: "rgba(255, 180, 0, 0.2)",
-                                                            strokeWidth: "0.8"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 261,
-                                                            columnNumber: 19
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                            d: getWavePath1(),
-                                                            fill: "none",
-                                                            stroke: "#ffb400",
-                                                            strokeWidth: "1.2",
-                                                            style: {
-                                                                filter: 'drop-shadow(0 0 3px rgba(255, 180, 0, 0.5))'
-                                                            }
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 263,
-                                                            columnNumber: 19
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 250,
-                                                    columnNumber: 17
-                                                }, this)
-                                            }, void 0, false, {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Oscilloscope, {}, void 0, false, {
                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                lineNumber: 249,
+                                                lineNumber: 274,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -10984,7 +11001,7 @@ function ContactSection() {
                                                                 children: "SYSTEM STATE:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                                lineNumber: 270,
+                                                                lineNumber: 279,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -10992,13 +11009,13 @@ function ContactSection() {
                                                                 children: "NOMINAL (99.8%)"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                                lineNumber: 271,
+                                                                lineNumber: 280,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                                        lineNumber: 269,
+                                                        lineNumber: 278,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11009,7 +11026,7 @@ function ContactSection() {
                                                                 children: "SESSION ID:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                                lineNumber: 274,
+                                                                lineNumber: 283,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -11017,13 +11034,13 @@ function ContactSection() {
                                                                 children: sessionId || 'LINKING...'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                                lineNumber: 275,
+                                                                lineNumber: 284,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                                        lineNumber: 273,
+                                                        lineNumber: 282,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11034,7 +11051,7 @@ function ContactSection() {
                                                                 children: "CRYPTO SUITE:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                                lineNumber: 278,
+                                                                lineNumber: 287,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -11042,13 +11059,13 @@ function ContactSection() {
                                                                 children: "ECDH_P256 / AES-GCM-256"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                                lineNumber: 279,
+                                                                lineNumber: 288,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                                        lineNumber: 277,
+                                                        lineNumber: 286,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11059,7 +11076,7 @@ function ContactSection() {
                                                                 children: "PING METRIC:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                                lineNumber: 282,
+                                                                lineNumber: 291,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -11067,25 +11084,25 @@ function ContactSection() {
                                                                 children: "14ms (RTT_OPTIMAL)"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                                lineNumber: 283,
+                                                                lineNumber: 292,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                                        lineNumber: 281,
+                                                        lineNumber: 290,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                lineNumber: 268,
+                                                lineNumber: 277,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                        lineNumber: 239,
+                                        lineNumber: 264,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11096,7 +11113,7 @@ function ContactSection() {
                                                 children: "// PUBLIC KEY ENDPOINTS"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                lineNumber: 290,
+                                                lineNumber: 299,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11105,24 +11122,24 @@ function ContactSection() {
                                                         link: link
                                                     }, link.label, false, {
                                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                                        lineNumber: 293,
+                                                        lineNumber: 302,
                                                         columnNumber: 19
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                lineNumber: 291,
+                                                lineNumber: 300,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                        lineNumber: 289,
+                                        lineNumber: 298,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                lineNumber: 226,
+                                lineNumber: 251,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11138,7 +11155,7 @@ function ContactSection() {
                                             children: "// TRANSACTION_VERIFIED"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                            lineNumber: 306,
+                                            lineNumber: 315,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11149,7 +11166,7 @@ function ContactSection() {
                                                     children: "[VERIFIED] TRANSMISSION ESTABLISHED"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 308,
+                                                    lineNumber: 317,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -11157,7 +11174,7 @@ function ContactSection() {
                                                     children: "MESSAGE INGESTED"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 309,
+                                                    lineNumber: 318,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11168,7 +11185,7 @@ function ContactSection() {
                                                             children: "> Packet checksum verified: 0xFD8E42"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 312,
+                                                            lineNumber: 321,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11176,7 +11193,7 @@ function ContactSection() {
                                                             children: "> Ingesting message stream payloads..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 313,
+                                                            lineNumber: 322,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11184,7 +11201,7 @@ function ContactSection() {
                                                             children: "> Writing record block to PostgreSQL DB..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 314,
+                                                            lineNumber: 323,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11192,13 +11209,13 @@ function ContactSection() {
                                                             children: "> Pipeline shutdown. Connection standby mode."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 315,
+                                                            lineNumber: 324,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 311,
+                                                    lineNumber: 320,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -11206,7 +11223,7 @@ function ContactSection() {
                                                     children: "Your transmission was saved securely. Prathamesh will review your packet nodes and respond shortly."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 318,
+                                                    lineNumber: 327,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Magnetic$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Magnetic"], {
@@ -11219,24 +11236,24 @@ function ContactSection() {
                                                         children: "[ NEW_TRANSMISSION() ]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                                        lineNumber: 323,
+                                                        lineNumber: 332,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 322,
+                                                    lineNumber: 331,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                            lineNumber: 307,
+                                            lineNumber: 316,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                    lineNumber: 305,
+                                    lineNumber: 314,
                                     columnNumber: 15
                                 }, this) : status === 'sending' ? /* Sending/Transmitting logs View */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "terminal-result-card transmitting",
@@ -11246,7 +11263,7 @@ function ContactSection() {
                                             children: "// PIPELINE_ACTIVE (TRANSMITTING)"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                            lineNumber: 336,
+                                            lineNumber: 345,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11259,7 +11276,7 @@ function ContactSection() {
                                                             children: "TRANSMITTING PACKETS..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 339,
+                                                            lineNumber: 348,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11269,18 +11286,18 @@ function ContactSection() {
                                                                     children: log
                                                                 }, index, false, {
                                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                                    lineNumber: 343,
+                                                                    lineNumber: 352,
                                                                     columnNumber: 25
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 341,
+                                                            lineNumber: 350,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 338,
+                                                    lineNumber: 347,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11289,24 +11306,24 @@ function ContactSection() {
                                                         className: "progress-bar-fill"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ContactSection.tsx",
-                                                        lineNumber: 350,
+                                                        lineNumber: 359,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 349,
+                                                    lineNumber: 358,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                            lineNumber: 337,
+                                            lineNumber: 346,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                    lineNumber: 335,
+                                    lineNumber: 344,
                                     columnNumber: 15
                                 }, this) : /* Core Form Telemetry inputs */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                     onSubmit: handleSubmit,
@@ -11319,20 +11336,20 @@ function ContactSection() {
                                                     children: "// STREAM_INGEST_FORM"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 358,
+                                                    lineNumber: 367,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "SECURE CHANNEL"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 359,
+                                                    lineNumber: 368,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                            lineNumber: 357,
+                                            lineNumber: 366,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11349,7 +11366,7 @@ function ContactSection() {
                                                                     children: "[PARAM: name]"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                                    lineNumber: 367,
+                                                                    lineNumber: 376,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -11357,13 +11374,13 @@ function ContactSection() {
                                                                     children: "string"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                                    lineNumber: 368,
+                                                                    lineNumber: 377,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 366,
+                                                            lineNumber: 375,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -11377,20 +11394,20 @@ function ContactSection() {
                                                             placeholder: "Enter name"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 370,
+                                                            lineNumber: 379,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "console-focus-underline"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 380,
+                                                            lineNumber: 389,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 365,
+                                                    lineNumber: 374,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11404,7 +11421,7 @@ function ContactSection() {
                                                                     children: "[PARAM: email]"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                                    lineNumber: 386,
+                                                                    lineNumber: 395,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -11412,13 +11429,13 @@ function ContactSection() {
                                                                     children: "email"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                                    lineNumber: 387,
+                                                                    lineNumber: 396,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 385,
+                                                            lineNumber: 394,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -11432,26 +11449,26 @@ function ContactSection() {
                                                             placeholder: "name@domain.com"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 389,
+                                                            lineNumber: 398,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "console-focus-underline"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 399,
+                                                            lineNumber: 408,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 384,
+                                                    lineNumber: 393,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                            lineNumber: 362,
+                                            lineNumber: 371,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11465,7 +11482,7 @@ function ContactSection() {
                                                             children: "[PARAM: subject]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 407,
+                                                            lineNumber: 416,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -11473,13 +11490,13 @@ function ContactSection() {
                                                             children: "string"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 408,
+                                                            lineNumber: 417,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 406,
+                                                    lineNumber: 415,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -11493,20 +11510,20 @@ function ContactSection() {
                                                     placeholder: "Enter subject header"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 410,
+                                                    lineNumber: 419,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "console-focus-underline"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 420,
+                                                    lineNumber: 429,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                            lineNumber: 405,
+                                            lineNumber: 414,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11520,7 +11537,7 @@ function ContactSection() {
                                                             children: "[PARAM: message]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 426,
+                                                            lineNumber: 435,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -11528,13 +11545,13 @@ function ContactSection() {
                                                             children: "text"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                                            lineNumber: 427,
+                                                            lineNumber: 436,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 425,
+                                                    lineNumber: 434,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -11547,20 +11564,20 @@ function ContactSection() {
                                                     placeholder: "Enter project specs, pipeline requirements, or message details..."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 429,
+                                                    lineNumber: 438,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "console-focus-underline"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 438,
+                                                    lineNumber: 447,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                            lineNumber: 424,
+                                            lineNumber: 433,
                                             columnNumber: 17
                                         }, this),
                                         status === 'error' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11571,7 +11588,7 @@ function ContactSection() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                            lineNumber: 442,
+                                            lineNumber: 451,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11585,34 +11602,34 @@ function ContactSection() {
                                                     children: "[ EXECUTE TRANSMIT_MESSAGE() ]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                                    lineNumber: 450,
+                                                    lineNumber: 459,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                                lineNumber: 449,
+                                                lineNumber: 458,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ContactSection.tsx",
-                                            lineNumber: 448,
+                                            lineNumber: 457,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ContactSection.tsx",
-                                    lineNumber: 356,
+                                    lineNumber: 365,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ContactSection.tsx",
-                                lineNumber: 301,
+                                lineNumber: 310,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ContactSection.tsx",
-                        lineNumber: 223,
+                        lineNumber: 248,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11625,18 +11642,18 @@ function ContactSection() {
                             children: "© 2026 PRATHAMESH JADHAV. BUILT WITH SYSTEMS FOCUS & SOLID INFRASTRUCTURE."
                         }, void 0, false, {
                             fileName: "[project]/src/components/ContactSection.tsx",
-                            lineNumber: 468,
+                            lineNumber: 477,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/ContactSection.tsx",
-                        lineNumber: 467,
+                        lineNumber: 476,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ContactSection.tsx",
-                lineNumber: 220,
+                lineNumber: 245,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -12179,23 +12196,24 @@ function ContactSection() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/components/ContactSection.tsx",
-                lineNumber: 475,
+                lineNumber: 484,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ContactSection.tsx",
-        lineNumber: 217,
+        lineNumber: 242,
         columnNumber: 5
     }, this);
 }
-_s1(ContactSection, "H8rBJe41hU9Oz2JO2Ll5rMCB+yo=");
-_c3 = ContactSection;
-var _c, _c1, _c2, _c3;
+_s2(ContactSection, "2DUvpg+UhRm7jXS04/x+i+of3KY=");
+_c4 = ContactSection;
+var _c, _c1, _c2, _c3, _c4;
 __turbopack_context__.k.register(_c, "GitHubIcon");
 __turbopack_context__.k.register(_c1, "LinkedInIcon");
 __turbopack_context__.k.register(_c2, "SocialButton");
-__turbopack_context__.k.register(_c3, "ContactSection");
+__turbopack_context__.k.register(_c3, "Oscilloscope");
+__turbopack_context__.k.register(_c4, "ContactSection");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

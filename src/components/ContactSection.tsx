@@ -72,6 +72,59 @@ function SocialButton({ link }: { link: SocialLink }) {
   );
 }
 
+function Oscilloscope() {
+  const [time, setTime] = useState(0);
+
+  // Oscilloscope Animation Frame loop
+  useEffect(() => {
+    let frameId: number;
+    const update = () => {
+      setTime((t) => (t + 0.04) % (Math.PI * 2));
+      frameId = requestAnimationFrame(update);
+    };
+    frameId = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(frameId);
+  }, []);
+
+  const getWavePath1 = () => {
+    let points = [];
+    for (let x = 0; x <= 220; x += 4) {
+      const y = 25 + Math.sin(x * 0.055 + time * 1.8) * 8;
+      points.push(`${x},${y}`);
+    }
+    return `M ${points.join(' L ')}`;
+  };
+
+  const getWavePath2 = () => {
+    let points = [];
+    for (let x = 0; x <= 220; x += 4) {
+      const y = 25 + Math.sin(x * 0.045 - time * 1.4 + Math.PI / 3) * 5;
+      points.push(`${x},${y}`);
+    }
+    return `M ${points.join(' L ')}`;
+  };
+
+  return (
+    <div className="console-oscilloscope-container">
+      <svg width="100%" height="50" viewBox="0 0 220 50" preserveAspectRatio="none">
+        {/* Grid overlay inside oscilloscope */}
+        <g stroke="rgba(255, 180, 0, 0.04)" strokeWidth="0.5">
+          <line x1="0" y1="12.5" x2="220" y2="12.5" />
+          <line x1="0" y1="25" x2="220" y2="25" />
+          <line x1="0" y1="37.5" x2="220" y2="37.5" />
+          <line x1="55" y1="0" x2="55" y2="50" />
+          <line x1="110" y1="0" x2="110" y2="50" />
+          <line x1="165" y1="0" x2="165" y2="50" />
+        </g>
+        {/* Oscillating Path 2 (Muted Out of Phase Channel) */}
+        <path d={getWavePath2()} fill="none" stroke="rgba(255, 180, 0, 0.2)" strokeWidth="0.8" />
+        {/* Oscillating Path 1 (Primary Channel) */}
+        <path d={getWavePath1()} fill="none" stroke="#ffb400" strokeWidth="1.2" style={{ filter: 'drop-shadow(0 0 3px rgba(255, 180, 0, 0.5))' }} />
+      </svg>
+    </div>
+  );
+}
+
 export function ContactSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -79,8 +132,6 @@ export function ContactSection() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   
-  // Real-time oscilloscope oscillation
-  const [time, setTime] = useState(0);
   // Unique connection telemetry node generated on client mount
   const [sessionId, setSessionId] = useState('');
   // Transmission terminal logs
@@ -104,16 +155,7 @@ export function ContactSection() {
     return () => observer.disconnect();
   }, []);
 
-  // Oscilloscope Animation Frame loop
-  useEffect(() => {
-    let frameId: number;
-    const update = () => {
-      setTime((t) => (t + 0.04) % (Math.PI * 2));
-      frameId = requestAnimationFrame(update);
-    };
-    frameId = requestAnimationFrame(update);
-    return () => cancelAnimationFrame(frameId);
-  }, []);
+
 
   // Generate session node ID
   useEffect(() => {
@@ -194,24 +236,7 @@ export function ContactSection() {
     }
   };
 
-  // Generate SVG path for dual-channel oscilloscope
-  const getWavePath1 = () => {
-    let points = [];
-    for (let x = 0; x <= 220; x += 4) {
-      const y = 25 + Math.sin(x * 0.055 + time * 1.8) * 8;
-      points.push(`${x},${y}`);
-    }
-    return `M ${points.join(' L ')}`;
-  };
 
-  const getWavePath2 = () => {
-    let points = [];
-    for (let x = 0; x <= 220; x += 4) {
-      const y = 25 + Math.sin(x * 0.045 - time * 1.4 + Math.PI / 3) * 5;
-      points.push(`${x},${y}`);
-    }
-    return `M ${points.join(' L ')}`;
-  };
 
   return (
     <section id="contact" className="contact-section-container">
@@ -246,23 +271,7 @@ export function ContactSection() {
               </div>
               
               {/* Dual-Channel Live Waveform */}
-              <div className="console-oscilloscope-container">
-                <svg width="100%" height="50" viewBox="0 0 220 50" preserveAspectRatio="none">
-                  {/* Grid overlay inside oscilloscope */}
-                  <g stroke="rgba(255, 180, 0, 0.04)" strokeWidth="0.5">
-                    <line x1="0" y1="12.5" x2="220" y2="12.5" />
-                    <line x1="0" y1="25" x2="220" y2="25" />
-                    <line x1="0" y1="37.5" x2="220" y2="37.5" />
-                    <line x1="55" y1="0" x2="55" y2="50" />
-                    <line x1="110" y1="0" x2="110" y2="50" />
-                    <line x1="165" y1="0" x2="165" y2="50" />
-                  </g>
-                  {/* Oscillating Path 2 (Muted Out of Phase Channel) */}
-                  <path d={getWavePath2()} fill="none" stroke="rgba(255, 180, 0, 0.2)" strokeWidth="0.8" />
-                  {/* Oscillating Path 1 (Primary Channel) */}
-                  <path d={getWavePath1()} fill="none" stroke="#ffb400" strokeWidth="1.2" style={{ filter: 'drop-shadow(0 0 3px rgba(255, 180, 0, 0.5))' }} />
-                </svg>
-              </div>
+              <Oscilloscope />
 
               {/* Metrics Readout */}
               <div className="console-readout-rows">

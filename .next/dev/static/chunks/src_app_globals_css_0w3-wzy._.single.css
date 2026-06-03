@@ -692,11 +692,6 @@
     outline-width: 1px;
   }
 
-  .blur {
-    --tw-blur: blur(8px);
-    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
-  }
-
   .drop-shadow {
     --tw-drop-shadow-size: drop-shadow(0 1px 2px var(--tw-drop-shadow-color, #0000001a)) drop-shadow(0 1px 1px var(--tw-drop-shadow-color, #0000000f));
     --tw-drop-shadow: drop-shadow(0 1px 2px #0000001a) drop-shadow(0 1px 1px #0000000f);
@@ -1615,6 +1610,11 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+.sphere-tag, .projects-hud-label, .project-panel-code, .schematic-label, .detail-row, .detail-meta-label, .detail-meta-val, .detail-sec-title, .detail-badge, .detail-github-btn, .tick-number, .tick-title, .contact-hud-label, .terminal-title, .blinking-dot-container, .readout-row, .console-form-header, .console-form-group-header, .transmit-submit-btn, .terminal-log-line, .footer-copyright-text, .nav-link, .console-hint-text, .hero-hud-logs, .year-badge, .scroll-explore, .sphere-hud-label, .expand-trigger-btn, .card-index, .mobile-year-badge, .sticky-year-label, .hud-visualizer-header, .hud-indicator, .nav-logo-sub {
+  font-family: var(--font-comfortaa), "Comfortaa", sans-serif !important;
+  font-weight: 500 !important;
 }
 
 @property --tw-rotate-x {
