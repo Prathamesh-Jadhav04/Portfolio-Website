@@ -65,3 +65,15 @@ export function ScramblerText({ text, className }: ScramblerTextProps) {
     </span>
   );
 }
+
+export function ParagraphScrambler({ text, className }: { text: string; className?: string }) {
+  return (
+    <span className={className} style={{ display: 'inline' }}>
+      {text.split(' ').map((word, idx) => (
+        <span key={idx} style={{ display: 'inline-block', marginRight: '0.25em' }}>
+          <ScramblerText text={word} />
+        </span>
+      ))}
+    </span>
+  );
+}

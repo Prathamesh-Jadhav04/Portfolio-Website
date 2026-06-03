@@ -251,6 +251,8 @@ function Magnetic({ children, range = 60, strength = 0.35 }) {
 "use strict";
 
 __turbopack_context__.s([
+    "ParagraphScrambler",
+    ()=>ParagraphScrambler,
     "ScramblerText",
     ()=>ScramblerText
 ]);
@@ -330,6 +332,35 @@ function ScramblerText({ text, className }) {
     }, void 0, true, {
         fileName: "[project]/src/components/ui/ScramblerText.tsx",
         lineNumber: 45,
+        columnNumber: 5
+    }, this);
+}
+function ParagraphScrambler({ text, className }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+        className: className,
+        style: {
+            display: 'inline'
+        },
+        children: text.split(' ').map((word, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                style: {
+                    display: 'inline-block',
+                    marginRight: '0.25em'
+                },
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ScramblerText, {
+                    text: word
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ui/ScramblerText.tsx",
+                    lineNumber: 74,
+                    columnNumber: 11
+                }, this)
+            }, idx, false, {
+                fileName: "[project]/src/components/ui/ScramblerText.tsx",
+                lineNumber: 73,
+                columnNumber: 9
+            }, this))
+    }, void 0, false, {
+        fileName: "[project]/src/components/ui/ScramblerText.tsx",
+        lineNumber: 71,
         columnNumber: 5
     }, this);
 }
@@ -1085,9 +1116,9 @@ const timelineEvents = [
     {
         id: 1,
         year: '2022',
-        title: 'COMMENCEMENT OF ENGINEERING JOURNEY',
-        teaser: 'Entered Computer Science foundations, diving into algorithms and core computing logic.',
-        description: 'Stepped into the world of computational thinking, logical structures, and database principles. Immersed myself in learning foundational engineering mathematics and digital electronics.',
+        title: 'ACADEMIC CONCEPTS & LOGICAL FOUNDATIONS',
+        teaser: 'Initiated formal academic study in Computer Science, mastering core computational paradigms.',
+        description: 'Acquired rigorous knowledge of data structures, classical algorithms, discrete mathematics, and computer architecture. Established fundamental habits in algorithm design, compiler constraints, and complexity analysis.',
         details: 'Acquired core logic and basic troubleshooting patterns early on.',
         technologies: [
             'C Language',
@@ -1098,9 +1129,9 @@ const timelineEvents = [
     {
         id: 2,
         year: '2022',
-        title: 'THE FIRST LINE OF CODE',
-        teaser: 'Wrote my very first "Hello World" terminal program, igniting a passion for software construction.',
-        description: 'Began building basic terminal games, calculators, and automation scripts. Explored control flow structure, debugging routines, and compiling mechanics.',
+        title: 'FIRST PYTHON & C SYSTEM ENGINE CONSTRUCTS',
+        teaser: 'Programmed core console logic, shell algorithms, and procedural scripting models.',
+        description: 'Built command-line tools and custom memory buffers. Practiced memory layout debugging, manual pointer reference handling, and clean modular development principles.',
         details: 'Spent hours debugging pointer offsets and system syntax anomalies.',
         technologies: [
             'Python',
@@ -1111,9 +1142,9 @@ const timelineEvents = [
     {
         id: 3,
         year: '2023',
-        title: 'FIRST FULL-STACK WEB APPLICATION',
-        teaser: 'Designed, coded, and deployed my first database-driven live server site.',
-        description: 'Mastered standard relational database structures, SQL query structures, and server routing. Deployed first responsive media portal hosting, resolving client-server data flows.',
+        title: 'SCALABLE WEB & DISTRIBUTED DATA FLOWS',
+        teaser: 'Architected secure database pipelines, server-side handlers, and state management.',
+        description: 'Designed relational schemas and high-throughput server backends. Addressed distributed application bottlenecks, database transaction constraints, and web browser rendering performance.',
         details: 'Optimized page load configurations and local caching schemas.',
         technologies: [
             'React',
@@ -1125,9 +1156,9 @@ const timelineEvents = [
     {
         id: 4,
         year: '2024',
-        title: 'DATA SCIENCE INTERNSHIP',
-        teaser: 'Joined Uptricks Services Pvt. Ltd. to run statistical modeling and pre-processing.',
-        description: 'Processed high-dimensional tabular datasets. Evaluated predictive machine learning models to capture actionable analytics patterns.',
+        title: 'DATA SCIENCE INTERNSHIP — UPTRICKS SERVICES',
+        teaser: 'Engineered data preprocessing engines and mathematical prediction pipelines.',
+        description: 'Processed complex logistics datasets. Conducted feature engineering, multi-collinearity checks, and statistical modeling to generate production-ready predictive insights.',
         details: 'Wrote robust validation suites to filter noisy logistics dataset entries.',
         technologies: [
             'Python',
@@ -1140,9 +1171,9 @@ const timelineEvents = [
     {
         id: 5,
         year: '2024',
-        title: 'SYSTEMS-LEVEL PIPELINES',
-        teaser: 'Architected automated data ingest workflows, reducing database import overheads.',
-        description: 'Designed and deployed automated pre-processing pipelines to optimize model ingest latency.',
+        title: 'HIGH-VOLUME DATA INGESTION & ETL ENGINES',
+        teaser: 'Streamlined data automation systems, reducing query processing latencies.',
+        description: 'Optimized extract-transform-load data paths. Automated pipeline triggers using custom shell automation scripts, decreasing system load times and streamlining database ingest.',
         details: 'Gained hands-on exposure to CI/CD triggers and Linux deployment environments.',
         technologies: [
             'Python',
@@ -1154,9 +1185,9 @@ const timelineEvents = [
     {
         id: 6,
         year: '2025',
-        title: 'GENAI & LLM API INTEGRATIONS',
-        teaser: 'Engineered FastAPI endpoints and LangChain RAG pipelines for contextual bots.',
-        description: 'Built secure webhook aggregators to review git diffs. Designed vector search integration layers serving low-latency context injections to LLM prompts.',
+        title: 'CONTEXTUAL AI ENGINES & RETRIEVAL-AUGMENTED GENERATION',
+        teaser: 'Engineered LangChain agent pipelines and real-time semantic search layers.',
+        description: 'Developed Retrieval-Augmented Generation (RAG) models using vector indexes. Designed low-latency contextual embeddings integration to feed LLM completions with enterprise security.',
         details: 'Engineered prompt templates with metadata filters to prevent context leaks.',
         technologies: [
             'FastAPI',
@@ -1168,9 +1199,9 @@ const timelineEvents = [
     {
         id: 7,
         year: '2026',
-        title: 'ENGINEERING GRADUATION (CGPA 7.8)',
-        teaser: 'Successfully completed degree. Built a Capstone Clinical Decision Support System.',
-        description: 'Completed Bachelor of Engineering in Computer Science. Designed and defended CDSS capstone model merging multi-modal clinical markers for prognosis analytics.',
+        title: 'BACHELOR OF COMPUTER SCIENCE — CGPA 7.8',
+        teaser: 'Successfully graduated. Researched clinical decision networks for prediction.',
+        description: 'Defended B.E. Thesis in Computer Science. Focused coursework on advanced machine learning, concurrent systems, and database engineering, maintaining a competitive cumulative CGPA of 7.8.',
         details: 'Maintained a strong cumulative CGPA of 7.8 across rigorous coursework semesters.',
         technologies: [
             'Predictive Modeling',
@@ -1181,9 +1212,9 @@ const timelineEvents = [
     {
         id: 8,
         year: '2026',
-        title: 'PRODUCTION SYSTEMS DEVELOPMENT',
-        teaser: 'Built custom HNSW vector database (NuroSearch) & packet inspector (DPI Engine).',
-        description: 'Implemented low-latency index graphs and multi-threaded raw network packet capturing listeners. Focused on memory allocations and concurrent graph insertions.',
+        title: 'NUROSEARCH VECTOR STORAGE & HIGH-SPEED PACKET CAPTURE',
+        teaser: 'Engineered custom graph-based vector storage indexing (HNSW) and C-based DPI listener.',
+        description: 'Designed NuroSearch, a custom HNSW graph indexing vector database for semantic search. Built a high-performance network packet sniffer utilising multithreaded raw socket streams and C libraries.',
         details: 'Architected custom scalar quantization scripts to compress memory footprints.',
         technologies: [
             'Rust',
@@ -1199,124 +1230,369 @@ function ProjectSchematic({ id }) {
     if (id === 1) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
             width: "100%",
-            height: "120",
-            viewBox: "0 0 400 120",
+            height: "130",
+            viewBox: "0 0 400 130",
             style: {
-                background: '#111',
-                border: '1px solid rgba(255,180,0,0.1)',
+                background: '#090909',
+                border: '1px solid rgba(255,180,0,0.12)',
                 borderRadius: '6px',
-                margin: '1rem 0'
+                margin: '1rem 0',
+                overflow: 'hidden'
             },
             children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                    cx: "80",
-                    cy: "60",
-                    r: "12",
-                    fill: "rgba(255,180,0,0.08)",
-                    stroke: "#ffb400",
-                    strokeWidth: "1"
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes nodePulse { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(255,180,0,0.2)); } 50% { transform: scale(1.08); filter: drop-shadow(0 0 8px rgba(255,180,0,0.6)); } }
+          @keyframes flowLine { 0% { stroke-dashoffset: 24; } 100% { stroke-dashoffset: 0; } }
+          .tree-node { animation: nodePulse 3s infinite ease-in-out; transform-origin: 200px 30px; }
+          .tree-node-delay1 { animation: nodePulse 3s infinite ease-in-out 1s; transform-origin: 120px 65px; }
+          .tree-node-delay2 { animation: nodePulse 3s infinite ease-in-out 2s; transform-origin: 80px 100px; }
+          .flow-link { stroke-dasharray: 6 3; animation: flowLine 1.5s linear infinite; }
+        `
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutSection.tsx",
                     lineNumber: 94,
                     columnNumber: 9
                 }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                    stroke: "rgba(255,180,0,0.02)",
+                    strokeWidth: "0.5",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "20",
+                            x2: "400",
+                            y2: "20"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 104,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "40",
+                            x2: "400",
+                            y2: "40"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 105,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "60",
+                            x2: "400",
+                            y2: "60"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 106,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "80",
+                            x2: "400",
+                            y2: "80"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 107,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "100",
+                            x2: "400",
+                            y2: "100"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 108,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "50",
+                            y1: "0",
+                            x2: "50",
+                            y2: "130"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 109,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "100",
+                            y1: "0",
+                            x2: "100",
+                            y2: "130"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 110,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "150",
+                            y1: "0",
+                            x2: "150",
+                            y2: "130"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 111,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "200",
+                            y1: "0",
+                            x2: "200",
+                            y2: "130"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 112,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "250",
+                            y1: "0",
+                            x2: "250",
+                            y2: "130"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 113,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "300",
+                            y1: "0",
+                            x2: "300",
+                            y2: "130"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 114,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "350",
+                            y1: "0",
+                            x2: "350",
+                            y2: "130"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 115,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 103,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                    stroke: "rgba(255, 180, 0, 0.2)",
+                    strokeWidth: "1.5",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "200",
+                            y1: "30",
+                            x2: "120",
+                            y2: "65",
+                            className: "flow-link",
+                            stroke: "#ffb400"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 120,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "200",
+                            y1: "30",
+                            x2: "280",
+                            y2: "65",
+                            className: "flow-link"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 121,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "120",
+                            y1: "65",
+                            x2: "80",
+                            y2: "100",
+                            className: "flow-link",
+                            stroke: "#ffb400"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 122,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "120",
+                            y1: "65",
+                            x2: "160",
+                            y2: "100",
+                            className: "flow-link"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 123,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 119,
+                    columnNumber: 9
+                }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
                     cx: "200",
-                    cy: "60",
-                    r: "12",
-                    fill: "none",
-                    stroke: "rgba(245,245,245,0.15)",
-                    strokeWidth: "1"
+                    cy: "30",
+                    r: "10",
+                    fill: "#090909",
+                    stroke: "#ffb400",
+                    strokeWidth: "1.5",
+                    className: "tree-node"
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 95,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                    cx: "320",
-                    cy: "60",
-                    r: "12",
-                    fill: "none",
-                    stroke: "rgba(245,245,245,0.15)",
-                    strokeWidth: "1"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 96,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                    x1: "92",
-                    y1: "60",
-                    x2: "188",
-                    y2: "60",
-                    stroke: "rgba(245,245,245,0.08)",
-                    strokeDasharray: "3"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 97,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                    x1: "212",
-                    y1: "60",
-                    x2: "308",
-                    y2: "60",
-                    stroke: "rgba(245,245,245,0.08)",
-                    strokeDasharray: "3"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 98,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "80",
-                    y: "63",
-                    fill: "#ffb400",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "8",
-                    textAnchor: "middle",
-                    children: "CS"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 99,
+                    lineNumber: 127,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "200",
-                    y: "63",
-                    fill: "rgba(245,245,245,0.4)",
+                    y: "33",
+                    fill: "#ffb400",
                     fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "8",
                     textAnchor: "middle",
-                    children: "DS"
+                    fontWeight: "bold",
+                    children: "ROOT"
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 100,
+                    lineNumber: 128,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "120",
+                    cy: "65",
+                    r: "10",
+                    fill: "#090909",
+                    stroke: "#ffb400",
+                    strokeWidth: "1.5",
+                    className: "tree-node-delay1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 131,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "320",
-                    y: "63",
+                    x: "120",
+                    y: "68",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "L_01"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 132,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "280",
+                    cy: "65",
+                    r: "10",
+                    fill: "#090909",
+                    stroke: "rgba(245,245,245,0.3)",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 134,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "280",
+                    y: "68",
                     fill: "rgba(245,245,245,0.4)",
                     fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "8",
                     textAnchor: "middle",
-                    children: "AI"
+                    children: "R_01"
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 101,
+                    lineNumber: 135,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "80",
+                    cy: "100",
+                    r: "10",
+                    fill: "#090909",
+                    stroke: "#ffb400",
+                    strokeWidth: "1.5",
+                    className: "tree-node-delay2"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 138,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "80",
+                    y: "103",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "0x3A"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 139,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "160",
+                    cy: "100",
+                    r: "10",
+                    fill: "#090909",
+                    stroke: "rgba(245,245,245,0.2)",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 141,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "160",
+                    y: "103",
+                    fill: "rgba(245,245,245,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "0x7B"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 142,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
                     x: "15",
                     y: "18",
-                    fill: "rgba(255,180,0,0.3)",
+                    fill: "rgba(255,180,0,0.4)",
                     fontFamily: "var(--font-jetbrains-mono, monospace)",
                     fontSize: "7",
-                    children: "CS FOUNDATION INDEX"
+                    letterSpacing: "0.05em",
+                    children: "DATA_STRUCTURE: HIERARCHICAL_INDEX"
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 102,
+                    lineNumber: 144,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "385",
+                    y: "18",
+                    fill: "rgba(245,245,245,0.25)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    textAnchor: "end",
+                    children: "O(log N) SEARCH"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 145,
                     columnNumber: 9
                 }, this)
             ]
@@ -1329,715 +1605,1836 @@ function ProjectSchematic({ id }) {
     if (id === 2) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
             width: "100%",
-            height: "120",
-            viewBox: "0 0 400 120",
+            height: "130",
+            viewBox: "0 0 400 130",
             style: {
-                background: '#111',
-                border: '1px solid rgba(255,180,0,0.1)',
+                background: '#090909',
+                border: '1px solid rgba(255,180,0,0.12)',
                 borderRadius: '6px',
-                margin: '1rem 0'
+                margin: '1rem 0',
+                overflow: 'hidden'
             },
             children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                    x: "25",
-                    y: "25",
-                    width: "350",
-                    height: "70",
-                    rx: "4",
-                    fill: "#050505",
-                    stroke: "rgba(245,245,245,0.05)"
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes cursorBlink { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+          @keyframes textType1 {
+            0% { content: ""; }
+            10% { content: "c"; }
+            20% { content: "ch"; }
+            30% { content: "char"; }
+            40% { content: "char*"; }
+            50% { content: "char* pt"; }
+            60% { content: "char* ptr "; }
+            70% { content: "char* ptr = "; }
+            80% { content: "char* ptr = ma"; }
+            90% { content: "char* ptr = malloc"; }
+            100% { content: "char* ptr = malloc(16);"; }
+          }
+          .typewriter::after {
+            display: inline-block;
+            content: "";
+            animation: textType1 4s steps(11) infinite alternate;
+          }
+          .cursor { animation: cursorBlink 1s infinite; fill: #ffb400; }
+          .memory-box { transition: fill 0.3s; }
+          .memory-box:hover { fill: rgba(255,180,0,0.08); }
+        `
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 109,
+                    lineNumber: 152,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "40",
-                    y: "52",
-                    fill: "rgba(245,245,245,0.35)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "8.5",
-                    children: '>>> print("Hello World")'
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 110,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "40",
-                    y: "72",
-                    fill: "#ffb400",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "8.5",
-                    children: "Hello World"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 111,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                    x: "110",
-                    y: "62",
-                    width: "5",
-                    height: "10",
-                    fill: "#ffb400",
-                    opacity: "0.8"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 112,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "15",
-                    y: "18",
-                    fill: "rgba(255,180,0,0.3)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7",
-                    children: "COMPILER SHELL EXECUTION"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 113,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/AboutSection.tsx",
-            lineNumber: 108,
-            columnNumber: 7
-        }, this);
-    }
-    if (id === 3) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-            width: "100%",
-            height: "120",
-            viewBox: "0 0 400 120",
-            style: {
-                background: '#111',
-                border: '1px solid rgba(255,180,0,0.1)',
-                borderRadius: '6px',
-                margin: '1rem 0'
-            },
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                    x: "35",
-                    y: "35",
-                    width: "90",
-                    height: "45",
-                    rx: "3",
-                    fill: "none",
-                    stroke: "rgba(245,245,245,0.12)"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 120,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                    x: "275",
-                    y: "35",
-                    width: "90",
-                    height: "45",
-                    rx: "3",
-                    fill: "none",
-                    stroke: "rgba(245,245,245,0.12)"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 121,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                    d: "M 125 58 L 275 58",
-                    stroke: "#ffb400",
-                    strokeDasharray: "3"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 122,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "80",
-                    y: "53",
-                    fill: "#f5f5f5",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "8",
-                    textAnchor: "middle",
-                    children: "USERS_DB"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 123,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "80",
-                    y: "65",
-                    fill: "rgba(245,245,245,0.3)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7",
-                    textAnchor: "middle",
-                    children: "PK: user_id"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 124,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "320",
-                    y: "53",
-                    fill: "#f5f5f5",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "8",
-                    textAnchor: "middle",
-                    children: "POSTS_DB"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 125,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "320",
-                    y: "65",
-                    fill: "rgba(245,245,245,0.3)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7",
-                    textAnchor: "middle",
-                    children: "FK: author_id"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 126,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "200",
-                    y: "50",
-                    fill: "#ffb400",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7.5",
-                    textAnchor: "middle",
-                    children: "RELATIONAL MAP"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 127,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "15",
-                    y: "18",
-                    fill: "rgba(255,180,0,0.3)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7",
-                    children: "DATABASE SCHEMA"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 128,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/AboutSection.tsx",
-            lineNumber: 119,
-            columnNumber: 7
-        }, this);
-    }
-    if (id === 4) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-            width: "100%",
-            height: "120",
-            viewBox: "0 0 400 120",
-            style: {
-                background: '#111',
-                border: '1px solid rgba(255,180,0,0.1)',
-                borderRadius: '6px',
-                margin: '1rem 0'
-            },
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                    d: "M 40 60 L 140 60 M 260 60 L 360 60",
-                    stroke: "rgba(245,245,245,0.15)"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 135,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                    x: "140",
-                    y: "42",
-                    width: "120",
-                    height: "36",
-                    rx: "3",
-                    fill: "none",
-                    stroke: "#ffb400"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 136,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "200",
-                    y: "64",
-                    fill: "#ffb400",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "8",
-                    textAnchor: "middle",
-                    children: "CLEANSE & MODEL"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 137,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                    cx: "90",
-                    cy: "60",
-                    r: "3",
-                    fill: "#f5f5f5",
-                    opacity: "0.3"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 138,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                    cx: "310",
-                    cy: "60",
-                    r: "3",
-                    fill: "#ffb400"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 139,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "15",
-                    y: "18",
-                    fill: "rgba(255,180,0,0.3)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7",
-                    children: "UPTRICKS DATA REFINEMENT FLOW"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 140,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/AboutSection.tsx",
-            lineNumber: 134,
-            columnNumber: 7
-        }, this);
-    }
-    if (id === 5) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-            width: "100%",
-            height: "120",
-            viewBox: "0 0 400 120",
-            style: {
-                background: '#111',
-                border: '1px solid rgba(255,180,0,0.1)',
-                borderRadius: '6px',
-                margin: '1rem 0'
-            },
-            children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
-                    stroke: "rgba(245,245,245,0.1)",
-                    strokeWidth: "1",
-                    fill: "none",
+                    fill: "rgba(245,245,245,0.15)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                            x: "40",
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "15",
                             y: "45",
-                            width: "60",
-                            height: "28",
-                            rx: "2"
+                            children: "0x007FFF01: [ 0x3F ]  -- ptr"
                         }, void 0, false, {
                             fileName: "[project]/src/components/AboutSection.tsx",
-                            lineNumber: 148,
+                            lineNumber: 178,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                            x: "170",
-                            y: "45",
-                            width: "60",
-                            height: "28",
-                            rx: "2"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "15",
+                            y: "65",
+                            children: "0x007FFF02: [ 0x4E ]"
                         }, void 0, false, {
                             fileName: "[project]/src/components/AboutSection.tsx",
-                            lineNumber: 149,
+                            lineNumber: 179,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                            x: "300",
-                            y: "45",
-                            width: "60",
-                            height: "28",
-                            rx: "2"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "15",
+                            y: "85",
+                            children: "0x007FFF03: [ 0x00 ]"
                         }, void 0, false, {
                             fileName: "[project]/src/components/AboutSection.tsx",
-                            lineNumber: 150,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                            d: "M 100 59 L 170 59 M 230 59 L 300 59",
-                            stroke: "#ffb400"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/AboutSection.tsx",
-                            lineNumber: 151,
+                            lineNumber: 180,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 147,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "70",
-                    y: "62",
-                    fill: "rgba(245,245,245,0.5)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "8",
-                    textAnchor: "middle",
-                    children: "RAW"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 153,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "200",
-                    y: "62",
-                    fill: "#ffb400",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "8",
-                    textAnchor: "middle",
-                    children: "FILTER"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 154,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "330",
-                    y: "62",
-                    fill: "rgba(245,245,245,0.5)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "8",
-                    textAnchor: "middle",
-                    children: "STORE"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 155,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "15",
-                    y: "18",
-                    fill: "rgba(255,180,0,0.3)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7",
-                    children: "AUTOMATED PIPELINE LOAD (ETL)"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 156,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/AboutSection.tsx",
-            lineNumber: 146,
-            columnNumber: 7
-        }, this);
-    }
-    if (id === 6) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-            width: "100%",
-            height: "120",
-            viewBox: "0 0 400 120",
-            style: {
-                background: '#111',
-                border: '1px solid rgba(255,180,0,0.1)',
-                borderRadius: '6px',
-                margin: '1rem 0'
-            },
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                    x: "30",
-                    y: "40",
-                    width: "80",
-                    height: "36",
-                    rx: "3",
-                    fill: "none",
-                    stroke: "rgba(245,245,245,0.12)"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 163,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                    x: "160",
-                    y: "40",
-                    width: "80",
-                    height: "36",
-                    rx: "3",
-                    fill: "none",
-                    stroke: "#ffb400",
-                    strokeWidth: "1.5"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 164,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                    x: "290",
-                    y: "40",
-                    width: "80",
-                    height: "36",
-                    rx: "3",
-                    fill: "none",
-                    stroke: "rgba(245,245,245,0.12)"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 165,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                    d: "M 110 58 L 160 58 M 240 58 L 290 58",
-                    stroke: "rgba(245,245,245,0.12)"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 166,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "70",
-                    y: "62",
-                    fill: "rgba(245,245,245,0.6)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7.5",
-                    textAnchor: "middle",
-                    children: "PROMPT"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 167,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "200",
-                    y: "62",
-                    fill: "#ffb400",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7.5",
-                    textAnchor: "middle",
-                    children: "RAG MODEL"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 168,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "330",
-                    y: "62",
-                    fill: "rgba(245,245,245,0.6)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7.5",
-                    textAnchor: "middle",
-                    children: "OUTPUT"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 169,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "15",
-                    y: "18",
-                    fill: "rgba(255,180,0,0.3)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7",
-                    children: "SEMANTIC CONTEXT RETRIEVAL LAYER"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 170,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/AboutSection.tsx",
-            lineNumber: 162,
-            columnNumber: 7
-        }, this);
-    }
-    if (id === 7) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-            width: "100%",
-            height: "120",
-            viewBox: "0 0 400 120",
-            style: {
-                background: '#111',
-                border: '1px solid rgba(255,180,0,0.1)',
-                borderRadius: '6px',
-                margin: '1rem 0'
-            },
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                    x: "150",
-                    y: "35",
-                    width: "100",
-                    height: "36",
-                    rx: "4",
-                    fill: "rgba(255,180,0,0.02)",
-                    stroke: "#ffb400",
-                    strokeWidth: "1.5"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
                     lineNumber: 177,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "200",
-                    y: "57",
-                    fill: "#ffb400",
-                    fontFamily: "var(--font-bebas-neue, sans-serif)",
-                    fontSize: "14",
-                    letterSpacing: "0.05em",
-                    textAnchor: "middle",
-                    children: "B.E. GRADUATE"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 178,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "200",
-                    y: "94",
-                    fill: "rgba(245,245,245,0.4)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "8",
-                    textAnchor: "middle",
-                    children: "CGPA: 7.8 // CAPSTONE DEPLOYED"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 179,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "15",
-                    y: "18",
-                    fill: "rgba(255,180,0,0.3)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7",
-                    children: "ACADEMIC DEGREE VERIFICATION"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 180,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/AboutSection.tsx",
-            lineNumber: 176,
-            columnNumber: 7
-        }, this);
-    }
-    if (id === 8) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-            width: "100%",
-            height: "120",
-            viewBox: "0 0 400 120",
-            style: {
-                background: '#111',
-                border: '1px solid rgba(255,180,0,0.1)',
-                borderRadius: '6px',
-                margin: '1rem 0'
-            },
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                    cx: "110",
-                    cy: "60",
-                    r: "18",
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 120 42 L 180 42 L 180 65 L 210 65",
                     fill: "none",
                     stroke: "#ffb400",
-                    strokeWidth: "1.5"
+                    strokeWidth: "1",
+                    strokeDasharray: "3 3"
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 187,
+                    lineNumber: 184,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                    cx: "290",
-                    cy: "60",
-                    r: "18",
-                    fill: "none",
-                    stroke: "rgba(245,245,245,0.15)",
-                    strokeWidth: "1.5"
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("polygon", {
+                    points: "210,65 205,62 205,68",
+                    fill: "#ffb400"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 185,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "215",
+                    y: "35",
+                    width: "150",
+                    height: "75",
+                    rx: "4",
+                    fill: "rgba(255,255,255,0.01)",
+                    stroke: "rgba(245,245,245,0.1)"
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutSection.tsx",
                     lineNumber: 188,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
-                    x1: "128",
-                    y1: "60",
-                    x2: "272",
-                    y2: "60",
-                    stroke: "#ffb400",
-                    strokeDasharray: "3"
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "225",
+                    y: "48",
+                    fill: "rgba(245,245,245,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6.5",
+                    children: "HEAP MEMORY MAP"
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutSection.tsx",
                     lineNumber: 189,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "110",
-                    y: "63",
-                    fill: "#ffb400",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "6",
-                    textAnchor: "middle",
-                    children: "NUROSEARCH"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 190,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "290",
-                    y: "63",
-                    fill: "rgba(245,245,245,0.4)",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "6",
-                    textAnchor: "middle",
-                    children: "DPI_ENGINE"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/AboutSection.tsx",
-                    lineNumber: 191,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "200",
-                    y: "50",
-                    fill: "#ffb400",
-                    fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7.5",
-                    textAnchor: "middle",
-                    children: "SYSTEMS ARCH"
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "225",
+                    y: "58",
+                    width: "30",
+                    height: "20",
+                    rx: "2",
+                    fill: "rgba(255,180,0,0.05)",
+                    stroke: "#ffb400",
+                    strokeWidth: "1",
+                    className: "memory-box"
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutSection.tsx",
                     lineNumber: 192,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
-                    x: "15",
-                    y: "18",
-                    fill: "rgba(255,180,0,0.3)",
+                    x: "240",
+                    y: "70",
+                    fill: "#ffb400",
                     fontFamily: "var(--font-jetbrains-mono, monospace)",
-                    fontSize: "7",
-                    children: "CUSTOM ENGINE GRAPH"
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "16B"
                 }, void 0, false, {
                     fileName: "[project]/src/components/AboutSection.tsx",
                     lineNumber: 193,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "260",
+                    y: "58",
+                    width: "45",
+                    height: "20",
+                    rx: "2",
+                    fill: "none",
+                    stroke: "rgba(245,245,245,0.15)",
+                    strokeWidth: "1",
+                    className: "memory-box"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 195,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "282",
+                    y: "70",
+                    fill: "rgba(245,245,245,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "32B"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 196,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "310",
+                    y: "58",
+                    width: "45",
+                    height: "20",
+                    rx: "2",
+                    fill: "rgba(245,245,245,0.02)",
+                    stroke: "rgba(245,245,245,0.1)",
+                    strokeWidth: "1",
+                    className: "memory-box"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 198,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "332",
+                    y: "70",
+                    fill: "rgba(245,245,245,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "FREE"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 199,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    letterSpacing: "0.05em",
+                    children: "LOW-LEVEL REGISTER & MEMORY LEAK WATCH"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 201,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "112",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    className: "typewriter",
+                    children: "guest@kernel:~$ "
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 202,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "180",
+                    y: "104",
+                    width: "4",
+                    height: "8",
+                    fill: "#ffb400",
+                    className: "cursor"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 203,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/AboutSection.tsx",
-            lineNumber: 186,
+            lineNumber: 151,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 3) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "130",
+            viewBox: "0 0 400 130",
+            style: {
+                background: '#090909',
+                border: '1px solid rgba(255,180,0,0.12)',
+                borderRadius: '6px',
+                margin: '1rem 0',
+                overflow: 'hidden'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes dataStream {
+            0% { stroke-dashoffset: 40; }
+            100% { stroke-dashoffset: 0; }
+          }
+          @keyframes hitFlash {
+            0%, 100% { fill: rgba(74, 222, 128, 0.05); stroke: rgba(74, 222, 128, 0.4); }
+            50% { fill: rgba(74, 222, 128, 0.25); stroke: rgba(74, 222, 128, 1); }
+          }
+          .stream-path { stroke-dasharray: 8 4; animation: dataStream 1s linear infinite; }
+          .redis-node { animation: hitFlash 2s infinite ease-in-out; }
+        `
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 210,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                    stroke: "rgba(245,245,245,0.1)",
+                    fill: "rgba(245,245,245,0.01)",
+                    strokeWidth: "1",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "20",
+                            y: "45",
+                            width: "55",
+                            height: "35",
+                            rx: "3"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 224,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "110",
+                            y: "45",
+                            width: "65",
+                            height: "35",
+                            rx: "3"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 225,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "210",
+                            y: "25",
+                            width: "70",
+                            height: "30",
+                            rx: "3",
+                            className: "redis-node"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 226,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "210",
+                            y: "70",
+                            width: "70",
+                            height: "30",
+                            rx: "3"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 227,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "315",
+                            y: "45",
+                            width: "65",
+                            height: "35",
+                            rx: "3"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 228,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 223,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 75 62 L 110 62",
+                    stroke: "#58c4dc",
+                    strokeWidth: "1.5",
+                    className: "stream-path"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 232,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 175 62 L 195 62 L 195 40 L 210 40",
+                    stroke: "#ffb400",
+                    strokeWidth: "1",
+                    strokeDasharray: "4 2"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 235,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 175 62 L 195 62 L 195 85 L 210 85",
+                    stroke: "#cbd5e1",
+                    strokeWidth: "1",
+                    strokeDasharray: "4 2"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 236,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 280 40 L 295 40 L 295 62 L 315 62",
+                    stroke: "#ffb400",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 238,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 280 85 L 295 85 L 295 62 L 315 62",
+                    stroke: "#cbd5e1",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 239,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "47",
+                    y: "66",
+                    fill: "rgba(245,245,245,0.8)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "CLIENT"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 242,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "142",
+                    y: "66",
+                    fill: "rgba(245,245,245,0.8)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "GATEWAY"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 243,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "245",
+                    y: "43",
+                    fill: "#4ade80",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    textAnchor: "middle",
+                    children: "REDIS"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 244,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "245",
+                    y: "88",
+                    fill: "rgba(245,245,245,0.6)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    textAnchor: "middle",
+                    children: "NODE_API"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 245,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "347",
+                    y: "66",
+                    fill: "#58c4dc",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    children: "POSTGRES"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 246,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    letterSpacing: "0.05em",
+                    children: "DISTRIBUTED SYSTEMS AND CACHING LAYERS"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 248,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "245",
+                    y: "52",
+                    fill: "#4ade80",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "5.5",
+                    textAnchor: "middle",
+                    children: "CACHE_HIT (2ms)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 249,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 209,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 4) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "130",
+            viewBox: "0 0 400 130",
+            style: {
+                background: '#090909',
+                border: '1px solid rgba(255,180,0,0.12)',
+                borderRadius: '6px',
+                margin: '1rem 0',
+                overflow: 'hidden'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes dropPoint {
+            0% { transform: translateY(-5px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(60px); opacity: 0; }
+          }
+          .data-drop { animation: dropPoint 2.5s infinite linear; }
+          .data-drop-d1 { animation: dropPoint 2.5s infinite linear 0.8s; }
+          .data-drop-d2 { animation: dropPoint 2.5s infinite linear 1.6s; }
+        `
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 256,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                    stroke: "rgba(245,245,245,0.06)",
+                    fill: "rgba(245,245,245,0.02)",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "20",
+                            y: "30",
+                            width: "80",
+                            height: "85",
+                            rx: "3"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 268,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "20",
+                            y1: "50",
+                            x2: "100",
+                            y2: "50"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 269,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "20",
+                            y1: "70",
+                            x2: "100",
+                            y2: "70"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 270,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "20",
+                            y1: "90",
+                            x2: "100",
+                            y2: "90"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 271,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 267,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "60",
+                    y: "42",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    textAnchor: "middle",
+                    children: "RAW_COLUMNS"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 273,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "60",
+                    y: "62",
+                    fill: "rgba(245,245,245,0.7)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7.5",
+                    textAnchor: "middle",
+                    children: "Logistics_Data"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 274,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "60",
+                    y: "82",
+                    fill: "rgba(245,245,245,0.7)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7.5",
+                    textAnchor: "middle",
+                    children: "Geo_Lat_Lon"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 275,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "60",
+                    y: "102",
+                    fill: "rgba(245,245,245,0.7)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7.5",
+                    textAnchor: "middle",
+                    children: "Transit_Time"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 276,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 100 72 L 150 72",
+                    stroke: "rgba(255,180,0,0.4)",
+                    strokeWidth: "1",
+                    strokeDasharray: "3 3"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 279,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "150",
+                    y: "45",
+                    width: "80",
+                    height: "50",
+                    rx: "4",
+                    fill: "rgba(255,180,0,0.03)",
+                    stroke: "#ffb400",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 282,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "190",
+                    y: "65",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    fontWeight: "bold",
+                    children: "COV_MATRIX"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 283,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "190",
+                    y: "78",
+                    fill: "rgba(245,245,245,0.5)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "VIF FILTERS > 5.0"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 284,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 230 72 L 275 72",
+                    stroke: "rgba(255,180,0,0.4)",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 287,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                    stroke: "rgba(245,245,245,0.1)",
+                    strokeWidth: "1",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "285",
+                            y1: "105",
+                            x2: "375",
+                            y2: "105"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 291,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "285",
+                            y1: "35",
+                            x2: "285",
+                            y2: "105"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 292,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 290,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 285 95 L 365 45",
+                    stroke: "#fb923c",
+                    strokeWidth: "1.5"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 294,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "305",
+                    cy: "80",
+                    r: "2",
+                    fill: "#60a5fa"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 295,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "325",
+                    cy: "72",
+                    r: "2",
+                    fill: "#60a5fa"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 296,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "340",
+                    cy: "55",
+                    r: "2",
+                    fill: "#60a5fa"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 297,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "310",
+                    cy: "92",
+                    r: "2",
+                    fill: "#60a5fa"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 298,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    letterSpacing: "0.05em",
+                    children: "FEATURE ENGINEERING & COLLINEARITY PREDICTION"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 300,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "375",
+                    y: "42",
+                    fill: "#fb923c",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "end",
+                    children: "MODEL FIT"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 301,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 255,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 5) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "130",
+            viewBox: "0 0 400 130",
+            style: {
+                background: '#090909',
+                border: '1px solid rgba(255,180,0,0.12)',
+                borderRadius: '6px',
+                margin: '1rem 0',
+                overflow: 'hidden'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes liquidFlow { 0% { stroke-dashoffset: 32; } 100% { stroke-dashoffset: 0; } }
+          .flow-liquid { stroke-dasharray: 8 8; animation: liquidFlow 2s linear infinite; }
+        `
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 308,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 30 65 L 120 65",
+                    stroke: "rgba(245,245,245,0.15)",
+                    strokeWidth: "8",
+                    strokeLinecap: "round"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 313,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 30 65 L 120 65",
+                    stroke: "#10b981",
+                    strokeWidth: "2",
+                    className: "flow-liquid"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 314,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "30",
+                    cy: "65",
+                    r: "16",
+                    fill: "#090909",
+                    stroke: "rgba(245,245,245,0.15)",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 317,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "30",
+                    y: "68",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "CRON"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 318,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "150",
+                    y: "35",
+                    width: "100",
+                    height: "60",
+                    rx: "4",
+                    fill: "rgba(16,185,129,0.02)",
+                    stroke: "#10b981",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 321,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "52",
+                    fill: "#10b981",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8.5",
+                    textAnchor: "middle",
+                    fontWeight: "bold",
+                    children: "TRANSFORMER"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 322,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "66",
+                    fill: "rgba(245,245,245,0.5)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "CSV --> PARQUET"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 323,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "80",
+                    fill: "rgba(245,245,245,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6.5",
+                    textAnchor: "middle",
+                    children: "GZIP COMPRESSION"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 324,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 250 65 L 340 65",
+                    stroke: "rgba(245,245,245,0.15)",
+                    strokeWidth: "8",
+                    strokeLinecap: "round"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 327,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 250 65 L 340 65",
+                    stroke: "#10b981",
+                    strokeWidth: "2",
+                    className: "flow-liquid"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 328,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "340",
+                    y: "45",
+                    width: "40",
+                    height: "40",
+                    rx: "3",
+                    fill: "#090909",
+                    stroke: "rgba(245,245,245,0.15)",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 331,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "360",
+                    y: "62",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7.5",
+                    textAnchor: "middle",
+                    children: "DB"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 332,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "360",
+                    y: "74",
+                    fill: "#10b981",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "LOAD"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 333,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    letterSpacing: "0.05em",
+                    children: "DATA INTEGRATION & BATCH ETL PIPELINING"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 335,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "112",
+                    fill: "rgba(245,245,245,0.3)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    textAnchor: "middle",
+                    children: "throughput: 25.4 MB/s"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 336,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 307,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 6) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "130",
+            viewBox: "0 0 400 130",
+            style: {
+                background: '#090909',
+                border: '1px solid rgba(255,180,0,0.12)',
+                borderRadius: '6px',
+                margin: '1rem 0',
+                overflow: 'hidden'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes pulseSonar {
+            0% { r: 5px; opacity: 0.9; }
+            100% { r: 60px; opacity: 0; }
+          }
+          .sonar { animation: pulseSonar 3s infinite cubic-bezier(0.1, 0.8, 0.3, 1); }
+          .query-pt { filter: drop-shadow(0 0 4px var(--accent-amber, #ffb400)); }
+        `
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 343,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "200",
+                    cy: "65",
+                    r: "5",
+                    fill: "#ffb400",
+                    className: "query-pt"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 352,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "200",
+                    cy: "65",
+                    r: "30",
+                    fill: "none",
+                    stroke: "rgba(255,180,0,0.2)",
+                    strokeWidth: "0.75"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 353,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "200",
+                    cy: "65",
+                    r: "55",
+                    fill: "none",
+                    stroke: "rgba(255,180,0,0.15)",
+                    strokeWidth: "0.75"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 354,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "200",
+                    cy: "65",
+                    r: "5",
+                    fill: "none",
+                    stroke: "#ffb400",
+                    strokeWidth: "1",
+                    className: "sonar"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 355,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "160",
+                    cy: "45",
+                    r: "3",
+                    fill: "#ffb400"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 358,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                    x1: "200",
+                    y1: "65",
+                    x2: "160",
+                    y2: "45",
+                    stroke: "rgba(255,180,0,0.5)",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 359,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "153",
+                    y: "42",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6.5",
+                    children: "chunk_09 (sim=0.88)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 360,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "245",
+                    cy: "50",
+                    r: "3",
+                    fill: "#ffb400"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 362,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                    x1: "200",
+                    y1: "65",
+                    x2: "245",
+                    y2: "50",
+                    stroke: "rgba(255,180,0,0.5)",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 363,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "252",
+                    y: "48",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6.5",
+                    children: "chunk_14 (sim=0.84)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 364,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "140",
+                    cy: "85",
+                    r: "2",
+                    fill: "rgba(245,245,245,0.2)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 367,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "260",
+                    cy: "85",
+                    r: "2",
+                    fill: "rgba(245,245,245,0.2)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 368,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "190",
+                    cy: "110",
+                    r: "2",
+                    fill: "rgba(245,245,245,0.2)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 369,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "215",
+                    cy: "25",
+                    r: "2",
+                    fill: "rgba(245,245,245,0.2)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 370,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    letterSpacing: "0.05em",
+                    children: "SEMANTIC RAG VECTOR NEAREST-NEIGHBORS"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 372,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "385",
+                    y: "18",
+                    fill: "rgba(245,245,245,0.25)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    textAnchor: "end",
+                    children: "API LATENCY: 28ms"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 373,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "112",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6.5",
+                    textAnchor: "middle",
+                    children: 'Query: "vector database optimization" --> Embedding Ingest'
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 374,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 342,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 7) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "130",
+            viewBox: "0 0 400 130",
+            style: {
+                background: '#090909',
+                border: '1px solid rgba(255,180,0,0.12)',
+                borderRadius: '6px',
+                margin: '1rem 0',
+                overflow: 'hidden'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                    stroke: "rgba(245,245,245,0.05)",
+                    strokeWidth: "1",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "30",
+                            y1: "100",
+                            x2: "370",
+                            y2: "100"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 383,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "30",
+                            y1: "30",
+                            x2: "370",
+                            y2: "30"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 384,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 382,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "50",
+                    y: "55",
+                    width: "20",
+                    height: "45",
+                    fill: "rgba(245,245,245,0.15)",
+                    rx: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 388,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "60",
+                    y: "112",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "SEM_I"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 389,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "60",
+                    y: "50",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6.5",
+                    textAnchor: "middle",
+                    children: "7.2"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 390,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "90",
+                    y: "50",
+                    width: "20",
+                    height: "50",
+                    fill: "rgba(245,245,245,0.15)",
+                    rx: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 392,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "100",
+                    y: "112",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "SEM_II"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 393,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "100",
+                    y: "45",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6.5",
+                    textAnchor: "middle",
+                    children: "7.5"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 394,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "130",
+                    y: "47",
+                    width: "20",
+                    height: "53",
+                    fill: "rgba(245,245,245,0.2)",
+                    rx: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 396,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "140",
+                    y: "112",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "SEM_III"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 397,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "140",
+                    y: "42",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6.5",
+                    textAnchor: "middle",
+                    children: "7.7"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 398,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "170",
+                    y: "44",
+                    width: "20",
+                    height: "56",
+                    fill: "rgba(245,245,245,0.2)",
+                    rx: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 400,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "180",
+                    y: "112",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "SEM_IV"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 401,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "180",
+                    y: "39",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6.5",
+                    textAnchor: "middle",
+                    children: "7.8"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 402,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "210",
+                    y: "42",
+                    width: "20",
+                    height: "58",
+                    fill: "rgba(255,180,0,0.15)",
+                    stroke: "#ffb400",
+                    strokeWidth: "0.5",
+                    rx: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 404,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "220",
+                    y: "112",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "SEM_V"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 405,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "220",
+                    y: "37",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6.5",
+                    textAnchor: "middle",
+                    children: "8.0"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 406,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "260",
+                    y: "35",
+                    width: "110",
+                    height: "65",
+                    rx: "3",
+                    fill: "rgba(245,245,245,0.01)",
+                    stroke: "rgba(245,245,245,0.08)"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 409,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "315",
+                    y: "48",
+                    fill: "rgba(245,245,245,0.7)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7.5",
+                    textAnchor: "middle",
+                    children: "CAPSTONE THESIS"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 410,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "315",
+                    y: "62",
+                    fill: "#ffb400",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "8",
+                    textAnchor: "middle",
+                    fontWeight: "bold",
+                    children: "CLINICAL ML NET"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 411,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "315",
+                    y: "78",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "middle",
+                    children: "VERDICT: APPROVED // GRADE A"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 412,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "15",
+                    y: "18",
+                    fill: "rgba(255,180,0,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    letterSpacing: "0.05em",
+                    children: "ACADEMIC TRACKING AND GRADE ENGINE"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 414,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "385",
+                    y: "18",
+                    fill: "rgba(245,245,245,0.25)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    textAnchor: "end",
+                    children: "CGPA: 7.80"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 415,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 380,
+            columnNumber: 7
+        }, this);
+    }
+    if (id === 8) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+            width: "100%",
+            height: "130",
+            viewBox: "0 0 400 130",
+            style: {
+                background: '#090909',
+                border: '1px solid rgba(255,180,0,0.12)',
+                borderRadius: '6px',
+                margin: '1rem 0',
+                overflow: 'hidden'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                    children: `
+          @keyframes oscil1 {
+            0% { stroke-dashoffset: 200; }
+            100% { stroke-dashoffset: 0; }
+          }
+          .oscilloscope-trace { stroke-dasharray: 200; stroke-dashoffset: 200; animation: oscil1 2.5s infinite linear; }
+          .oscilloscope-trace-secondary { opacity: 0.15; }
+        `
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 422,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                    stroke: "rgba(239,68,68,0.03)",
+                    strokeWidth: "0.5",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "20",
+                            y1: "65",
+                            x2: "380",
+                            y2: "65"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 433,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "20",
+                            y1: "35",
+                            x2: "380",
+                            y2: "35"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 434,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "20",
+                            y1: "95",
+                            x2: "380",
+                            y2: "95"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 435,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "200",
+                            y1: "10",
+                            x2: "200",
+                            y2: "120"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 436,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "100",
+                            y1: "10",
+                            x2: "100",
+                            y2: "120"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 437,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "300",
+                            y1: "10",
+                            x2: "300",
+                            y2: "120"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 438,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 432,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                    x: "15",
+                    y: "10",
+                    width: "370",
+                    height: "110",
+                    fill: "none",
+                    stroke: "rgba(239,68,68,0.08)",
+                    strokeWidth: "1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 442,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 20 65 Q 65 15, 110 65 T 200 65 T 290 65 T 380 65",
+                    fill: "none",
+                    stroke: "rgba(239,68,68,0.2)",
+                    strokeWidth: "1",
+                    className: "oscilloscope-trace-secondary"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 445,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                    d: "M 20 65 Q 65 15, 110 65 T 200 65 T 290 65 T 380 65",
+                    fill: "none",
+                    stroke: "#ef4444",
+                    strokeWidth: "1.5",
+                    className: "oscilloscope-trace"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 448,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "50",
+                    cy: "95",
+                    r: "3",
+                    fill: "#cbd5e1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 451,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "80",
+                    cy: "105",
+                    r: "3",
+                    fill: "#cbd5e1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 452,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                    cx: "65",
+                    cy: "85",
+                    r: "3",
+                    fill: "#cbd5e1"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 453,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                    x1: "50",
+                    y1: "95",
+                    x2: "80",
+                    y2: "105",
+                    stroke: "rgba(245,245,245,0.3)",
+                    strokeWidth: "0.75"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 454,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                    x1: "50",
+                    y1: "95",
+                    x2: "65",
+                    y2: "85",
+                    stroke: "rgba(245,245,245,0.3)",
+                    strokeWidth: "0.75"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 455,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                    x1: "80",
+                    y1: "105",
+                    x2: "65",
+                    y2: "85",
+                    stroke: "rgba(245,245,245,0.3)",
+                    strokeWidth: "0.75"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 456,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "80",
+                    y: "82",
+                    fill: "rgba(245,245,245,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "5.5",
+                    children: "HNSW_L0_GRAPH"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 457,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "375",
+                    y: "22",
+                    fill: "#ef4444",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "end",
+                    children: "DPI BUFFER: 99.8% INGEST"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 460,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "375",
+                    y: "32",
+                    fill: "#ef4444",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6",
+                    textAnchor: "end",
+                    children: "RAW CAPTURE STREAM: 10Gbps"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 461,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "25",
+                    y: "22",
+                    fill: "rgba(255,180,0,0.4)",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "7",
+                    letterSpacing: "0.05em",
+                    children: "C RAW SOCKET CAPTURE & MULTITHREADED PACKET PARSING"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 463,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                    x: "200",
+                    y: "115",
+                    fill: "#ef4444",
+                    fontFamily: "var(--font-jetbrains-mono, monospace)",
+                    fontSize: "6.5",
+                    textAnchor: "middle",
+                    children: "MT_INGEST_THREAD [ID: 0x7000B2A3] -- RUNNING"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 464,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/AboutSection.tsx",
+            lineNumber: 421,
             columnNumber: 7
         }, this);
     }
@@ -2063,6 +3460,8 @@ function TechSphere({ onHoverChange }) {
         'Node.js',
         'TypeScript',
         'JavaScript',
+        'HTML',
+        'CSS',
         'Python',
         'Rust',
         'C Language',
@@ -2287,38 +3686,1321 @@ function TechSphere({ onHoverChange }) {
             const top = 160 + tag.y * scale;
             const opacity = (tag.z + radius) / (2 * radius) * 0.8 + 0.2;
             const zIndex = Math.round(tag.z + radius);
+            // Classify tag for premium multi-tone theme
+            const isBasicWeb = [
+                'HTML',
+                'CSS',
+                'JavaScript'
+            ].includes(tag.text);
+            const isFrontendWeb = [
+                'React',
+                'Next.js',
+                'TypeScript'
+            ].includes(tag.text);
+            const isBackendDB = [
+                'Node.js',
+                'FastAPI',
+                'SQL Databases',
+                'NoSQL',
+                'MongoDB',
+                'Redis'
+            ].includes(tag.text);
+            const isAIML = [
+                'Python',
+                'Pandas',
+                'NumPy',
+                'Scikit-Learn',
+                'LangChain',
+                'OpenAI API',
+                'HNSW Graph',
+                'Vector DB',
+                'RAG Pipelines',
+                'ETL Pipelines'
+            ].includes(tag.text);
+            const isSystemsDevOps = [
+                'Rust',
+                'C Language',
+                'C++',
+                'Docker',
+                'Git',
+                'Linux',
+                'Shell Scripting',
+                'Multithreading',
+                'Scapy',
+                'Network Protocols'
+            ].includes(tag.text);
+            let activeColor = '#cbd5e1'; // Fallback Slate
+            let activeBg = 'rgba(203, 213, 225, 0.05)';
+            let activeBorder = '1px solid rgba(203, 213, 225, 0.25)';
+            let activeGlow = 'none';
+            if (isBasicWeb) {
+                // Warm sunset/gold tones (HTML/CSS/JS matching but distinct)
+                if (tag.text === 'HTML') {
+                    activeColor = '#ff6d3b'; // Coral/Orange HTML
+                } else if (tag.text === 'CSS') {
+                    activeColor = '#ffb33b'; // Warm Yellow-Orange CSS
+                } else {
+                    activeColor = '#f5e050'; // Bright Yellow JavaScript
+                }
+                activeBg = `rgba(${activeColor === '#ff6d3b' ? '255, 109, 59' : activeColor === '#ffb33b' ? '255, 179, 59' : '245, 224, 80'}, 0.05)`;
+                activeBorder = `1px solid rgba(${activeColor === '#ff6d3b' ? '255, 109, 59' : activeColor === '#ffb33b' ? '255, 179, 59' : '245, 224, 80'}, 0.25)`;
+                activeGlow = `0 0 15px rgba(${activeColor === '#ff6d3b' ? '255, 109, 59' : activeColor === '#ffb33b' ? '255, 179, 59' : '245, 224, 80'}, 0.15)`;
+            } else if (isFrontendWeb) {
+                // Cool tech cyan/blue tones (React/Next/TS)
+                if (tag.text === 'React') {
+                    activeColor = '#58c4dc'; // React Cyan
+                } else if (tag.text === 'Next.js') {
+                    activeColor = '#a5f3fc'; // Bright Cyan-white
+                } else {
+                    activeColor = '#3178c6'; // TypeScript Royal Blue
+                }
+                activeBg = `rgba(${activeColor === '#58c4dc' ? '88, 196, 220' : activeColor === '#a5f3fc' ? '165, 243, 252' : '49, 120, 198'}, 0.05)`;
+                activeBorder = `1px solid rgba(${activeColor === '#58c4dc' ? '88, 196, 220' : activeColor === '#a5f3fc' ? '165, 243, 252' : '49, 120, 198'}, 0.25)`;
+                activeGlow = `0 0 15px rgba(${activeColor === '#58c4dc' ? '88, 196, 220' : activeColor === '#a5f3fc' ? '165, 243, 252' : '49, 120, 198'}, 0.15)`;
+            } else if (isBackendDB) {
+                // Backend/DB minty green tones
+                if (tag.text === 'Redis') {
+                    activeColor = '#f87171'; // Redis Coral Red
+                } else if (tag.text === 'MongoDB') {
+                    activeColor = '#10b981'; // Mongo Emerald Green
+                } else if (tag.text === 'FastAPI') {
+                    activeColor = '#2dd4bf'; // Teal
+                } else {
+                    activeColor = '#4ade80'; // Node/SQL Bright Green
+                }
+                activeBg = `rgba(${activeColor === '#f87171' ? '248, 113, 113' : activeColor === '#10b981' ? '16, 185, 129' : activeColor === '#2dd4bf' ? '45, 212, 191' : '74, 222, 128'}, 0.05)`;
+                activeBorder = `1px solid rgba(${activeColor === '#f87171' ? '248, 113, 113' : activeColor === '#10b981' ? '16, 185, 129' : activeColor === '#2dd4bf' ? '45, 212, 191' : '74, 222, 128'}, 0.25)`;
+                activeGlow = `0 0 15px rgba(${activeColor === '#f87171' ? '248, 113, 113' : activeColor === '#10b981' ? '16, 185, 129' : activeColor === '#2dd4bf' ? '45, 212, 191' : '74, 222, 128'}, 0.15)`;
+            } else if (isAIML) {
+                // AI/ML Warm Amber and Python Blue-Yellow
+                if (tag.text === 'Python') {
+                    activeColor = '#60a5fa'; // Soft Sky Blue
+                } else if (tag.text === 'RAG Pipelines' || tag.text === 'Vector DB') {
+                    activeColor = '#fb923c'; // Warm Orange
+                } else {
+                    activeColor = 'var(--accent-amber, #ffb400)'; // Signature Amber
+                }
+                activeBg = `rgba(${activeColor === '#60a5fa' ? '96, 165, 250' : activeColor === '#fb923c' ? '251, 146, 60' : '255, 180, 0'}, 0.05)`;
+                activeBorder = `1px solid rgba(${activeColor === '#60a5fa' ? '96, 165, 250' : activeColor === '#fb923c' ? '251, 146, 60' : '255, 180, 0'}, 0.25)`;
+                activeGlow = `0 0 15px rgba(${activeColor === '#60a5fa' ? '96, 165, 250' : activeColor === '#fb923c' ? '251, 146, 60' : '255, 180, 0'}, 0.15)`;
+            } else if (isSystemsDevOps) {
+                // Systems/DevOps Indigo, Violet & Crimson Red
+                if (tag.text === 'Rust') {
+                    activeColor = '#ef4444'; // Crimson Rust
+                } else if (tag.text === 'Docker' || tag.text === 'Git') {
+                    activeColor = '#818cf8'; // Soft Indigo
+                } else if (tag.text === 'Linux' || tag.text === 'Shell Scripting') {
+                    activeColor = '#c084fc'; // Purple
+                } else {
+                    activeColor = '#a78bfa'; // Lavender/Violet
+                }
+                activeBg = `rgba(${activeColor === '#ef4444' ? '239, 68, 68' : activeColor === '#818cf8' ? '129, 140, 248' : activeColor === '#c084fc' ? '192, 132, 252' : '167, 139, 250'}, 0.05)`;
+                activeBorder = `1px solid rgba(${activeColor === '#ef4444' ? '239, 68, 68' : activeColor === '#818cf8' ? '129, 140, 248' : activeColor === '#c084fc' ? '192, 132, 252' : '167, 139, 250'}, 0.25)`;
+                activeGlow = `0 0 15px rgba(${activeColor === '#ef4444' ? '239, 68, 68' : activeColor === '#818cf8' ? '129, 140, 248' : activeColor === '#c084fc' ? '192, 132, 252' : '167, 139, 250'}, 0.15)`;
+            }
+            const isFront = tag.z > 0;
+            // Depth of field blur calculation
+            let blurAmount = 0;
+            if (tag.z < -20) {
+                blurAmount = Math.min(2.5, (Math.abs(tag.z) - 20) * 0.015);
+            }
             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                 style: {
                     position: 'absolute',
                     left: `${left}px`,
                     top: `${top}px`,
                     transform: `translate(-50%, -50%) scale(${scale})`,
-                    fontSize: '0.75rem',
+                    fontSize: '0.72rem',
                     fontFamily: 'var(--font-jetbrains-mono, monospace)',
-                    fontWeight: tag.z > 0 ? 500 : 300,
-                    color: tag.z > 0 ? 'var(--accent-amber, #ffb400)' : 'rgba(245, 245, 245, 0.35)',
+                    fontWeight: isFront ? 500 : 300,
+                    color: isFront ? activeColor : 'rgba(245, 245, 245, 0.25)',
                     opacity: opacity,
                     zIndex: zIndex,
                     whiteSpace: 'nowrap',
                     textTransform: 'uppercase',
-                    pointerEvents: tag.z > 0 ? 'auto' : 'none',
-                    background: tag.z > 0 ? 'rgba(255, 180, 0, 0.04)' : 'transparent',
-                    border: tag.z > 0 ? '1px solid rgba(255, 180, 0, 0.15)' : '1px solid transparent',
+                    pointerEvents: isFront ? 'auto' : 'none',
+                    background: isFront ? activeBg : 'transparent',
+                    border: isFront ? activeBorder : '1px solid transparent',
                     borderRadius: '4px',
                     padding: '0.2rem 0.5rem',
-                    transition: 'color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease',
-                    boxShadow: tag.z > 40 ? '0 0 10px rgba(255, 180, 0, 0.08)' : 'none'
+                    transition: 'color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease',
+                    boxShadow: isFront ? activeGlow : 'none',
+                    filter: blurAmount > 0 ? `blur(${blurAmount}px)` : 'none'
                 },
                 children: tag.text
             }, idx, false, {
                 fileName: "[project]/src/components/AboutSection.tsx",
-                lineNumber: 443,
+                lineNumber: 800,
                 columnNumber: 11
             }, this);
         })
     }, void 0, false, {
         fileName: "[project]/src/components/AboutSection.tsx",
-        lineNumber: 399,
+        lineNumber: 670,
+        columnNumber: 5
+    }, this);
+}
+function DynamicHUDVisualizer({ activeId }) {
+    const getTheme = ()=>{
+        switch(activeId){
+            case 1:
+                return {
+                    color: '#ffb400',
+                    rgb: '255, 180, 0',
+                    label: 'CS_FOUNDATION_INDEX'
+                };
+            case 2:
+                return {
+                    color: '#ffb400',
+                    rgb: '255, 180, 0',
+                    label: 'COMPILER_SHELL_EXEC'
+                };
+            case 3:
+                return {
+                    color: '#58c4dc',
+                    rgb: '88, 196, 220',
+                    label: 'RELATIONAL_DB_SCHEMA'
+                };
+            case 4:
+                return {
+                    color: '#fb923c',
+                    rgb: '251, 146, 60',
+                    label: 'MODEL_REGRESSION_PLOT'
+                };
+            case 5:
+                return {
+                    color: '#10b981',
+                    rgb: '16, 185, 129',
+                    label: 'ETL_DATA_PIPELINE'
+                };
+            case 6:
+                return {
+                    color: '#ffb400',
+                    rgb: '255, 180, 0',
+                    label: 'VECTOR_SIMILARITY_RAG'
+                };
+            case 7:
+                return {
+                    color: '#a78bfa',
+                    rgb: '167, 139, 250',
+                    label: 'NEURAL_NET_CAPSTONE'
+                };
+            case 8:
+                return {
+                    color: '#ef4444',
+                    rgb: '239, 68, 68',
+                    label: 'RAW_PACKET_DPI_ENGINE'
+                };
+            default:
+                return {
+                    color: '#ffb400',
+                    rgb: '255, 180, 0',
+                    label: 'SYSTEM_SCHEMATIC'
+                };
+        }
+    };
+    const theme = getTheme();
+    const getVisualizer = ()=>{
+        switch(activeId){
+            case 1:
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 200 100",
+                    className: "hud-svg",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                            children: `
+              @keyframes scanline {
+                0% { transform: translateY(-100px); }
+                100% { transform: translateY(100px); }
+              }
+              .binary-text {
+                font-family: var(--font-jetbrains-mono, monospace);
+                font-size: 6px;
+                fill: rgba(255, 180, 0, 0.45);
+              }
+            `
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 855,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "10",
+                            y: "20",
+                            className: "binary-text",
+                            children: "01010100 01000101"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 866,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "10",
+                            y: "35",
+                            className: "binary-text",
+                            children: "01000011 01001000"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 867,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "10",
+                            y: "50",
+                            className: "binary-text",
+                            children: "01001111 01010010"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 868,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "10",
+                            y: "65",
+                            className: "binary-text",
+                            children: "01000111 01001001"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 869,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "10",
+                            y: "80",
+                            className: "binary-text",
+                            children: "01001110 01010011"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 870,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "0",
+                            y: "0",
+                            width: "200",
+                            height: "100",
+                            fill: "rgba(255,180,0,0.01)"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 871,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "0",
+                            y1: "0",
+                            x2: "200",
+                            y2: "0",
+                            stroke: "rgba(255,180,0,0.3)",
+                            strokeWidth: "1",
+                            style: {
+                                animation: 'scanline 3s linear infinite'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 872,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 854,
+                    columnNumber: 11
+                }, this);
+            case 2:
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 200 100",
+                    className: "hud-svg",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                            children: `
+              @keyframes blink-cursor {
+                0%, 100% { opacity: 0; }
+                50% { opacity: 1; }
+              }
+              .shell-text {
+                font-family: var(--font-jetbrains-mono, monospace);
+                font-size: 6px;
+                fill: #ffffff;
+              }
+              .prompt-symbol {
+                fill: var(--accent-amber, #ffb400);
+              }
+            `
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 878,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "10",
+                            y: "25",
+                            className: "shell-text",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tspan", {
+                                    className: "prompt-symbol",
+                                    children: "guest@system:~$"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/AboutSection.tsx",
+                                    lineNumber: 892,
+                                    columnNumber: 56
+                                }, this),
+                                " gcc engine.c -o out"
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 892,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "10",
+                            y: "42",
+                            className: "shell-text",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tspan", {
+                                    className: "prompt-symbol",
+                                    children: "guest@system:~$"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/AboutSection.tsx",
+                                    lineNumber: 893,
+                                    columnNumber: 56
+                                }, this),
+                                " ./out"
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 893,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "10",
+                            y: "58",
+                            className: "shell-text",
+                            fill: "var(--accent-amber, #ffb400)",
+                            children: ">> STACK CORE LOADED"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 894,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "10",
+                            y: "75",
+                            className: "shell-text",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tspan", {
+                                    className: "prompt-symbol",
+                                    children: "guest@system:~$"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/AboutSection.tsx",
+                                    lineNumber: 895,
+                                    columnNumber: 56
+                                }, this),
+                                " _"
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 895,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "73",
+                            y: "69",
+                            width: "3",
+                            height: "6",
+                            fill: "#ffb400",
+                            style: {
+                                animation: 'blink-cursor 0.8s infinite'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 896,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 877,
+                    columnNumber: 11
+                }, this);
+            case 3:
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 200 100",
+                    className: "hud-svg",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                            children: `
+              @keyframes pulse-node {
+                0%, 100% { r: 3px; opacity: 0.4; }
+                50% { r: 5px; opacity: 1; }
+              }
+              @keyframes dash {
+                to { stroke-dashoffset: -20; }
+              }
+            `
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 902,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "50",
+                            cy: "50",
+                            r: "4",
+                            fill: "#58c4dc",
+                            style: {
+                                animation: 'pulse-node 1.5s infinite'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 911,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "100",
+                            cy: "25",
+                            r: "4",
+                            fill: "#a5f3fc"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 912,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "100",
+                            cy: "75",
+                            r: "4",
+                            fill: "#a5f3fc"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 913,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "150",
+                            cy: "50",
+                            r: "4",
+                            fill: "#58c4dc",
+                            style: {
+                                animation: 'pulse-node 1.5s infinite 0.75s'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 914,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "50",
+                            y1: "50",
+                            x2: "100",
+                            y2: "25",
+                            stroke: "rgba(88,196,220,0.3)",
+                            strokeWidth: "1",
+                            strokeDasharray: "4",
+                            style: {
+                                animation: 'dash 1s linear infinite'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 915,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "50",
+                            y1: "50",
+                            x2: "100",
+                            y2: "75",
+                            stroke: "rgba(88,196,220,0.3)",
+                            strokeWidth: "1",
+                            strokeDasharray: "4",
+                            style: {
+                                animation: 'dash 1s linear infinite'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 916,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "100",
+                            y1: "25",
+                            x2: "150",
+                            y2: "50",
+                            stroke: "rgba(245,245,245,0.2)",
+                            strokeWidth: "1"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 917,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "100",
+                            y1: "75",
+                            x2: "150",
+                            y2: "50",
+                            stroke: "rgba(245,245,245,0.2)",
+                            strokeWidth: "1"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 918,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "100",
+                            y: "16",
+                            fill: "rgba(245,245,245,0.4)",
+                            fontFamily: "var(--font-jetbrains-mono, monospace)",
+                            fontSize: "5.5",
+                            textAnchor: "middle",
+                            children: "CLIENT"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 919,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "100",
+                            y: "90",
+                            fill: "rgba(245,245,245,0.4)",
+                            fontFamily: "var(--font-jetbrains-mono, monospace)",
+                            fontSize: "5.5",
+                            textAnchor: "middle",
+                            children: "DATABASE"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 920,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 901,
+                    columnNumber: 11
+                }, this);
+            case 4:
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 200 100",
+                    className: "hud-svg",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                            children: `
+              @keyframes draw-line {
+                to { stroke-dashoffset: 0; }
+              }
+            `
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 926,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "20",
+                            y1: "80",
+                            x2: "180",
+                            y2: "80",
+                            stroke: "rgba(245,245,245,0.1)",
+                            strokeWidth: "0.5"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 931,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "20",
+                            y1: "20",
+                            x2: "20",
+                            y2: "80",
+                            stroke: "rgba(245,245,245,0.1)",
+                            strokeWidth: "0.5"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 932,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "40",
+                            cy: "70",
+                            r: "2.5",
+                            fill: "#fb923c"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 933,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "60",
+                            cy: "55",
+                            r: "2.5",
+                            fill: "#fb923c"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 934,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "80",
+                            cy: "62",
+                            r: "2.5",
+                            fill: "#fb923c"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 935,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "100",
+                            cy: "45",
+                            r: "2.5",
+                            fill: "#fb923c"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 936,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "120",
+                            cy: "38",
+                            r: "2.5",
+                            fill: "#fb923c"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 937,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "140",
+                            cy: "42",
+                            r: "2.5",
+                            fill: "#fb923c"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 938,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "160",
+                            cy: "25",
+                            r: "2.5",
+                            fill: "#fb923c"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 939,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "30",
+                            y1: "75",
+                            x2: "170",
+                            y2: "22",
+                            stroke: "#60a5fa",
+                            strokeWidth: "1.5",
+                            strokeDasharray: "200",
+                            strokeDashoffset: "200",
+                            style: {
+                                animation: 'draw-line 2s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 940,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "160",
+                            y: "75",
+                            fill: "rgba(245,245,245,0.3)",
+                            fontFamily: "var(--font-jetbrains-mono, monospace)",
+                            fontSize: "5.5",
+                            textAnchor: "end",
+                            children: "R² = 0.942"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 941,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 925,
+                    columnNumber: 11
+                }, this);
+            case 5:
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 200 100",
+                    className: "hud-svg",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                            children: `
+              @keyframes etl-flow {
+                0% { stroke-dashoffset: 20; }
+                100% { stroke-dashoffset: 0; }
+              }
+            `
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 947,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "25",
+                            y: "35",
+                            width: "40",
+                            height: "30",
+                            rx: "3",
+                            fill: "none",
+                            stroke: "rgba(245,245,245,0.15)"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 953,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                            x: "135",
+                            y: "35",
+                            width: "40",
+                            height: "30",
+                            rx: "3",
+                            fill: "none",
+                            stroke: "rgba(245,245,245,0.15)"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 954,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 65 50 L 135 50",
+                            stroke: "#10b981",
+                            strokeWidth: "1.5",
+                            strokeDasharray: "6 4",
+                            style: {
+                                animation: 'etl-flow 0.8s linear infinite'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 955,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "100",
+                            cy: "50",
+                            r: "6",
+                            fill: "#10b981"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 956,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "45",
+                            y: "52",
+                            fill: "rgba(245,245,245,0.5)",
+                            fontFamily: "var(--font-jetbrains-mono, monospace)",
+                            fontSize: "6",
+                            textAnchor: "middle",
+                            children: "IN"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 957,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "155",
+                            y: "52",
+                            fill: "rgba(245,245,245,0.5)",
+                            fontFamily: "var(--font-jetbrains-mono, monospace)",
+                            fontSize: "6",
+                            textAnchor: "middle",
+                            children: "OUT"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 958,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "100",
+                            y: "24",
+                            fill: "#10b981",
+                            fontFamily: "var(--font-jetbrains-mono, monospace)",
+                            fontSize: "5.5",
+                            textAnchor: "middle",
+                            children: "FILTER NODE"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 959,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 946,
+                    columnNumber: 11
+                }, this);
+            case 6:
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 200 100",
+                    className: "hud-svg",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                            children: `
+              @keyframes pulse-ring {
+                0% { r: 5px; opacity: 1; }
+                100% { r: 25px; opacity: 0; }
+              }
+            `
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 965,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "100",
+                            cy: "50",
+                            r: "3",
+                            fill: "#ffb400"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 971,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "100",
+                            cy: "50",
+                            r: "5",
+                            fill: "none",
+                            stroke: "#ffb400",
+                            strokeWidth: "0.75",
+                            style: {
+                                animation: 'pulse-ring 2s cubic-bezier(0.16, 1, 0.3, 1) infinite'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 972,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "85",
+                            cy: "40",
+                            r: "1.5",
+                            fill: "rgba(245,245,245,0.4)"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 973,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "118",
+                            cy: "62",
+                            r: "1.5",
+                            fill: "rgba(245,245,245,0.4)"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 974,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "112",
+                            cy: "38",
+                            r: "1.5",
+                            fill: "rgba(245,245,245,0.4)"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 975,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "92",
+                            cy: "65",
+                            r: "1.5",
+                            fill: "rgba(245,245,245,0.4)"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 976,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "70",
+                            cy: "55",
+                            r: "1.5",
+                            fill: "rgba(245,245,245,0.15)"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 977,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "130",
+                            cy: "45",
+                            r: "1.5",
+                            fill: "rgba(245,245,245,0.15)"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 978,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "100",
+                            y1: "50",
+                            x2: "85",
+                            y2: "40",
+                            stroke: "rgba(255,180,0,0.3)",
+                            strokeWidth: "0.5"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 979,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "100",
+                            y1: "50",
+                            x2: "118",
+                            y2: "62",
+                            stroke: "rgba(255,180,0,0.3)",
+                            strokeWidth: "0.5"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 980,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "100",
+                            y1: "50",
+                            x2: "112",
+                            y2: "38",
+                            stroke: "rgba(255,180,0,0.3)",
+                            strokeWidth: "0.5"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 981,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                            x1: "100",
+                            y1: "50",
+                            x2: "92",
+                            y2: "65",
+                            stroke: "rgba(255,180,0,0.3)",
+                            strokeWidth: "0.5"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 982,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "100",
+                            y: "85",
+                            fill: "#ffb400",
+                            fontFamily: "var(--font-jetbrains-mono, monospace)",
+                            fontSize: "5.5",
+                            textAnchor: "middle",
+                            children: "COSINE SIMILARITY CORE"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 983,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 964,
+                    columnNumber: 11
+                }, this);
+            case 7:
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 200 100",
+                    className: "hud-svg",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                            children: `
+              @keyframes neuro-pulse {
+                0%, 100% { opacity: 0.3; }
+                50% { opacity: 0.95; }
+              }
+            `
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 989,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "40",
+                            cy: "25",
+                            r: "3.5",
+                            fill: "#f5f5f5"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 995,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "40",
+                            cy: "50",
+                            r: "3.5",
+                            fill: "#f5f5f5"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 996,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "40",
+                            cy: "75",
+                            r: "3.5",
+                            fill: "#f5f5f5"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 997,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "100",
+                            cy: "20",
+                            r: "3.5",
+                            fill: "#c084fc",
+                            style: {
+                                animation: 'neuro-pulse 2s infinite'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 998,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "100",
+                            cy: "40",
+                            r: "3.5",
+                            fill: "#c084fc",
+                            style: {
+                                animation: 'neuro-pulse 2s infinite 0.5s'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 999,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "100",
+                            cy: "60",
+                            r: "3.5",
+                            fill: "#c084fc",
+                            style: {
+                                animation: 'neuro-pulse 2s infinite 1s'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1000,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "100",
+                            cy: "80",
+                            r: "3.5",
+                            fill: "#c084fc",
+                            style: {
+                                animation: 'neuro-pulse 2s infinite 1.5s'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1001,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "160",
+                            cy: "50",
+                            r: "4.5",
+                            fill: "#a78bfa"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1002,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 40 25 L 100 20 M 40 25 L 100 40 M 40 50 L 100 40 M 40 50 L 100 60 M 40 75 L 100 60 M 40 75 L 100 80",
+                            stroke: "rgba(245,245,245,0.08)",
+                            strokeWidth: "0.75"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1003,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 100 20 L 160 50 M 100 40 L 160 50 M 100 60 L 160 50 M 100 80 L 160 50",
+                            stroke: "rgba(192,132,252,0.15)",
+                            strokeWidth: "0.75"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1004,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "160",
+                            y: "38",
+                            fill: "#a78bfa",
+                            fontFamily: "var(--font-jetbrains-mono, monospace)",
+                            fontSize: "5.5",
+                            textAnchor: "middle",
+                            children: "OUTPUT"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1005,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 988,
+                    columnNumber: 11
+                }, this);
+            case 8:
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 200 100",
+                    className: "hud-svg",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                            children: `
+              @keyframes sniffer-wave {
+                0% { stroke-dashoffset: 40; }
+                100% { stroke-dashoffset: 0; }
+              }
+            `
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1011,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 20 50 Q 40 20, 60 50 T 100 50 T 140 50 T 180 50",
+                            fill: "none",
+                            stroke: "rgba(239,68,68,0.15)",
+                            strokeWidth: "1"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1017,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M 20 50 Q 40 10, 60 50 T 100 50 T 140 50 T 180 50",
+                            fill: "none",
+                            stroke: "#ef4444",
+                            strokeWidth: "1.5",
+                            strokeDasharray: "8 6",
+                            style: {
+                                animation: 'sniffer-wave 1.5s linear infinite'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1018,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "100",
+                            cy: "50",
+                            r: "4.5",
+                            fill: "#ef4444"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1019,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "60",
+                            cy: "50",
+                            r: "3",
+                            fill: "#cbd5e1"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1020,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                            cx: "140",
+                            cy: "50",
+                            r: "3",
+                            fill: "#cbd5e1"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1021,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                            x: "100",
+                            y: "85",
+                            fill: "#ef4444",
+                            fontFamily: "var(--font-jetbrains-mono, monospace)",
+                            fontSize: "5.5",
+                            textAnchor: "middle",
+                            children: "RAW PACKET STREAM / C INGEST"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AboutSection.tsx",
+                            lineNumber: 1022,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/AboutSection.tsx",
+                    lineNumber: 1010,
+                    columnNumber: 11
+                }, this);
+            default:
+                return null;
+        }
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "hud-visualizer-card animate-on-scroll",
+        style: {
+            borderColor: `rgba(${theme.rgb}, 0.12)`,
+            boxShadow: `0 20px 50px rgba(0, 0, 0, 0.4), 0 0 20px rgba(${theme.rgb}, 0.03)`
+        },
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "hud-visualizer-header",
+                style: {
+                    borderBottomColor: `rgba(${theme.rgb}, 0.08)`
+                },
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "hud-indicator",
+                        style: {
+                            color: `rgba(${theme.rgb}, 0.5)`
+                        },
+                        children: [
+                            "// ",
+                            theme.label
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/AboutSection.tsx",
+                        lineNumber: 1039,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "hud-status-dot",
+                        style: {
+                            backgroundColor: theme.color,
+                            boxShadow: `0 0 8px ${theme.color}`
+                        }
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/AboutSection.tsx",
+                        lineNumber: 1040,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/AboutSection.tsx",
+                lineNumber: 1038,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "hud-visualizer-body",
+                style: {
+                    borderColor: `rgba(${theme.rgb}, 0.06)`
+                },
+                children: getVisualizer()
+            }, void 0, false, {
+                fileName: "[project]/src/components/AboutSection.tsx",
+                lineNumber: 1042,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/AboutSection.tsx",
+        lineNumber: 1031,
         columnNumber: 5
     }, this);
 }
@@ -2384,38 +5066,7 @@ function AboutSection() {
             timelineObserver.disconnect();
         };
     }, []);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (!isSectionInView) return;
-        // Scroll stop snap-alignment handler - runs only when section is active in viewport
-        let scrollTimeout;
-        const handleScrollSnap = ()=>{
-            if (isHoveringSphere) return; // Prevent autoscroll snapping while interacting with the 3D Sphere
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(()=>{
-                const activeCard = sectionRef.current?.querySelector('.timeline-card.active');
-                if (activeCard) {
-                    const rect = activeCard.getBoundingClientRect();
-                    const targetOffset = window.innerHeight * 0.25;
-                    const targetTop = window.scrollY + rect.top - targetOffset;
-                    // Only scroll if we are not already close to the target alignment (within 8px)
-                    if (Math.abs(rect.top - targetOffset) > 8) {
-                        window.scrollTo({
-                            top: targetTop,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            }, 200);
-        };
-        window.addEventListener('scroll', handleScrollSnap);
-        return ()=>{
-            window.removeEventListener('scroll', handleScrollSnap);
-            clearTimeout(scrollTimeout);
-        };
-    }, [
-        isSectionInView,
-        isHoveringSphere
-    ]);
+    // Auto-scroll snapping disabled to prevent scroll hijacking
     const toggleExpand = (id, e)=>{
         e.stopPropagation();
         const isCollapsing = expandedCardId === id;
@@ -2470,7 +5121,7 @@ function AboutSection() {
                         children: "01 / Origin"
                     }, void 0, false, {
                         fileName: "[project]/src/components/AboutSection.tsx",
-                        lineNumber: 622,
+                        lineNumber: 1165,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2499,7 +5150,7 @@ function AboutSection() {
                                                     "BUILDING",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 659,
+                                                        lineNumber: 1202,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2509,19 +5160,19 @@ function AboutSection() {
                                                         children: "THINGS"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 660,
+                                                        lineNumber: 1203,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 661,
+                                                        lineNumber: 1204,
                                                         columnNumber: 17
                                                     }, this),
                                                     "THAT MATTER."
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                lineNumber: 645,
+                                                lineNumber: 1188,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2534,7 +5185,6 @@ function AboutSection() {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         style: {
-                                                            fontFamily: 'var(--font-inter, "Inter", sans-serif)',
                                                             fontWeight: 300,
                                                             fontSize: '1.1rem',
                                                             lineHeight: 1.8,
@@ -2544,12 +5194,11 @@ function AboutSection() {
                                                         children: "I'm Prathamesh Jadhav — an engineering-focused AI/ML developer specializing in building production-grade vector databases, RAG pipelines, and intelligent API systems."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 673,
+                                                        lineNumber: 1216,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         style: {
-                                                            fontFamily: 'var(--font-inter, "Inter", sans-serif)',
                                                             fontWeight: 300,
                                                             fontSize: '1.1rem',
                                                             lineHeight: 1.8,
@@ -2559,7 +5208,7 @@ function AboutSection() {
                                                         children: "From custom HNSW indexing to systems-level multi-threaded network analysis, I focus on building scalable, low-latency architectures that bridge AI research and robust production systems."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 685,
+                                                        lineNumber: 1227,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2570,32 +5219,224 @@ function AboutSection() {
                                                                 children: "// DRAG & ORBIT TECHNICAL CORE"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 700,
+                                                                lineNumber: 1241,
+                                                                columnNumber: 19
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "sphere-holo-backdrop",
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                                    viewBox: "0 0 400 400",
+                                                                    className: "holo-svg",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                                                                            cx: "200",
+                                                                            cy: "200",
+                                                                            r: "180",
+                                                                            stroke: "rgba(255, 180, 0, 0.02)",
+                                                                            strokeWidth: "1",
+                                                                            fill: "none"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1244,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                                                                            cx: "200",
+                                                                            cy: "200",
+                                                                            r: "150",
+                                                                            stroke: "rgba(255, 180, 0, 0.03)",
+                                                                            strokeWidth: "1",
+                                                                            strokeDasharray: "6 30",
+                                                                            fill: "none",
+                                                                            className: "rotate-clockwise",
+                                                                            style: {
+                                                                                transformOrigin: '200px 200px'
+                                                                            }
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1245,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                                                                            cx: "200",
+                                                                            cy: "200",
+                                                                            r: "130",
+                                                                            stroke: "rgba(245, 245, 245, 0.02)",
+                                                                            strokeWidth: "1",
+                                                                            strokeDasharray: "40 120",
+                                                                            fill: "none",
+                                                                            className: "rotate-counter-clockwise",
+                                                                            style: {
+                                                                                transformOrigin: '200px 200px'
+                                                                            }
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1246,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                                                                            cx: "200",
+                                                                            cy: "200",
+                                                                            r: "100",
+                                                                            stroke: "rgba(255, 180, 0, 0.04)",
+                                                                            strokeWidth: "0.5",
+                                                                            strokeDasharray: "2 6",
+                                                                            fill: "none"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1247,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                                                                            x1: "200",
+                                                                            y1: "10",
+                                                                            x2: "200",
+                                                                            y2: "390",
+                                                                            stroke: "rgba(245, 245, 245, 0.015)",
+                                                                            strokeWidth: "0.5"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1249,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                                                                            x1: "10",
+                                                                            y1: "200",
+                                                                            x2: "390",
+                                                                            y2: "200",
+                                                                            stroke: "rgba(245, 245, 245, 0.015)",
+                                                                            strokeWidth: "0.5"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1250,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                                            d: "M 180 200 A 20 20 0 0 1 220 200",
+                                                                            fill: "none",
+                                                                            stroke: "rgba(255, 180, 0, 0.15)",
+                                                                            strokeWidth: "0.75"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1252,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                                            d: "M 200 180 A 20 20 0 0 1 200 220",
+                                                                            fill: "none",
+                                                                            stroke: "rgba(255, 180, 0, 0.15)",
+                                                                            strokeWidth: "0.75"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1253,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                                                                            x1: "200",
+                                                                            y1: "20",
+                                                                            x2: "200",
+                                                                            y2: "28",
+                                                                            stroke: "rgba(255, 180, 0, 0.3)",
+                                                                            strokeWidth: "1"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1256,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                                                                            x1: "200",
+                                                                            y1: "380",
+                                                                            x2: "200",
+                                                                            y2: "372",
+                                                                            stroke: "rgba(255, 180, 0, 0.3)",
+                                                                            strokeWidth: "1"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1257,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                                                                            x1: "20",
+                                                                            y1: "200",
+                                                                            x2: "28",
+                                                                            y2: "200",
+                                                                            stroke: "rgba(255, 180, 0, 0.3)",
+                                                                            strokeWidth: "1"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1258,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
+                                                                            x1: "380",
+                                                                            y1: "200",
+                                                                            x2: "372",
+                                                                            y2: "200",
+                                                                            stroke: "rgba(255, 180, 0, 0.3)",
+                                                                            strokeWidth: "1"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1259,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                                                                            x: "210",
+                                                                            y: "35",
+                                                                            fill: "rgba(255, 180, 0, 0.25)",
+                                                                            fontFamily: "var(--font-jetbrains-mono, monospace)",
+                                                                            fontSize: "6",
+                                                                            children: "ROTATION: ACTIVE"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1262,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("text", {
+                                                                            x: "210",
+                                                                            y: "375",
+                                                                            fill: "rgba(245, 245, 245, 0.15)",
+                                                                            fontFamily: "var(--font-jetbrains-mono, monospace)",
+                                                                            fontSize: "6",
+                                                                            children: "LOC: 19.0760° N"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                                                            lineNumber: 1263,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/src/components/AboutSection.tsx",
+                                                                    lineNumber: 1243,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/AboutSection.tsx",
+                                                                lineNumber: 1242,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(TechSphere, {
                                                                 onHoverChange: setIsHoveringSphere
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 701,
+                                                                lineNumber: 1266,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 699,
+                                                        lineNumber: 1240,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                lineNumber: 665,
+                                                lineNumber: 1208,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                        lineNumber: 644,
+                                        lineNumber: 1187,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2614,7 +5455,7 @@ function AboutSection() {
                                         children: "// Interactive Journey & Milestones (Click Overview to Expand)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                        lineNumber: 707,
+                                        lineNumber: 1272,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2627,11 +5468,6 @@ function AboutSection() {
                                                 "data-id": event.id,
                                                 className: `timeline-card ${isExpanded ? 'expanded' : ''} ${isActive ? 'active' : ''}`,
                                                 onClick: (e)=>toggleExpand(event.id, e),
-                                                style: {
-                                                    display: 'grid',
-                                                    gridTemplateRows: isExpanded ? 'auto 1fr' : 'auto 0fr',
-                                                    overflow: 'hidden'
-                                                },
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
@@ -2640,14 +5476,14 @@ function AboutSection() {
                                                                 children: event.year
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 746,
+                                                                lineNumber: 1306,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: `timeline-dot ${isActive ? 'active' : ''}`
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 751,
+                                                                lineNumber: 1311,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2663,7 +5499,7 @@ function AboutSection() {
                                                                         children: event.title
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                                        lineNumber: 754,
+                                                                        lineNumber: 1314,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2680,13 +5516,13 @@ function AboutSection() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                                        lineNumber: 757,
+                                                                        lineNumber: 1317,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 753,
+                                                                lineNumber: 1313,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2712,7 +5548,7 @@ function AboutSection() {
                                                                         children: event.teaser
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                                        lineNumber: 763,
+                                                                        lineNumber: 1323,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2735,28 +5571,23 @@ function AboutSection() {
                                                                         children: isExpanded ? '[ - CLOSE ]' : '[ + OVERVIEW ]'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                                        lineNumber: 768,
+                                                                        lineNumber: 1328,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                                lineNumber: 762,
+                                                                lineNumber: 1322,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 744,
+                                                        lineNumber: 1304,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        style: {
-                                                            minHeight: '0',
-                                                            overflow: 'hidden',
-                                                            opacity: isExpanded ? 1 : 0,
-                                                            transition: 'opacity 0.4s ease'
-                                                        },
+                                                        className: "timeline-card-expandable-panel",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             style: {
                                                                 paddingTop: '1.2rem',
@@ -2769,14 +5600,14 @@ function AboutSection() {
                                                                     children: event.description
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                                    lineNumber: 794,
+                                                                    lineNumber: 1354,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ProjectSchematic, {
                                                                     id: event.id
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                                    lineNumber: 799,
+                                                                    lineNumber: 1359,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 event.details && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2784,7 +5615,7 @@ function AboutSection() {
                                                                     children: event.details
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                                    lineNumber: 802,
+                                                                    lineNumber: 1362,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2808,41 +5639,41 @@ function AboutSection() {
                                                                             children: t
                                                                         }, t, false, {
                                                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                                                            lineNumber: 810,
+                                                                            lineNumber: 1370,
                                                                             columnNumber: 29
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                                    lineNumber: 808,
+                                                                    lineNumber: 1368,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                                            lineNumber: 793,
+                                                            lineNumber: 1353,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                                        lineNumber: 792,
+                                                        lineNumber: 1352,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, event.id, true, {
                                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                                lineNumber: 731,
+                                                lineNumber: 1296,
                                                 columnNumber: 19
                                             }, this);
                                         })
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/AboutSection.tsx",
-                                        lineNumber: 725,
+                                        lineNumber: 1290,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                lineNumber: 642,
+                                lineNumber: 1185,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2855,7 +5686,7 @@ function AboutSection() {
                                             children: "YEAR"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                            lineNumber: 838,
+                                            lineNumber: 1398,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2863,7 +5694,14 @@ function AboutSection() {
                                             children: activeYear
                                         }, activeYear, false, {
                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                            lineNumber: 839,
+                                            lineNumber: 1399,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(DynamicHUDVisualizer, {
+                                            activeId: activeCardId
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/AboutSection.tsx",
+                                            lineNumber: 1404,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2873,50 +5711,50 @@ function AboutSection() {
                                                     children: "// 19.0760° N, 72.8777° E"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                    lineNumber: 843,
+                                                    lineNumber: 1407,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "// CORE_SYSTEM_INDEXING: ACTIVE"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                    lineNumber: 844,
+                                                    lineNumber: 1408,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "// INDEX: HNSW_INDEX_FOUND"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                                    lineNumber: 845,
+                                                    lineNumber: 1409,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/AboutSection.tsx",
-                                            lineNumber: 842,
+                                            lineNumber: 1406,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/AboutSection.tsx",
-                                    lineNumber: 837,
+                                    lineNumber: 1397,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/AboutSection.tsx",
-                                lineNumber: 836,
+                                lineNumber: 1396,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/AboutSection.tsx",
-                        lineNumber: 640,
+                        lineNumber: 1183,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/AboutSection.tsx",
-                lineNumber: 620,
+                lineNumber: 1163,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -2940,6 +5778,68 @@ function AboutSection() {
           overflow: hidden;
           width: 100%;
           user-select: none;
+        }
+
+        .sphere-holo-backdrop {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 320px;
+          height: 320px;
+          pointer-events: none;
+          z-index: 0;
+          opacity: 0.7;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .holo-svg {
+          width: 100%;
+          height: 100%;
+        }
+
+        @keyframes cwSpin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes ccwSpin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(-360deg); }
+        }
+        .rotate-clockwise {
+          animation: cwSpin 30s linear infinite;
+        }
+        .rotate-counter-clockwise {
+          animation: ccwSpin 20s linear infinite;
+        }
+
+        /* High-tech sci-fi corner brackets for expanded cards */
+        .timeline-card.expanded::before,
+        .timeline-card.expanded::after {
+          content: '';
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-color: rgba(245, 245, 245, 0.2);
+          border-style: solid;
+          pointer-events: none;
+          transition: border-color 0.4s ease;
+        }
+        .timeline-card.expanded::before {
+          top: 8px;
+          left: 8px;
+          border-width: 1px 0 0 1px;
+        }
+        .timeline-card.expanded::after {
+          bottom: 8px;
+          right: 8px;
+          border-width: 0 1px 1px 0;
+        }
+        .timeline-card.active.expanded::before,
+        .timeline-card.active.expanded::after {
+          border-color: var(--accent-amber, #ffb400);
         }
 
         .sphere-hud-label {
@@ -3002,12 +5902,22 @@ function AboutSection() {
           cursor: pointer;
           opacity: 0.35;
           transform: scale(0.985);
-          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          display: grid;
+          grid-template-rows: auto 0fr;
+          overflow: hidden;
+          transition: 
+            grid-template-rows 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+            transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+            background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+            border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+            box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .timeline-card.expanded {
           opacity: 1;
           transform: scale(1);
+          grid-template-rows: auto 1fr;
           background: rgba(245, 245, 245, 0.02) !important;
           border-color: rgba(245, 245, 245, 0.08) !important;
           box-shadow: 0 10px 40px -25px rgba(0, 0, 0, 0.5);
@@ -3025,6 +5935,23 @@ function AboutSection() {
           border-color: rgba(255, 180, 0, 0.2) !important;
           background: rgba(255, 180, 0, 0.015) !important;
           box-shadow: 0 15px 40px -15px rgba(255, 180, 0, 0.06), inset 0 1px 0px rgba(255, 255, 255, 0.05) !important;
+        }
+
+        /* Inner Expandable Panel Transition */
+        .timeline-card-expandable-panel {
+          min-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transform: scale(0.96) translateY(5px);
+          transition: 
+            opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+            transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          transform-origin: center top;
+        }
+
+        .timeline-card.expanded .timeline-card-expandable-panel {
+          opacity: 1;
+          transform: scale(1) translateY(0);
         }
 
         .timeline-card:hover {
@@ -3159,6 +6086,73 @@ function AboutSection() {
           transform: translateX(-15px);
         }
 
+        .hud-visualizer-card {
+          margin-top: 2rem;
+          width: 280px;
+          background: rgba(245, 245, 245, 0.015);
+          border: 1px solid rgba(245, 245, 245, 0.04);
+          border-radius: 6px;
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+          transform: translateX(-15px);
+          transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hud-visualizer-card:hover {
+          border-color: rgba(255, 180, 0, 0.15);
+          box-shadow: 0 25px 60px rgba(255, 180, 0, 0.02), 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .hud-visualizer-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid rgba(245, 245, 245, 0.05);
+          padding-bottom: 0.5rem;
+        }
+
+        .hud-indicator {
+          font-family: var(--font-jetbrains-mono, monospace);
+          font-size: 0.55rem;
+          letter-spacing: 0.1em;
+          color: rgba(245, 245, 245, 0.3);
+          text-transform: uppercase;
+        }
+
+        .hud-status-dot {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: #00ff66;
+          box-shadow: 0 0 8px #00ff66;
+          animation: pulse-dot 1s infinite alternate;
+        }
+
+        @keyframes pulse-dot {
+          from { opacity: 0.4; }
+          to { opacity: 1; }
+        }
+
+        .hud-visualizer-body {
+          width: 100%;
+          height: 120px;
+          background: #070707;
+          border: 1px solid rgba(245, 245, 245, 0.02);
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+        }
+
+        .hud-svg {
+          width: 100%;
+          height: 100%;
+        }
+
         /* Mobile layout styling fallback */
         .mobile-year-badge {
           display: none;
@@ -3201,13 +6195,13 @@ function AboutSection() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/components/AboutSection.tsx",
-                lineNumber: 852,
+                lineNumber: 1416,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/AboutSection.tsx",
-        lineNumber: 607,
+        lineNumber: 1150,
         columnNumber: 5
     }, this);
 }
