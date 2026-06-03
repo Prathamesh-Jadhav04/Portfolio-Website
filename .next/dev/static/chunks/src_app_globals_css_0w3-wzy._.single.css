@@ -64,8 +64,6 @@
 
 @layer theme {
   :root, :host {
-    --font-sans: var(--font-inter);
-    --font-mono: var(--font-jetbrains-mono);
     --spacing: .25rem;
     --text-xs: .75rem;
     --text-xs--line-height: calc(1 / .75);
@@ -78,7 +76,6 @@
     --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     --default-font-family: var(--font-inter);
     --default-mono-font-family: var(--font-jetbrains-mono);
-    --font-heading: var(--font-bebas-neue);
   }
 }
 
@@ -387,6 +384,10 @@
     inset-inline-start: var(--spacing);
   }
 
+  .end {
+    inset-inline-end: var(--spacing);
+  }
+
   .container {
     width: 100%;
   }
@@ -493,6 +494,10 @@
     min-height: 100%;
   }
 
+  .flex-shrink {
+    flex-shrink: 1;
+  }
+
   .shrink-0 {
     flex-shrink: 0;
   }
@@ -507,6 +512,10 @@
 
   .flex-col {
     flex-direction: column;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
   }
 
   .items-center {

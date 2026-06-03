@@ -200,10 +200,27 @@ function ProjectSchematic({ id }: { id: number }) {
 export function AboutSection() {
   const [activeYear, setActiveYear] = useState<string>('2022');
   const [activeCardId, setActiveCardId] = useState<number>(1);
-  const [expandedCardId, setExpandedCardId] = useState<number | null>(null);
+  const [expandedCardId, setExpandedCardId] = useState<number | null>(1);
+  const [isSectionInView, setIsSectionInView] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // Section visibility tracker to prevent scroll wars when section is offscreen
+    const sectionEl = sectionRef.current;
+    if (!sectionEl) return;
+
+    const sectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        setIsSectionInView(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.05
+      }
+    );
+    sectionObserver.observe(sectionEl);
+
     // Reveal animation observer for main headers
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -231,14 +248,16 @@ export function AboutSection() {
               setActiveYear(year);
             }
             if (id) {
-              setActiveCardId(parseInt(id, 10));
+              const parsedId = parseInt(id, 10);
+              setActiveCardId(parsedId);
+              setExpandedCardId(parsedId);
             }
           }
         });
       },
       {
         root: null,
-        rootMargin: '-25% 0px -45% 0px',
+        rootMargin: '-10% 0px -20% 0px',
         threshold: 0.05
       }
     );
@@ -247,14 +266,64 @@ export function AboutSection() {
     cards?.forEach((card) => timelineObserver.observe(card));
 
     return () => {
+      sectionObserver.disconnect();
       revealObserver.disconnect();
       timelineObserver.disconnect();
     };
   }, []);
 
+  useEffect(() => {
+    if (!isSectionInView) return;
+
+    // Scroll stop snap-alignment handler - runs only when section is active in viewport
+    let scrollTimeout: NodeJS.Timeout;
+    const handleScrollSnap = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const activeCard = sectionRef.current?.querySelector('.timeline-card.active') as HTMLElement;
+        if (activeCard) {
+          const rect = activeCard.getBoundingClientRect();
+          const targetOffset = window.innerHeight * 0.25;
+          const targetTop = window.scrollY + rect.top - targetOffset;
+          // Only scroll if we are not already close to the target alignment (within 8px)
+          if (Math.abs(rect.top - targetOffset) > 8) {
+            window.scrollTo({
+              top: targetTop,
+              behavior: 'smooth'
+            });
+          }
+        }
+      }, 200);
+    };
+
+    window.addEventListener('scroll', handleScrollSnap);
+
+    return () => {
+      window.removeEventListener('scroll', handleScrollSnap);
+      clearTimeout(scrollTimeout);
+    };
+  }, [isSectionInView]);
+
   const toggleExpand = (id: number, e: React.MouseEvent) => {
     e.stopPropagation();
-    setExpandedCardId(expandedCardId === id ? null : id);
+    const isCollapsing = expandedCardId === id;
+    setExpandedCardId(isCollapsing ? null : id);
+    
+    // Smooth scroll the clicked card to line up with the year display (25vh offset)
+    if (!isCollapsing) {
+      setTimeout(() => {
+        const cardEl = sectionRef.current?.querySelector(`[data-id="${id}"]`) as HTMLElement;
+        if (cardEl) {
+          const rect = cardEl.getBoundingClientRect();
+          const targetOffset = window.innerHeight * 0.25;
+          const targetTop = window.scrollY + rect.top - targetOffset;
+          window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth'
+          });
+        }
+      }, 120); // wait for layout height transition to begin
+    }
   };
 
   return (
