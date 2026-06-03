@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Magnetic } from './ui/Magnetic';
+import { ScramblerText } from './ui/ScramblerText';
 
 interface NavigationProps {
   onLogoDoubleClick: () => void;
@@ -34,7 +35,7 @@ export function Navigation({ onLogoDoubleClick }: NavigationProps) {
                 display: 'inline-block'
               }}
             >
-              P. JADHAV
+              <ScramblerText text="P. JADHAV" />
             </span>
           </Magnetic>
           <div className="logo-tooltip">
@@ -44,13 +45,13 @@ export function Navigation({ onLogoDoubleClick }: NavigationProps) {
 
         <div className="nav-links">
           <Magnetic>
-            <a href="#about">Origin</a>
+            <a href="#about"><ScramblerText text="Origin" /></a>
           </Magnetic>
           <Magnetic>
-            <a href="#projects">Work</a>
+            <a href="#projects"><ScramblerText text="Work" /></a>
           </Magnetic>
           <Magnetic>
-            <a href="#contact">Build</a>
+            <a href="#contact"><ScramblerText text="Build" /></a>
           </Magnetic>
         </div>
       </div>

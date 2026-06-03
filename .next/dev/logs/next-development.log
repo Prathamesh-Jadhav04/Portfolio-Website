@@ -1,3 +1,13 @@
-{"timestamp":"00:00:01.847","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 269ms. If D:\\Portfolio\\.next/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
-{"timestamp":"00:00:01.881","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:03.924","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:01.494","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:01.570","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 561ms. If D:\\Portfolio\\.next/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
+{"timestamp":"00:00:03.312","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:02:09.548","source":"Server","level":"LOG","message":"✓ Compiled in 113ms"}
+{"timestamp":"00:03:16.473","source":"Server","level":"LOG","message":"✓ Compiled in 79ms"}
+{"timestamp":"00:05:50.563","source":"Server","level":"LOG","message":"✓ Compiled in 219ms"}
+{"timestamp":"00:05:51.077","source":"Browser","level":"ERROR","message":"uncaughtError: ReferenceError: Magnetic is not defined"}
+{"timestamp":"00:05:55.474","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
+{"timestamp":"00:05:55.494","source":"Server","level":"LOG","message":"✓ Compiled in 89ms"}
+{"timestamp":"00:05:55.855","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:06:09.186","source":"Server","level":"LOG","message":"✓ Compiled in 271ms"}
+{"timestamp":"00:07:38.231","source":"Server","level":"LOG","message":"✓ Compiled in 177ms"}
+{"timestamp":"00:08:55.696","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
