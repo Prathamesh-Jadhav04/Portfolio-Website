@@ -62,22 +62,11 @@ function SocialButton({ link }: { link: SocialLink }) {
         aria-label={link.label}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          color: hovered ? '#ffb400' : 'rgba(245,245,245,0.4)',
-          textDecoration: 'none',
-          fontFamily: 'JetBrains Mono, monospace',
-          fontSize: '0.65rem',
-          letterSpacing: '0.15em',
-          textTransform: 'uppercase',
-          transition: 'color 0.3s cubic-bezier(0.65, 0, 0.35, 1)',
-          padding: '0.5rem',
-        }}
+        className="social-console-btn"
       >
         {link.icon}
         <span>{link.label}</span>
+        <span className="btn-terminal-tag">{hovered ? '➔ STACK' : '// LINK'}</span>
       </a>
     </Magnetic>
   );
@@ -89,6 +78,13 @@ export function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  
+  // Real-time oscilloscope oscillation
+  const [time, setTime] = useState(0);
+  // Unique connection telemetry node generated on client mount
+  const [sessionId, setSessionId] = useState('');
+  // Transmission terminal logs
+  const [transmittingLogs, setTransmittingLogs] = useState<string[]>([]);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -107,6 +103,50 @@ export function ContactSection() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  // Oscilloscope Animation Frame loop
+  useEffect(() => {
+    let frameId: number;
+    const update = () => {
+      setTime((t) => (t + 0.04) % (Math.PI * 2));
+      frameId = requestAnimationFrame(update);
+    };
+    frameId = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(frameId);
+  }, []);
+
+  // Generate session node ID
+  useEffect(() => {
+    const rand = Math.random().toString(16).substring(2, 8).toUpperCase();
+    setSessionId(`LINK-NODE-${rand}`);
+  }, []);
+
+  // Simulated transmission pipeline logs stepper
+  const logSteps = [
+    '// INITIALIZING PIPELINE INGESTION TO ETH0...',
+    '// SSL HANDSHAKE SECURE WITH GATEWAY: SUCCESS',
+    '// SERIALIZING PAYLOAD BLOCKS INTO JSON_STREAM...',
+    '// TRANSMITTING PACKET OVER ENCRYPTED UDP TUNNEL...',
+    '// VERIFYING CHECKSUM WITH REMOTE INSTANCE...',
+    '// ACK RECEIVED: 200 OK (SAVED TO QUEUE)'
+  ];
+
+  useEffect(() => {
+    if (status !== 'sending') return;
+
+    setTransmittingLogs([logSteps[0]]);
+
+    const timers = logSteps.map((log, index) => {
+      if (index === 0) return null;
+      return setTimeout(() => {
+        setTransmittingLogs((prev) => [...prev, log]);
+      }, index * 180);
+    });
+
+    return () => {
+      timers.forEach((t) => t && clearTimeout(t));
+    };
+  }, [status]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -139,312 +179,594 @@ export function ContactSection() {
         throw new Error(data.error || 'Failed to transmit message.');
       }
 
-      setStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      // Allow visual logging to complete before showing success
+      setTimeout(() => {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }, 1300);
+
     } catch (err: any) {
       console.error(err);
-      setErrorMsg(err.message || 'Something went wrong. Please try again.');
-      setStatus('error');
+      setTimeout(() => {
+        setErrorMsg(err.message || 'Something went wrong. Please try again.');
+        setStatus('error');
+      }, 1300);
     }
   };
 
+  // Generate SVG path for dual-channel oscilloscope
+  const getWavePath1 = () => {
+    let points = [];
+    for (let x = 0; x <= 220; x += 4) {
+      const y = 25 + Math.sin(x * 0.055 + time * 1.8) * 8;
+      points.push(`${x},${y}`);
+    }
+    return `M ${points.join(' L ')}`;
+  };
+
+  const getWavePath2 = () => {
+    let points = [];
+    for (let x = 0; x <= 220; x += 4) {
+      const y = 25 + Math.sin(x * 0.045 - time * 1.4 + Math.PI / 3) * 5;
+      points.push(`${x},${y}`);
+    }
+    return `M ${points.join(' L ')}`;
+  };
+
   return (
-    <section
-      id="contact"
-      style={{
-        padding: '8rem 2rem',
-        borderTop: '1px solid rgba(245,245,245,0.08)',
-        backgroundColor: '#0a0a0a',
-      }}
-    >
-      <div
-        ref={sectionRef}
-        style={{
-          maxWidth: '1400px',
-          margin: '0 auto',
-          textAlign: 'center',
-        }}
-      >
-        {/* Section label */}
-        <div
-          style={{
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: '0.7rem',
-            letterSpacing: '0.3em',
-            color: '#ffb400',
-            marginBottom: '2rem',
-            textTransform: 'uppercase',
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'opacity 0.6s cubic-bezier(0.65, 0, 0.35, 1), transform 0.6s cubic-bezier(0.65, 0, 0.35, 1)',
-          }}
-        >
-          03 / Build
-        </div>
+    <section id="contact" className="contact-section-container">
+      <div className="contact-grid-overlay" />
+      
+      <div ref={sectionRef} className="contact-inner-wrapper">
+        
+        {/* Double Column Grid Layout */}
+        <div className="contact-dashboard-grid">
+          
+          {/* LEFT COLUMN: System Telemetry & Gateways */}
+          <div className={`contact-telemetry-panel ${visible ? 'fade-in-up' : ''}`} style={{ transitionDelay: '0.1s' }}>
+            
+            {/* Header label */}
+            <div className="contact-hud-label">// 03 / BUILD</div>
+            
+            {/* Immersive Title */}
+            <h2 className="contact-hud-title">ESTABLISH SECURE LINK</h2>
+            
+            <p className="contact-hud-teaser">
+              Have an architectural challenge or scaling requirement? Initialize a secure socket transmission below.
+            </p>
 
-        {/* Big heading */}
-        <h2
-          style={{
-            fontFamily: 'Bebas Neue, sans-serif',
-            fontSize: 'clamp(3.5rem, 8vw, 8rem)',
-            lineHeight: 0.9,
-            color: '#f5f5f5',
-            margin: '0 0 2rem 0',
-            letterSpacing: '0.02em',
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(30px)',
-            transition:
-              'opacity 0.7s 0.1s cubic-bezier(0.65, 0, 0.35, 1), transform 0.7s 0.1s cubic-bezier(0.65, 0, 0.35, 1)',
-          }}
-        >
-          LET&apos;S BUILD SOMETHING.
-        </h2>
-
-        {/* Subtext */}
-        <p
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontWeight: 300,
-            fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)',
-            color: 'rgba(245,245,245,0.5)',
-            margin: '0 0 4rem 0',
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(20px)',
-            transition:
-              'opacity 0.7s 0.2s cubic-bezier(0.65, 0, 0.35, 1), transform 0.7s 0.2s cubic-bezier(0.65, 0, 0.35, 1)',
-          }}
-        >
-          Have an idea? Let&apos;s make it real.
-        </p>
-
-        {/* Contact Form OR Success State */}
-        <div
-          style={{
-            maxWidth: '650px',
-            margin: '0 auto',
-            textAlign: 'left',
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'opacity 0.8s 0.25s cubic-bezier(0.65, 0, 0.35, 1), transform 0.8s 0.25s cubic-bezier(0.65, 0, 0.35, 1)',
-          }}
-        >
-          {status === 'success' ? (
-            <div
-              style={{
-                background: 'rgba(255, 180, 0, 0.02)',
-                border: '1px solid rgba(255, 180, 0, 0.2)',
-                borderRadius: '8px',
-                padding: '3rem 2rem',
-                textAlign: 'center',
-                boxShadow: '0 15px 40px -15px rgba(255, 180, 0, 0.05)',
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.65rem',
-                  letterSpacing: '0.25em',
-                  color: '#ffb400',
-                  marginBottom: '1rem',
-                }}
-              >
-                [SUCCESS] TRANSMISSION ESTABLISHED
+            {/* Hardware Telemetry Card */}
+            <div className="hardware-console-card">
+              <div className="console-card-header">
+                <span className="terminal-title">// LOG_RECEIVER_TELEMETRY.conf</span>
+                <span className="blinking-dot-container">
+                  <span className="blinking-dot" />
+                  STATUS: ESTABLISHED
+                </span>
               </div>
-              <h3
-                style={{
-                  fontFamily: 'Bebas Neue, sans-serif',
-                  fontSize: '2.5rem',
-                  color: '#f5f5f5',
-                  marginBottom: '1rem',
-                  letterSpacing: '0.02em',
-                }}
-              >
-                MESSAGE LOGGED
-              </h3>
-              <p
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontWeight: 300,
-                  fontSize: '0.95rem',
-                  lineHeight: 1.6,
-                  color: 'rgba(245,245,245,0.6)',
-                  marginBottom: '2rem',
-                }}
-              >
-                Thank you. Your message has been ingested securely. Prathamesh will review your query and reply shortly.
-              </p>
-              <Magnetic strength={0.2} range={60}>
-                <button
-                  type="button"
-                  onClick={() => setStatus('idle')}
-                  className="submit-btn"
-                >
-                  SEND ANOTHER MESSAGE
-                </button>
-              </Magnetic>
+              
+              {/* Dual-Channel Live Waveform */}
+              <div className="console-oscilloscope-container">
+                <svg width="100%" height="50" viewBox="0 0 220 50" preserveAspectRatio="none">
+                  {/* Grid overlay inside oscilloscope */}
+                  <g stroke="rgba(255, 180, 0, 0.04)" strokeWidth="0.5">
+                    <line x1="0" y1="12.5" x2="220" y2="12.5" />
+                    <line x1="0" y1="25" x2="220" y2="25" />
+                    <line x1="0" y1="37.5" x2="220" y2="37.5" />
+                    <line x1="55" y1="0" x2="55" y2="50" />
+                    <line x1="110" y1="0" x2="110" y2="50" />
+                    <line x1="165" y1="0" x2="165" y2="50" />
+                  </g>
+                  {/* Oscillating Path 2 (Muted Out of Phase Channel) */}
+                  <path d={getWavePath2()} fill="none" stroke="rgba(255, 180, 0, 0.2)" strokeWidth="0.8" />
+                  {/* Oscillating Path 1 (Primary Channel) */}
+                  <path d={getWavePath1()} fill="none" stroke="#ffb400" strokeWidth="1.2" style={{ filter: 'drop-shadow(0 0 3px rgba(255, 180, 0, 0.5))' }} />
+                </svg>
+              </div>
+
+              {/* Metrics Readout */}
+              <div className="console-readout-rows">
+                <div className="readout-row">
+                  <span className="readout-label">SYSTEM STATE:</span>
+                  <span className="readout-val color-green">NOMINAL (99.8%)</span>
+                </div>
+                <div className="readout-row">
+                  <span className="readout-label">SESSION ID:</span>
+                  <span className="readout-val monospace">{sessionId || 'LINKING...'}</span>
+                </div>
+                <div className="readout-row">
+                  <span className="readout-label">CRYPTO SUITE:</span>
+                  <span className="readout-val monospace">ECDH_P256 / AES-GCM-256</span>
+                </div>
+                <div className="readout-row">
+                  <span className="readout-label">PING METRIC:</span>
+                  <span className="readout-val color-amber">14ms (RTT_OPTIMAL)</span>
+                </div>
+              </div>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <div className="contact-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                {/* Name */}
-                <div className="contact-form-group">
-                  <label htmlFor="name" className="contact-label">Name</label>
+
+            {/* Social Gateways Links inside Card Slots */}
+            <div className="social-gateways-container">
+              <span className="gateways-label">// PUBLIC KEY ENDPOINTS</span>
+              <div className="social-links-grid">
+                {socialLinks.map((link) => (
+                  <SocialButton key={link.label} link={link} />
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          {/* RIGHT COLUMN: Transmission Form Interface */}
+          <div className={`contact-form-panel ${visible ? 'fade-in-up' : ''}`} style={{ transitionDelay: '0.2s' }}>
+            
+            {/* Success Telemetry View */}
+            {status === 'success' ? (
+              <div className="terminal-result-card success">
+                <div className="terminal-result-header">// TRANSACTION_VERIFIED</div>
+                <div className="terminal-result-body">
+                  <div className="success-code-log">[VERIFIED] TRANSMISSION ESTABLISHED</div>
+                  <h3 className="success-heading">MESSAGE INGESTED</h3>
+                  
+                  <div className="terminal-logs-window font-mono">
+                    <div className="terminal-log-line color-green">&gt; Packet checksum verified: 0xFD8E42</div>
+                    <div className="terminal-log-line color-green">&gt; Ingesting message stream payloads...</div>
+                    <div className="terminal-log-line color-green">&gt; Writing record block to PostgreSQL DB...</div>
+                    <div className="terminal-log-line">&gt; Pipeline shutdown. Connection standby mode.</div>
+                  </div>
+
+                  <p className="success-subtext">
+                    Your transmission was saved securely. Prathamesh will review your packet nodes and respond shortly.
+                  </p>
+                  
+                  <Magnetic strength={0.2} range={60}>
+                    <button
+                      type="button"
+                      onClick={() => setStatus('idle')}
+                      className="transmit-submit-btn cursor-pointer"
+                    >
+                      [ NEW_TRANSMISSION() ]
+                    </button>
+                  </Magnetic>
+                </div>
+              </div>
+            ) : status === 'sending' ? (
+              /* Sending/Transmitting logs View */
+              <div className="terminal-result-card transmitting">
+                <div className="terminal-result-header">// PIPELINE_ACTIVE (TRANSMITTING)</div>
+                <div className="terminal-result-body flex flex-col justify-between">
+                  <div>
+                    <div className="success-code-log animate-pulse">TRANSMITTING PACKETS...</div>
+                    
+                    <div className="terminal-logs-window font-mono min-h-[140px] mt-4">
+                      {transmittingLogs.map((log, index) => (
+                        <div key={index} className="terminal-log-line">
+                          {log}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="progress-bar-container mt-6">
+                    <div className="progress-bar-fill" />
+                  </div>
+                </div>
+              </div>
+            ) : (
+              /* Core Form Telemetry inputs */
+              <form onSubmit={handleSubmit} className="console-form-container">
+                <div className="console-form-header">
+                  <span>// STREAM_INGEST_FORM</span>
+                  <span>SECURE CHANNEL</span>
+                </div>
+                
+                <div className="contact-inputs-grid">
+                  
+                  {/* Name field */}
+                  <div className="console-form-group">
+                    <div className="console-form-group-header">
+                      <span className="param-label">[PARAM: name]</span>
+                      <span className="param-type">string</span>
+                    </div>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="console-input"
+                      placeholder="Enter name"
+                    />
+                    <div className="console-focus-underline" />
+                  </div>
+
+                  {/* Email field */}
+                  <div className="console-form-group">
+                    <div className="console-form-group-header">
+                      <span className="param-label">[PARAM: email]</span>
+                      <span className="param-type">email</span>
+                    </div>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="console-input"
+                      placeholder="name@domain.com"
+                    />
+                    <div className="console-focus-underline" />
+                  </div>
+
+                </div>
+
+                {/* Subject field */}
+                <div className="console-form-group">
+                  <div className="console-form-group-header">
+                    <span className="param-label">[PARAM: subject]</span>
+                    <span className="param-type">string</span>
+                  </div>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
+                    id="subject"
+                    name="subject"
                     required
-                    value={formData.name}
+                    value={formData.subject}
                     onChange={handleInputChange}
-                    className="contact-input"
-                    placeholder="Enter your name"
-                    disabled={status === 'sending'}
+                    className="console-input"
+                    placeholder="Enter subject header"
                   />
+                  <div className="console-focus-underline" />
                 </div>
 
-                {/* Email */}
-                <div className="contact-form-group">
-                  <label htmlFor="email" className="contact-label">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
+                {/* Message field */}
+                <div className="console-form-group">
+                  <div className="console-form-group-header">
+                    <span className="param-label">[PARAM: message]</span>
+                    <span className="param-type">text</span>
+                  </div>
+                  <textarea
+                    id="message"
+                    name="message"
                     required
-                    value={formData.email}
+                    value={formData.message}
                     onChange={handleInputChange}
-                    className="contact-input"
-                    placeholder="Enter your email"
-                    disabled={status === 'sending'}
+                    className="console-textarea"
+                    placeholder="Enter project specs, pipeline requirements, or message details..."
                   />
+                  <div className="console-focus-underline" />
                 </div>
-              </div>
 
-              {/* Subject */}
-              <div className="contact-form-group">
-                <label htmlFor="subject" className="contact-label">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  className="contact-input"
-                  placeholder="Enter message subject"
-                  disabled={status === 'sending'}
-                />
-              </div>
+                {status === 'error' && (
+                  <div className="terminal-error-log font-mono">
+                    // [CRITICAL ERROR] Failed to transmit packet: {errorMsg}
+                  </div>
+                )}
 
-              {/* Message */}
-              <div className="contact-form-group">
-                <label htmlFor="message" className="contact-label">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  className="contact-textarea"
-                  placeholder="Enter details of your project or query..."
-                  disabled={status === 'sending'}
-                />
-              </div>
-
-              {status === 'error' && (
-                <div
-                  style={{
-                    fontFamily: 'JetBrains Mono, monospace',
-                    fontSize: '0.7rem',
-                    color: '#ff4444',
-                    marginBottom: '1.5rem',
-                    letterSpacing: '0.05em',
-                  }}
-                >
-                  // [ERROR]: {errorMsg}
+                {/* Submit Action */}
+                <div className="submit-btn-row">
+                  <Magnetic strength={0.15} range={60}>
+                    <button
+                      type="submit"
+                      className="transmit-submit-btn cursor-pointer"
+                    >
+                      [ EXECUTE TRANSMIT_MESSAGE() ]
+                    </button>
+                  </Magnetic>
                 </div>
-              )}
 
-              {/* Submit CTA Button */}
-              <div style={{ textAlign: 'center', marginTop: '1rem' }}>
-                <Magnetic strength={0.2} range={80}>
-                  <button
-                    type="submit"
-                    disabled={status === 'sending'}
-                    className="submit-btn"
-                  >
-                    {status === 'sending' ? 'TRANSMITTING...' : 'TRANSMIT MESSAGE'}
-                  </button>
-                </Magnetic>
-              </div>
-            </form>
-          )}
+              </form>
+            )}
+
+          </div>
+
         </div>
 
-        {/* Social links row */}
-        <div
-          style={{
-            display: 'flex',
-            gap: '2rem',
-            justifyContent: 'center',
-            marginTop: '5rem',
-            flexWrap: 'wrap',
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(20px)',
-            transition:
-              'opacity 0.7s 0.4s cubic-bezier(0.65, 0, 0.35, 1), transform 0.7s 0.4s cubic-bezier(0.65, 0, 0.35, 1)',
-          }}
-        >
-          {socialLinks.map((link) => (
-            <SocialButton key={link.label} link={link} />
-          ))}
-        </div>
-
-        {/* Footer line */}
-        <div
-          style={{
-            marginTop: '6rem',
-            paddingTop: '2rem',
-            borderTop: '1px solid rgba(245,245,245,0.08)',
-            opacity: visible ? 1 : 0,
-            transition: 'opacity 0.7s 0.5s cubic-bezier(0.65, 0, 0.35, 1)',
-          }}
-        >
-          <span
-            style={{
-              fontFamily: 'JetBrains Mono, monospace',
-              fontSize: '0.65rem',
-              letterSpacing: '0.2em',
-              color: 'rgba(245,245,245,0.3)',
-              textTransform: 'uppercase',
-            }}
-          >
-            © 2026 PRATHAMESH JADHAV. BUILT WITH PURPOSE.
+        {/* Footer copyright section */}
+        <div className={`contact-footer-line ${visible ? 'fade-in-up' : ''}`} style={{ transitionDelay: '0.4s' }}>
+          <span className="footer-copyright-text">
+            © 2026 PRATHAMESH JADHAV. BUILT WITH SYSTEMS FOCUS & SOLID INFRASTRUCTURE.
           </span>
         </div>
+
       </div>
 
       <style>{`
-        .contact-form-group {
+        .contact-section-container {
           position: relative;
-          margin-bottom: 2.5rem;
+          padding: 8rem 5rem 4rem 5rem;
+          background-color: #0a0a0a;
+          box-sizing: border-box;
+          border-top: 1px solid rgba(245, 245, 245, 0.05);
+          overflow: hidden;
+        }
+
+        .contact-grid-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: 
+            radial-gradient(rgba(255, 180, 0, 0.02) 1.5px, transparent 1.5px),
+            linear-gradient(to right, rgba(255,255,255,0.008) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.008) 1px, transparent 1px);
+          background-size: 32px 32px;
+          opacity: 0.85;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .contact-inner-wrapper {
+          position: relative;
+          width: 100%;
+          max-width: 1400px;
+          margin: 0 auto;
+          z-index: 3;
+        }
+
+        .contact-dashboard-grid {
+          display: grid;
+          grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+          gap: 6rem;
+          align-items: start;
+        }
+
+        .contact-telemetry-panel {
           display: flex;
           flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
         }
-        
-        .contact-label {
+
+        .contact-hud-label {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.7rem;
+          letter-spacing: 0.3em;
+          color: #ffb400;
+          margin-bottom: 0.75rem;
+          text-transform: uppercase;
+        }
+
+        .contact-hud-title {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: clamp(3rem, 4.5vw, 4.5rem);
+          line-height: 0.95;
+          color: #f5f5f5;
+          margin: 0;
+          letter-spacing: 0.02em;
+        }
+
+        .contact-hud-teaser {
+          font-family: 'Inter', sans-serif;
+          font-weight: 300;
+          font-size: 1.05rem;
+          line-height: 1.6;
+          color: rgba(245, 245, 245, 0.5);
+          margin: 1.5rem 0 2rem 0;
+        }
+
+        /* Telemetry Box Card */
+        .hardware-console-card {
+          width: 100%;
+          background: rgba(10, 10, 10, 0.6);
+          border: 1px solid rgba(255, 180, 0, 0.12);
+          border-radius: 6px;
+          padding: 1.5rem;
+          box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.7);
+          backdrop-filter: blur(8px);
+          display: flex;
+          flex-direction: column;
+          gap: 1.2rem;
+          margin-bottom: 2rem;
+        }
+
+        .console-card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid rgba(245, 245, 245, 0.06);
+          padding-bottom: 0.75rem;
+        }
+
+        .terminal-title {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.6rem;
+          letter-spacing: 0.05em;
+          color: rgba(245, 245, 245, 0.35);
+        }
+
+        .blinking-dot-container {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.55rem;
+          font-weight: bold;
+          color: #10b981;
+          letter-spacing: 0.05em;
+        }
+
+        .blinking-dot {
+          width: 5px;
+          height: 5px;
+          background-color: #10b981;
+          border-radius: 50%;
+          display: inline-block;
+          animation: terminalBlink 1.4s infinite ease-in-out;
+        }
+
+        @keyframes terminalBlink {
+          0%, 100% { opacity: 0.2; }
+          50% { opacity: 1; }
+        }
+
+        .console-oscilloscope-container {
+          width: 100%;
+          background-color: #050505;
+          border: 1px solid rgba(245, 245, 245, 0.04);
+          border-radius: 4px;
+          overflow: hidden;
+          padding: 0.25rem 0;
+        }
+
+        .console-readout-rows {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .readout-row {
+          display: flex;
+          justify-content: space-between;
+          font-size: 0.65rem;
+          letter-spacing: 0.05em;
+        }
+
+        .readout-label {
+          font-family: 'JetBrains Mono', monospace;
+          color: rgba(245, 245, 245, 0.3);
+        }
+
+        .readout-val {
+          font-family: 'Inter', sans-serif;
+          color: #f5f5f5;
+        }
+
+        .readout-val.monospace {
+          font-family: 'JetBrains Mono', monospace;
+        }
+
+        .readout-val.color-green {
+          color: #10b981;
+          font-weight: 600;
+        }
+
+        .readout-val.color-amber {
+          color: #ffb400;
+        }
+
+        /* Gateways container */
+        .social-gateways-container {
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          width: 100%;
+        }
+
+        .gateways-label {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.6rem;
+          color: rgba(245, 245, 245, 0.25);
+          letter-spacing: 0.1em;
+        }
+
+        .social-links-grid {
+          display: flex;
+          gap: 1rem;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+
+        .social-console-btn {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          color: rgba(245,245,245,0.4);
+          background: rgba(245, 245, 245, 0.02);
+          border: 1px solid rgba(245, 245, 245, 0.08);
+          border-radius: 4px;
+          text-decoration: none;
           font-family: 'JetBrains Mono', monospace;
           font-size: 0.65rem;
-          letter-spacing: 0.15em;
-          color: rgba(245, 245, 245, 0.3);
+          letter-spacing: 0.1em;
           text-transform: uppercase;
-          margin-bottom: 0.6rem;
+          transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+          padding: 0.7rem 1.2rem;
+          justify-content: space-between;
+          min-width: 150px;
+        }
+
+        .social-console-btn:hover {
+          color: #ffb400;
+          border-color: rgba(255, 180, 0, 0.3);
+          background: rgba(255, 180, 0, 0.02);
+        }
+
+        .btn-terminal-tag {
+          font-size: 0.55rem;
+          color: rgba(245, 245, 245, 0.2);
           transition: color 0.3s ease;
         }
 
-        .contact-input, .contact-textarea {
+        .social-console-btn:hover .btn-terminal-tag {
+          color: #ffb400;
+        }
+
+        /* Form styling */
+        .contact-form-panel {
+          width: 100%;
+        }
+
+        .console-form-container {
+          background: rgba(10, 10, 10, 0.5);
+          border: 1px solid rgba(245, 245, 245, 0.06);
+          border-radius: 6px;
+          padding: 2.5rem;
+          box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.8);
+          backdrop-filter: blur(8px);
+          display: flex;
+          flex-direction: column;
+          gap: 2.2rem;
+        }
+
+        .console-form-header {
+          display: flex;
+          justify-content: space-between;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.65rem;
+          letter-spacing: 0.1em;
+          color: rgba(245, 245, 245, 0.25);
+          border-bottom: 1px solid rgba(245, 245, 245, 0.06);
+          padding-bottom: 0.75rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .contact-inputs-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2.5rem;
+        }
+
+        .console-form-group {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .console-form-group-header {
+          display: flex;
+          justify-content: space-between;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.6rem;
+          letter-spacing: 0.1em;
+          margin-bottom: 0.5rem;
+        }
+
+        .param-label {
+          color: rgba(245, 245, 245, 0.3);
+          transition: color 0.3s ease;
+        }
+
+        .param-type {
+          color: rgba(255, 180, 0, 0.35);
+        }
+
+        .console-input, .console-textarea {
           font-family: 'Inter', sans-serif;
           font-weight: 300;
-          font-size: 1rem;
+          font-size: 0.95rem;
           color: #f5f5f5;
           background: transparent;
           border: none;
@@ -456,48 +778,234 @@ export function ContactSection() {
           cursor: text !important;
         }
 
-        .contact-input:focus, .contact-textarea:focus {
-          border-bottom-color: var(--accent-amber, #ffb400);
+        .console-focus-underline {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background-color: #ffb400;
+          box-shadow: 0 0 6px #ffb400;
+          transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
         }
 
-        .contact-form-group:focus-within .contact-label {
-          color: var(--accent-amber, #ffb400);
+        .console-input:focus ~ .console-focus-underline,
+        .console-textarea:focus ~ .console-focus-underline {
+          width: 100%;
         }
 
-        .contact-textarea {
-          min-height: 120px;
+        .console-form-group:focus-within .param-label {
+          color: #ffb400;
+        }
+
+        .console-textarea {
+          min-height: 140px;
           resize: vertical;
         }
-        
-        .submit-btn {
+
+        .terminal-error-log {
+          font-size: 0.7rem;
+          color: #ef4444;
+          letter-spacing: 0.05em;
+        }
+
+        .submit-btn-row {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+
+        .transmit-submit-btn {
           border: 1px solid #ffb400;
           color: #ffb400;
           background: transparent;
-          padding: 1rem 3rem;
+          padding: 1.1rem 3rem;
           font-family: 'JetBrains Mono', monospace;
           font-size: 0.75rem;
-          letter-spacing: 0.2em;
+          letter-spacing: 0.15em;
           text-transform: uppercase;
-          cursor: pointer;
           transition: all 0.3s cubic-bezier(0.65, 0, 0.35, 1);
-          display: inline-block;
+          border-radius: 4px;
         }
 
-        .submit-btn:hover {
+        .transmit-submit-btn:hover {
           color: #0a0a0a;
           background-color: #ffb400;
+          box-shadow: 0 0 15px rgba(255, 180, 0, 0.4);
         }
-        
-        .submit-btn:disabled {
-          border-color: rgba(245, 245, 245, 0.2);
+
+        /* Result cards styling (Transmitting and Success States) */
+        .terminal-result-card {
+          background: rgba(10, 10, 10, 0.6);
+          border: 1px solid rgba(245, 245, 245, 0.08);
+          border-radius: 6px;
+          padding: 3rem;
+          box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.85);
+          backdrop-filter: blur(8px);
+          min-height: 420px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .terminal-result-card.success {
+          border-color: rgba(16, 185, 129, 0.2);
+          box-shadow: 0 15px 45px -15px rgba(16, 185, 129, 0.1);
+        }
+
+        .terminal-result-card.transmitting {
+          border-color: rgba(255, 180, 0, 0.2);
+          box-shadow: 0 15px 45px -15px rgba(255, 180, 0, 0.1);
+        }
+
+        .terminal-result-header {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.65rem;
+          letter-spacing: 0.15em;
           color: rgba(245, 245, 245, 0.3);
-          cursor: not-allowed;
+          border-bottom: 1px solid rgba(245, 245, 245, 0.06);
+          padding-bottom: 0.75rem;
+          margin-bottom: 2rem;
+          text-transform: uppercase;
+        }
+
+        .terminal-result-card.success .terminal-result-header {
+          color: #10b981;
+        }
+
+        .terminal-result-card.transmitting .terminal-result-header {
+          color: #ffb400;
+        }
+
+        .terminal-result-body {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .success-code-log {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.65rem;
+          letter-spacing: 0.2em;
+          color: #ffb400;
+          margin-bottom: 0.75rem;
+        }
+
+        .terminal-result-card.success .success-code-log {
+          color: #10b981;
+        }
+
+        .success-heading {
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 2.8rem;
+          color: #f5f5f5;
+          margin-bottom: 1.5rem;
+          letter-spacing: 0.02em;
+          line-height: 1;
+        }
+
+        .terminal-logs-window {
+          background-color: #050505;
+          border: 1px solid rgba(245, 245, 245, 0.04);
+          border-radius: 4px;
+          padding: 1.25rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.6rem;
+          margin-bottom: 2rem;
+        }
+
+        .terminal-log-line {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.7rem;
+          color: rgba(245, 245, 245, 0.55);
+          letter-spacing: 0.02em;
+          line-height: 1.4;
+        }
+
+        .terminal-log-line.color-green {
+          color: #10b981;
+        }
+
+        .success-subtext {
+          font-family: 'Inter', sans-serif;
+          font-weight: 300;
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: rgba(245, 245, 245, 0.6);
+          margin-bottom: 2rem;
+        }
+
+        .progress-bar-container {
+          width: 100%;
+          height: 3px;
+          background-color: rgba(245, 245, 245, 0.04);
+          border-radius: 2px;
+          overflow: hidden;
+        }
+
+        .progress-bar-fill {
+          height: 100%;
+          background-color: #ffb400;
+          width: 0%;
+          animation: transmitProgressBar 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+          box-shadow: 0 0 6px #ffb400;
+        }
+
+        @keyframes transmitProgressBar {
+          to { width: 100%; }
+        }
+
+        /* Footer line */
+        .contact-footer-line {
+          margin-top: 8rem;
+          padding-top: 2rem;
+          border-top: 1px solid rgba(245, 245, 245, 0.06);
+          text-align: center;
+        }
+
+        .footer-copyright-text {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.65rem;
+          letter-spacing: 0.2em;
+          color: rgba(245, 245, 245, 0.25);
+          text-transform: uppercase;
+        }
+
+        /* Intersection Observer entry animations */
+        .fade-in-up {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+
+        .contact-telemetry-panel, .contact-form-panel, .contact-footer-line {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1), transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        @media (max-width: 992px) {
+          .contact-section-container {
+            padding: 6rem 2rem 4rem 2rem;
+          }
+
+          .contact-dashboard-grid {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+          }
+
+          .contact-hud-title {
+            font-size: 3.5rem;
+          }
         }
 
         @media (max-width: 768px) {
-          .contact-form-grid {
-            grid-template-columns: 1fr !important;
-            gap: 1.5rem !important;
+          .contact-inputs-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .terminal-result-card {
+            padding: 2rem;
           }
         }
       `}</style>
