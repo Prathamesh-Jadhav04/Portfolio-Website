@@ -46,7 +46,7 @@ export function HeroSection() {
           <div className="year-badge-wrapper">
             <Magnetic range={60} strength={0.35}>
               <div className="year-badge" style={{ display: 'inline-block' }}>
-                <ScramblerText text="EST. 2022 — CHHATRAPATI SAMBHAJINAGAR, INDIA" />
+                <ScramblerText text="EST. 2022 — CHHATRAPATI SAMBHAJINAGAR, INDIA" delay={1200} />
               </div>
             </Magnetic>
           </div>
@@ -64,14 +64,14 @@ export function HeroSection() {
           </h1>
 
           <p className="hero-subtext">
-            <ScramblerText text="AI/ML Developer. Data Scientist. GenAI Engineer." />
+            <ScramblerText text="AI/ML Developer. Data Scientist. GenAI Engineer." delay={1500} />
           </p>
         </div>
 
         <Magnetic range={40} strength={0.3}>
           <div className="scroll-explore">
             <span>
-              <ScramblerText text="SCROLL TO EXPLORE" />
+              <ScramblerText text="SCROLL TO EXPLORE" delay={1800} />
             </span>
             <div className="scroll-line" />
           </div>

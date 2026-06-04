@@ -5,21 +5,44 @@ import { useState, useEffect } from 'react';
 interface ScramblerTextProps {
   text: string;
   className?: string;
+  delay?: number;
 }
 
-export function ScramblerText({ text, className }: ScramblerTextProps) {
+export function ScramblerText({ text, className, delay = 0 }: ScramblerTextProps) {
   const [displayText, setDisplayText] = useState(text);
   const [isHovered, setIsHovered] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [ready, setReady] = useState(delay === 0);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  // Handle delay on mount
   useEffect(() => {
-    if (!mounted) return;
+    if (delay === 0 || !mounted) return;
+    const timeout = setTimeout(() => {
+      setReady(true);
+    }, delay);
+    return () => clearTimeout(timeout);
+  }, [delay, mounted]);
 
-    // Trigger scramble if hovered, or run once on initial component mount
+  useEffect(() => {
+    if (!ready || !mounted) {
+      // Show randomized characters initially during the delay so it looks like active computing
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      setDisplayText(
+        text
+          .split('')
+          .map((char) => {
+            if ([' ', '.', '/', '-', '_', ',', '—'].includes(char)) return char;
+            return chars[Math.floor(Math.random() * chars.length)];
+          })
+          .join('')
+      );
+      return;
+    }
+
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let iterations = 0;
     const interval = setInterval(() => {
@@ -42,7 +65,7 @@ export function ScramblerText({ text, className }: ScramblerTextProps) {
     }, 25);
 
     return () => clearInterval(interval);
-  }, [isHovered, text, mounted]);
+  }, [isHovered, text, mounted, ready]);
 
   return (
     <span 

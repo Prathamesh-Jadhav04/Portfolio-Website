@@ -35,7 +35,7 @@ export function Navigation({ onLogoDoubleClick }: NavigationProps) {
                 display: 'inline-block'
               }}
             >
-              <ScramblerText text="P. JADHAV" />
+              <ScramblerText text="P. JADHAV" delay={1200} />
             </span>
           </Magnetic>
           <div className="logo-tooltip">
@@ -45,13 +45,13 @@ export function Navigation({ onLogoDoubleClick }: NavigationProps) {
 
         <div className="nav-links">
           <Magnetic>
-            <a href="#about"><ScramblerText text="Origin" /></a>
+            <a href="#about"><ScramblerText text="Origin" delay={1400} /></a>
           </Magnetic>
           <Magnetic>
-            <a href="#projects"><ScramblerText text="Work" /></a>
+            <a href="#projects"><ScramblerText text="Work" delay={1600} /></a>
           </Magnetic>
           <Magnetic>
-            <a href="#contact"><ScramblerText text="Build" /></a>
+            <a href="#contact"><ScramblerText text="Build" delay={1800} /></a>
           </Magnetic>
         </div>
       </div>

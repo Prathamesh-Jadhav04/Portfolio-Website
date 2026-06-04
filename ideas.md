@@ -120,3 +120,42 @@ To maintain **maximum performance (under 60fps check)** while delivering a **pre
 *   [ ] Place `Background.png` into `/public` as `/background-interactive.png` for Next.js accessibility.
 *   [ ] Create a reusable `<InteractiveEmberCanvas />` React component in `src/components/ui/InteractiveEmberCanvas.tsx`.
 *   [ ] Replace the default Mixkit video container in [HeroSection.tsx](file:///D:/Portfolio/src/components/HeroSection.tsx) with this new interactive background.
+
+---
+
+# 🖱️ Plan: Custom Cursor Design Options
+
+This section documents options to upgrade the basic circle custom cursor into a premium, interactive design system matching the developer/cyberpunk HUD theme.
+
+---
+
+## 🛠️ Design Concepts
+
+### Option 1: The "Systems HUD Reticle & Targeter" (Dev/Console Theme)
+*   **Visuals**:
+    *   **Core**: A solid central dot.
+    *   **Ring**: A thin outer circle with 4 small ticks (compass marks) indicating diagnostic alignment.
+    *   **Aesthetics**: Colored in amber (`#ffb400`).
+*   **Interactivity**:
+    *   **Elastic Drag (Lag/Spring)**: The outer ring trails behind the central dot using spring-mass physics, creating dynamic compression and stretch as you move the cursor.
+    *   **Interactive Target Lock**: Hovering over links/buttons causes the tick marks to collapse inward, the outer ring to spin 90 degrees, and displays a tiny subtext indicator next to it like `[LOCK]` or `[EXEC]`.
+
+### Option 2: The "Ember Spark Trail Emitter" (JJK Fire Theme)
+*   **Visuals**:
+    *   **Core**: A soft glowing amber dot.
+    *   **Trail**: A dynamic trailing stream of microscopic glowing sparks (similar to JJK flames).
+*   **Interactivity**:
+    *   **Velocity-Based Emission**: Moving the mouse quickly spawns more sparks in a direction opposite to mouse movement.
+    *   **Active Hover Glow**: Hovering interactive items triggers a circular "flame swirl" force around the core, matching the global particle whirlpool.
+
+### Option 3: The "Inverted Magnetic Liquid Bubble" (Creative Theme)
+*   **Visuals**:
+    *   An organic liquid bubble using CSS `mix-blend-mode: difference` and a SVG filter.
+*   **Interactivity**:
+    *   **Text Capture (Magnetic Sticky)**: When hovering text links, the bubble snaps directly onto the word, expanding into a rectangular fluid block that wraps around the text and inverts the colors behind it.
+
+### Option 4: The "Active Coordinates HUD Cursor" (Diagnostic Theme)
+*   **Visuals**:
+    *   A small amber dot with tiny real-time data logs printed beside it (e.g. `X: 382`, `Y: 492`, `PING: 12ms`) in a microscopic `6px` monospace font.
+*   **Interactivity**:
+    *   The coordinates track mouse positions with a subtle lag. Hovering over a button changes the telemetry status from `SYS_IDLE` to `SYS_ACTIVE`.
