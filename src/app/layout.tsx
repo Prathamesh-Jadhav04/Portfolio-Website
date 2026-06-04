@@ -29,8 +29,38 @@ const comfortaa = Comfortaa({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://prathamesh-jadhav.vercel.app'),
   title: "Prathamesh Jadhav | AI/ML Engineer & Data Scientist",
   description: "Engineering-focused AI/ML developer specializing in scalable low-latency infrastructure, custom vector databases, and RAG pipelines.",
+  keywords: ["Prathamesh Jadhav", "AI Engineer", "Machine Learning", "Data Scientist", "Vector Database", "HNSW", "RAG Pipeline", "Next.js Portfolio", "Brutalist Web Design"],
+  authors: [{ name: "Prathamesh Jadhav", url: "https://github.com/Prathamesh-Jadhav04" }],
+  creator: "Prathamesh Jadhav",
+  openGraph: {
+    title: "Prathamesh Jadhav | AI/ML Engineer & Data Scientist",
+    description: "Specializing in scalable low-latency infrastructure, custom vector databases, and RAG pipelines.",
+    url: "https://github.com/Prathamesh-Jadhav04/Portfolio-Website",
+    siteName: "Prathamesh Jadhav Portfolio",
+    images: [
+      {
+        url: "/public/background-interactive.png",
+        width: 1200,
+        height: 630,
+        alt: "Prathamesh Jadhav AI/ML Portfolio Background",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prathamesh Jadhav | AI/ML Engineer & Data Scientist",
+    description: "Specializing in scalable low-latency infrastructure, custom vector databases, and RAG pipelines.",
+    images: ["/public/background-interactive.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

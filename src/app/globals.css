@@ -106,7 +106,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    cursor: none;
+    cursor: none !important;
     @apply border-border outline-ring/50;
   }
 
@@ -305,8 +305,10 @@
   cursor: none;
 }
 
-.nav-links a:hover {
-  color: var(--text-color);
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-amber);
+  text-shadow: 0 0 8px rgba(255, 180, 0, 0.45);
 }
 
 /* =============================================
@@ -407,7 +409,7 @@
 }
 
 .hero-headline .line span {
-  display: block;
+  display: inline-block;
   opacity: 0;
   transform: translateY(100%);
   animation: slideUp 1.8s var(--transition-cinematic) forwards; /* Increased duration to 1.8s */

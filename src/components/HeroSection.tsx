@@ -119,6 +119,27 @@ export function HeroSection() {
           text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
         }
 
+        .hero-headline span {
+          display: inline-block;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.3s, color 0.3s;
+          cursor: crosshair;
+        }
+
+        .hero-headline span:hover {
+          color: var(--accent-amber, #ffb400) !important;
+          transform: skewX(-8deg) scale(1.03);
+          text-shadow: 
+            3px -1.5px 0px rgba(239, 68, 68, 0.7), 
+            -3px 1.5px 0px rgba(59, 130, 246, 0.7),
+            0 0 15px rgba(255, 180, 0, 0.35);
+          animation: glitch-flicker 0.15s infinite;
+        }
+
+        @keyframes glitch-flicker {
+          0%, 100% { transform: skewX(-8deg) scale(1.03); }
+          50% { transform: skewX(-11deg) scale(1.03) translate(1.5px, -1px); opacity: 0.95; }
+        }
+
         .scroll-explore {
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           cursor: pointer;

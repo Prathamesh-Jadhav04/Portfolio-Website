@@ -22,7 +22,10 @@ export default function Home() {
       {/* Loader — shows until onComplete called */}
       {!loaderDone && (
         <Loader
-          onComplete={() => setLoaderDone(true)}
+          onComplete={() => {
+            setLoaderDone(true);
+            document.body.classList.add('system-ready');
+          }}
           onStartTransition={() => setStartReveal(true)}
         />
       )}

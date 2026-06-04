@@ -72,7 +72,7 @@ function SocialButton({ link }: { link: SocialLink }) {
   );
 }
 
-function Oscilloscope() {
+function Oscilloscope({ messageLength = 0, isFocused = false }: { messageLength?: number; isFocused?: boolean }) {
   const [time, setTime] = useState(0);
 
   // Oscilloscope Animation Frame loop
@@ -86,10 +86,15 @@ function Oscilloscope() {
     return () => cancelAnimationFrame(frameId);
   }, []);
 
+  const speedMultiplier = isFocused ? 2.2 : 1.0;
+  const amplitudeMultiplier = 1.0 + Math.min(2.5, messageLength * 0.02);
+
   const getWavePath1 = () => {
     let points = [];
+    const amp = 8 * amplitudeMultiplier;
+    const freq = 0.055 + Math.min(0.04, messageLength * 0.0003);
     for (let x = 0; x <= 220; x += 4) {
-      const y = 25 + Math.sin(x * 0.055 + time * 1.8) * 8;
+      const y = 25 + Math.sin(x * freq + time * 1.8 * speedMultiplier) * amp;
       points.push(`${x},${y}`);
     }
     return `M ${points.join(' L ')}`;
@@ -97,8 +102,10 @@ function Oscilloscope() {
 
   const getWavePath2 = () => {
     let points = [];
+    const amp = 5 * amplitudeMultiplier * 0.7;
+    const freq = 0.045 + Math.min(0.03, messageLength * 0.0002);
     for (let x = 0; x <= 220; x += 4) {
-      const y = 25 + Math.sin(x * 0.045 - time * 1.4 + Math.PI / 3) * 5;
+      const y = 25 + Math.sin(x * freq - time * 1.4 * speedMultiplier + Math.PI / 3) * amp;
       points.push(`${x},${y}`);
     }
     return `M ${points.join(' L ')}`;
@@ -119,8 +126,48 @@ function Oscilloscope() {
         {/* Oscillating Path 2 (Muted Out of Phase Channel) */}
         <path d={getWavePath2()} fill="none" stroke="rgba(255, 180, 0, 0.2)" strokeWidth="0.8" />
         {/* Oscillating Path 1 (Primary Channel) */}
-        <path d={getWavePath1()} fill="none" stroke="#ffb400" strokeWidth="1.2" style={{ filter: 'drop-shadow(0 0 3px rgba(255, 180, 0, 0.5))' }} />
+        <path d={getWavePath1()} fill="none" stroke={isFocused ? "#00ff66" : "#ffb400"} strokeWidth="1.2" style={{ filter: isFocused ? 'drop-shadow(0 0 5px rgba(0, 255, 102, 0.6))' : 'drop-shadow(0 0 3px rgba(255, 180, 0, 0.5))', transition: 'stroke 0.3s ease' }} />
       </svg>
+    </div>
+  );
+}
+
+function ScramblingLabel({ labelText, typeText, triggerScramble }: { labelText: string; typeText: string; triggerScramble: boolean }) {
+  const [displayText, setDisplayText] = useState(labelText);
+
+  useEffect(() => {
+    if (!triggerScramble) {
+      setDisplayText(labelText);
+      return;
+    }
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+';
+    let iterations = 0;
+    const interval = setInterval(() => {
+      setDisplayText(
+        labelText
+          .split('')
+          .map((char, index) => {
+            if ([' ', '[', ']', ':', '_'].includes(char)) return char;
+            if (index < iterations) return labelText[index];
+            return chars[Math.floor(Math.random() * chars.length)];
+          })
+          .join('')
+      );
+      iterations += 1/2;
+      if (iterations >= labelText.length) {
+        clearInterval(interval);
+        setDisplayText(labelText);
+      }
+    }, 20);
+    return () => clearInterval(interval);
+  }, [triggerScramble, labelText]);
+
+  return (
+    <div className="console-form-group-header">
+      <span className="param-label" style={{ fontFamily: 'var(--font-jetbrains-mono, monospace)', color: triggerScramble ? 'var(--accent-amber, #ffb400)' : 'rgba(245, 245, 245, 0.45)', textShadow: triggerScramble ? '0 0 8px rgba(255, 180, 0, 0.25)' : 'none', transition: 'color 0.3s ease' }}>
+        {displayText}
+      </span>
+      <span className="param-type">{typeText}</span>
     </div>
   );
 }
@@ -131,6 +178,7 @@ export function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const [focusedField, setFocusedField] = useState<string | null>(null);
   
   // Unique connection telemetry node generated on client mount
   const [sessionId, setSessionId] = useState('');
@@ -271,7 +319,7 @@ export function ContactSection() {
               </div>
               
               {/* Dual-Channel Live Waveform */}
-              <Oscilloscope />
+              <Oscilloscope messageLength={formData.message.length} isFocused={focusedField !== null} />
 
               {/* Metrics Readout */}
               <div className="console-readout-rows">
@@ -372,10 +420,11 @@ export function ContactSection() {
                   
                   {/* Name field */}
                   <div className="console-form-group">
-                    <div className="console-form-group-header">
-                      <span className="param-label">[PARAM: name]</span>
-                      <span className="param-type">string</span>
-                    </div>
+                    <ScramblingLabel
+                      labelText="[PARAM: name]"
+                      typeText="string"
+                      triggerScramble={focusedField === 'name'}
+                    />
                     <input
                       type="text"
                       id="name"
@@ -383,6 +432,8 @@ export function ContactSection() {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField('name')}
+                      onBlur={() => setFocusedField(null)}
                       className="console-input"
                       placeholder="Enter name"
                     />
@@ -391,10 +442,11 @@ export function ContactSection() {
 
                   {/* Email field */}
                   <div className="console-form-group">
-                    <div className="console-form-group-header">
-                      <span className="param-label">[PARAM: email]</span>
-                      <span className="param-type">email</span>
-                    </div>
+                    <ScramblingLabel
+                      labelText="[PARAM: email]"
+                      typeText="email"
+                      triggerScramble={focusedField === 'email'}
+                    />
                     <input
                       type="email"
                       id="email"
@@ -402,6 +454,8 @@ export function ContactSection() {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
+                      onFocus={() => setFocusedField('email')}
+                      onBlur={() => setFocusedField(null)}
                       className="console-input"
                       placeholder="name@domain.com"
                     />
@@ -412,10 +466,11 @@ export function ContactSection() {
 
                 {/* Subject field */}
                 <div className="console-form-group">
-                  <div className="console-form-group-header">
-                    <span className="param-label">[PARAM: subject]</span>
-                    <span className="param-type">string</span>
-                  </div>
+                  <ScramblingLabel
+                    labelText="[PARAM: subject]"
+                    typeText="string"
+                    triggerScramble={focusedField === 'subject'}
+                  />
                   <input
                     type="text"
                     id="subject"
@@ -423,6 +478,8 @@ export function ContactSection() {
                     required
                     value={formData.subject}
                     onChange={handleInputChange}
+                    onFocus={() => setFocusedField('subject')}
+                    onBlur={() => setFocusedField(null)}
                     className="console-input"
                     placeholder="Enter subject header"
                   />
@@ -431,16 +488,19 @@ export function ContactSection() {
 
                 {/* Message field */}
                 <div className="console-form-group">
-                  <div className="console-form-group-header">
-                    <span className="param-label">[PARAM: message]</span>
-                    <span className="param-type">text</span>
-                  </div>
+                  <ScramblingLabel
+                    labelText="[PARAM: message]"
+                    typeText="text"
+                    triggerScramble={focusedField === 'message'}
+                  />
                   <textarea
                     id="message"
                     name="message"
                     required
                     value={formData.message}
                     onChange={handleInputChange}
+                    onFocus={() => setFocusedField('message')}
+                    onBlur={() => setFocusedField(null)}
                     className="console-textarea"
                     placeholder="Enter project specs, pipeline requirements, or message details..."
                   />

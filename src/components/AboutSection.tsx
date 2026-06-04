@@ -569,17 +569,27 @@ const tagsMeta = skills.map((text) => {
     activeColor,
     activeBg,
     activeBorder,
-    activeGlow
+    activeGlow,
+    isBasicWeb,
+    isFrontendWeb,
+    isBackendDB,
+    isAIML,
+    isSystemsDevOps
   };
 });
 
-function TechSphere({ onHoverChange }: { onHoverChange: (hovering: boolean) => void }) {
+function TechSphere({ onHoverChange, activeCategory }: { onHoverChange: (hovering: boolean) => void; activeCategory: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
   const isHoveredRef = useRef(false);
   const isDraggingRef = useRef(false);
   const dragStartRef = useRef({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
+
+  const activeCategoryRef = useRef(activeCategory);
+  useEffect(() => {
+    activeCategoryRef.current = activeCategory;
+  }, [activeCategory]);
 
   // Store coordinates in a mutable ref to bypass React state cycles
   const tagsRef = useRef<Tag[]>([]);
@@ -612,27 +622,52 @@ function TechSphere({ onHoverChange }: { onHoverChange: (hovering: boolean) => v
         const left = 160 + tag.x * scale;
         const top = 160 + tag.y * scale;
         
-        const opacity = (tag.z + radius) / (2 * radius) * 0.8 + 0.2;
         const zIndex = Math.round(tag.z + radius);
         const isFront = tag.z > 0;
-        
-        let blurAmount = 0;
-        if (tag.z < -20) {
-          blurAmount = Math.min(2.5, (Math.abs(tag.z) - 20) * 0.015);
+
+        const activeCat = activeCategoryRef.current;
+        let isMatched = true;
+        if (activeCat !== 'all') {
+          if (activeCat === 'ai' && !meta.isAIML) isMatched = false;
+          else if (activeCat === 'systems' && !meta.isSystemsDevOps) isMatched = false;
+          else if (activeCat === 'frontend' && !meta.isFrontendWeb) isMatched = false;
+          else if (activeCat === 'backend' && !meta.isBackendDB) isMatched = false;
+          else if (activeCat === 'basic' && !meta.isBasicWeb) isMatched = false;
         }
 
-        el.style.left = `${left}px`;
-        el.style.top = `${top}px`;
-        el.style.transform = `translate(-50%, -50%) scale(${scale})`;
-        el.style.opacity = `${opacity}`;
-        el.style.zIndex = `${zIndex}`;
-        el.style.fontWeight = isFront ? '500' : '300';
-        el.style.color = isFront ? meta.activeColor : 'rgba(245, 245, 245, 0.25)';
-        el.style.pointerEvents = isFront ? 'auto' : 'none';
-        el.style.background = isFront ? meta.activeBg : 'transparent';
-        el.style.border = isFront ? meta.activeBorder : '1px solid transparent';
-        el.style.boxShadow = isFront ? meta.activeGlow : 'none';
-        el.style.filter = blurAmount > 0 ? `blur(${blurAmount}px)` : 'none';
+        if (!isMatched) {
+          el.style.left = `${left}px`;
+          el.style.top = `${top}px`;
+          el.style.transform = `translate(-50%, -50%) scale(${scale * 0.95})`;
+          el.style.opacity = '0.04';
+          el.style.zIndex = '0';
+          el.style.fontWeight = '300';
+          el.style.color = 'rgba(245, 245, 245, 0.05)';
+          el.style.pointerEvents = 'none';
+          el.style.background = 'transparent';
+          el.style.border = '1px solid transparent';
+          el.style.boxShadow = 'none';
+          el.style.filter = 'blur(3px)';
+        } else {
+          const opacity = (tag.z + radius) / (2 * radius) * 0.8 + 0.2;
+          let blurAmount = 0;
+          if (tag.z < -20) {
+            blurAmount = Math.min(2.5, (Math.abs(tag.z) - 20) * 0.015);
+          }
+
+          el.style.left = `${left}px`;
+          el.style.top = `${top}px`;
+          el.style.transform = `translate(-50%, -50%) scale(${scale})`;
+          el.style.opacity = `${opacity}`;
+          el.style.zIndex = `${zIndex}`;
+          el.style.fontWeight = isFront ? '500' : '300';
+          el.style.color = isFront ? meta.activeColor : 'rgba(245, 245, 245, 0.25)';
+          el.style.pointerEvents = isFront ? 'auto' : 'none';
+          el.style.background = isFront ? meta.activeBg : 'transparent';
+          el.style.border = isFront ? meta.activeBorder : '1px solid transparent';
+          el.style.boxShadow = isFront ? meta.activeGlow : 'none';
+          el.style.filter = blurAmount > 0 ? `blur(${blurAmount}px)` : 'none';
+        }
       }
     });
   };
@@ -1052,6 +1087,7 @@ export function AboutSection() {
   const [expandedCardId, setExpandedCardId] = useState<number | null>(1);
   const [isSectionInView, setIsSectionInView] = useState(false);
   const [isHoveringSphere, setIsHoveringSphere] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<string>('all');
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -1263,7 +1299,39 @@ export function AboutSection() {
                       <text x="210" y="375" fill="rgba(245, 245, 245, 0.15)" fontFamily="var(--font-jetbrains-mono, monospace)" fontSize="6">LOC: 19.0760° N</text>
                     </svg>
                   </div>
-                  <TechSphere onHoverChange={setIsHoveringSphere} />
+                  <div className="sphere-filter-menu" style={{ display: 'flex', gap: '0.4rem', marginBottom: '1.2rem', zIndex: 10, flexWrap: 'wrap', justifyContent: 'center' }}>
+                    {[
+                      { id: 'all', label: 'ALL' },
+                      { id: 'ai', label: 'AI/ML' },
+                      { id: 'systems', label: 'SYSTEMS' },
+                      { id: 'frontend', label: 'FRONTEND' },
+                      { id: 'backend', label: 'BACKEND' },
+                      { id: 'basic', label: 'CORE' },
+                    ].map((cat) => (
+                      <button
+                        key={cat.id}
+                        onClick={() => setActiveCategory(cat.id)}
+                        className={`sphere-filter-btn ${activeCategory === cat.id ? 'active' : ''}`}
+                        style={{
+                          background: 'transparent',
+                          color: activeCategory === cat.id ? 'var(--accent-amber, #ffb400)' : 'rgba(245, 245, 245, 0.45)',
+                          border: activeCategory === cat.id ? '1px solid var(--accent-amber, #ffb400)' : '1px solid rgba(245, 245, 245, 0.12)',
+                          padding: '0.35rem 0.65rem',
+                          borderRadius: '4px',
+                          fontFamily: 'var(--font-jetbrains-mono, monospace)',
+                          fontSize: '0.62rem',
+                          letterSpacing: '0.08em',
+                          cursor: 'pointer',
+                          textTransform: 'uppercase',
+                          transition: 'all 0.3s ease',
+                          boxShadow: activeCategory === cat.id ? '0 0 12px rgba(255, 180, 0, 0.15)' : 'none',
+                        }}
+                      >
+                        {cat.label}
+                      </button>
+                    ))}
+                  </div>
+                  <TechSphere onHoverChange={setIsHoveringSphere} activeCategory={activeCategory} />
                 </div>
               </div>
             </div>

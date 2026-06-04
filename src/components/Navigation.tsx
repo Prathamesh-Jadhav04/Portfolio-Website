@@ -10,6 +10,7 @@ interface NavigationProps {
 
 export function Navigation({ onLogoDoubleClick }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +19,39 @@ export function Navigation({ onLogoDoubleClick }: NavigationProps) {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = ['about', 'projects', 'contact'];
+    
+    const observers = sections.map((id) => {
+      const el = document.getElementById(id);
+      if (!el) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(id);
+          }
+        },
+        {
+          root: null,
+          rootMargin: '-40% 0px -40% 0px',
+          threshold: 0,
+        }
+      );
+      
+      observer.observe(el);
+      return { observer, el };
+    });
+
+    return () => {
+      observers.forEach((obs) => {
+        if (obs) {
+          obs.observer.unobserve(obs.el);
+        }
+      });
+    };
   }, []);
 
   return (
@@ -45,13 +79,19 @@ export function Navigation({ onLogoDoubleClick }: NavigationProps) {
 
         <div className="nav-links">
           <Magnetic>
-            <a href="#about"><ScramblerText text="Origin" delay={1400} /></a>
+            <a href="#about" className={activeSection === 'about' ? 'active' : ''}>
+              <ScramblerText text="Origin" delay={1400} />
+            </a>
           </Magnetic>
           <Magnetic>
-            <a href="#projects"><ScramblerText text="Work" delay={1600} /></a>
+            <a href="#projects" className={activeSection === 'projects' ? 'active' : ''}>
+              <ScramblerText text="Work" delay={1600} />
+            </a>
           </Magnetic>
           <Magnetic>
-            <a href="#contact"><ScramblerText text="Build" delay={1800} /></a>
+            <a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>
+              <ScramblerText text="Build" delay={1800} />
+            </a>
           </Magnetic>
         </div>
       </div>

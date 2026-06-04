@@ -6,7 +6,6 @@ export function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
   const coordsRef = useRef<HTMLSpanElement>(null);
   const statusRef = useRef<HTMLSpanElement>(null);
-
   useEffect(() => {
     const dot = dotRef.current;
     const ring = ringRef.current;
@@ -15,26 +14,24 @@ export function CustomCursor() {
 
     if (!dot || !ring) return;
 
-    let targetX = 0;
-    let targetY = 0;
-    let ringX = 0;
-    let ringY = 0;
+    // Start coordinates in the center of the window to avoid initial hiding
+    let targetX = typeof window !== 'undefined' ? window.innerWidth / 2 : 200;
+    let targetY = typeof window !== 'undefined' ? window.innerHeight / 2 : 200;
+    let ringX = targetX;
+    let ringY = targetY;
     let isHovered = false;
-    let active = false;
+    let active = true;
+
+    // Make cursor visible immediately on mount
+    dot.style.opacity = '1';
+    ring.style.opacity = '1';
+    dot.style.transform = `translate3d(calc(${targetX}px - 50%), calc(${targetY}px - 50%), 0)`;
+    ring.style.transform = `translate3d(calc(${ringX}px - 50%), calc(${ringY}px - 50%), 0)`;
 
     // Listen to mouse movements
     const onMouseMove = (e: MouseEvent) => {
-      if (!active) {
-        // Position immediately on first movement to avoid visual jumps
-        targetX = ringX = e.clientX;
-        targetY = ringY = e.clientY;
-        active = true;
-        dot.style.opacity = '1';
-        ring.style.opacity = '1';
-      } else {
-        targetX = e.clientX;
-        targetY = e.clientY;
-      }
+      targetX = e.clientX;
+      targetY = e.clientY;
     };
 
     // Listen to mouseover for hover scale effect on buttons/links
