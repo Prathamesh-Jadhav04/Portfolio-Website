@@ -10,6 +10,7 @@ import { AboutSection } from '@/components/AboutSection';
 import { ProjectsSection } from '@/components/ProjectsSection';
 import { DeveloperConsole } from '@/components/DeveloperConsole';
 import { ContactSection } from '@/components/ContactSection';
+import { InteractiveEmberCanvas } from '@/components/ui/InteractiveEmberCanvas';
 
 export default function Home() {
   const [loaderDone, setLoaderDone] = useState(false);
@@ -29,6 +30,7 @@ export default function Home() {
       {/* Global overlays — always present */}
       <NoiseOverlay />
       <CustomCursor />
+      <InteractiveEmberCanvas />
 
       {/* Main content — rendered when loader starts slide-up */}
       {startReveal && (

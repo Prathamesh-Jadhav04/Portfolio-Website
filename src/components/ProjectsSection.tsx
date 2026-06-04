@@ -1140,7 +1140,7 @@ export function ProjectsSection() {
         .projects-scroll-section {
           position: relative;
           height: 500vh; /* 5 projects * 100vh runway */
-          background-color: #0a0a0a;
+          background-color: transparent;
           box-sizing: border-box;
           transition: background-color 0.6s ease;
         }
@@ -1201,7 +1201,7 @@ export function ProjectsSection() {
           padding: 12rem 5rem 6rem 5rem; /* Padding to clear headers & HUD */
           display: flex;
           align-items: center;
-          background-color: #0a0a0a;
+          background-color: transparent;
           position: relative;
           overflow: hidden;
         }

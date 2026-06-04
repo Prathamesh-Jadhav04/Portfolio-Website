@@ -116,6 +116,11 @@
 
   body {
     background-color: var(--bg-color);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.85)), url("/background-interactive.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--text-color);
     font-family: var(--font-inter), "Inter", sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -181,7 +186,10 @@
    LOADER
    ============================================= */
 .loader {
-  background: var(--bg-color);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.85)), url("/background-interactive.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: 20000;
   justify-content: center;
   align-items: center;

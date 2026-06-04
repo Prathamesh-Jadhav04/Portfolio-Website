@@ -485,7 +485,7 @@ export function ContactSection() {
         .contact-section-container {
           position: relative;
           padding: 8rem 5rem 4rem 5rem;
-          background-color: #0a0a0a;
+          background-color: transparent;
           box-sizing: border-box;
           border-top: 1px solid rgba(245, 245, 245, 0.05);
           overflow: hidden;
