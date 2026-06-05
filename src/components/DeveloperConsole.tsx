@@ -76,6 +76,44 @@ export function DeveloperConsole({ isOpen, onClose }: DeveloperConsoleProps) {
     // Append user input to history
     const updatedHistory: CommandLog[] = [...history, { type: 'input', text: `guest@prathamesh:~$ ${inputVal}` }];
     
+    // Check for theme parameter commands first
+    const args = cmd.split(' ');
+    const primaryCmd = args[0];
+    const subCmd = args[1];
+
+    if (primaryCmd === 'theme') {
+      if (!subCmd) {
+        updatedHistory.push({
+          type: 'output',
+          text: `
+Usage: theme [color]
+Available system themes:
+  theme amber - Original Amber Signature (Default)
+  theme green - Cyber Ingestion Green
+  theme pink  - Hot Cyberpunk Pink
+  theme blue  - Deep Space Cyan
+          `.trim()
+        });
+      } else if (subCmd === 'amber') {
+        document.documentElement.style.setProperty('--accent-amber', '#ffb400');
+        updatedHistory.push({ type: 'output', text: 'System theme color shifted to: AMBER (Default)' });
+      } else if (subCmd === 'green') {
+        document.documentElement.style.setProperty('--accent-amber', '#00ff66');
+        updatedHistory.push({ type: 'output', text: 'System theme color shifted to: NEON CYBER GREEN' });
+      } else if (subCmd === 'pink') {
+        document.documentElement.style.setProperty('--accent-amber', '#ff007f');
+        updatedHistory.push({ type: 'output', text: 'System theme color shifted to: HOT CYBERPUNK PINK' });
+      } else if (subCmd === 'blue') {
+        document.documentElement.style.setProperty('--accent-amber', '#00e5ff');
+        updatedHistory.push({ type: 'output', text: 'System theme color shifted to: DEEP SPACE CYAN' });
+      } else {
+        updatedHistory.push({ type: 'output', text: `System color "${subCmd}" not registered. Available: amber, green, pink, blue.` });
+      }
+      setHistory(updatedHistory);
+      setInputVal('');
+      return;
+    }
+
     // Command Router
     switch (cmd) {
       case 'help':
@@ -88,6 +126,7 @@ Registered system queries:
   projects - Displays active production-grade directories
   contact  - Outputs secure mailbox and connection channels
   neofetch - Shows system hardware and configuration
+  theme    - Shifts global system accent color [amber/green/pink/blue]
   exit     - Shuts down system shell
   clear    - Flushes console output log history
           `.trim()
